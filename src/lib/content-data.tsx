@@ -459,7 +459,6 @@ const donorSurgeryOverviewContent = (
     </div>
 );
 
-
 const donorRecoveryTimelineContent = (
     <div className="space-y-4 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">The Donor's Recovery Journey</h2>
@@ -482,6 +481,25 @@ const donorRecoveryTimelineContent = (
     </div>
 );
 
+const risksAndBenefitsContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Understanding the Risks of Living Donation</h2>
+        <p>Deciding to be a living kidney donor is a significant choice. While it is a very safe procedure, it's important to be fully aware of the potential physical and emotional risks involved. The transplant team will discuss these with you in detail.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Physical Risks</h3>
+        <p>Donating a kidney is a major surgery, and like any operation, it carries some risks. Although serious complications are rare, they can include issues like infection, bleeding, blood clots, or nerve damage. Your surgeon will explain every possibility so you can make an informed decision.</p>
+        
+        <h4 className="font-semibold pt-2">Life with One Kidney</h4>
+        <p>A common question is, "What happens after donation?" The good news is that the human body is remarkable. Your remaining kidney will grow larger and work harder to compensate. It can provide up to 75% of the function that two kidneys would, which is more than enough for a healthy life. Donating a kidney does not impact your life expectancy.</p>
+        <p>While the long-term outlook is excellent, donors may have a slightly increased risk of developing high blood pressure or having small amounts of protein in their urine as they age. This is why regular health check-ups after donation are important to monitor your health.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Emotional Well-being</h3>
+        <p>The vast majority of living donors report feeling a great sense of satisfaction from their decision. Many feel positive about the experience, even if the transplant outcome isn't perfect.</p>
+        <p>However, it's also normal to experience a mix of emotions. Some donors may feel anxious or down after the surgery, which can be a normal reaction to any major life event. These feelings can be more likely if the recipient has a complicated recovery.</p>
+        <p>It's crucial to remember that support is always available. If you experience any emotional difficulties, your healthcare team can connect you with resources and support to help you manage these feelings.</p>
+    </div>
+);
+
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
     'understanding-living-donation': understandingLivingDonationContent,
@@ -497,6 +515,7 @@ export const contentData: ModuleContent = {
     'psychological-assessment': psychologicalAssessmentContent,
     'donor-surgery': donorSurgeryOverviewContent,
     'donor-recovery': donorRecoveryTimelineContent,
+    'risks-and-benefits': risksAndBenefitsContent,
 };
 
 // Placeholder for other modules

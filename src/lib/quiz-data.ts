@@ -579,6 +579,58 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             options: ["To get a discount on the hospital bill", "Because it is a legal requirement", "To reduce infection risk and support healing", "To be able to drive sooner"],
             correctAnswer: "To reduce infection risk and support healing"
         }
+    ],
+    'risks-and-benefits': [
+        {
+            question: "Is donating a kidney considered a minor or major surgery?",
+            options: [
+                "Minor surgery, like getting stitches",
+                "It is not a surgery",
+                "Major surgery with potential risks",
+                "A simple outpatient procedure"
+            ],
+            correctAnswer: "Major surgery with potential risks"
+        },
+        {
+            question: "What happens to the donor's remaining kidney after donation?",
+            options: [
+                "It shrinks and works less",
+                "It increases in size and function to compensate",
+                "It stays the same and provides exactly 50% function",
+                "It needs to be replaced later"
+            ],
+            correctAnswer: "It increases in size and function to compensate"
+        },
+        {
+            question: "Does donating a kidney affect the donor's life expectancy?",
+            options: [
+                "Yes, it shortens it significantly",
+                "Yes, but only by a year or two",
+                "No, it has no impact on life span",
+                "It's unknown"
+            ],
+            correctAnswer: "No, it has no impact on life span"
+        },
+        {
+            question: "How do most living donors feel about their decision to donate?",
+            options: [
+                "They usually regret it",
+                "They feel very satisfied and positive",
+                "They are mostly indifferent",
+                "They feel angry"
+            ],
+            correctAnswer: "They feel very satisfied and positive"
+        },
+        {
+            question: "What should a donor do if they experience anxiety or depression after the surgery?",
+            options: [
+                "Ignore the feelings",
+                "Talk to their healthcare team for support",
+                "Pretend everything is fine",
+                "Stop going to check-ups"
+            ],
+            correctAnswer: "Talk to their healthcare team for support"
+        }
     ]
 };
 
