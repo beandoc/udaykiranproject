@@ -357,34 +357,31 @@ const immunosuppressiveMedicationsContent = (
 );
 
 const donorEvaluationContent = (
-    <div className="space-y-4 text-base leading-relaxed">
+    <div className="space-y-6 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">The Evaluation Process for Living Donors</h2>
         
-        <h3 className="text-xl font-bold font-headline pt-4">How to Start the Process</h3>
-        <p>To begin your journey as a living donor, the first step is to get in touch with a transplant center. Here’s what you need to know:</p>
-        <ul className="list-disc list-inside space-y-2 pl-4">
-            <li><strong>If you are donating to a specific person (a "directed donation"):</strong> You must contact the transplant center where the recipient is on the waitlist. Your evaluation will be handled by the same center.</li>
-            <li><strong>If you are donating to any person in need (a "non-directed donation"):</strong> You have the flexibility to contact any transplant center to begin your evaluation process.</li>
-        </ul>
-        <p className="pt-2">It's highly recommended to talk openly about your decision with family and trusted friends. Many potential donors also find it helpful to connect with someone who has already gone through the donation experience to learn from their journey.</p>
+        <div>
+            <h3 className="text-xl font-bold font-headline mb-2">How to Start the Process</h3>
+            <p>To begin your journey as a living donor, the first step is to contact a transplant center. For a "directed donation" to a specific person, you must contact the center where the recipient is waitlisted. If you wish to be a "non-directed" donor to anyone in need, you can contact any transplant center.</p>
+            <p className="mt-2">It's highly recommended to talk openly about your decision with family and trusted friends. Many potential donors also find it helpful to connect with someone who has already gone through the donation experience to learn from their journey.</p>
+        </div>
 
-        <h3 className="text-xl font-bold font-headline pt-4">What does a “full evaluation” involve?</h3>
-        <p>The evaluation is a comprehensive process, often taking place over two days. It's designed to give you a complete picture of what's involved and to ensure donation is safe for you. During this time, you will meet with the living donor team, have more blood work done, and complete imaging scans.</p>
-        <p className="font-semibold">You can expect to meet with the following team members:</p>
-        <ul className="list-disc list-inside space-y-3 pl-4 mt-2">
-            <li><strong>Nurse Coordinator:</strong> Your main point of contact throughout the entire process. They will answer your questions, review results, and keep you informed.</li>
-            <li><strong>Nephrologist (Kidney Doctor):</strong> They will discuss your kidney health and confirm you are healthy enough to donate.</li>
-            <li><strong>Surgeon:</strong> The surgeon will explain the surgical procedure, including pain management, and answer any questions about your recovery.</li>
-            <li><strong>Dietitian:</strong> They will review your eating habits and discuss what a healthy, well-balanced diet looks like to keep you healthy before and after donation.</li>
-        </ul>
+        <div>
+            <h3 className="text-xl font-bold font-headline mb-2">What does a “full evaluation” involve?</h3>
+            <p>The evaluation is a comprehensive process, often taking place over two days. It's designed to give you a complete picture of what's involved and to ensure donation is safe for you. You will meet with the living donor team, have more blood work done, and complete imaging scans.</p>
+            <p className="font-semibold mt-4">You can expect to meet with the following team members:</p>
+            <ul className="list-disc list-inside space-y-3 pl-4 mt-2">
+                <li><strong>Nurse Coordinator:</strong> Your main point of contact throughout the entire process.</li>
+                <li><strong>Nephrologist (Kidney Doctor):</strong> They will discuss your kidney health and confirm you are healthy enough to donate.</li>
+                <li><strong>Surgeon:</strong> The surgeon will explain the surgical procedure, pain management, and answer questions about recovery.</li>
+                <li><strong>Dietitian:</strong> They will review your eating habits and discuss a healthy, well-balanced diet.</li>
+            </ul>
+        </div>
 
-        <h3 className="text-xl font-bold font-headline pt-4">Medical Tests During Evaluation</h3>
-        <p>At a minimum, you will have the following tests:</p>
-        <ul className="list-disc list-inside space-y-3 pl-4 mt-2">
-            <li><strong>Lab Work:</strong> A new set of blood and urine samples will be taken to check on your overall health and to confirm you are a good match for the intended recipient.</li>
-            <li><strong>Imaging:</strong> Tests like a chest X-ray and a CT scan help the team see the size and structure of your kidneys and their blood supply. These images also help them decide which kidney is better to donate, allowing you to keep the healthier of the two.</li>
-        </ul>
-        <p className="pt-2">During these tests, it's possible to discover a health problem you weren't aware of. If this happens, the medical team will provide full support and refer you to a specialist for care.</p>
+        <div>
+            <h3 className="text-xl font-bold font-headline mb-2">Medical Tests During Evaluation</h3>
+            <p>You will have lab work and imaging tests to check on your health. Blood and urine samples will check your overall health and confirm if you are a good match for the recipient. Imaging tests like a chest X-ray and CT scan help the team see the size and structure of your kidneys and their blood supply, which helps them decide which kidney is better to donate, allowing you to keep the healthier of the two.</p>
+        </div>
     </div>
 );
 
@@ -457,8 +454,8 @@ const risksAndBenefitsContent = (
         <h3 className="text-xl font-bold font-headline pt-4">Long-Term Health Considerations</h3>
         <p>While the outlook is excellent, there are a few things to be aware of for the long term:</p>
         <ul className="list-disc list-inside space-y-3 pl-4">
-            <li><strong>Blood Pressure:</strong> Donors have a slightly higher than average risk of developing high blood pressure. Maintaining a healthy diet and getting regular physical activity are key to staying healthy, especially for female donors who may want to become pregnant after donation.</li>
-            <li><strong>Kidney Failure:</strong> The risk of a donor's remaining kidney failing is very low—less than 1% of donors ever need dialysis or a transplant themselves. This is only slightly higher than the average person's risk. In the rare event a former donor does need a kidney, they are given high priority on the transplant waitlist.</li>
+            <li><strong>Blood Pressure:</strong> Donors have a slightly higher than average risk of developing high blood pressure. Maintaining a healthy diet and getting regular physical activity are key to staying healthy.</li>
+            <li><strong>Kidney Failure:</strong> The risk of a donor's remaining kidney failing is very low—less than 1% of donors ever need dialysis or a transplant themselves. In the rare event a former donor does need a kidney, they are given high priority on the transplant waitlist.</li>
         </ul>
 
         <h3 className="text-xl font-bold font-headline pt-4">What to Expect Emotionally</h3>
@@ -466,6 +463,35 @@ const risksAndBenefitsContent = (
         <p>It is vital to talk to the transplant team about how you're feeling, both physically and emotionally, during your follow-up visits. Your emotional health is just as important as your physical recovery, and support is always available.</p>
     </div>
 );
+
+const longTermCareContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <div>
+            <h3 className="text-xl font-bold font-headline mb-2">Honoring Your Gift</h3>
+            <p>Your new kidney is a precious gift, whether it comes from a living or deceased donor. It represents a second chance at health, and it's important to treat it with the utmost care and respect. Remember that many people are still waiting for this opportunity, so embracing your health and following your care plan is the best way to honor this gift.</p>
+        </div>
+
+        <div>
+            <h3 className="text-xl font-bold font-headline mb-2">Embracing Your New Freedom</h3>
+            <p>One of the most significant rewards of a successful transplant is a newfound sense of freedom. Without the demands of dialysis, you'll have more time and energy for work, hobbies, family, and friends. You'll also find more flexibility in your diet and greater opportunities to travel. Embracing this freedom is a wonderful part of your new life.</p>
+        </div>
+
+        <div className="p-6 rounded-lg bg-destructive/10 border-l-4 border-destructive">
+            <h3 className="text-xl font-bold font-headline text-destructive-foreground">Your Health Partnership: Critical Reminders</h3>
+            <div className="space-y-4 mt-4 text-destructive-foreground/90">
+                 <div>
+                    <h4 className="font-semibold">Never Miss Appointments</h4>
+                    <p>Your follow-up appointments are a cornerstone of your long-term health. It is absolutely crucial that you attend every scheduled visit, even when you feel perfectly well. Often, the earliest signs of a problem, like rejection, can only be detected through blood tests. By the time you feel symptoms, the issue may have become much more serious. If you do feel unwell, don't wait for your next appointment—contact your transplant team immediately.</p>
+                </div>
+                <div>
+                     <h4 className="font-semibold">Trust Your Transplant Team</h4>
+                    <p>Your transplant team is your partner in this journey. Follow their advice closely. They will not ask you to undergo unnecessary tests. If they recommend an investigation, it is because they have a good reason and believe it is essential for your health. Open communication and collaboration with your team are key to your long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
@@ -477,6 +503,7 @@ export const contentData: ModuleContent = {
     'mental-health-support': mentalHealthSupportContent,
     'understanding-rejection': understandingRejectionContent,
     'immunosuppressants': immunosuppressiveMedicationsContent,
+    'long-term-care': longTermCareContent,
     'donor-evaluation': donorEvaluationContent,
     'donor-eligibility': donorEligibilityContent,
     'psychological-assessment': psychologicalAssessmentContent,

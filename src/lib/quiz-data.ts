@@ -370,6 +370,58 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             correctAnswer: "Yes, most episodes can be managed successfully, often by adjusting medications"
         }
     ],
+    'long-term-care': [
+        {
+            question: "Why is it important to attend all your transplant clinic appointments, even if you feel well?",
+            options: [
+                "To see your friends at the clinic",
+                "Early signs of rejection can be detected in tests before you feel symptoms",
+                "It's a good excuse to take a day off work",
+                "To get your blood pressure checked for free"
+            ],
+            correctAnswer: "Early signs of rejection can be detected in tests before you feel symptoms"
+        },
+        {
+            question: "What is described in the module as a 'unique gift' that should be treated with respect?",
+            options: [
+                "The hospital food",
+                "Your first post-transplant vacation",
+                "Your transplanted kidney",
+                "Your new diet plan"
+            ],
+            correctAnswer: "Your transplanted kidney"
+        },
+        {
+            question: "What should you do if your transplant team strongly advises you to have an investigation or test?",
+            options: [
+                "Get a second opinion from the internet",
+                "Ignore their advice if you feel fine",
+                "Trust their expertise as they have good reasons for their recommendation",
+                "Postpone it until you have more time"
+            ],
+            correctAnswer: "Trust their expertise as they have good reasons for their recommendation"
+        },
+        {
+            question: "What is one of the major benefits you can enjoy after a successful transplant?",
+            options: [
+                "The ability to stop all medications",
+                "Greater personal freedom from dialysis",
+                "Never having to see a doctor again",
+                "Eating anything you want without any restrictions at all"
+            ],
+            correctAnswer: "Greater personal freedom from dialysis"
+        },
+        {
+            question: "If you start feeling unwell between scheduled appointments, what is the best course of action?",
+            options: [
+                "Wait until your next appointment to mention it",
+                "Contact your transplant team immediately",
+                "Ask a family member what to do",
+                "Take some over-the-counter medication"
+            ],
+            correctAnswer: "Contact your transplant team immediately"
+        }
+    ],
     'donor-evaluation': [
         {
             question: "Who is the main point of contact for a living donor throughout the evaluation process?",
