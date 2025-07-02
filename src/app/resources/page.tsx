@@ -35,25 +35,37 @@ export default function ResourcesPage() {
                     <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                         <div>
-                            <span className="font-semibold">The Incision:</span> The surgeon makes a small cut in the lower abdomen to create an access point.
+                            <span className="font-semibold">The Incision:</span> The surgeon makes an incision in the lower abdomen. This cut allows them to access the major blood vessels and the bladder where the new kidney will be connected.
                         </div>
                     </li>
                      <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                         <div>
-                            <span className="font-semibold">Placing the New Kidney:</span> The healthy donor kidney is carefully placed into the pelvis. The original, failed kidneys are usually left in place.
+                            <span className="font-semibold">Placing the New Kidney:</span> The healthy donor kidney is carefully placed into the iliac fossa (the curved surface of the hip bone). The original, failed kidneys are usually left in place unless they are causing problems.
                         </div>
                     </li>
                      <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                         <div>
-                            <span className="font-semibold">Connecting Blood Flow:</span> The new kidney's artery and vein are attached to the patient's blood vessels to establish circulation.
+                            <span className="font-semibold">Connecting Blood Flow:</span> This is a critical step. The surgeon first connects the new kidney's vein to the patient's iliac vein. Then, the new kidney's artery is connected to the patient's iliac artery. This process, called anastomosis, establishes blood flow to the new organ.
                         </div>
                     </li>
                      <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                         <div>
-                            <span className="font-semibold">Connecting the Ureter:</span> The new kidney's ureter (the tube that carries urine) is connected to the bladder, allowing the new organ to function.
+                            <span className="font-semibold">Checking for Function:</span> Once blood is flowing, the kidney should "pink up," changing color to a healthy pink. The team checks for any bleeding and ensures good blood perfusion. Urine may start to be produced at this stage.
+                        </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                            <span className="font-semibold">Connecting the Ureter:</span> The new kidney's ureter (the tube that carries urine) is connected to the bladder. This allows the new organ to function properly and drain urine from the body.
+                        </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                            <span className="font-semibold">Closing the Incision:</span> Once all connections are secure and the kidney is functioning well, the surgeon carefully closes the incision in layers, using absorbable sutures for the skin.
                         </div>
                     </li>
                 </ul>
