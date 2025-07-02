@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Clock, PlayCircle, Star } from "lucide-react";
 import Link from "next/link";
 import { useAppContext } from "@/context/app-context";
-import { modulesByRole, type Module } from "@/lib/modules-data";
+import type { Module } from "@/lib/modules-data";
 import { contentData } from "@/lib/content-data";
 import { calculateReadingTime } from "@/lib/utils";
 
@@ -51,7 +51,7 @@ function ModuleCard({ module, isNext }: { module: Module, isNext: boolean }) {
 }
 
 export default function ModulesPage() {
-    const { role, t } = useAppContext();
+    const { role, t, modulesByRole } = useAppContext();
     const roleData = modulesByRole[role];
     const { modules } = roleData;
 

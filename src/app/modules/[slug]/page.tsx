@@ -9,7 +9,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { quizData, type QuizQuestion } from "@/lib/quiz-data";
-import { modulesByRole } from "@/lib/modules-data";
 import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
@@ -20,7 +19,7 @@ export default function ModulePage() {
     const params = useParams();
     const slug = params.slug as string;
     const { toast } = useToast();
-    const { t } = useAppContext();
+    const { t, role, modulesByRole, updateModuleStatus } = useAppContext();
     
     const [viewMode, setViewMode] = useState<'content' | 'quiz'>('content');
 
@@ -28,9 +27,7 @@ export default function ModulePage() {
         return quizData[slug] || [];
     });
 
-    const moduleInfo = Object.values(modulesByRole)
-        .flatMap(role => role.modules)
-        .find(module => module.slug === slug);
+    const moduleInfo = modulesByRole[role].modules.find(module => module.slug === slug);
 
     const moduleTitle = moduleInfo?.title || 'Module';
     const moduleContent = contentData[slug];
@@ -61,6 +58,11 @@ export default function ModulePage() {
     const handleSubmit = () => {
         setIsSubmitted(true);
         const correctCount = selectedAnswers.filter((answer, index) => answer === questions[index].correctAnswer).length;
+        
+        if (moduleInfo?.status === 'Not Started') {
+            updateModuleStatus(slug, role);
+        }
+
         toast({
             title: t('quizResultsTitle'),
             description: t('quizResultsScore', { score: correctCount, total: questions.length }),
@@ -154,7 +156,7 @@ export default function ModulePage() {
                         return (
                             <div key={index} className="p-4 border rounded-lg">
                                 <p className="font-semibold">{index + 1}. {q.question}</p>
-                                <p className={`mt-2 text-sm flex items-center gap-2 ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>
+                                <p className={cn("mt-2 text-sm flex items-center gap-2", isCorrect ? 'text-green-600' : 'text-red-600')}>
                                     {isCorrect ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
                                     {t('quizUserAnswer')} {userAnswer || t('quizNotAnswered')}
                                 </p>

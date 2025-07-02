@@ -22,12 +22,21 @@
     "linkMedsDesc": "Track your meds",
     "linkFollow": "Follow Nirogyam",
     "linkFollowDesc": "Educational WhatsApp channel",
-    "activityCompleted": "Completed \"Understanding Immunosuppression\"",
-    "activityEarned": "Earned \"Knowledge Seeker\" badge",
+    "activityCompleted": "Completed \"{{moduleName}}\"",
+    "activityEarnedNewbie": "Earned \"First Step\" badge",
+    "activityEarnedHalfway": "Earned \"Halfway Hero\" badge",
+    "activityEarnedCompletionist": "Earned \"Completionist\" badge",
     "activityPosted": "Posted in \"Post-Transplant Support\" forum",
-    "timeHoursAgo": "2 hours ago",
+    "timeHoursAgo": {
+        "one": "1 hour ago",
+        "other": "{{count}} hours ago"
+    },
     "timeYesterday": "Yesterday",
-    "timeDaysAgo": "2 days ago",
+    "timeDaysAgo": {
+        "one": "1 day ago",
+        "other": "{{count}} days ago"
+    },
+    "timeJustNow": "Just now",
     "defineRole": "Define Your Role",
     "selectRolePrompt": "Select your role to personalize your learning experience.",
     "rolePatient": "Patient",

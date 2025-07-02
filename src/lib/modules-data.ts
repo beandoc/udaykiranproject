@@ -4,10 +4,21 @@ export type Module = {
   slug: string;
 };
 
+export type RoleData = {
+    title: string;
+    modules: Module[];
+};
+
+export type ModulesByRole = {
+    Patient: RoleData;
+    Donor: RoleData;
+    Caregiver: RoleData;
+};
+
 export const patientModules: Module[] = [
   { title: 'Understanding Kidney Disease', status: 'Completed', slug: 'understanding-kidney-disease' },
-  { title: 'Chronic Kidney Disease Stages', status: 'Completed', slug: 'ckd-stages' },
-  { title: 'Treatment Options Overview', status: 'Completed', slug: 'treatment-options' },
+  { title: 'Chronic Kidney Disease Stages', status: 'Not Started', slug: 'ckd-stages' },
+  { title: 'Treatment Options Overview', status: 'Not Started', slug: 'treatment-options' },
   { title: 'Dialysis vs Transplant', status: 'Not Started', slug: 'dialysis-vs-transplant' },
   { title: 'Transplant Evaluation Process', status: 'Not Started', slug: 'evaluation-process' },
   { title: 'Finding a Donor', status: 'Not Started', slug: 'finding-a-donor' },
@@ -26,7 +37,7 @@ export const patientModules: Module[] = [
 
 export const donorModules: Module[] = [
     { title: 'Understanding Living Donation', status: 'Completed', slug: 'understanding-living-donation' },
-    { title: 'Donor Eligibility Criteria', status: 'Completed', slug: 'donor-eligibility' },
+    { title: 'Donor Eligibility Criteria', status: 'Not Started', slug: 'donor-eligibility' },
     { title: 'Medical Evaluation Process', status: 'Not Started', slug: 'donor-evaluation' },
     { title: 'Understanding Transplant Matching', status: 'Not Started', slug: 'transplant-matching' },
     { title: 'Psychological Assessment', status: 'Not Started', slug: 'psychological-assessment' },
@@ -39,16 +50,16 @@ export const donorModules: Module[] = [
 
 export const caregiverModules: Module[] = [
     { title: 'Understanding Your Role', status: 'Completed', slug: 'understanding-your-role' },
-    { title: 'Supporting Pre-Transplant', status: 'Completed', slug: 'supporting-pre-transplant' },
-    { title: 'Hospital Stay Support', status: 'Completed', slug: 'hospital-stay-support' },
-    { title: 'Home Recovery Care', status: 'Completed', slug: 'home-recovery-care' },
+    { title: 'Supporting Pre-Transplant', status: 'Not Started', slug: 'supporting-pre-transplant' },
+    { title: 'Hospital Stay Support', status: 'Not Started', slug: 'hospital-stay-support' },
+    { title: 'Home Recovery Care', status: 'Not Started', slug: 'home-recovery-care' },
     { title: 'Medication Management', status: 'Not Started', slug: 'medication-management' },
     { title: 'Recognizing Warning Signs', status: 'Not Started', slug: 'recognizing-warning-signs' },
     { title: 'Self-Care for Caregivers', status: 'Not Started', slug: 'self-care-for-caregivers' },
     { title: 'Communication with Medical Team', status: 'Not Started', slug: 'communication-with-medical-team' },
 ];
 
-export const modulesByRole = {
+export const modulesByRole: ModulesByRole = {
     Patient: { title: "Kidney Patient Education Path", modules: patientModules },
     Donor: { title: "Living Donor Education Path", modules: donorModules },
     Caregiver: { title: "Caregiver Support Path", modules: caregiverModules },

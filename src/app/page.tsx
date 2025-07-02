@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Heart, MessageSquare, Pill, Star, User, Users, UserCheck } from "lucide-react";
 import Link from "next/link";
-import { useAppContext, type Role } from "@/context/app-context";
+import { useAppContext, type Role, type Activity } from "@/context/app-context";
 import { cn } from "@/lib/utils";
+import type { LucideIcon } from "lucide-react";
 
 const roles = [
     { name: 'Patient', icon: User, descriptionKey: 'rolePatientDesc' },
@@ -13,18 +14,37 @@ const roles = [
     { name: 'Caregiver', icon: Users, descriptionKey: 'roleCaregiverDesc' },
 ] as const;
 
+const iconMap: { [key: string]: LucideIcon } = {
+  CheckCircle,
+  Star,
+  MessageSquare,
+};
+
+function formatTimeAgo(timestamp: number, t: (key: string) => string): string {
+    const now = Date.now();
+    const seconds = Math.floor((now - timestamp) / 1000);
+    const days = Math.floor(seconds / (24 * 60 * 60));
+
+    if (days >= 2) {
+        return t('timeDaysAgo', { count: days });
+    }
+    if (days === 1) {
+        return t('timeYesterday');
+    }
+    const hours = Math.floor(seconds / 3600);
+    if (hours >= 1) {
+        return t('timeHoursAgo', { count: hours });
+    }
+    return t('timeJustNow');
+}
+
+
 export default function Home() {
-    const { role, setRole, t } = useAppContext();
+    const { role, setRole, t, activities } = useAppContext();
 
     const quickLinks = [
         { href: '/tools/medication', labelKey: 'linkMeds', descriptionKey: 'linkMedsDesc', icon: Pill },
         { href: '#', labelKey: 'linkFollow', descriptionKey: 'linkFollowDesc', icon: MessageSquare },
-    ]
-    
-    const recentActivity = [
-        { textKey: 'activityCompleted', timeKey: 'timeHoursAgo', icon: CheckCircle, color: 'text-green-500 bg-green-100' },
-        { textKey: 'activityEarned', timeKey: 'timeYesterday', icon: Star, color: 'text-blue-500 bg-blue-100' },
-        { textKey: 'activityPosted', timeKey: 'timeDaysAgo', icon: MessageSquare, color: 'text-purple-500 bg-purple-100' },
     ]
 
     return (
@@ -71,17 +91,20 @@ export default function Home() {
                         <CardTitle className="font-headline text-xl">{t('recentActivity')}</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                        {recentActivity.map((activity, index) => (
-                            <div key={index} className="flex items-center gap-4">
-                                <div className={cn("p-3 rounded-full", activity.color)}>
-                                    <activity.icon className="w-5 h-5" />
+                        {activities.map((activity) => {
+                            const Icon = iconMap[activity.icon];
+                            return (
+                                <div key={activity.id} className="flex items-center gap-4">
+                                    <div className={cn("p-3 rounded-full", activity.color)}>
+                                        {Icon && <Icon className="w-5 h-5" />}
+                                    </div>
+                                    <div>
+                                        <p className="font-medium text-sm">{t(activity.textKey, activity.options)}</p>
+                                        <p className="text-xs text-muted-foreground">{formatTimeAgo(activity.timestamp, t)}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p className="font-medium text-sm">{t(activity.textKey)}</p>
-                                    <p className="text-xs text-muted-foreground">{t(activity.timeKey)}</p>
-                                </div>
-                            </div>
-                        ))}
+                            )
+                        })}
                     </CardContent>
                 </Card>
             </div>
