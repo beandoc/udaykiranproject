@@ -25,9 +25,16 @@ import {
   Pill,
   Heart,
   Bell,
-  Moon
+  Moon,
+  Globe,
 } from 'lucide-react';
 import { Button } from '../ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const mainNav = [
   { href: '/', label: 'Dashboard', icon: LayoutDashboard },
@@ -52,8 +59,8 @@ export function AppShell({ children }: { children: ReactNode }) {
                     <Heart className="w-6 h-6 fill-current" />
                 </div>
                  <div className="group-data-[collapsible=icon]:hidden">
-                  <h1 className="text-lg font-headline font-bold text-foreground">Kidney Care Hub</h1>
-                  <p className="text-xs text-muted-foreground">Your transplant journey companion</p>
+                  <h1 className="text-lg font-headline font-bold text-foreground">Kidney Transplant Hub</h1>
+                  <p className="text-xs text-muted-foreground">Your journey companion</p>
                 </div>
             </Link>
         </SidebarHeader>
@@ -92,6 +99,19 @@ export function AppShell({ children }: { children: ReactNode }) {
           <SidebarTrigger className="md:hidden" />
           <div className="flex-1" />
           <div className="flex items-center gap-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" className="rounded-full">
+                      <Globe className="h-5 w-5" />
+                      <span className="sr-only">Select language</span>
+                  </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                  <DropdownMenuItem>English</DropdownMenuItem>
+                  <DropdownMenuItem>हिन्दी (Hindi)</DropdownMenuItem>
+                  <DropdownMenuItem>मराठी (Marathi)</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button variant="ghost" size="icon" className="rounded-full">
                 <Bell className="h-5 w-5" />
                 <span className="sr-only">Notifications</span>
