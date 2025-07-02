@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -13,6 +13,169 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 type ModuleContent = {
     [key: string]: React.ReactNode;
 };
+
+const physicalActivityAndExerciseContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Physical Activity & Your New Kidney</h2>
+        <p>Staying active is one of the best things you can do for your overall health and for the long-term success of your new kidney. Because cardiovascular disease (heart disease) is a major concern for transplant patients, being physically active is a key way to lower your risk.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Before Your Transplant: "Prehabilitation"</h3>
+        <p>Even before your surgery, your transplant team will ask about your current activity level. If you've been inactive for a while, they might recommend a "prehabilitation" program. This is a tailored physical therapy plan designed to help you get stronger *before* your transplant, which can lead to a smoother, faster recovery afterward.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">After Your Transplant: Getting Back on Your Feet</h3>
+        <p>Your journey back to activity will be gradual, but it starts almost immediately.</p>
+        <div className="grid md:grid-cols-2 gap-6 mt-4">
+            <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2"><Clock className="text-primary"/> The Early Days</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                    <p>You will be encouraged to start walking as soon as possible after surgery. This helps prevent complications like blood clots and chest infections.</p>
+                    <p>Your team will re-evaluate your physical condition and help you create a plan to safely return to your normal activities.</p>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2"><Bike className="text-primary"/> The First 3 Months</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                    <p>As your wound heals, you'll be encouraged to increase your aerobic activity (like walking).</p>
+                    <p><span className="font-bold">Crucial Restriction:</span> Avoid any heavy lifting or bending that could strain your abdominal muscles. This helps prevent a hernia.</p>
+                    <p>A good goal is to work towards <span className="font-bold">7,500 to 10,000 steps</span> daily.</p>
+                </CardContent>
+            </Card>
+        </div>
+
+        <Alert className="mt-6">
+            <HeartPulse className="h-4 w-4" />
+            <AlertTitle>Long-Term Fitness Goals</AlertTitle>
+            <AlertDescription>
+                In addition to daily walking, aim to include some resistance or strength training exercises about three times a week. Always discuss your exercise plans with your transplant team to ensure they are safe for you.
+            </AlertDescription>
+        </Alert>
+    </div>
+);
+
+const understandingGraftHealthContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Understanding the Health of Your New Kidney</h2>
+        <p>Many factors can affect how well your new kidney (also called an "allograft" or "graft") works, both immediately after surgery and for years to come. Understanding these factors helps you play an active role in keeping it healthy.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Factors Affecting Short-Term Success (First Weeks & Months)</h3>
+        <div className="space-y-4 mt-2">
+            <div className="flex items-start gap-4">
+                <Clock className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Delayed Function</h4>
+                    <p className="text-muted-foreground">Sometimes, a new kidney takes a little while to "wake up" and start working. This is common, especially with deceased donor kidneys, and it doesn't mean the transplant has failed.</p>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <ShieldAlert className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Antibodies</h4>
+                    <p className="text-muted-foreground">Having pre-existing antibodies against the donor's tissue type (HLA) can increase the risk of early rejection. This is why cross-matching before surgery is so important.</p>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <HeartHandshake className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Donor Type</h4>
+                    <p className="text-muted-foreground">Kidneys from living donors generally have a higher short-term success rate and often start working faster than those from deceased donors.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Factors Affecting Long-Term Success (Years)</h3>
+        <p>Protecting your kidney for the long haul involves managing factors related to both your immune system and your overall health.</p>
+
+        <div className="grid md:grid-cols-2 gap-6 mt-4">
+            <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2"><ShieldCheck className="text-primary"/> Immune System Factors</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                    <p><span className="font-bold">HLA Mismatch:</span> A closer tissue match between you and the donor can lead to better long-term outcomes.</p>
+                    <p><span className="font-bold">New Antibodies:</span> Your body can develop new antibodies against the kidney over time. This is a major cause of late rejection.</p>
+                    <p><span className="font-bold">Medication Adherence:</span> This is the most important factor you can control. Not taking your immunosuppressants correctly is a primary cause of late kidney loss.</p>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2"><HeartPulse className="text-primary"/> Overall Health Factors</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                    <p><span className="font-bold">Blood Pressure & Cholesterol:</span> Keeping hypertension and high cholesterol under control is vital to protect the new kidney's blood vessels.</p>
+                    <p><span className="font-bold">Medication Side Effects:</span> The long-term use of some immunosuppressants can be toxic to the kidney, which your team will monitor closely.</p>
+                    <p><span className="font-bold">Recurrent Disease:</span> In some cases, the original kidney disease that caused failure can return and damage the new kidney.</p>
+                </CardContent>
+            </Card>
+        </div>
+    </div>
+);
+
+const postTransplantDiabetesContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Diabetes After Your Transplant (PTDM)</h2>
+        <p>Post-Transplant Diabetes Mellitus (PTDM) is a type of diabetes that develops after your transplant surgery. It's a common complication, but it can be managed effectively with help from your transplant team.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Who is at Risk?</h3>
+        <p>Certain factors can increase your risk of developing PTDM:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4">
+            <li>Being overweight or obese</li>
+            <li>Being older (over 40-45 years)</li>
+            <li>Having a family history of type 2 diabetes</li>
+            <li>A personal history of diabetes during a pregnancy (gestational diabetes)</li>
+            <li><span className="font-bold">Your immunosuppressive medication regimen is the most significant post-transplant risk factor.</span></li>
+        </ul>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Screening and Diagnosis</h3>
+        <p>Your team will watch you closely for signs of diabetes.</p>
+        <div className="space-y-4 mt-2">
+             <div className="flex items-start gap-4">
+                <CalendarClock className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Regular Monitoring</h4>
+                    <p className="text-muted-foreground">You will have regular blood tests to check your blood sugar levels, especially in the first year after transplant. An A1C test (which shows your average blood sugar over 3 months) will likely be done starting at 3 months post-transplant.</p>
+                </div>
+            </div>
+             <div className="flex items-start gap-4">
+                <ClipboardList className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">When is it Diagnosed?</h4>
+                    <p className="text-muted-foreground">A formal diagnosis of PTDM is only made once you are on a stable dose of your medications, your new kidney is functioning well, and you don't have any acute infections.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Managing Post-Transplant Diabetes</h3>
+        <p>The goal of management is to keep your blood sugar in a healthy range to protect both your new kidney and your overall health. Treatment involves a combination of lifestyle changes and medication.</p>
+        <div className="grid md:grid-cols-2 gap-6 mt-4">
+            <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2"><Scale className="text-primary"/> Lifestyle is Key</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>Lifestyle interventions are the first and most important step for everyone with PTDM. This includes:</p>
+                    <ul className="list-disc list-inside space-y-2 mt-2">
+                        <li>Following a healthy diet</li>
+                        <li>Losing weight if you are overweight</li>
+                        <li>Regular physical activity</li>
+                    </ul>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2"><Pill className="text-primary"/> Medication</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>Right after surgery, high blood sugar is often managed with <span className="font-bold">insulin</span>. Later, depending on your needs, your doctor may prescribe oral pills or other injectable medications. The choice of drug depends on how well your new kidney is working.</p>
+                </CardContent>
+            </Card>
+        </div>
+    </div>
+);
+
 
 const understandingKidneyDiseaseContent = (
     <div className="space-y-4 text-base leading-relaxed">
@@ -281,13 +444,7 @@ const postTransplantRecoveryContent = (
             <Info className="h-4 w-4" />
             <AlertTitle>Important Information for Women: Pregnancy After Transplant</AlertTitle>
             <AlertDescription>
-                <p>Most women are fertile again after a transplant. If you wish to become pregnant, it is <strong>critical</strong> to plan this carefully with your transplant team. We strongly recommend waiting at least <strong>two years</strong> after your transplant before trying to conceive.</p>
-                <ul className="list-disc list-inside space-y-2 pl-4 mt-3">
-                    <li><strong>Medication Changes are Essential:</strong> Some immunosuppressive drugs can cause birth defects and MUST be switched to safer alternatives before you attempt to get pregnant.</li>
-                    <li><strong>Special Risks:</strong> Pregnancy after transplant carries risks for both mother and child, including a higher chance of high blood pressure, premature birth, and a slightly increased risk of birth defects.</li>
-                    <li><strong>Close Monitoring:</strong> You will need more frequent lab tests and close prenatal care to ensure a successful and healthy outcome for both you and your baby.</li>
-                    <li><strong>Birth Control is Key:</strong> If you are not planning a pregnancy, you must use a reliable form of birth control.</li>
-                </ul>
+                 <p>Pregnancy in a transplant recipient is considered high risk. All immunosuppressive medications carry some risk in pregnancy; in particular, mycophenolate mofetil/sodium and the mammalian (mechanistic) target of rapamycin (mTOR) inhibitors are contraindicated in pregnancy. The most effective safe form of contraception should be used to avoid unplanned pregnancies in transplant recipients.</p>
             </AlertDescription>
         </Alert>
     </div>
@@ -566,21 +723,10 @@ const risksAndBenefitsContent = (
 const longTermCareContent = (
     <div className="space-y-6 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">Your New Kidney: A Lifelong Partnership</h2>
-        <p>Whether your new kidney came from a living or a deceased donor, it's a unique gift that deserves respect and care. Many people wait a long time for this opportunity, so embracing your health and sticking to your care plan is the best way to honor this gift and avoid wasting it.</p>
+        <p>You are on complex immunosuppressive regimens that render them susceptible to infection, malignancy, and cardiovascular disease (CVD). In addition, patients often have multiple comorbidities due to, or as a cause of, their underlying end-stage kidney disease.</p>
         
-        <h3 className="text-xl font-bold font-headline pt-4">Embracing Your New Freedom</h3>
-        <p>After your transplant, you'll experience a greater sense of personal freedom. You'll have more time for work, hobbies, and family, without the scheduling demands of dialysis. You'll also enjoy more flexibility with your diet and new opportunities for travel.</p>
-        
-        <h3 className="text-xl font-bold font-headline pt-4">Your Role in Long-Term Success</h3>
-        <p>Your long-term health depends on a partnership between you and your transplant team. Here are your key responsibilities:</p>
-        <ul className="list-disc list-inside space-y-3 pl-4">
-            <li>
-                <strong>Never Miss Appointments:</strong> It is crucial that you attend all your transplant clinic appointments, even when you feel perfectly healthy. The earliest signs of rejection often appear in blood tests before you feel any symptoms. By the time symptoms are obvious, it might be too late to easily treat the problem. If you feel unwell, contact your team immediately—don't wait for your next scheduled visit.
-            </li>
-            <li>
-                <strong>Follow Your Team's Advice:</strong> Your transplant team will not ask you to do unnecessary tests. If they recommend an investigation, trust that they have good reasons. Following their guidance is essential for protecting your health.
-            </li>
-        </ul>
+        <h3 className="text-xl font-bold font-headline pt-4">Infectious issues</h3>
+        <p>Infections such as upper respiratory or urinary tract infection are common in kidney transplant recipients. Decongestants and nonsteroidal antiinflammatory agents should be avoided. Patients are also at risk for opportunistic infections including cytomegalovirus (CMV), Pneumocystis jirovecii (formerly carinii) pneumonia (PCP), and polyomavirus (BK and John Cunningham [JC] virus).</p>
         
         <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Cancer Surveillance: Tests and Frequency</h3>
         <p>After a kidney transplant, you are at a higher risk of developing certain types of cancer. Early detection leads to better treatment outcomes, so it's essential to follow a regular screening protocol. Please review the table below and discuss it with your transplant team if you have any questions.</p>
@@ -1028,7 +1174,10 @@ export const contentData: ModuleContent = {
     'medication-management': medicationManagementSupportContent,
     'recognizing-warning-signs': recognizingWarningSignsContent,
     'self-care-for-caregivers': selfCareForCaregiversContent,
-    'communication-with-medical-team': communicationWithMedicalTeamContent
+    'communication-with-medical-team': communicationWithMedicalTeamContent,
+    'physical-activity-and-exercise': physicalActivityAndExerciseContent,
+    'understanding-graft-health': understandingGraftHealthContent,
+    'post-transplant-diabetes': postTransplantDiabetesContent
 };
 
 // Placeholder for other modules

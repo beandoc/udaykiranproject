@@ -8,6 +8,162 @@ export type QuizQuestion = {
 };
 
 export const quizData: { [key: string]: QuizQuestion[] } = {
+    'physical-activity-and-exercise': [
+        {
+            question: "Why is physical activity important after a kidney transplant?",
+            options: [
+                "To be able to eat more food",
+                "To lower the risk of cardiovascular disease",
+                "To make the surgical scar heal faster",
+                "It is not important"
+            ],
+            correctAnswer: "To lower the risk of cardiovascular disease"
+        },
+        {
+            question: "What kind of activity should be avoided for the first 3 months after transplant?",
+            options: [
+                "Walking",
+                "Cycling on a stationary bike",
+                "Heavy lifting",
+                "Breathing exercises"
+            ],
+            correctAnswer: "Heavy lifting"
+        },
+        {
+            question: "What is a good daily step goal for transplant recipients to work towards?",
+            options: [
+                "1,000 to 2,000 steps",
+                "3,000 to 5,000 steps",
+                "7,500 to 10,000 steps",
+                "Over 15,000 steps"
+            ],
+            correctAnswer: "7,500 to 10,000 steps"
+        },
+        {
+            question: "What is 'prehabilitation'?",
+            options: [
+                "A type of medication",
+                "A tailored physical therapy program before transplant surgery",
+                "A special diet before transplant",
+                "The final check-up before surgery"
+            ],
+            correctAnswer: "A tailored physical therapy program before transplant surgery"
+        },
+        {
+            question: "Who should you talk to before starting a new exercise plan?",
+            options: [
+                "Your family",
+                "A personal trainer at the gym",
+                "Your transplant team",
+                "Other transplant patients"
+            ],
+            correctAnswer: "Your transplant team"
+        }
+    ],
+    'understanding-graft-health': [
+        {
+            question: "What is the most important factor a patient can control to ensure long-term kidney health?",
+            options: [
+                "The brand of water they drink",
+                "Taking their immunosuppressant medication correctly",
+                "The time of day they have surgery",
+                "The hospital's location"
+            ],
+            correctAnswer: "Taking their immunosuppressant medication correctly"
+        },
+        {
+            question: "What does 'delayed graft function' mean?",
+            options: [
+                "The transplant surgery was late",
+                "The new kidney takes a little while to start working",
+                "The new kidney is a bad match",
+                "The patient missed a dose of medication"
+            ],
+            correctAnswer: "The new kidney takes a little while to start working"
+        },
+        {
+            question: "Which of these is an 'alloantigen-independent' factor that can affect long-term kidney health?",
+            options: [
+                "HLA mismatch",
+                "Developing new antibodies",
+                "Uncontrolled high blood pressure",
+                "Not taking immunosuppressants"
+            ],
+            correctAnswer: "Uncontrolled high blood pressure"
+        },
+        {
+            question: "Why do kidneys from living donors often have better short-term success?",
+            options: [
+                "They are always a perfect match",
+                "The surgery is shorter",
+                "They generally start working faster",
+                "They are larger"
+            ],
+            correctAnswer: "They generally start working faster"
+        },
+        {
+            question: "What is a primary cause of late kidney loss?",
+            options: [
+                "Eating too much sugar",
+                "Not exercising enough",
+                "Not taking medications as prescribed (noncompliance)",
+                "Drinking too much water"
+            ],
+            correctAnswer: "Not taking medications as prescribed (noncompliance)"
+        }
+    ],
+    'post-transplant-diabetes': [
+        {
+            question: "What does PTDM stand for?",
+            options: [
+                "Post-Tiredness Daily Measurement",
+                "Pre-Transplant Diet Management",
+                "Post-Transplant Diabetes Mellitus",
+                "Patient-Tested Drug Module"
+            ],
+            correctAnswer: "Post-Transplant Diabetes Mellitus"
+        },
+        {
+            question: "What is the most significant post-transplant risk factor for developing PTDM?",
+            options: [
+                "The patient's age",
+                "The immunosuppressive medication regimen",
+                "Family history of diabetes",
+                "The type of transplant surgery"
+            ],
+            correctAnswer: "The immunosuppressive medication regimen"
+        },
+        {
+            question: "What is the first and most important step in managing PTDM?",
+            options: [
+                "Starting insulin immediately",
+                "Lifestyle interventions (diet, weight loss, exercise)",
+                "Trying herbal remedies",
+                "Requesting different medication"
+            ],
+            correctAnswer: "Lifestyle interventions (diet, weight loss, exercise)"
+        },
+        {
+            question: "When should an A1C test be used to check for PTDM?",
+            options: [
+                "Immediately after surgery",
+                "Starting at 3 months post-transplant",
+                "Only if the patient feels symptoms of high blood sugar",
+                "It is never used for transplant patients"
+            ],
+            correctAnswer: "Starting at 3 months post-transplant"
+        },
+        {
+            question: "What is the typical blood sugar goal for most patients with PTDM, measured by A1C?",
+            options: [
+                "Less than 9%",
+                "Less than 8%",
+                "Less than 7%",
+                "Less than 6%"
+            ],
+            correctAnswer: "Less than 7%"
+        }
+    ],
     'transplant-matching': [
         {
             question: "What are the two main factors checked during the transplant matching process?",

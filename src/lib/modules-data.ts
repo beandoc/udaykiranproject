@@ -1,3 +1,4 @@
+
 export type Module = {
   title: string;
   status: 'Completed' | 'Not Started';
@@ -25,8 +26,11 @@ export const patientModules: Module[] = [
   { title: 'Immunosuppressive Medications', status: 'Not Started', slug: 'immunosuppressants' },
   { title: 'Medication Adherence', status: 'Not Started', slug: 'medication-adherence' },
   { title: 'Understanding Risk of Rejection', status: 'Not Started', slug: 'understanding-rejection' },
+  { title: "Understanding Your New Kidney's Health", status: 'Not Started', slug: 'understanding-graft-health' },
   { title: 'Long-term Care', status: 'Not Started', slug: 'long-term-care' },
   { title: 'Diet and Nutrition', status: 'Not Started', slug: 'diet-and-nutrition' },
+  { title: 'Physical Activity & Exercise', status: 'Not Started', slug: 'physical-activity-and-exercise' },
+  { title: 'Post-Transplant Diabetes', status: 'Not Started', slug: 'post-transplant-diabetes' },
   { title: 'Mental Health Support', status: 'Not Started', slug: 'mental-health-support' },
 ];
 
