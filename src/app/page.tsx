@@ -118,9 +118,8 @@ export default function Home() {
                 </div>
                 <div className="relative h-64 md:h-auto">
                     <Image
-                        src="https://placehold.co/600x400.png"
+                        src="/images/nutrition.jpg"
                         alt="A vibrant plate of healthy food including fresh vegetables and lean protein."
-                        data-ai-hint="healthy food"
                         fill
                         className="object-cover rounded-r-lg"
                     />
