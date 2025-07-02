@@ -184,6 +184,32 @@ const surgeryDayExperienceContent = (
         <p>Most patients are able to sit up in a chair the day after surgery and can expect to be walking within a couple of days.</p>
         <p>Preventing infection is a top priority. For this reason, your visitor numbers might be limited, and you may be in a separate room to minimize exposure to germs.</p>
         <p>The length of your hospital stay depends on your recovery, but most people are ready to go home within six to ten days. Everyone's journey is different, so it's okay if you feel better right away or need a bit more time to adjust.</p>
+        
+        <h3 className="text-2xl font-bold font-headline pt-8 border-t mt-8">The Living Donor Transplant Experience</h3>
+        <p>If you are receiving a kidney from a living donor, the process has a few extra, well-planned steps. Here’s what you can expect.</p>
+
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="space-y-4">
+                <h4 className="text-xl font-semibold font-headline">Before the Surgery</h4>
+                <p>In the week leading up to the scheduled date, both you and your donor will have a final round of tests. This is to ensure everyone is healthy and ready. A final "cross-match" blood test is also done to confirm compatibility one last time.</p>
+                <p>You will both be admitted to the hospital, usually the day before the procedure. As the recipient, you might have one last dialysis session to prepare your body for the transplant.</p>
+
+                <h4 className="text-xl font-semibold font-headline pt-4">During the Surgery</h4>
+                <p>For you, the surgery to place the new kidney is exactly the same as described earlier. The main difference in a living donation is how the kidney is retrieved from your donor. Most donors now undergo a minimally invasive procedure called <strong>laparoscopic nephrectomy</strong> (keyhole surgery).</p>
+                <p>In this procedure, the surgeon makes a few small incisions in the donor's abdomen. A tiny camera and specialized tools are used to carefully detach the kidney, which is then removed through one slightly larger incision. This method typically results in less pain and a faster recovery for the donor.</p>
+            </div>
+            <div className="space-y-2">
+                <Image 
+                    src="https://placehold.co/400x300.png" 
+                    alt="Diagram showing the small incisions for a laparoscopic nephrectomy."
+                    width={400}
+                    height={300}
+                    className="rounded-lg mx-auto border"
+                    data-ai-hint="laparoscopic surgery incisions"
+                />
+                <p className="text-xs text-center text-muted-foreground">Laparoscopic surgery involves several small incisions, leading to a quicker recovery.</p>
+            </div>
+        </div>
     </div>
 );
 
