@@ -162,7 +162,7 @@ const surgeryDayExperienceContent = (
             </div>
             <div className="space-y-2">
                 <Image 
-                    src="/images/kidney-transplant-anatomy.png" 
+                    src="https://placehold.co/400x450.png" 
                     alt="Diagram showing the placement of a transplanted kidney in the pelvis."
                     width={400}
                     height={450}
@@ -292,6 +292,23 @@ const understandingRejectionContent = (
         <p>It's not uncommon to experience rejection episodes, especially in the early period after your transplant. Often, these are so subtle that they are only detected through your routine blood tests. In most cases, these episodes can be successfully treated by simply adjusting your medications.</p>
         <p>More significant rejection episodes might require additional treatments, like plasma exchange (a process to remove harmful antibodies from your blood) or other specialized infusions. The good news is that most rejection can be managed effectively.</p>
         <p>However, it's crucial to remember that rejection can happen at any time. This is why strictly following your medication schedule, attending all check-ups, and reporting any new symptoms to your team is so important for the long-term health of your new kidney.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Types of Rejection</h3>
+        <p>There are different types of rejection, each occurring on a different timeline:</p>
+        <ul className="list-none space-y-4 pl-0">
+            <li className="p-4 bg-muted/50 rounded-lg">
+                <h4 className="font-bold">Hyperacute Rejection</h4>
+                <p>This is a very rare type that can happen within minutes or hours of surgery. It is caused by a severe, immediate immune response. This type cannot be treated, and the new kidney must be removed right away.</p>
+            </li>
+            <li className="p-4 bg-muted/50 rounded-lg">
+                <h4 className="font-bold">Acute Rejection</h4>
+                <p>This is a more common type, often happening within the first few weeks or months. It involves a sudden inflammation of the new kidney. Acute rejection might cause pain or fever, but often there are no symptoms, which is why your routine blood tests are so important. If your lab results show a problem, a kidney biopsy might be needed to confirm it. Fortunately, most cases of acute rejection can be successfully treated with changes to your medication.</p>
+            </li>
+            <li className="p-4 bg-muted/50 rounded-lg">
+                <h4 className="font-bold">Chronic Rejection</h4>
+                <p>This is a slow, long-term process where the new kidney gradually becomes damaged and scarred over several years. It can be caused by antibodies that your body develops over time against the new kidney. This type of rejection is harder to treat and can eventually lead to kidney failure, requiring a return to dialysis or another transplant.</p>
+            </li>
+        </ul>
     </div>
 );
 
