@@ -428,6 +428,59 @@ const psychologicalAssessmentContent = (
     </div>
 );
 
+const donorSurgeryOverviewContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">The Donor's Surgical Procedure</h2>
+        <p>The transplant team will discuss the surgical options in detail with the living donor. Most kidney removal procedures today are done using a minimally invasive technique, but traditional open surgery is also an option.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Laparoscopic Nephrectomy (Keyhole Surgery)</h3>
+         <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="space-y-4">
+                <p>This is the most common method. The surgeon makes several small incisions in the donor's abdomen. A laparoscope—a thin tube with a video camera—is inserted, allowing the surgeon to see inside the body on a monitor.</p>
+                <p>Using special instruments, the surgeon carefully detaches the kidney. It is then removed through a slightly larger incision, often placed below the belly button. This is done either by hand or using a special surgical bag.</p>
+                <p>This minimally invasive approach typically results in less pain, a shorter hospital stay, and a faster overall recovery for the donor.</p>
+            </div>
+            <div className="space-y-2">
+                <Image
+                    src="https://placehold.co/400x300.png"
+                    alt="Diagram showing the small incisions for a laparoscopic nephrectomy."
+                    width={400}
+                    height={300}
+                    className="rounded-lg mx-auto border"
+                    data-ai-hint="laparoscopic surgery incisions"
+                />
+                <p className="text-xs text-center text-muted-foreground">Laparoscopic surgery involves several small incisions, leading to a quicker recovery.</p>
+            </div>
+        </div>
+
+        <h3 className="text-xl font-bold font-headline pt-8 border-t mt-8">Open Nephrectomy</h3>
+        <p>In a traditional open surgery, the surgeon makes one larger incision, about 15–25 cm (6–10 inches) long, on the front or side of the abdomen. This allows direct access to the kidney.</p>
+        <p>The surgeon will then clamp and cut the blood vessels and the ureter connected to the kidney before removing it. This method may be used if the donor's anatomy is not suitable for keyhole surgery or for other medical reasons.</p>
+    </div>
+);
+
+
+const donorRecoveryTimelineContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">The Donor's Recovery Journey</h2>
+        <p>Recovering from kidney donation surgery is a process that requires time and care. Understanding what to expect can help donors prepare for the weeks following the procedure.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">In the Hospital</h3>
+        <p>After the surgery, it is completely normal for the donor to feel some pain and discomfort around the incision area. This will be managed with pain medication provided by the hospital staff.</p>
+        <p>The typical hospital stay for a living kidney donor is between <strong>four and ten days</strong>. This can vary depending on the type of surgery (laparoscopic vs. open) and the individual's recovery progress.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Recovery at Home</h3>
+        <p>Full recovery at home can take up to <strong>six weeks</strong>. During this important healing period, there are some key restrictions to follow:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4">
+            <li><strong>No Driving:</strong> Donors should not drive a car for a minimum of six weeks.</li>
+            <li><strong>No Heavy Lifting:</strong> It is crucial to avoid any heavy lifting for at least six weeks to allow the abdominal muscles to heal properly.</li>
+        </ul>
+        <p>It is essential to follow all recovery instructions provided by the medical team. This helps reduce the risk of complications, such as infection, and supports a smooth healing process.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Recovery Time Comparison</h3>
+        <p>Donors who undergo a laparoscopic (keyhole) surgery often experience a quicker recovery compared to those who have a traditional open nephrectomy. However, every person's experience is different. It is important to discuss the recovery process openly with the healthcare team, as well as with family and friends who can provide support.</p>
+    </div>
+);
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
@@ -442,6 +495,8 @@ export const contentData: ModuleContent = {
     'donor-evaluation': donorEvaluationContent,
     'donor-eligibility': donorEligibilityContent,
     'psychological-assessment': psychologicalAssessmentContent,
+    'donor-surgery': donorSurgeryOverviewContent,
+    'donor-recovery': donorRecoveryTimelineContent,
 };
 
 // Placeholder for other modules

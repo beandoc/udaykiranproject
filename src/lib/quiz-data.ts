@@ -525,6 +525,60 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             ],
             correctAnswer: "Forced or paid to donate"
         }
+    ],
+    'donor-surgery': [
+        {
+            question: "What is the most common method for removing a kidney from a living donor?",
+            options: ["Open nephrectomy", "Laparoscopic (keyhole) surgery", "Robotic surgery", "Ultrasound extraction"],
+            correctAnswer: "Laparoscopic (keyhole) surgery"
+        },
+        {
+            question: "What is a major advantage of laparoscopic surgery for the donor?",
+            options: ["It is a faster operation", "It results in less pain and a quicker recovery", "It guarantees the kidney will work better", "It does not leave any scars"],
+            correctAnswer: "It results in less pain and a quicker recovery"
+        },
+        {
+            question: "What does a surgeon use to see inside the donor's body during a laparoscopic procedure?",
+            options: ["X-ray goggles", "A microscope", "A laparoscope (a thin tube with a camera)", "A small mirror"],
+            correctAnswer: "A laparoscope (a thin tube with a camera)"
+        },
+        {
+            question: "In which situation might an open nephrectomy be performed instead of a laparoscopic one?",
+            options: ["If the donor requests it for a bigger scar", "If the donor's anatomy is not suitable for keyhole surgery", "If the hospital's power goes out", "If the donor is left-handed"],
+            correctAnswer: "If the donor's anatomy is not suitable for keyhole surgery"
+        },
+        {
+            question: "How is the donor's kidney removed from the body in keyhole surgery?",
+            options: ["It is broken into small pieces first", "It is pulled out through one of the tiny incisions", "It is removed through a slightly larger single incision", "It is teleported out"],
+            correctAnswer: "It is removed through a slightly larger single incision"
+        }
+    ],
+    'donor-recovery': [
+        {
+            question: "What is the typical hospital stay for a living kidney donor after surgery?",
+            options: ["One day", "Two to three weeks", "Four to ten days", "Over a month"],
+            correctAnswer: "Four to ten days"
+        },
+        {
+            question: "For how long should a living donor avoid driving and heavy lifting after surgery?",
+            options: ["For two days", "For two weeks", "For at least six weeks", "Until they feel like it"],
+            correctAnswer: "For at least six weeks"
+        },
+        {
+            question: "Which type of surgery generally leads to a faster recovery for the donor?",
+            options: ["Open nephrectomy", "Laparoscopic (keyhole) surgery", "Both are the same", "Neither, recovery is always 6 months"],
+            correctAnswer: "Laparoscopic (keyhole) surgery"
+        },
+        {
+            question: "What is a normal experience for the donor immediately after surgery?",
+            options: ["Feeling no pain at all", "Feeling pain around the wound", "Being able to run a marathon", "Going home the same day"],
+            correctAnswer: "Feeling pain around the wound"
+        },
+        {
+            question: "Why is it important to follow all of the doctor's recovery instructions?",
+            options: ["To get a discount on the hospital bill", "Because it is a legal requirement", "To reduce infection risk and support healing", "To be able to drive sooner"],
+            correctAnswer: "To reduce infection risk and support healing"
+        }
     ]
 };
 
