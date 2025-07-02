@@ -7,6 +7,58 @@ export type QuizQuestion = {
 };
 
 export const quizData: { [key: string]: QuizQuestion[] } = {
+    'transplant-matching': [
+        {
+            question: "What are the two main factors checked during the transplant matching process?",
+            options: [
+                "Hair color and eye color",
+                "Blood group and tissue type (HLA)",
+                "Height and weight",
+                "Age and gender"
+            ],
+            correctAnswer: "Blood group and tissue type (HLA)"
+        },
+        {
+            question: "What does 'HLA' stand for in tissue typing?",
+            options: [
+                "Healthy Lung Activity",
+                "Human Liver Antigen",
+                "Human Leukocyte Antigen",
+                "High Level Antibody"
+            ],
+            correctAnswer: "Human Leukocyte Antigen"
+        },
+        {
+            question: "Is it possible to receive a kidney from a living donor with a different blood type?",
+            options: [
+                "No, never",
+                "Yes, but only if they are a close relative",
+                "Yes, with special pre-surgery treatments",
+                "Only for children"
+            ],
+            correctAnswer: "Yes, with special pre-surgery treatments"
+        },
+        {
+            question: "Why are anti-rejection medications required after a transplant?",
+            options: [
+                "To prevent the new kidney from getting infections",
+                "To help the new kidney produce urine",
+                "To stop the immune system from attacking the new kidney",
+                "To lower blood pressure"
+            ],
+            correctAnswer: "To stop the immune system from attacking the new kidney"
+        },
+        {
+            question: "What is the immune system's response to a foreign organ called?",
+            options: [
+                "Acceptance",
+                "Rejection",
+                "Adaptation",
+                "Fusion"
+            ],
+            correctAnswer: "Rejection"
+        },
+    ],
     'immunosuppressants': [
         {
             question: "What is the most important thing to remember about taking immunosuppressive medications?",
