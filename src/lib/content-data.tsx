@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info, Ban, UtensilsCrossed, Fish, Leaf, Beef, Milk, Carrot, ShieldCheck } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCrossed, Fish, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHand, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -657,6 +657,76 @@ const longTermCareContent = (
     </div>
 );
 
+const medicationAdherenceContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">The Critical Importance of Medication Adherence</h2>
+        <p>Taking your immunosuppressive medications correctly is the single most important thing you can do to protect your new kidney. Adherence means taking the right dose, at the right time, in the right way—for as long as you have the transplant. It's a lifelong commitment.</p>
+
+        <Alert variant="destructive">
+            <Ban className="h-4 w-4" />
+            <AlertTitle>The Golden Rules of Adherence</AlertTitle>
+            <AlertDescription>
+                <ul className="list-disc list-inside mt-2 space-y-1">
+                    <li><strong>Dose & Timing:</strong> Never change the dose or timing of your medication unless your transplant team tells you to.</li>
+                    <li><strong>Consistency is Key:</strong> Take your medications at the same time every day.</li>
+                    <li><strong>Don't Change Brands:</strong> Different brands of the same medication can act differently in your body. Never switch brands without your nephrologist's permission.</li>
+                </ul>
+            </AlertDescription>
+        </Alert>
+
+        <p>Even if your kidney is functioning perfectly, you must continue taking your medication. Chronic rejection can be subtle and hard to detect in its early stages. Once it's established, it's often irreversible. Your medication is your shield against it.</p>
+        
+        <div className="grid md:grid-cols-2 gap-6 pt-4">
+            <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline text-xl flex items-center gap-2"><School className="text-primary"/>Educational & Medical Strategies</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                     <div className="flex items-start gap-3">
+                        <UserCheck className="w-6 h-5 text-primary mt-1 flex-shrink-0" />
+                        <div><span className="font-semibold">Know Your Meds:</span> Learn the name, dosage, and purpose of each medication. Your team will reinforce this at every visit.</div>
+                    </div>
+                     <div className="flex items-start gap-3">
+                        <Info className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <div><span className="font-semibold">Understand Side Effects:</span> Be informed about potential adverse effects and discuss any concerns. Your team can often treat side effects without reducing your essential dose.</div>
+                    </div>
+                     <div className="flex items-start gap-3">
+                        <CalendarClock className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <div><span className="font-semibold">Simplify Your Routine:</span> Your team will try to reduce the number and frequency of medications, ideally to once or twice daily.</div>
+                    </div>
+                     <div className="flex items-start gap-3">
+                        <MessageSquare className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <div><span className="font-semibold">Ask Questions:</span> Always inquire about problems or concerns during clinic visits.</div>
+                    </div>
+                </CardContent>
+            </Card>
+             <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline text-xl flex items-center gap-2"><HeartHand className="text-primary"/>Behavioral & Psychosocial Support</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                     <div className="flex items-start gap-3">
+                        <Users className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <div><span className="font-semibold">Build a Support System:</span> Involve family or friends who can help you stay on track.</div>
+                    </div>
+                     <div className="flex items-start gap-3">
+                        <BrainCircuit className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <div><span className="font-semibold">Treat Mental Health:</span> Address any depression, anxiety, or other psychological issues. Your mental well-being is key to successful adherence.</div>
+                    </div>
+                     <div className="flex items-start gap-3">
+                        <BellRing className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <div><span className="font-semibold">Integrate and Remind:</span> Make taking your medication part of your daily routine (e.g., with breakfast). Use digital alarms, pillboxes, or alerts to help you remember.</div>
+                    </div>
+                     <div className="flex items-start gap-3">
+                        <Info className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <div><span className="font-semibold">Non-Judgmental Discussion:</span> Your team will always discuss adherence in a supportive, non-judgmental way. Be honest about any challenges you're facing.</div>
+                    </div>
+                </CardContent>
+            </Card>
+        </div>
+
+    </div>
+);
 
 
 export const contentData: ModuleContent = {
@@ -666,6 +736,7 @@ export const contentData: ModuleContent = {
     'transplant-matching': transplantMatchingContent,
     'surgery-day': surgeryDayExperienceContent,
     'post-transplant-recovery': postTransplantRecoveryContent,
+    'medication-adherence': medicationAdherenceContent,
     'mental-health-support': mentalHealthSupportContent,
     'understanding-rejection': understandingRejectionContent,
     'immunosuppressants': immunosuppressiveMedicationsContent,

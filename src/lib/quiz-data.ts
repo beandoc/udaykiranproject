@@ -424,6 +424,58 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             correctAnswer: "Contact your transplant team immediately."
         }
     ],
+    'medication-adherence': [
+        {
+            question: "What is the single most important thing you can do to protect your new kidney?",
+            options: [
+                "Take your medications correctly and consistently",
+                "Exercise twice a day",
+                "Only eat organic food",
+                "Avoid all social gatherings"
+            ],
+            correctAnswer: "Take your medications correctly and consistently"
+        },
+        {
+            question: "If your new kidney is working perfectly, should you continue taking immunosuppressants?",
+            options: [
+                "No, you can stop once you feel healthy",
+                "You can reduce the dose by half",
+                "Yes, you must continue taking them as prescribed",
+                "Only take them when you remember"
+            ],
+            correctAnswer: "Yes, you must continue taking them as prescribed"
+        },
+        {
+            question: "What should you do if you want to switch to a different brand of your medication?",
+            options: [
+                "It's okay as long as the name is the same",
+                "You must get permission from your nephrologist first",
+                "Choose the cheapest brand available",
+                "Ask a friend who has had a transplant"
+            ],
+            correctAnswer: "You must get permission from your nephrologist first"
+        },
+        {
+            question: "What is the best way to deal with medication side effects?",
+            options: [
+                "Stop taking the medication immediately",
+                "Reduce the dose on your own",
+                "Discuss them with your transplant team, as they can often be managed",
+                "Ignore them and hope they go away"
+            ],
+            correctAnswer: "Discuss them with your transplant team, as they can often be managed"
+        },
+        {
+            question: "Why is it important to keep taking your medication even when you feel well?",
+            options: [
+                "Because the pharmacy requires it",
+                "To prevent your insurance from being cancelled",
+                "Because chronic rejection can start silently without any symptoms",
+                "To make your doctor happy"
+            ],
+            correctAnswer: "Because chronic rejection can start silently without any symptoms"
+        }
+    ],
     'donor-evaluation': [
         {
             question: "Who is the main point of contact for a living donor throughout the evaluation process?",

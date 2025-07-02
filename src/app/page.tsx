@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, CheckCircle, ClipboardList, Clock, Heart, MessageSquare, Pill, ShieldCheck, Star, User, UserCheck, Users, CalendarDays, GlassWater, PhoneForwarded, ShowerHead, ShieldQuestion, Apple, HeartPulse, ShieldOff, UserX, Virus, FlaskConical, Ban, UtensilsCrossed, SearchX } from "lucide-react";
+import { BookOpen, CheckCircle, ClipboardList, Clock, Heart, MessageSquare, Pill, ShieldCheck, Star, User, UserCheck, Users, CalendarDays, GlassWater, PhoneForwarded, ShowerHead, ShieldQuestion, Apple, HeartPulse, ShieldOff, UserX, Bug, FlaskConical, Ban, UtensilsCrossed, SearchX } from "lucide-react";
 import Link from "next/link";
 import { useAppContext, type Role, type Activity } from "@/context/app-context";
 import { cn } from "@/lib/utils";
@@ -108,7 +108,7 @@ export default function Home() {
     const dontsList = [
         { icon: ShieldOff, titleKey: 'dontsStopMedsTitle', descriptionKey: 'dontsStopMedsDesc' },
         { icon: UserX, titleKey: 'dontsAvoidInfectionsTitle', descriptionKey: 'dontsAvoidInfectionsDesc' },
-        { icon: Virus, titleKey: 'dontsIgnoreSymptomsTitle', descriptionKey: 'dontsIgnoreSymptomsDesc' },
+        { icon: Bug, titleKey: 'dontsIgnoreSymptomsTitle', descriptionKey: 'dontsIgnoreSymptomsDesc' },
         { icon: FlaskConical, titleKey: 'dontsCheckMedsTitle', descriptionKey: 'dontsCheckMedsDesc' },
         { icon: Ban, titleKey: 'dontsRiskySubstancesTitle', descriptionKey: 'dontsRiskySubstancesDesc' },
         { icon: UtensilsCrossed, titleKey: 'dontsFoodSafetyTitle', descriptionKey: 'dontsFoodSafetyDesc' },
