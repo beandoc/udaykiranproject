@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, MessageSquare, CheckCircle, Star, User, UserCheck, Users } from "lucide-react";
 import Link from "next/link";
@@ -70,9 +70,9 @@ export default function Home() {
                             key={r.name}
                             onClick={() => setRole(r.name as Role)}
                             className={cn(
-                                "p-6 text-left rounded-lg border-2 transition-all flex flex-col items-center justify-center text-center",
+                                "p-6 text-left rounded-lg border-2 transition-all duration-200 ease-in-out flex flex-col items-center justify-center text-center hover:-translate-y-1",
                                 role === r.name
-                                ? "bg-primary/10 border-primary"
+                                ? "bg-primary/10 border-primary scale-105 shadow-lg"
                                 : "bg-card hover:bg-muted/50"
                             )}
                         >
@@ -88,19 +88,21 @@ export default function Home() {
             </Card>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="font-headline text-xl">{t('patientResponsibilitiesTitle')}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                       <p className="text-sm text-muted-foreground">
-                            {t('patientResponsibilitiesDesc')}
-                        </p>
-                        <Button asChild variant="outline">
-                            <Link href="/modules/patient-responsibilities">Read More</Link>
-                        </Button>
-                    </CardContent>
-                </Card>
+                 <Link href="/modules/patient-responsibilities" className="block h-full">
+                    <Card className="transition-all duration-200 ease-in-out hover:shadow-lg hover:-translate-y-1 h-full">
+                        <CardHeader>
+                            <CardTitle className="font-headline text-xl">{t('patientResponsibilitiesTitle')}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                            <p className="text-sm text-muted-foreground">
+                                {t('patientResponsibilitiesDesc')}
+                            </p>
+                            <div className={cn(buttonVariants({ variant: 'outline' }), "mt-2 pointer-events-none")}>
+                                Read More
+                            </div>
+                        </CardContent>
+                    </Card>
+                </Link>
 
                  <Card>
                     <CardHeader>

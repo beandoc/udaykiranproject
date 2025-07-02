@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +9,8 @@ import Link from "next/link";
 import { useAppContext } from "@/context/app-context";
 import type { Module } from "@/lib/modules-data";
 import { getContentDataForLang } from "@/lib/content-data";
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
 
 // Helper to calculate reading time
 const countWords = (node: React.ReactNode): number => {
@@ -42,36 +43,45 @@ function ModuleCard({ module, isNext }: { module: Module, isNext: boolean }) {
     const duration = calculateReadingTime(module.slug, language);
 
     return (
-        <div className={`flex items-center justify-between p-4 bg-card rounded-lg border transition-all ${isNext && !isCompleted ? 'border-primary shadow-md' : ''}`}>
-            <div className="flex items-center gap-4">
-                {isCompleted ? (
-                    <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                ) : (
-                    <div className={`w-6 h-6 flex-shrink-0 rounded-full border-2 ${isNext ? 'border-primary' : 'border-muted-foreground'}`} />
-                )}
-                <div>
-                    <h3 className="font-semibold flex items-center gap-2">
-                        {t(module.title)}
-                        {isNext && !isCompleted && (
-                            <Badge variant="outline" className="border-primary/80 text-primary bg-primary/10">
-                                <Star className="w-3 h-3 mr-1.5" />
-                                {t('nextUpBadge')}
-                            </Badge>
-                        )}
-                    </h3>
-                    <p className="text-sm text-muted-foreground flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5" />
-                        <span>{duration} {t('moduleDurationRead')}</span>
-                    </p>
+        <Link 
+            href={`/modules/${module.slug}`} 
+            className={cn(
+                "block rounded-lg border bg-card text-card-foreground shadow-sm transition-all duration-200 ease-in-out hover:shadow-xl hover:-translate-y-1 hover:border-primary/30",
+                isNext && !isCompleted && "border-primary shadow-md"
+            )}
+        >
+            <div className="flex items-center justify-between p-4">
+                <div className="flex items-center gap-4">
+                    {isCompleted ? (
+                        <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
+                    ) : (
+                        <div className={`w-6 h-6 flex-shrink-0 rounded-full border-2 ${isNext ? 'border-primary' : 'border-muted-foreground'}`} />
+                    )}
+                    <div>
+                        <h3 className="font-semibold flex items-center gap-2">
+                            {t(module.title)}
+                            {isNext && !isCompleted && (
+                                <Badge variant="outline" className="border-primary/80 text-primary bg-primary/10">
+                                    <Star className="w-3 h-3 mr-1.5" />
+                                    {t('nextUpBadge')}
+                                </Badge>
+                            )}
+                        </h3>
+                        <p className="text-sm text-muted-foreground flex items-center gap-1.5">
+                            <Clock className="w-3.5 h-3.5" />
+                            <span>{duration} {t('moduleDurationRead')}</span>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <Button asChild variant={isCompleted ? 'outline' : 'default'} size="sm">
-                <Link href={`/modules/${module.slug}`}>
+                <div className={cn(
+                    buttonVariants({ variant: isCompleted ? 'outline' : 'default', size: 'sm' }),
+                    "pointer-events-none"
+                )}>
                     {isCompleted ? t('moduleActionReview') : t('moduleActionStart')}
                     <PlayCircle className="ml-2 w-4 h-4" />
-                </Link>
-            </Button>
-        </div>
+                </div>
+            </div>
+        </Link>
     )
 }
 
