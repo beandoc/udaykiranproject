@@ -5,13 +5,14 @@ import { createContext, useContext, useState, useCallback, useEffect } from 'rea
 
 import en from '@/lib/locales/en.json';
 import hi from '@/lib/locales/hi.json';
+import mr from '@/lib/locales/mr.json';
 import { modulesByRole as initialModulesByRole, type ModulesByRole as ModulesByRoleType, type Module } from '@/lib/modules-data';
 
 type Translations = { [key: string]: string | { [key:string]: string } };
-const translations: { [key: string]: Translations } = { en, hi };
+const translations: { [key: string]: Translations } = { en, hi, mr };
 
 export type Role = 'Patient' | 'Donor' | 'Caregiver';
-export type Language = 'en' | 'hi';
+export type Language = 'en' | 'hi' | 'mr';
 
 export type Activity = {
   id: string;
@@ -51,7 +52,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const t = useCallback((key: string, options?: { [key: string]: string | number }) => {
-    const langFile = translations[language];
+    const langFile = translations[language] || translations['en'];
     let text: any = langFile[key];
 
     if(typeof text === 'undefined') return key;

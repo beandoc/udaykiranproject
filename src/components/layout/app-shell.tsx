@@ -114,7 +114,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <DropdownMenuContent align="end">
                   <DropdownMenuItem onClick={() => setLanguage('en')}>{t('langEnglish')}</DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setLanguage('hi')}>{t('langHindi')}</DropdownMenuItem>
-                  <DropdownMenuItem disabled>{t('langMarathi')}</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setLanguage('mr')}>{t('langMarathi')}</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <Button variant="ghost" size="icon" className="rounded-full">
