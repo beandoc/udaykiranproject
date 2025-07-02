@@ -172,6 +172,19 @@ const surgeryDayExperienceContent = (
                 <p className="text-xs text-center text-muted-foreground">An illustration of a transplanted kidney, ureter, and the original diseased kidneys.</p>
             </div>
         </div>
+        
+        <h3 className="text-xl font-bold font-headline pt-8">Recovery in the Hospital</h3>
+        <p>Your care team will continue to monitor your new kidney's performance with daily blood tests, checking levels like creatinine and eGFR. For many, these values will improve significantly, returning to a healthier range.</p>
+        <p>Fluid intake is also closely watched. Nurses will track how much you drink, and as your new kidney begins to function well, you'll likely be able to drink more fluids than before.</p>
+        <p>Getting mobile is a key part of recovery. A physiotherapist may provide an exercise plan, and you will be encouraged to do coughing, breathing, and leg exercises to:</p>
+         <ul className="list-disc list-inside space-y-2 pl-4">
+            <li>Keep your airways clear and reduce the risk of chest infections.</li>
+            <li>Encourage good blood flow and prevent blood clots in your legs.</li>
+        </ul>
+        <p>Most patients are able to sit up in a chair the day after surgery and can expect to be walking within a couple of days.</p>
+        <p>Preventing infection is a top priority. For this reason, your visitor numbers might be limited, and you may be in a separate room to minimize exposure to germs.</p>
+        <p>The length of your hospital stay depends on your recovery, but most people are ready to go home within six to ten days. Everyone's journey is different, so it's okay if you feel better right away or need a bit more time to adjust.</p>
+
     </div>
 );
 
