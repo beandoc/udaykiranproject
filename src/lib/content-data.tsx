@@ -26,7 +26,7 @@ const understandingKidneyDiseaseContent = (
 
         <h3 className="text-xl font-bold font-headline pt-4">Are kidney transplants successful?</h3>
         <p>Kidney transplants are very successful. On average, 95 per cent of transplants are working one year later. If the transplant works well for the first year, the chances are good that it will function very well for many years.</p>
-        <p>How long your transplanted kidney will work can depend on many factors. In Australia, around four in every ten kidney transplants are still working 15 years later. Some people have had kidney transplants that have lasted more than 30 years.</p>
+        <p>How long your transplanted kidney will work can depend on many factors. Some people have had kidney transplants that have lasted more than 30 years.</p>
         <p>Success rates are higher with living donor kidneys than for deceased donor kidneys.</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
@@ -50,8 +50,30 @@ const understandingKidneyDiseaseContent = (
     </div>
 );
 
+const understandingLivingDonationContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Understanding Living Donation</h2>
+        <p>Transplantable kidneys can come from two sources: living donors or deceased donors. A living donor is typically someone the recipient knows, such as a family member or a close friend, who chooses to donate one of their two healthy kidneys. A deceased donor is an individual whose family has consented to organ donation after their passing.</p>
+        <p>It is crucial to discuss your thoughts on kidney transplantation with your support network. Understanding the differences between receiving a kidney from a living versus a deceased donor is an important step. Your healthcare team can provide personalized information to help you understand all available options.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Who can be a living donor?</h3>
+        <p>A living donor can be a relative like a parent, sibling, or adult child. However, unrelated individuals such as a spouse or a friend can also be donors if they are a suitable match. The evaluation process to confirm compatibility is thorough and can take time. Modern medical advancements have made transplantation possible even in complex cases, such as when the donor and recipient have different blood types.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Benefits of Living Donation</h3>
+        <p>The primary advantage of living donation is timing. The wait for a deceased donor kidney can be long, sometimes years. A living donor can significantly shorten this wait. It can even allow for a "pre-emptive" transplant, which occurs before the recipient needs to start dialysis.</p>
+        <p>Furthermore, surgery with a living donor can be scheduled in advance, which offers several benefits:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4">
+            <li>It minimizes the time the kidney is outside a body (known as 'cold ischemia time'), which is a key factor in the long-term success of the transplant.</li>
+            <li>This planning gives both the donor and recipient time to prepare for the surgery and recovery.</li>
+            <li>Generally, transplants from living donors have a higher rate of long-term success compared to those from deceased donors.</li>
+        </ul>
+    </div>
+);
+
+
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
+    'understanding-living-donation': understandingLivingDonationContent,
 };
 
 // Placeholder for other modules
