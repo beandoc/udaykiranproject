@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Heart, MessageSquare, Pill, Star, User, Users, UserCheck } from "lucide-react";
+import { BookOpen, CheckCircle, ClipboardList, Clock, Heart, MessageSquare, Pill, ShieldCheck, Star, User, UserCheck, Users } from "lucide-react";
 import Link from "next/link";
 import { useAppContext, type Role, type Activity } from "@/context/app-context";
 import { cn } from "@/lib/utils";
@@ -46,6 +46,34 @@ export default function Home() {
         { href: '/tools/medication', labelKey: 'linkImmunosuppressants', descriptionKey: 'linkImmunosuppressantsDesc', icon: Pill },
         { href: '#', labelKey: 'linkFollow', descriptionKey: 'linkFollowDesc', icon: MessageSquare },
     ]
+
+    const responsibilities = [
+        {
+            icon: BookOpen,
+            titleKey: 'respBeInformed',
+            points: ['respBeInformedDesc1', 'respBeInformedDesc2', 'respBeInformedDesc3'],
+        },
+        {
+            icon: ClipboardList,
+            titleKey: 'respFollowProgram',
+            points: ['respFollowProgramDesc1', 'respFollowProgramDesc2'],
+        },
+        {
+            icon: Clock,
+            titleKey: 'respBeOnTime',
+            points: ['respBeOnTimeDesc1', 'respBeOnTimeDesc2'],
+        },
+        {
+            icon: ShieldCheck,
+            titleKey: 'respFollowPolicies',
+            points: ['respFollowPoliciesDesc1', 'respFollowPoliciesDesc2'],
+        },
+        {
+            icon: Users,
+            titleKey: 'respBeConsiderate',
+            points: ['respBeConsiderateDesc1', 'respBeConsiderateDesc2', 'respBeConsiderateDesc3'],
+        },
+    ];
 
     return (
         <div className="space-y-8">
@@ -133,6 +161,30 @@ export default function Home() {
                             <h3 className="font-bold text-lg">{t(`role${r.name}`)}</h3>
                             <p className="text-sm text-muted-foreground mt-1">{t(r.descriptionKey)}</p>
                         </button>
+                    ))}
+                </CardContent>
+            </Card>
+
+             <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline text-xl">{t('patientResponsibilitiesTitle')}</CardTitle>
+                    <CardDescription>{t('patientResponsibilitiesDesc')}</CardDescription>
+                </CardHeader>
+                <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {responsibilities.map((resp) => (
+                        <div key={resp.titleKey} className="flex items-start gap-4">
+                            <div className="flex-shrink-0 mt-1">
+                                <resp.icon className="w-6 h-6 text-primary" />
+                            </div>
+                            <div>
+                                <h4 className="font-semibold">{t(resp.titleKey)}</h4>
+                                <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
+                                    {resp.points.map((pointKey) => (
+                                        <li key={pointKey}>{t(pointKey)}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
                     ))}
                 </CardContent>
             </Card>

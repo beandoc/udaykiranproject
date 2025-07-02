@@ -384,42 +384,42 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             correctAnswer: "Because problems like rejection can be found in tests before you feel symptoms."
         },
         {
-            question: "What is a major benefit of post-transplant life mentioned in the module?",
+            question: "After a transplant, you are at a higher risk of developing which health issue?",
             options: [
-                "You never have to take medication again.",
-                "You can eat more junk food.",
-                "Greater personal freedom from the schedule of dialysis.",
-                "You get free parking at the hospital."
+                "Common cold",
+                "Cancer",
+                "Hair loss",
+                "Broken bones"
             ],
-            correctAnswer: "Greater personal freedom from the schedule of dialysis."
+            correctAnswer: "Cancer"
         },
         {
-            question: "How should you view your new kidney?",
+            question: "What is the recommended screening for skin cancer surveillance?",
             options: [
-                "As a temporary fix.",
-                "As a unique gift that deserves respect and care.",
-                "As something that doesn't require much thought.",
-                "As your own property to do with as you wish."
+                "Wearing sunscreen daily",
+                "Avoiding the sun completely",
+                "Monthly self-examination and regular exams by a skin physician",
+                "Getting a tan to build resistance"
             ],
-            correctAnswer: "As a unique gift that deserves respect and care."
+            correctAnswer: "Monthly self-examination and regular exams by a skin physician"
         },
         {
-            question: "What should you do if your transplant team strongly recommends a test?",
+            question: "For women over 50, what is the recommended screening for breast cancer?",
             options: [
-                "Postpone it until you feel sick.",
-                "Ask for a different, easier test.",
-                "Trust their advice, as they have good reasons for it.",
-                "Ignore the advice if you feel fine."
+                "Daily self-exam",
+                "Annual or biennial mammography",
+                "A blood test",
+                "No screening is needed"
             ],
-            correctAnswer: "Trust their advice, as they have good reasons for it."
+            correctAnswer: "Annual or biennial mammography"
         },
         {
-            question: "If you feel unwell between appointments, you should:",
+            question: "If you feel unwell between scheduled appointments, what should you do?",
             options: [
-                "Wait until your next scheduled visit.",
+                "Wait until your next appointment.",
                 "Search online for a diagnosis.",
                 "Contact your transplant team immediately.",
-                "Take some leftover antibiotics."
+                "Take some over-the-counter pain medicine."
             ],
             correctAnswer: "Contact your transplant team immediately."
         }

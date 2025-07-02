@@ -4,9 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info, Ban, UtensilsCross, Fish, Leaf, Beef, Milk, Carrot } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCrossed, Fish, Leaf, Beef, Milk, Carrot, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+
 
 type ModuleContent = {
     [key: string]: React.ReactNode;
@@ -423,7 +425,7 @@ const dietAndNutritionContent = (
             </Alert>
             
             <Alert>
-                <UtensilsCross className="h-4 w-4" />
+                <UtensilsCrossed className="h-4 w-4" />
                 <AlertTitle>Reduce Your Salt Intake</AlertTitle>
                 <AlertDescription>
                     Too much salt (sodium) can cause swelling and raise your blood pressure. Try to avoid high-sodium foods such as:
@@ -574,7 +576,7 @@ const risksAndBenefitsContent = (
         <p>While the outlook is excellent, there are a few things to be aware of for the long term:</p>
         <ul className="list-disc list-inside space-y-3 pl-4">
             <li><strong>Blood Pressure:</strong> Donors have a slightly higher than average risk of developing high blood pressure. Maintaining a healthy diet and getting regular physical activity are key to staying healthy.</li>
-            <li><strong>Kidney Failure:</strong> The risk of a donor's remaining kidney failing is very low—less than 1% of donors ever need dialysis or a transplant themselves. In the rare event a former donor does need a kidney, they are given high priority on the transplant waitlist.</li>
+            <li><strong>Kidney Failure:</strong> The risk of a donor's remaining kidney failing is very low—less than 1% of donors ever need a dialysis or a transplant themselves. In the rare event a former donor does need a kidney, they are given high priority on the transplant waitlist.</li>
         </ul>
 
         <h3 className="text-xl font-bold font-headline pt-4">What to Expect Emotionally</h3>
@@ -584,7 +586,7 @@ const risksAndBenefitsContent = (
 );
 
 const longTermCareContent = (
-    <div className="space-y-4 text-base leading-relaxed">
+    <div className="space-y-6 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">Your New Kidney: A Lifelong Partnership</h2>
         <p>Whether your new kidney came from a living or a deceased donor, it's a unique gift that deserves respect and care. Many people wait a long time for this opportunity, so embracing your health and sticking to your care plan is the best way to honor this gift and avoid wasting it.</p>
         
@@ -601,6 +603,57 @@ const longTermCareContent = (
                 <strong>Follow Your Team's Advice:</strong> Your transplant team will not ask you to do unnecessary tests. If they recommend an investigation, trust that they have good reasons. Following their guidance is essential for protecting your health.
             </li>
         </ul>
+        
+        <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Cancer Surveillance: Tests and Frequency</h3>
+        <p>After a kidney transplant, you are at a higher risk of developing certain types of cancer. Early detection leads to better treatment outcomes, so it's essential to follow a regular screening protocol. Please review the table below and discuss it with your transplant team if you have any questions.</p>
+        
+        <Card className="mt-4">
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2"><ShieldCheck className="text-primary"/> Recommended Cancer Screening</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <div className="overflow-x-auto">
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead className="font-bold">Cancer Type</TableHead>
+                                <TableHead className="font-bold">Screening Modality and Frequency</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell className="font-semibold">Breast</TableCell>
+                                <TableCell>Annual or biennial mammography for all women older than 50 years. For women between 40 and 49, screening is decided on an individual basis.</TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell className="font-semibold">Colorectal</TableCell>
+                                <TableCell>For individuals over 50 years: Annual fecal occult blood testing and/or flexible sigmoidoscopy or colonoscopy every 5 years.</TableCell>
+                            </TableRow>
+                             <TableRow>
+                                <TableCell className="font-semibold">Cervical</TableCell>
+                                <TableCell>Annual Pap smear and pelvic examination once sexually active.</TableCell>
+                            </TableRow>
+                             <TableRow>
+                                <TableCell className="font-semibold">Prostate</TableCell>
+                                <TableCell>Annual digital rectal examination and PSA blood test for all males after age 50.</TableCell>
+                            </TableRow>
+                             <TableRow>
+                                <TableCell className="font-semibold">Liver</TableCell>
+                                <TableCell>For high-risk individuals (e.g., with HBV or HCV infection), an alpha-fetoprotein (AFP) blood test and liver ultrasound every 6 months may be recommended.</TableCell>
+                            </TableRow>
+                             <TableRow>
+                                <TableCell className="font-semibold">Skin</TableCell>
+                                <TableCell>Monthly self-examination and a total body skin examination by an expert skin physician every 6-12 months.</TableCell>
+                            </TableRow>
+                             <TableRow>
+                                <TableCell className="font-semibold">Kidney</TableCell>
+                                <TableCell>No firm recommendation, but an annual ultrasound of your original (native) kidneys is often suggested.</TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                </div>
+            </CardContent>
+        </Card>
     </div>
 );
 
