@@ -5,7 +5,7 @@ import { AppProvider } from '@/context/app-context';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Nirogyam: Your Transplant Companion',
+  title: 'UdayKiran: Your Transplant Companion',
   description: 'Your personalized hub for kidney transplant education and support.',
 };
 
