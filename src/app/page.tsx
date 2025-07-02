@@ -46,19 +46,19 @@ export default function Home() {
                  <HeartPulse className="absolute -bottom-8 -right-8 w-40 h-40 text-white/10" />
             </Card>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="space-y-6">
                 <Card className="flex flex-col">
                     <CardHeader>
                         <CardTitle className="font-headline text-xl">{t('defineRole')}</CardTitle>
                         <CardDescription>{t('selectRolePrompt')}</CardDescription>
                     </CardHeader>
-                    <CardContent className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 gap-4 flex-grow">
+                    <CardContent className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         {roles.map((r) => (
                             <button
                                 key={r.name}
                                 onClick={() => setRole(r.name as Role)}
                                 className={cn(
-                                    "p-4 text-left rounded-lg border-2 transition-all duration-200 ease-in-out flex flex-col items-center justify-center text-center hover:-translate-y-1",
+                                    "p-4 text-left rounded-lg border-2 transition-all duration-200 ease-in-out flex flex-col items-center justify-center text-center hover:-translate-y-1 h-32",
                                     role === r.name
                                     ? "bg-primary/10 border-primary scale-105 shadow-lg"
                                     : "bg-card hover:bg-muted/50"
@@ -75,47 +75,49 @@ export default function Home() {
                     </CardContent>
                 </Card>
                 
-                <Card className="flex flex-col">
-                    <CardHeader>
-                        <CardTitle className="font-headline text-xl">{t('pathProgressTitle')}</CardTitle>
-                        <CardDescription>{t(titleKey)}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow space-y-4 flex flex-col justify-center">
-                        <div className="space-y-2">
-                            <div className="flex justify-between items-center mb-1">
-                                <p className="text-sm font-medium text-muted-foreground">
-                                    {t('modulesCompleted', { completed: completedModules, total: totalModules })}
-                                </p>
-                                <span className="text-sm font-bold text-primary">{Math.round(progress)}%</span>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Card className="flex flex-col">
+                        <CardHeader>
+                            <CardTitle className="font-headline text-xl">{t('pathProgressTitle')}</CardTitle>
+                            <CardDescription>{t(titleKey)}</CardDescription>
+                        </CardHeader>
+                        <CardContent className="flex-grow space-y-4 flex flex-col justify-center">
+                            <div className="space-y-2">
+                                <div className="flex justify-between items-center mb-1">
+                                    <p className="text-sm font-medium text-muted-foreground">
+                                        {t('modulesCompleted', { completed: completedModules, total: totalModules })}
+                                    </p>
+                                    <span className="text-sm font-bold text-primary">{Math.round(progress)}%</span>
+                                </div>
+                                <Progress value={progress} />
                             </div>
-                            <Progress value={progress} />
-                        </div>
-                    </CardContent>
-                    <CardFooter>
-                        <Button asChild className="w-full">
-                            <Link href="/modules">
-                                {t('continueLearning')} <PlayCircle className="ml-2 w-4 h-4" />
-                            </Link>
-                        </Button>
-                    </CardFooter>
-                </Card>
+                        </CardContent>
+                        <CardFooter>
+                            <Button asChild className="w-full">
+                                <Link href="/modules">
+                                    {t('continueLearning')} <PlayCircle className="ml-2 w-4 h-4" />
+                                </Link>
+                            </Button>
+                        </CardFooter>
+                    </Card>
 
-                <Card className="flex flex-col">
-                    <CardHeader>
-                        <CardTitle className="font-headline text-xl">{t('patientResponsibilitiesTitle')}</CardTitle>
-                        <CardDescription>{t('patientResponsibilitiesDesc')}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow flex items-center justify-center">
-                        <ListChecks className="w-16 h-16 text-primary/20" />
-                    </CardContent>
-                    <CardFooter>
-                        <Button asChild className="w-full">
-                            <Link href="/modules/patient-responsibilities">
-                                {t('moduleActionReview')}
-                            </Link>
-                        </Button>
-                    </CardFooter>
-                </Card>
+                    <Card className="flex flex-col">
+                        <CardHeader>
+                            <CardTitle className="font-headline text-xl">{t('patientResponsibilitiesTitle')}</CardTitle>
+                            <CardDescription>{t('patientResponsibilitiesDesc')}</CardDescription>
+                        </CardHeader>
+                        <CardContent className="flex-grow flex items-center justify-center">
+                            <ListChecks className="w-16 h-16 text-primary/20" />
+                        </CardContent>
+                        <CardFooter>
+                            <Button asChild className="w-full">
+                                <Link href="/modules/patient-responsibilities">
+                                    {t('moduleActionReview')}
+                                </Link>
+                            </Button>
+                        </CardFooter>
+                    </Card>
+                </div>
             </div>
         </div>
     );
