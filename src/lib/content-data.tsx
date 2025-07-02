@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video } from 'lucide-react';
+import { Video, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 type ModuleContent = {
@@ -228,7 +228,7 @@ const surgeryDayExperienceContent = (
 );
 
 const postTransplantRecoveryContent = (
-    <div className="space-y-4 text-base leading-relaxed">
+    <div className="space-y-6 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">Living With Your New Kidney</h2>
         <p>You should be able to return to normal activities and work within three to six months of your transplant. You will need to allow time for your wound to heal and for your stomach muscles to get strong again. Regular exercise is an important part of staying healthy. It is recommended that you start regular exercise under the guidance of your health care team.</p>
         <p>You will need to manage your medications carefully. It is important that you take your medications exactly as prescribed by your doctor. Support from your pharmacist as well as a pill organizer might be needed as there will be a large number of medications needed at specific times of the day.</p>
@@ -247,23 +247,22 @@ const postTransplantRecoveryContent = (
             <div>
                 <h4 className="font-bold mb-2">Personal Hygiene</h4>
                 <ul className="list-disc list-inside space-y-1">
-                    <li>Take a shower at least once a day.</li>
-                    <li>Always wear clean clothes.</li>
-                    <li>Until your wound has fully healed and staples are removed, you can clean your body with a wet towel.</li>
+                    <li>Take a shower at least once a day and wear clean clothes.</li>
+                    <li>Until your wound has fully healed, you can clean your body with a wet towel.</li>
                     <li>After bathing, gently pat the incision area dry. If you notice any fluid oozing or suspect an infection, contact your doctor immediately.</li>
                 </ul>
             </div>
             <div>
                  <h4 className="font-bold mb-2">Avoid Crowded Places</h4>
-                 <p>For the first three months after your transplant, it's best to avoid crowded public places like cinemas, restaurants, and busy stores to reduce your risk of infection. Also, limit contact with animals and birds.</p>
+                 <p>For the first three months after your transplant, it's best to avoid crowded public places like cinemas, restaurants, and busy stores. Also, limit contact with animals and birds to reduce your risk of infection.</p>
             </div>
              <div>
                  <h4 className="font-bold mb-2">Avoid Tobacco</h4>
-                 <p>The use of tobacco in any form is strongly discouraged. Smoking increases your surgical risk, raises the chance of cancer, heart attack, and stroke, and can damage your blood vessels.</p>
+                 <p>The use of tobacco in any form is strongly discouraged. It increases surgical risks and the chance of cancer, heart attack, and stroke.</p>
             </div>
         </div>
 
-        <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Activity Restrictions</h3>
+        <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Activity Restrictions and Resuming Life</h3>
         <p>While you'll soon be able to resume an active life, there are some important restrictions to follow during your recovery to ensure you heal properly.</p>
         <div className="space-y-4 pt-2">
             <div className="p-4 bg-muted/50 rounded-lg">
@@ -271,7 +270,7 @@ const postTransplantRecoveryContent = (
                  <ul className="list-disc list-inside space-y-1">
                     <li><strong>First 6 weeks:</strong> Do not lift anything heavier than 5 kg.</li>
                     <li><strong>6 to 12 weeks:</strong> Do not lift anything heavier than 10 kg.</li>
-                    <li><strong>After 3 months:</strong> There are no specific restrictions, but always exercise caution.</li>
+                    <li><strong>After 3 months:</strong> There are no specific restrictions, but always use common sense.</li>
                 </ul>
             </div>
             <div className="p-4 bg-muted/50 rounded-lg">
@@ -280,9 +279,35 @@ const postTransplantRecoveryContent = (
                     <li>Avoid jogging or running on hard surfaces (like asphalt or cement) for the first 3 months.</li>
                     <li>Avoid "bouncing" activities like motorcycling or horseback riding for the first 3 months.</li>
                     <li>Do not take baths or go swimming until your incision has completely healed.</li>
+                    <li>As a general rule, avoid contact sports to protect your new kidney.</li>
                 </ul>
             </div>
         </div>
+
+        <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Sexual Activity and Family Planning</h3>
+        <p>It's normal to have questions about intimacy and family planning after your transplant. Here’s what you need to know.</p>
+        
+        <h4 className="font-semibold pt-2">Resuming Sexual Activity</h4>
+        <p>Your new kidney is well-protected, and sexual activity will not harm it. However, as with any major surgery, it's best to wait about six weeks to allow your incision and muscles to heal fully. It's also very important to take precautions against sexually transmitted diseases.</p>
+        
+        <h4 className="font-semibold pt-4">For Men</h4>
+        <p>Most men regain sexual desire and function that may have been lost during kidney failure. Certain medications can sometimes affect sexual function. If you notice any changes, don't hesitate to discuss them with your transplant team. Men should also discuss family planning with the team.</p>
+
+        <h4 className="font-semibold pt-4">For Women</h4>
+        <p>Most women are fertile after a transplant, and menstrual periods often return within a few months. It's important to have routine gynecological exams (Pap smear, breast exam) every year. If you are not planning to become pregnant, you must use a reliable form of birth control.</p>
+
+        <Alert variant="destructive" className="mt-4">
+            <Info className="h-4 w-4" />
+            <AlertTitle>Planning a Pregnancy?</AlertTitle>
+            <AlertDescription>
+                <p>If you wish to become pregnant, it is critical to plan carefully with your transplant team. We recommend waiting at least two years after your transplant.</p>
+                <ul className="list-disc list-inside space-y-2 pl-4 mt-3">
+                    <li>Some immunosuppressive drugs can cause birth defects and must be changed before you try to conceive.</li>
+                    <li>There are special risks for both mother and child, including a higher risk of high blood pressure, premature birth, and a slight increase in the risk of birth defects.</li>
+                    <li>Close monitoring and prenatal care are essential for a successful outcome.</li>
+                </ul>
+            </AlertDescription>
+        </Alert>
     </div>
 );
 
@@ -366,7 +391,7 @@ const immunosuppressiveMedicationsContent = (
 
 const donorEvaluationContent = (
     <div className="space-y-6 text-base leading-relaxed">
-         <h2 className="text-2xl font-bold font-headline">The Evaluation Process for Living Donors</h2>
+        <h2 className="text-2xl font-bold font-headline">The Evaluation Process for Living Donors</h2>
         <div>
             <h3 className="text-xl font-bold font-headline mb-2">How to Start the Process</h3>
             <p>To begin your journey as a living donor, the first step is to contact a transplant center. For a "directed donation" to a specific person, you must contact the center where the recipient is waitlisted. If you wish to be a "non-directed" donor to anyone in need, you can contact any transplant center.</p>

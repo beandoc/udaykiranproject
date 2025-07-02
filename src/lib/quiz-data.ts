@@ -114,29 +114,29 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
     ],
     'post-transplant-recovery': [
         {
-            question: "For the first 6 weeks after your transplant, what is the maximum weight you should lift?",
-            options: ["1 kg", "5 kg", "10 kg", "20 kg"],
-            correctAnswer: "5 kg"
+            question: "How long should you generally wait after surgery before engaging in sexual intercourse?",
+            options: ["Two weeks", "One month", "About six weeks", "Three months"],
+            correctAnswer: "About six weeks"
         },
         {
-            question: "Which of the following activities should be avoided for the first 3 months post-transplant?",
-            options: ["Walking on a treadmill", "Gentle stretching", "Horseback riding", "Cooking"],
-            correctAnswer: "Horseback riding"
+            question: "Which type of sport should generally be avoided after a kidney transplant?",
+            options: ["Swimming (after wound heals)", "Walking", "Contact sports like football or hockey", "Yoga"],
+            correctAnswer: "Contact sports like football or hockey"
         },
         {
-            question: "What should you do if you notice your surgical incision is oozing fluid?",
-            options: ["Put a larger bandage on it", "Wait for it to stop on its own", "Apply some lotion", "Contact your doctor immediately"],
-            correctAnswer: "Contact your doctor immediately"
+            question: "What is the most important step for a female patient who wants to become pregnant?",
+            options: ["Stop taking all medications", "Start trying immediately", "Plan carefully with the transplant team", "Change their diet without consultation"],
+            correctAnswer: "Plan carefully with the transplant team"
         },
         {
-            question: "Why is it recommended to avoid crowded public places for the first 3 months?",
-            options: ["To save money", "To reduce the risk of infection", "To get more rest at home", "To avoid loud noises"],
-            correctAnswer: "To reduce the risk of infection"
+            question: "True or False: Sexual activity is dangerous and can harm your new kidney.",
+            options: ["True", "False"],
+            correctAnswer: "False"
         },
         {
-            question: "What is the recommendation regarding tobacco use after a transplant?",
-            options: ["It is safe in moderation", "It is only a risk before surgery", "It is strongly discouraged", "It is fine as long as you don't smoke"],
-            correctAnswer: "It is strongly discouraged"
+            question: "What is a key recommendation for women of child-bearing age if they are NOT planning a pregnancy?",
+            options: ["Avoid all sexual activity", "Rely on the calendar method", "Use a reliable form of birth control", "They do not need birth control"],
+            correctAnswer: "Use a reliable form of birth control"
         }
     ],
     'immunosuppressants': [
