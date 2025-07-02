@@ -4,9 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info, Ban, UtensilsCrossed, Fish, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 
@@ -222,7 +222,7 @@ const surgeryDayExperienceContent = (
                     width={400}
                     height={300}
                     className="rounded-lg mx-auto border"
-                    data-ai-hint="laparoscopic surgery incisions"
+                    data-ai-hint="laparoscopic surgery"
                 />
                 <p className="text-xs text-center text-muted-foreground">Laparoscopic surgery involves several small incisions, leading to a quicker recovery.</p>
             </div>
@@ -265,50 +265,28 @@ const postTransplantRecoveryContent = (
             </div>
         </div>
 
-        <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Activity Restrictions and Resuming Life</h3>
-        <p>While you'll soon be able to resume an active life, there are some important restrictions to follow during your recovery to ensure you heal properly.</p>
-        <div className="space-y-4 pt-2">
-            <div className="p-4 bg-muted/50 rounded-lg">
-                <h4 className="font-bold">Lifting Restrictions</h4>
-                 <ul className="list-disc list-inside space-y-1">
-                    <li><strong>First 6 weeks:</strong> Do not lift anything heavier than 5 kg.</li>
-                    <li><strong>6 to 12 weeks:</strong> Do not lift anything heavier than 10 kg.</li>
-                    <li><strong>After 3 months:</strong> There are no specific restrictions, but always use common sense.</li>
-                </ul>
-            </div>
-            <div className="p-4 bg-muted/50 rounded-lg">
-                <h4 className="font-bold">General Activity</h4>
-                 <ul className="list-disc list-inside space-y-1">
-                    <li>Avoid jogging or running on hard surfaces (like asphalt or cement) for the first 3 months.</li>
-                    <li>Avoid "bouncing" activities like motorcycling or horseback riding for the first 3 months.</li>
-                    <li>Do not take baths or go swimming until your incision has completely healed.</li>
-                    <li>As a general rule, avoid contact sports to protect your new kidney.</li>
-                </ul>
-            </div>
-        </div>
-
-        <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Sexual Activity and Family Planning</h3>
-        <p>It's normal to have questions about intimacy and family planning after your transplant. Here’s what you need to know.</p>
+        <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Activity and Intimacy After Transplant</h3>
+        <p>Resuming physical and sexual activity are important milestones in your recovery. Here’s what you need to know to do so safely.</p>
         
-        <h4 className="font-semibold pt-2">Resuming Sexual Activity</h4>
-        <p>Your new kidney is well-protected, and sexual activity will not harm it. However, as with any major surgery, it's best to wait about six weeks to allow your incision and muscles to heal fully. It's also very important to take precautions against sexually transmitted diseases.</p>
-        
-        <h4 className="font-semibold pt-4">For Men</h4>
-        <p>Most men regain sexual desire and function that may have been lost during kidney failure. Certain medications can sometimes affect sexual function. If you notice any changes, don't hesitate to discuss them with your transplant team. Men should also discuss family planning with the team.</p>
+        <h4 className="font-semibold pt-2">Physical Activity</h4>
+        <p>As you gain strength and endurance, your ability to be physically active will increase. Use common sense as your guide. It's best to start slowly and gradually increase your activity level. As a general rule, you should avoid contact sports (like football or hockey) to protect your new kidney.</p>
 
-        <h4 className="font-semibold pt-4">For Women</h4>
-        <p>Most women are fertile after a transplant, and menstrual periods often return within a few months. It's important to have routine gynecological exams (Pap smear, breast exam) every year. If you are not planning to become pregnant, you must use a reliable form of birth control.</p>
+        <h4 className="font-semibold pt-4">Sexual Activity</h4>
+        <p>Your new kidney is well-protected, and sexual activity will not harm it. However, as with any major surgery, it's wise to wait about six weeks before engaging in sexual intercourse to allow your incision and muscles to fully heal. It's also very important to take precautions against sexually transmitted diseases.</p>
+        
+        <h4 className="font-semibold pt-4">Family Planning for Men</h4>
+        <p>Most men regain sexual desire and function that may have been lost during kidney failure. However, certain medications, like those for high blood pressure, can sometimes affect sexual function. If you notice a change, do not hesitate to discuss it with your transplant team. Men should also discuss any family planning goals with the team.</p>
 
         <Alert variant="destructive" className="mt-4">
             <Info className="h-4 w-4" />
-            <AlertTitle>Planning a Pregnancy?</AlertTitle>
+            <AlertTitle>Important Information for Women: Pregnancy After Transplant</AlertTitle>
             <AlertDescription>
-                <p>If you wish to become pregnant, it is critical to plan carefully with your transplant team. We recommend waiting at least two years after your transplant.</p>
-
+                <p>Most women are fertile again after a transplant. If you wish to become pregnant, it is <strong>critical</strong> to plan this carefully with your transplant team. We strongly recommend waiting at least <strong>two years</strong> after your transplant before trying to conceive.</p>
                 <ul className="list-disc list-inside space-y-2 pl-4 mt-3">
-                    <li>Some immunosuppressive drugs can cause birth defects and must be changed before you try to conceive.</li>
-                    <li>There are special risks for both mother and child, including a higher risk of high blood pressure, premature birth, and a slight increase in the risk of birth defects.</li>
-                    <li>Close monitoring and prenatal care are essential for a successful outcome.</li>
+                    <li><strong>Medication Changes are Essential:</strong> Some immunosuppressive drugs can cause birth defects and MUST be switched to safer alternatives before you attempt to get pregnant.</li>
+                    <li><strong>Special Risks:</strong> Pregnancy after transplant carries risks for both mother and child, including a higher chance of high blood pressure, premature birth, and a slightly increased risk of birth defects.</li>
+                    <li><strong>Close Monitoring:</strong> You will need more frequent lab tests and close prenatal care to ensure a successful and healthy outcome for both you and your baby.</li>
+                    <li><strong>Birth Control is Key:</strong> If you are not planning a pregnancy, you must use a reliable form of birth control.</li>
                 </ul>
             </AlertDescription>
         </Alert>
@@ -724,7 +702,78 @@ const medicationAdherenceContent = (
                 </CardContent>
             </Card>
         </div>
+    </div>
+);
 
+const patientResponsibilitiesContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Your Responsibilities as a Patient</h2>
+        <p>A successful transplant journey is a partnership. Here’s how you can contribute to your own care.</p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 mt-1">
+                    <BookOpen className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                    <h4 className="font-semibold">Be Informed</h4>
+                    <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
+                        <li>Learn as much as you can about your condition and treatment.</li>
+                        <li>Talk to your healthcare team about any concerns.</li>
+                        <li>Speak up and ask questions if you don't understand something.</li>
+                    </ul>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 mt-1">
+                    <ClipboardList className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                    <h4 className="font-semibold">Follow Your Treatment Program</h4>
+                    <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
+                        <li>Provide complete and accurate information about your health.</li>
+                        <li>Follow through with recommended services and referrals.</li>
+                    </ul>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 mt-1">
+                    <Clock className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                    <h4 className="font-semibold">Be On Time</h4>
+                    <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
+                        <li>Make every effort to be on time for all scheduled appointments.</li>
+                        <li>Ensure your lab investigation reports are available for your visit.</li>
+                    </ul>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 mt-1">
+                    <ShieldCheck className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                    <h4 className="font-semibold">Follow Facility Policies</h4>
+                    <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
+                        <li>Adhere to all hospital policies and procedures for safety.</li>
+                        <li>Help maintain a healing environment by not using tobacco products.</li>
+                    </ul>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 mt-1">
+                    <Users className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                    <h4 className="font-semibold">Be Considerate</h4>
+                    <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
+                        <li>Treat other patients and staff with respect and dignity.</li>
+                        <li>Never threaten others or act in a violent manner.</li>
+                        <li>Keep noise to a minimum and use phones and TVs courteously.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 );
 
@@ -748,6 +797,7 @@ export const contentData: ModuleContent = {
     'donor-surgery': donorSurgeryOverviewContent,
     'donor-recovery': donorRecoveryTimelineContent,
     'risks-and-benefits': risksAndBenefitsContent,
+    'patient-responsibilities': patientResponsibilitiesContent,
 };
 
 // Placeholder for other modules

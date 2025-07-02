@@ -17,21 +17,15 @@ export type ModulesByRole = {
 
 export const patientModules: Module[] = [
   { title: 'Understanding Kidney Disease', status: 'Completed', slug: 'understanding-kidney-disease' },
-  { title: 'Chronic Kidney Disease Stages', status: 'Not Started', slug: 'ckd-stages' },
-  { title: 'Treatment Options Overview', status: 'Not Started', slug: 'treatment-options' },
-  { title: 'Dialysis vs Transplant', status: 'Not Started', slug: 'dialysis-vs-transplant' },
+  { title: 'Patient Responsibilities', status: 'Not Started', slug: 'patient-responsibilities' },
   { title: 'Transplant Evaluation Process', status: 'Not Started', slug: 'evaluation-process' },
-  { title: 'Finding a Donor', status: 'Not Started', slug: 'finding-a-donor' },
   { title: 'Understanding Transplant Matching', status: 'Not Started', slug: 'transplant-matching' },
-  { title: 'Pre-Surgery Preparation', status: 'Not Started', slug: 'pre-surgery-prep' },
   { title: 'Surgery Day Experience', status: 'Not Started', slug: 'surgery-day' },
   { title: 'Post-Transplant Recovery', status: 'Not Started', slug: 'post-transplant-recovery' },
   { title: 'Immunosuppressive Medications', status: 'Not Started', slug: 'immunosuppressants' },
   { title: 'Medication Adherence', status: 'Not Started', slug: 'medication-adherence' },
   { title: 'Understanding Risk of Rejection', status: 'Not Started', slug: 'understanding-rejection' },
-  { title: 'Recognizing Complications', status: 'Not Started', slug: 'recognizing-complications' },
   { title: 'Long-term Care', status: 'Not Started', slug: 'long-term-care' },
-  { title: 'Lifestyle Management', status: 'Not Started', slug: 'lifestyle-management' },
   { title: 'Diet and Nutrition', status: 'Not Started', slug: 'diet-and-nutrition' },
   { title: 'Mental Health Support', status: 'Not Started', slug: 'mental-health-support' },
 ];

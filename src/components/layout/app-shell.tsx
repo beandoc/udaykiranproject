@@ -26,6 +26,8 @@ import {
   Bell,
   Moon,
   Globe,
+  Contact,
+  ListChecks
 } from 'lucide-react';
 import { Button } from '../ui/button';
 import {
@@ -44,11 +46,13 @@ export function AppShell({ children }: { children: ReactNode }) {
     { href: '/', labelKey: 'navDashboard', icon: LayoutDashboard },
     { href: '/modules', labelKey: 'navEducationalModules', icon: BookOpen },
     { href: '/resources', labelKey: 'navResourceLibrary', icon: Library },
+    { href: '/contacts', labelKey: 'navContacts', icon: Contact },
   ];
   
   const toolsNav = [
     { href: '/tools/medication', labelKey: 'toolImmunosuppressants', icon: Pill },
     { href: '/tools/symptoms', labelKey: 'toolSymptomLog', icon: HeartPulse },
+    { href: '/dos-and-donts', labelKey: 'navDosAndDonts', icon: ListChecks },
   ];
 
   return (
