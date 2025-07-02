@@ -10,22 +10,28 @@ import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { quizData, type QuizQuestion } from "@/lib/quiz-data";
 import { modulesByRole } from "@/lib/modules-data";
-import { CheckCircle, XCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import { contentData } from "@/lib/content-data";
 
-export default function QuizPage() {
+export default function ModulePage() {
     const params = useParams();
     const slug = params.slug as string;
     const { toast } = useToast();
+    
+    const [viewMode, setViewMode] = useState<'content' | 'quiz'>('content');
 
     const [questions, setQuestions] = useState<QuizQuestion[]>(() => {
         return quizData[slug] || [];
     });
 
-    const moduleTitle = Object.values(modulesByRole)
+    const moduleInfo = Object.values(modulesByRole)
         .flatMap(role => role.modules)
-        .find(module => module.slug === slug)?.title || 'Knowledge Check';
+        .find(module => module.slug === slug);
+
+    const moduleTitle = moduleInfo?.title || 'Module';
+    const moduleContent = contentData[slug];
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswers, setSelectedAnswers] = useState<(string | null)[]>(Array(questions.length).fill(null));
@@ -58,15 +64,21 @@ export default function QuizPage() {
             description: `You scored ${correctCount} out of ${questions.length}.`,
         });
     };
+
+    const resetQuiz = () => {
+        setCurrentQuestionIndex(0);
+        setSelectedAnswers(Array(questions.length).fill(null));
+        setIsSubmitted(false);
+    };
     
     const score = selectedAnswers.filter((answer, index) => answer === questions[index].correctAnswer).length;
     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
 
-    if (!questions || questions.length === 0) {
+    if (!moduleInfo) {
         return (
             <div className="text-center">
-                <h1 className="text-2xl font-bold">Quiz not found</h1>
-                <p className="text-muted-foreground">Could not find a quiz for this module.</p>
+                <h1 className="text-2xl font-bold">Module not found</h1>
+                <p className="text-muted-foreground">Could not find a module for this path.</p>
                 <Button asChild className="mt-4">
                     <Link href="/modules">Back to Modules</Link>
                 </Button>
@@ -76,6 +88,53 @@ export default function QuizPage() {
 
     const currentQuestion = questions[currentQuestionIndex];
     const selectedAnswer = selectedAnswers[currentQuestionIndex];
+
+    if (viewMode === 'content') {
+        return (
+             <div className="max-w-4xl mx-auto space-y-6">
+                <Card>
+                    <CardHeader>
+                        <p className="text-sm font-medium text-primary">{moduleTitle}</p>
+                        <CardTitle className="font-headline text-3xl">Educational Content</CardTitle>
+                        <CardDescription>
+                            Read through the material below. When you're ready, you can test your knowledge with a short quiz.
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        {moduleContent}
+                    </CardContent>
+                    <CardFooter className="flex-col items-stretch gap-4 sm:flex-row sm:justify-between">
+                         <Button variant="outline" asChild>
+                            <Link href="/modules">
+                                <ChevronLeft className="mr-2 h-4 w-4" /> Back to Learning Path
+                            </Link>
+                        </Button>
+                        {questions && questions.length > 0 ? (
+                             <Button onClick={() => setViewMode('quiz')} size="lg">
+                                Start Knowledge Check <HelpCircle className="ml-2 h-4 w-4" />
+                            </Button>
+                        ) : (
+                             <Button disabled size="lg">
+                                Quiz Coming Soon
+                            </Button>
+                        )}
+                    </CardFooter>
+                </Card>
+            </div>
+        )
+    }
+
+    if (questions.length === 0) {
+        return (
+            <div className="text-center">
+                <h1 className="text-2xl font-bold">Quiz not found</h1>
+                <p className="text-muted-foreground">Could not find a quiz for this module.</p>
+                <Button onClick={() => setViewMode('content')} className="mt-4">
+                    <ChevronLeft className="mr-2 h-4 w-4" /> Back to Content
+                </Button>
+            </div>
+        )
+    }
 
     if (isSubmitted) {
         return (
@@ -105,8 +164,17 @@ export default function QuizPage() {
                         )
                     })}
                 </CardContent>
-                <CardFooter>
-                    <Button asChild className="w-full" size="lg">
+                <CardFooter className="flex-col sm:flex-row gap-4 w-full">
+                    <Button variant="outline" onClick={() => {
+                        resetQuiz();
+                        setViewMode('content');
+                    }} className="w-full sm:w-auto">
+                        <BookOpen className="mr-2 h-4 w-4" /> Review Content
+                    </Button>
+                    <Button onClick={resetQuiz} className="w-full sm:w-auto">
+                        Retake Quiz
+                    </Button>
+                    <Button asChild className="w-full sm:w-auto" size="lg">
                         <Link href="/modules">Back to Learning Path</Link>
                     </Button>
                 </CardFooter>
@@ -135,15 +203,8 @@ export default function QuizPage() {
                         disabled={isSubmitted}
                     >
                         {currentQuestion.options.map((option, index) => {
-                            const isSelected = selectedAnswer === option;
-                            const isCorrect = currentQuestion.correctAnswer === option;
-                            let stateClass = "";
-                            if (isSubmitted) {
-                                if (isCorrect) stateClass = "border-green-500 bg-green-50";
-                                else if (isSelected && !isCorrect) stateClass = "border-red-500 bg-red-50";
-                            }
                             return (
-                                <Label key={index} htmlFor={`option-${index}`} className={cn("flex items-center gap-4 p-4 border rounded-lg cursor-pointer hover:bg-muted/50 transition-colors", stateClass)}>
+                                <Label key={index} htmlFor={`option-${index}`} className={cn("flex items-center gap-4 p-4 border rounded-lg cursor-pointer hover:bg-muted/50 transition-colors", selectedAnswer === option ? "border-primary bg-primary/10" : "")}>
                                     <RadioGroupItem value={option} id={`option-${index}`} />
                                     <span>{option}</span>
                                 </Label>
@@ -154,16 +215,21 @@ export default function QuizPage() {
             </Card>
 
             <div className="flex justify-between items-center">
-                <Button variant="outline" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
-                    <ChevronLeft className="mr-2 h-4 w-4" /> Previous
+                 <Button variant="outline" onClick={() => setViewMode('content')}>
+                    <BookOpen className="mr-2 h-4 w-4" /> Back to Content
                 </Button>
-                {currentQuestionIndex === questions.length - 1 ? (
-                    <Button onClick={handleSubmit} disabled={!selectedAnswer}>Submit Quiz</Button>
-                ) : (
-                    <Button onClick={handleNext} disabled={!selectedAnswer}>
-                        Next <ChevronRight className="ml-2 h-4 w-4" />
+                <div className="flex gap-2">
+                    <Button variant="outline" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
+                        <ChevronLeft className="mr-2 h-4 w-4" /> Previous
                     </Button>
-                )}
+                    {currentQuestionIndex === questions.length - 1 ? (
+                        <Button onClick={handleSubmit} disabled={!selectedAnswer}>Submit Quiz</Button>
+                    ) : (
+                        <Button onClick={handleNext} disabled={!selectedAnswer}>
+                            Next <ChevronRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    )}
+                </div>
             </div>
         </div>
     );
