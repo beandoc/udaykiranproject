@@ -350,7 +350,7 @@ const donorEvaluationContent = (
         <p>Becoming a living kidney donor is a generous act. To ensure it's safe for you, the potential donor must have normal kidney function, be in good overall health, and be emotionally prepared for the donation process. The evaluation involves a series of medical tests and a psychological assessment.</p>
 
         <h3 className="text-xl font-bold font-headline pt-4">The Medical Assessment</h3>
-        <p>If you are considering becoming a living donor, you'll undergo a thorough medical check-up. The primary goal is to ensure that donating a kidney is safe for you, both immediately and in the long run. The transplant team will also confirm that you are fit for surgery and that your kidney is suitable for donation.</p>
+        <p>If you are considering being a living donor, you'll undergo a thorough medical check-up. The primary goal is to ensure that donating a kidney is safe for you, both immediately and in the long run. The transplant team will also confirm that you are fit for surgery and that your kidney is suitable for donation.</p>
 
         <h3 className="text-xl font-bold font-headline pt-4">What Tests Are Involved?</h3>
         <p>A number of tests are required to ensure a living donor is a suitable match. These may include:</p>
@@ -367,6 +367,41 @@ const donorEvaluationContent = (
     </div>
 );
 
+const donorEligibilityContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Who Can Be a Living Donor?</h2>
+        <p>Not everyone is able to be a living kidney donor. The evaluation process is designed to protect your health first and foremost. Certain health conditions may prevent someone from being able to donate safely.</p>
+        <h3 className="text-xl font-bold font-headline pt-4">Conditions That May Prevent Donation</h3>
+        <p>Some of the common reasons a person may not be eligible to donate include:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4 columns-1 md:columns-2">
+            <li>Having cancer, a history of cancer, hepatitis, or AIDS.</li>
+            <li>Having diabetes or a high risk of developing it.</li>
+            <li>Significant heart or lung problems, including uncontrolled high blood pressure.</li>
+            <li>Being significantly overweight.</li>
+            <li>Being an active smoker.</li>
+            <li>Certain psychological concerns that might make the process too difficult.</li>
+        </ul>
+        <p className="pt-2">The transplant team is dedicated to helping potential donors fully understand the risks and benefits. Their primary responsibility is to ensure your well-being throughout the entire process.</p>
+    </div>
+);
+
+const psychologicalAssessmentContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">The Psychological Assessment</h2>
+        <p>A psychological assessment is a key part of the living donation process. It's a supportive conversation designed to ensure that you, the potential donor, are making a fully informed and voluntary decision. It's a chance to talk through your motivations, feelings, and any concerns you might have.</p>
+        <h3 className="text-xl font-bold font-headline pt-4">Goals of the Assessment</h3>
+        <p>The assessment helps confirm that the donor:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4">
+            <li>Is comfortable with the idea of donation and understands the entire process.</li>
+            <li>Is not being pressured or paid to donate. This must be a free and willing choice.</li>
+            <li>Has a clear understanding of both the physical and emotional outcomes of kidney donation.</li>
+            <li>Has considered the potential risks and benefits to their own health. This is called "informed consent."</li>
+        </ul>
+        <h3 className="text-xl font-bold font-headline pt-4">Your Decision is Respected</h3>
+        <p>It is crucial to know that you can change your mind about donating at any point, for any reason, right up until the surgery. Your decision will be respected, and the transplant team will support you no matter what you choose.</p>
+    </div>
+);
+
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
@@ -379,6 +414,8 @@ export const contentData: ModuleContent = {
     'understanding-rejection': understandingRejectionContent,
     'immunosuppressants': immunosuppressiveMedicationsContent,
     'donor-evaluation': donorEvaluationContent,
+    'donor-eligibility': donorEligibilityContent,
+    'psychological-assessment': psychologicalAssessmentContent,
 };
 
 // Placeholder for other modules

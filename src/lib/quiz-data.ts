@@ -421,6 +421,110 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             ],
             correctAnswer: "A psychological assessment."
         }
+    ],
+    'donor-eligibility': [
+        {
+            question: "Which of the following conditions may prevent someone from becoming a living kidney donor?",
+            options: [
+                "A history of seasonal allergies",
+                "Having cancer or a history of cancer",
+                "Wearing glasses for vision correction",
+                "A previous ankle sprain"
+            ],
+            correctAnswer: "Having cancer or a history of cancer"
+        },
+        {
+            question: "Why is being a smoker a concern for potential kidney donors?",
+            options: [
+                "It is not a concern.",
+                "It increases the risks associated with surgery and long-term health.",
+                "It affects hair color.",
+                "It's only a concern if the recipient also smokes."
+            ],
+            correctAnswer: "It increases the risks associated with surgery and long-term health."
+        },
+        {
+            question: "What is one of the key requirements to be considered for living donation?",
+            options: [
+                "Being a specific age",
+                "Having the same favorite color as the recipient",
+                "Being in good overall health with normal kidney function",
+                "Living in the same city as the hospital"
+            ],
+            correctAnswer: "Being in good overall health with normal kidney function"
+        },
+        {
+            question: "Is it possible for someone with uncontrolled high blood pressure to donate a kidney?",
+            options: [
+                "Yes, without any issues.",
+                "No, it's generally considered a condition that prevents donation due to health risks.",
+                "Only if they promise to control it after surgery.",
+                "Yes, but they have to pay more."
+            ],
+            correctAnswer: "No, it's generally considered a condition that prevents donation due to health risks."
+        },
+        {
+            question: "The transplant team's main priority regarding the donor is:",
+            options: [
+                "To get the kidney as fast as possible.",
+                "To ensure the donor's safety and well-being.",
+                "To make sure the donor and recipient become friends.",
+                "To publish a paper about the surgery."
+            ],
+            correctAnswer: "To ensure the donor's safety and well-being."
+        }
+    ],
+    'psychological-assessment': [
+        {
+            question: "What is the main purpose of the psychological assessment for a living donor?",
+            options: [
+                "To test the donor's memory",
+                "To make sure the donor's choice is voluntary and well-informed",
+                "To determine if the donor is a good person",
+                "To negotiate the terms of the donation"
+            ],
+            correctAnswer: "To make sure the donor's choice is voluntary and well-informed"
+        },
+        {
+            question: "What does 'informed consent' mean in the context of donation?",
+            options: [
+                "The donor has been informed of the surgery date.",
+                "The donor understands the medical procedure, including the risks and benefits.",
+                "The donor has signed a consent form without reading it.",
+                "The recipient has consented to receive the kidney."
+            ],
+            correctAnswer: "The donor understands the medical procedure, including the risks and benefits."
+        },
+        {
+            question: "Can a potential living donor change their mind about donating?",
+            options: [
+                "No, once the process starts, they must go through with it.",
+                "Only if they pay a penalty fee.",
+                "Yes, they can change their mind at any time before the surgery.",
+                "Only if the recipient agrees."
+            ],
+            correctAnswer: "Yes, they can change their mind at any time before the surgery."
+        },
+        {
+            question: "Which of these is a health condition that might prevent someone from being a living donor?",
+            options: [
+                "Having a common cold a year ago",
+                "Having well-controlled high blood pressure",
+                "Having diabetes",
+                "Having broken a bone in the past"
+            ],
+            correctAnswer: "Having diabetes"
+        },
+        {
+            question: "The psychological assessment ensures that the donor is NOT being...",
+            options: [
+                "Generous or selfless",
+                "Careful or thoughtful",
+                "Forced or paid to donate",
+                "Supported by their family"
+            ],
+            correctAnswer: "Forced or paid to donate"
+        }
     ]
 };
 
