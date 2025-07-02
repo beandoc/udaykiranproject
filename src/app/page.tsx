@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, CheckCircle, ClipboardList, Clock, Heart, MessageSquare, Pill, ShieldCheck, Star, User, UserCheck, Users, CalendarDays, GlassWater, PhoneForwarded, ShowerHead, ShieldQuestion, Apple, HeartPulse } from "lucide-react";
+import { BookOpen, CheckCircle, ClipboardList, Clock, Heart, MessageSquare, Pill, ShieldCheck, Star, User, UserCheck, Users, CalendarDays, GlassWater, PhoneForwarded, ShowerHead, ShieldQuestion, Apple, HeartPulse, ShieldOff, UserX, Virus, FlaskConical, Ban, UtensilsCrossed, SearchX } from "lucide-react";
 import Link from "next/link";
 import { useAppContext, type Role, type Activity } from "@/context/app-context";
 import { cn } from "@/lib/utils";
@@ -84,6 +84,16 @@ export default function Home() {
         { icon: ShieldQuestion, titleKey: 'dosCheckNewMedsTitle', descriptionKey: 'dosCheckNewMedsDesc' },
         { icon: Apple, titleKey: 'dosWashProduceTitle', descriptionKey: 'dosWashProduceDesc' },
         { icon: HeartPulse, titleKey: 'dosExerciseSafelyTitle', descriptionKey: 'dosExerciseSafelyDesc' },
+    ];
+    
+    const dontsList = [
+        { icon: ShieldOff, titleKey: 'dontsStopMedsTitle', descriptionKey: 'dontsStopMedsDesc' },
+        { icon: UserX, titleKey: 'dontsAvoidInfectionsTitle', descriptionKey: 'dontsAvoidInfectionsDesc' },
+        { icon: Virus, titleKey: 'dontsIgnoreSymptomsTitle', descriptionKey: 'dontsIgnoreSymptomsDesc' },
+        { icon: FlaskConical, titleKey: 'dontsCheckMedsTitle', descriptionKey: 'dontsCheckMedsDesc' },
+        { icon: Ban, titleKey: 'dontsRiskySubstancesTitle', descriptionKey: 'dontsRiskySubstancesDesc' },
+        { icon: UtensilsCrossed, titleKey: 'dontsFoodSafetyTitle', descriptionKey: 'dontsFoodSafetyDesc' },
+        { icon: SearchX, titleKey: 'dontsGoogleDoctorTitle', descriptionKey: 'dontsGoogleDoctorDesc' },
     ];
 
 
@@ -189,6 +199,26 @@ export default function Home() {
                         <div key={item.titleKey} className="flex items-start gap-4">
                             <div className="flex-shrink-0 mt-1">
                                 <item.icon className="w-6 h-6 text-primary" />
+                            </div>
+                            <div>
+                                <h4 className="font-semibold">{t(item.titleKey)}</h4>
+                                <p className="mt-1 text-sm text-muted-foreground">{t(item.descriptionKey)}</p>
+                            </div>
+                        </div>
+                    ))}
+                </CardContent>
+            </Card>
+
+            <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline text-xl">{t('dontsTitle')}</CardTitle>
+                    <CardDescription>{t('dontsDesc')}</CardDescription>
+                </CardHeader>
+                <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {dontsList.map((item) => (
+                        <div key={item.titleKey} className="flex items-start gap-4">
+                            <div className="flex-shrink-0 mt-1">
+                                <item.icon className="w-6 h-6 text-destructive" />
                             </div>
                             <div>
                                 <h4 className="font-semibold">{t(item.titleKey)}</h4>

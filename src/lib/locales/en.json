@@ -203,5 +203,21 @@
     "dosWashProduceTitle": "Wash Food Carefully",
     "dosWashProduceDesc": "Wash all fruits and vegetables thoroughly under running water, especially those that aren't peeled.",
     "dosExerciseSafelyTitle": "Exercise Daily and Safely",
-    "dosExerciseSafelyDesc": "Engage in non-contact sports like walking and cycling to build strength. Avoid heavy lifting for the first 3 months."
+    "dosExerciseSafelyDesc": "Engage in non-contact sports like walking and cycling to build strength. Avoid heavy lifting for the first 3 months.",
+    "dontsTitle": "Key Don'ts for a Healthy Transplant",
+    "dontsDesc": "Avoiding these pitfalls is just as important as following the do's. Be vigilant to protect your health.",
+    "dontsStopMedsTitle": "Never Stop Your Medications",
+    "dontsStopMedsDesc": "Do not stop, skip, or change your immunosuppressant dose or schedule without your team's explicit direction. If you're ever unsure, always ask.",
+    "dontsAvoidInfectionsTitle": "Avoid Infections",
+    "dontsAvoidInfectionsDesc": "Stay away from people with infections like colds or coughs, particularly in the first few months after your transplant.",
+    "dontsIgnoreSymptomsTitle": "Don't Ignore Symptoms",
+    "dontsIgnoreSymptomsDesc": "A fever, cough, urinary symptoms, or pain could be serious. Contact your doctor right away if you feel unwell.",
+    "dontsCheckMedsTitle": "Don't Self-Medicate",
+    "dontsCheckMedsDesc": "Never take any over-the-counter drugs, herbal remedies, or alternative medicines (Homeopathic, Ayurvedic) without your transplant doctor's permission first.",
+    "dontsRiskySubstancesTitle": "Avoid Risky Substances",
+    "dontsRiskySubstancesDesc": "Do not smoke, consume alcohol, or use recreational drugs. These can harm your new kidney and your overall health.",
+    "dontsFoodSafetyTitle": "Practice Food Safety",
+    "dontsFoodSafetyDesc": "Avoid raw or partially cooked foods, street food, and any food that has been sitting at room temperature, as it can harbor harmful bacteria.",
+    "dontsGoogleDoctorTitle": "Don't Be a 'Google Doctor'",
+    "dontsGoogleDoctorDesc": "It's fine to read about your condition, but do not try to self-diagnose or self-treat based on internet searches. Always trust your medical team."
 }
