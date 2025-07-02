@@ -15,7 +15,7 @@ export default function ReadinessPage() {
     ];
 
     const patientQuestions = [
-        "patientQ1", "patientQ2", "patientQ3", "patientQ4", "patientQ5", "patientQ6", "patientQ7"
+        "patientQ1", "patientQ2", "patientQ3", "patientQ4", "patientQ5", "patientQ6", "patientQ7", "patientQ8", "patientQ9", "patientQ10"
     ];
 
     return (
