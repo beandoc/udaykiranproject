@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info, Ban, UtensilsCrossed, Fish, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHand, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCrossed, Fish, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -702,7 +702,7 @@ const medicationAdherenceContent = (
             </Card>
              <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline text-xl flex items-center gap-2"><HeartHand className="text-primary"/>Behavioral & Psychosocial Support</CardTitle>
+                    <CardTitle className="font-headline text-xl flex items-center gap-2"><HeartHandshake className="text-primary"/>Behavioral & Psychosocial Support</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                      <div className="flex items-start gap-3">
