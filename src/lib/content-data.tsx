@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Image from 'next/image';
 import { modulesByRole } from './modules-data';
 
 type ModuleContent = {
@@ -128,7 +129,7 @@ const transplantMatchingContent = (
 const surgeryDayExperienceContent = (
     <div className="space-y-4 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">What to Expect on Surgery Day</h2>
-        <p>Being prepared for your kidney transplant surgery can help ease some of the anxiety. Here’s a general overview of what happens before and during the procedure.</p>
+        <p>Being prepared for your kidney transplant surgery can help ease some of the anxiety. Here’s a general overview of what happens before, during, and after the procedure.</p>
 
         <h3 className="text-xl font-bold font-headline pt-4">Before the Surgery</h3>
         <p>Once you are admitted to the hospital, you will undergo a final series of checks to ensure you are ready for the operation. This typically includes:</p>
@@ -150,6 +151,27 @@ const surgeryDayExperienceContent = (
         
         <h3 className="text-xl font-bold font-headline pt-4">What About My Old Kidneys?</h3>
         <p>A common question is whether the old, failed kidneys are removed. In most cases, they are left in place. This avoids a more extensive surgery. However, if your kidneys are causing problems (for example, if they are very large due to polycystic kidney disease and causing pain or infection), they may be removed in a separate procedure before your transplant.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">After the Surgery</h3>
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="space-y-4">
+                <p>It's normal to experience some pain around the incision site after surgery, and you will receive pain medication to manage it.</p>
+                <p>The new kidney might start producing urine right away, or it may take a few days. If you need dialysis temporarily, don't worry—it doesn’t mean the transplant has failed. The kidney just needs a little more time to "wake up" and start functioning.</p>
+                <p>A catheter will be placed in your bladder for about five days to drain urine and help your medical team monitor the kidney's function. You might also have temporary tubes near the wound to drain excess fluid, which are typically removed after a few days.</p>
+                <p>Daily blood tests are a standard part of recovery. They are used to monitor your new kidney's function, check the levels of your anti-rejection medication, and catch any potential issues early.</p>
+            </div>
+            <div className="space-y-2">
+                <Image 
+                    src="/images/kidney-transplant-anatomy.png" 
+                    alt="Diagram showing the placement of a transplanted kidney in the pelvis."
+                    width={400}
+                    height={450}
+                    className="rounded-lg mx-auto border"
+                    data-ai-hint="kidney anatomy"
+                />
+                <p className="text-xs text-center text-muted-foreground">An illustration of a transplanted kidney, ureter, and the original diseased kidneys.</p>
+            </div>
+        </div>
     </div>
 );
 
