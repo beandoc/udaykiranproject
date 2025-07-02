@@ -30,6 +30,7 @@ export default function MedicationGuidePage() {
     {
         name: "Cyclosporine",
         instructions: [
+            "Cyclosporine is an alternative medication used to prevent rejection if you have issues with Tacrolimus.",
             "Take your dose at the same time each day. If you miss a dose, take it as soon as you remember unless it's nearly time for your next one. Never take two doses to make up for a missed one.",
             "Swallow capsules whole with a glass of water.",
             "If using the oral solution, you can mix it with orange or apple juice to improve the taste. After taking the solution, add a little more juice to the glass, swirl, and drink again to ensure you've taken the full dose.",
@@ -59,8 +60,11 @@ export default function MedicationGuidePage() {
     {
         name: "Prednisolone",
         instructions: [
-            "Your daily dose of Prednisolone may consist of several tablets.",
-            "It's common to take the entire daily dose all at once in the morning with food to reduce stomach irritation."
+            "Prednisolone is a steroid that helps prevent rejection by reducing your body's immune response.",
+            "Your dose will likely be high at first and then gradually tapered down to a small, daily maintenance dose over a few months.",
+            "It's common to take the entire daily dose all at once in the morning with food to reduce stomach irritation.",
+            "This is usually a lifelong medication to protect your kidney. Never stop taking it unless your doctor tells you to.",
+            "Possible side effects include high blood sugar, fluid retention, high blood pressure, mood changes, poor wound healing, and an increased risk of infection. Discuss any concerns with your transplant team."
         ]
     }
   ]
