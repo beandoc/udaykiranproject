@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -777,6 +777,229 @@ const patientResponsibilitiesContent = (
     </div>
 );
 
+const understandingYourRoleContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">The Indispensable Role of a Caregiver</h2>
+        <p>As a family member or caregiver who is not the donor or recipient, your role is that of a vital "support system manager" and emotional anchor. Your involvement profoundly impacts the well-being and recovery of both individuals.</p>
+        
+        <Card>
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2 font-headline"><BookOpen className="text-primary"/> Understanding the Journey</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+                <p>To be effective, you need to understand the basics of the transplant process:</p>
+                <ul className="list-disc list-inside space-y-2">
+                    <li><strong>Kidney Failure:</strong> Know why the transplant is needed and what life on dialysis is like.</li>
+                    <li><strong>Living Donation:</strong> Understand the benefits, but also be aware that the donor is undergoing major surgery for someone else and will have their own recovery journey.</li>
+                    <li><strong>The Medical Team:</strong> Get to know the roles of the transplant team members (nephrologists, surgeons, coordinators, etc.).</li>
+                    <li><strong>Immunosuppressants:</strong> Learn that the recipient will take these lifelong medications to prevent rejection and understand their importance.</li>
+                </ul>
+            </CardContent>
+        </Card>
+    </div>
+);
+
+const supportingPreTransplantContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Supporting Before the Transplant</h2>
+        <p>This is where a caregiver often plays a huge hands-on role. Your practical support can make a massive difference during this stressful time.</p>
+
+        <ul className="list-none space-y-4">
+            <li className="flex items-start gap-4">
+                <CalendarClock className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Manage Appointments & Travel</h4>
+                    <p className="text-muted-foreground">Help both the donor and recipient with transportation to their many pre-transplant evaluations. This can be very time-consuming.</p>
+                </div>
+            </li>
+             <li className="flex items-start gap-4">
+                <MessageSquare className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Be a Second Set of Ears</h4>
+                    <p className="text-muted-foreground">Go with them to appointments to listen, take notes, and ask questions. It's easy to miss information when you're feeling overwhelmed.</p>
+                </div>
+            </li>
+             <li className="flex items-start gap-4">
+                <Home className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Help Around the House</h4>
+                    <p className="text-muted-foreground">Assist with chores, errands, and meal preparation, as the recipient may be experiencing significant fatigue.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+);
+
+const hospitalStaySupportContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Support During the Hospital Stay</h2>
+        <p>The surgery and immediate post-operative period is a vulnerable time. Your presence and practical help are invaluable.</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2"><Users className="text-primary"/> Be the Communication Hub</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>Act as a central point of contact for updating other family and friends. This manages visitors and shields the patient and donor from feeling overwhelmed by calls and messages.</p>
+                </CardContent>
+            </Card>
+             <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2"><Bed className="text-primary"/> Offer Comfort & Presence</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>Just being a familiar face in the hospital room can provide immense emotional support and comfort to both the recipient and the donor.</p>
+                </CardContent>
+            </Card>
+             <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2"><HeartHandshake className="text-primary"/> Advocate for Their Needs</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>Be prepared to advocate for your loved ones if necessary. Ensure their questions are answered, their concerns are addressed, and they are comfortable.</p>
+                </CardContent>
+            </Card>
+             <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2"><Info className="text-primary"/> Acknowledge the Donor</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>Remember that the donor has also had major surgery. Validate their feelings and offer them specific support, not just the recipient.</p>
+                </CardContent>
+            </Card>
+        </div>
+    </div>
+);
+
+const homeRecoveryCareContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Caregiving During Home Recovery</h2>
+        <p>The first 3 to 6 months after discharge are a crucial phase, especially for the recipient. Your role is key to a smooth and safe recovery.</p>
+
+        <ul className="list-disc list-inside space-y-3">
+            <li><strong>Transportation:</strong> The recipient will have frequent follow-up appointments. You will likely need to provide transportation.</li>
+            <li><strong>Monitoring Vitals:</strong> You may need to help check and record blood pressure, temperature, blood sugar, and fluid intake/output.</li>
+            <li><strong>Infection Control:</strong> Help maintain strict hygiene practices to protect the immunosuppressed recipient. This includes frequent handwashing, avoiding sick contacts, and safe food handling.</li>
+            <li><strong>Household Help:</strong> Continue to assist with daily living activities like cooking (often following specific dietary guidelines), cleaning, and errands.</li>
+            <li><strong>Enforcing Restrictions:</strong> Gently help enforce post-operative activity restrictions for both the donor and recipient, such as no heavy lifting.</li>
+        </ul>
+    </div>
+);
+
+const medicationManagementSupportContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Supporting Medication Management</h2>
+        <p>The recipient's medication regimen will be complex and is absolutely critical to their long-term health. Your support can be the key to preventing missed doses, which can lead to organ rejection.</p>
+        
+        <Card>
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2"><Pill className="text-primary"/> How You Can Help</CardTitle>
+                <CardDescription>Simple organizational support can make a huge difference.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                 <div className="flex items-start gap-3">
+                    <ClipboardList className="w-6 h-5 text-primary mt-1 flex-shrink-0" />
+                    <div><span className="font-semibold">Help Organize:</span> Use pillboxes sorted by day and time. This visual aid is one of the most effective ways to manage multiple medications.</div>
+                </div>
+                 <div className="flex items-start gap-3">
+                    <BellRing className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <div><span className="font-semibold">Set Reminders:</span> Help set daily alarms on a phone or clock for each medication time. Consistency is crucial.</div>
+                </div>
+                 <div className="flex items-start gap-3">
+                    <UserCheck className="w-6 h-5 text-primary mt-1 flex-shrink-0" />
+                    <div><span className="font-semibold">Double-Check:</span> Gently remind and check in to ensure doses have been taken, especially at the beginning.</div>
+                </div>
+                 <div className="flex items-start gap-3">
+                    <CalendarClock className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <div><span className="font-semibold">Track Refills:</span> Keep an eye on prescription quantities and help ensure refills are ordered well before they run out.</div>
+                </div>
+            </CardContent>
+        </Card>
+    </div>
+);
+
+const recognizingWarningSignsContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Recognizing Warning Signs</h2>
+        <p>As a caregiver, you are often the first person to notice subtle changes in the recipient's health. Being vigilant and knowing when to call the transplant team is a critical responsibility.</p>
+        
+        <Alert variant="destructive">
+            <Siren className="h-4 w-4" />
+            <AlertTitle>Contact the Transplant Team Immediately If You Notice:</AlertTitle>
+            <AlertDescription>
+                <ul className="list-disc list-inside mt-2 space-y-1">
+                    <li><strong>Fever:</strong> Any temperature above 100.4°F (38°C).</li>
+                    <li><strong>Pain:</strong> New or worsening pain or tenderness over the area of the new kidney.</li>
+                    <li><strong>Flu-like Symptoms:</strong> Chills, aches, headache, dizziness, nausea, or vomiting.</li>
+                    <li><strong>Fluid Changes:</strong> A big decrease in urine output or sudden weight gain/swelling (which indicates fluid retention).</li>
+                    <li><strong>Wound Issues:</strong> Redness, swelling, pus, or foul-smelling drainage from the surgical incision.</li>
+                    <li><strong>General Malaise:</strong> The patient just "doesn't feel right" or seems unusually tired.</li>
+                </ul>
+                <p className="mt-3 font-semibold">Do not wait for the next scheduled appointment. Early intervention is key to treating potential problems like infection or rejection.</p>
+            </AlertDescription>
+        </Alert>
+    </div>
+);
+
+const selfCareForCaregiversContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Self-Care: A Crucial Task for Caregivers</h2>
+        <p>This is often the most overlooked aspect of caregiving. You cannot provide good care if you are exhausted or overwhelmed. Taking care of yourself is not selfish; it's essential for sustainable support.</p>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+            <Card>
+                <CardHeader><CardTitle>Recognize Your Limits</CardTitle></CardHeader>
+                <CardContent>
+                    <p>You are not expected to be perfect or to do everything alone. Understand that caregiving is demanding, and it's okay to need help.</p>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader><CardTitle>Seek Your Own Support</CardTitle></CardHeader>
+                <CardContent>
+                    <p>Talk to trusted friends, find a caregiver support group, or seek professional counseling if you feel overwhelmed. You are not alone.</p>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader><CardTitle>Prioritize Rest & Nutrition</CardTitle></CardHeader>
+                <CardContent>
+                    <p>Caregiver burnout is a real risk. Make sure you are getting enough sleep and eating healthy meals to maintain your own strength.</p>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader><CardTitle>Take Breaks</CardTitle></CardHeader>
+                <CardContent>
+                    <p>Schedule regular breaks, even short ones, to recharge. Arrange for others to help so you can step away without worry.</p>
+                </CardContent>
+            </Card>
+        </div>
+    </div>
+);
+
+const communicationWithMedicalTeamContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Communicating with the Medical Team</h2>
+        <p>Effective communication with the transplant team is essential. As a caregiver, you are a key part of these conversations. Don't be afraid to ask questions.</p>
+
+        <Card>
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2"><HelpCircle className="text-primary"/> Key Questions to Ask</CardTitle>
+                <CardDescription>Being prepared with questions can help you get the most out of every interaction with the team.</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <ul className="list-disc list-inside space-y-3">
+                    <li>"What are the most critical things I need to monitor for the recipient and donor in the next few weeks?"</li>
+                    <li>"Who is the primary contact person for urgent questions, especially after hours?"</li>
+                    <li>"Are there any specific educational materials or classes for caregivers that you recommend?"</li>
+                    <li>"What resources are available for caregiver support, like social workers or support groups?"</li>
+                    <li>"Can you clarify the specific dietary and activity restrictions for both the recipient and the donor?"</li>
+                    <li>"What are the financial implications we should be aware of, and is a financial counselor available?"</li>
+                </ul>
+            </CardContent>
+        </Card>
+    </div>
+);
+
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
@@ -798,6 +1021,14 @@ export const contentData: ModuleContent = {
     'donor-recovery': donorRecoveryTimelineContent,
     'risks-and-benefits': risksAndBenefitsContent,
     'patient-responsibilities': patientResponsibilitiesContent,
+    'understanding-your-role': understandingYourRoleContent,
+    'supporting-pre-transplant': supportingPreTransplantContent,
+    'hospital-stay-support': hospitalStaySupportContent,
+    'home-recovery-care': homeRecoveryCareContent,
+    'medication-management': medicationManagementSupportContent,
+    'recognizing-warning-signs': recognizingWarningSignsContent,
+    'self-care-for-caregivers': selfCareForCaregiversContent,
+    'communication-with-medical-team': communicationWithMedicalTeamContent
 };
 
 // Placeholder for other modules

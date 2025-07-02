@@ -25,7 +25,7 @@ import {
   Heart,
   Bell,
   Moon,
-  Globe,
+  Languages,
   Contact,
   ListChecks
 } from 'lucide-react';
@@ -106,9 +106,9 @@ export function AppShell({ children }: { children: ReactNode }) {
           <div className="flex items-center gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon" className="rounded-full">
-                      <Globe className="h-5 w-5" />
-                      <span className="sr-only">{t('selectLanguage')}</span>
+                  <Button variant="ghost" className="text-sm font-medium px-3">
+                      <Languages className="mr-2 h-5 w-5" />
+                      {t('languageLabel')}
                   </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">

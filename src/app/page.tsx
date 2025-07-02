@@ -59,6 +59,34 @@ export default function Home() {
                  <Heart className="absolute -bottom-8 -right-8 w-40 h-40 text-white/10" />
             </Card>
 
+            <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline text-xl">{t('defineRole')}</CardTitle>
+                    <CardDescription>{t('selectRolePrompt')}</CardDescription>
+                </CardHeader>
+                <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {roles.map((r) => (
+                        <button
+                            key={r.name}
+                            onClick={() => setRole(r.name as Role)}
+                            className={cn(
+                                "p-6 text-left rounded-lg border-2 transition-all flex flex-col items-center justify-center text-center",
+                                role === r.name
+                                ? "bg-primary/10 border-primary"
+                                : "bg-card hover:bg-muted/50"
+                            )}
+                        >
+                            <r.icon className={cn(
+                                "w-10 h-10 mb-4",
+                                role === r.name ? "text-primary" : "text-muted-foreground"
+                            )} />
+                            <h3 className="font-bold text-lg">{t(`role${r.name}`)}</h3>
+                            <p className="text-sm text-muted-foreground mt-1">{t(r.descriptionKey)}</p>
+                        </button>
+                    ))}
+                </CardContent>
+            </Card>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card>
                     <CardHeader>
@@ -98,34 +126,6 @@ export default function Home() {
                     </CardContent>
                 </Card>
             </div>
-            
-            <Card>
-                <CardHeader>
-                    <CardTitle className="font-headline text-xl">{t('defineRole')}</CardTitle>
-                    <CardDescription>{t('selectRolePrompt')}</CardDescription>
-                </CardHeader>
-                <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {roles.map((r) => (
-                        <button
-                            key={r.name}
-                            onClick={() => setRole(r.name as Role)}
-                            className={cn(
-                                "p-6 text-left rounded-lg border-2 transition-all flex flex-col items-center justify-center text-center",
-                                role === r.name
-                                ? "bg-primary/10 border-primary"
-                                : "bg-card hover:bg-muted/50"
-                            )}
-                        >
-                            <r.icon className={cn(
-                                "w-10 h-10 mb-4",
-                                role === r.name ? "text-primary" : "text-muted-foreground"
-                            )} />
-                            <h3 className="font-bold text-lg">{t(`role${r.name}`)}</h3>
-                            <p className="text-sm text-muted-foreground mt-1">{t(r.descriptionKey)}</p>
-                        </button>
-                    ))}
-                </CardContent>
-            </Card>
         </div>
     );
 }

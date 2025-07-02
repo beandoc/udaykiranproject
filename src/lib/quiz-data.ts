@@ -737,6 +737,177 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             ],
             correctAnswer: "Talk to the transplant team about their physical and emotional health"
         }
+    ],
+    'understanding-your-role': [
+        {
+            question: "What is a primary role for a caregiver who is not the donor or recipient?",
+            options: [ "Making medical decisions", "Acting as an emotional anchor and logistics manager", "Performing daily blood tests", "Driving the ambulance" ],
+            correctAnswer: "Acting as an emotional anchor and logistics manager"
+        },
+        {
+            question: "Why is it important for a caregiver to understand immunosuppressants?",
+            options: [
+                "So they can adjust the dose themselves",
+                "To understand their critical importance for the recipient and potential side effects",
+                "They don't need to understand them",
+                "To buy them from the pharmacy"
+            ],
+            correctAnswer: "To understand their critical importance for the recipient and potential side effects"
+        }
+    ],
+    'supporting-pre-transplant': [
+        {
+            question: "Why is it helpful for a caregiver to attend appointments with the patient/donor?",
+            options: [
+                "To get a day off from work",
+                "To be a second set of ears and help remember information",
+                "To tell the doctor what to do",
+                "It is not helpful"
+            ],
+            correctAnswer: "To be a second set of ears and help remember information"
+        },
+        {
+            question: "What is a key practical support role for a caregiver pre-transplant?",
+            options: [
+                "Helping with transportation to appointments",
+                "Watching TV with the patient",
+                "Choosing the music for the operating room",
+                "Decorating the hospital room"
+            ],
+            correctAnswer: "Helping with transportation to appointments"
+        }
+    ],
+    'hospital-stay-support': [
+        {
+            question: "What does it mean for a caregiver to be a 'communication hub'?",
+            options: [
+                "Answering the main hospital phone",
+                "Updating family and friends so the patient and donor can rest",
+                "Setting up the patient's WiFi",
+                "Talking to other patients"
+            ],
+            correctAnswer: "Updating family and friends so the patient and donor can rest"
+        },
+        {
+            question: "What is an important part of supporting the donor in the hospital?",
+            options: [
+                "Reminding them they will recover quickly",
+                "Focusing only on the recipient",
+                "Acknowledging their sacrifice and validating their feelings",
+                "Bringing them their favorite fast food"
+            ],
+            correctAnswer: "Acknowledging their sacrifice and validating their feelings"
+        }
+    ],
+    'home-recovery-care': [
+        {
+            question: "What is a crucial part of infection control for a post-transplant patient at home?",
+            options: [
+                "Opening all the windows",
+                "Strict hygiene, frequent handwashing, and avoiding sick contacts",
+                "Using a lot of air freshener",
+                "Allowing pets to sleep on the bed"
+            ],
+            correctAnswer: "Strict hygiene, frequent handwashing, and avoiding sick contacts"
+        },
+        {
+            question: "What is a key activity a caregiver can help with during home recovery?",
+            options: [
+                "Lifting heavy furniture for the patient",
+                "Taking the patient to parties",
+                "Helping monitor vital signs like blood pressure and temperature",
+                "Encouraging contact sports"
+            ],
+            correctAnswer: "Helping monitor vital signs like blood pressure and temperature"
+        }
+    ],
+    'medication-management': [
+        {
+            question: "What is one of the most effective ways a caregiver can help with medication?",
+            options: [
+                "Hiding the pills to see if the patient remembers",
+                "Telling the patient they don't need them",
+                "Helping organize them into a weekly pillbox",
+                "Changing the doses to see what works best"
+            ],
+            correctAnswer: "Helping organize them into a weekly pillbox"
+        },
+        {
+            question: "Besides organizing pills, what is another helpful medication support task?",
+            options: [
+                "Keeping track of when prescriptions need to be refilled",
+                "Throwing away the instruction labels",
+                "Mixing all the pills into one bottle",
+                "Only giving medication every other day"
+            ],
+            correctAnswer: "Keeping track of when prescriptions need to be refilled"
+        }
+    ],
+    'recognizing-warning-signs': [
+        {
+            question: "Which of the following is a critical warning sign that requires an immediate call to the transplant team?",
+            options: [
+                "The patient is feeling a little tired",
+                "The patient has a fever over 100.4°F (38°C)",
+                "The patient wants a different meal for dinner",
+                "The patient is watching TV"
+            ],
+            correctAnswer: "The patient has a fever over 100.4°F (38°C)"
+        },
+        {
+            question: "If you notice a potential warning sign, what should you do?",
+            options: [
+                "Wait until the next scheduled appointment to mention it",
+                "Search the internet for a solution",
+                "Ask a neighbor what they think",
+                "Do not wait, contact the transplant team immediately"
+            ],
+            correctAnswer: "Do not wait, contact the transplant team immediately"
+        }
+    ],
+    'self-care-for-caregivers': [
+        {
+            question: "Why is self-care important for a caregiver?",
+            options: [
+                "It is selfish and should be avoided",
+                "It's not important; only the patient matters",
+                "To prevent burnout and provide sustainable, effective support",
+                "It's only for after the recovery period is over"
+            ],
+            correctAnswer: "To prevent burnout and provide sustainable, effective support"
+        },
+        {
+            question: "What is a good self-care strategy for a caregiver?",
+            options: [
+                "Working 24/7 without a break",
+                "Ignoring your own feelings",
+                "Taking short, regular breaks to recharge",
+                "Avoiding all contact with friends"
+            ],
+            correctAnswer: "Taking short, regular breaks to recharge"
+        }
+    ],
+    'communication-with-medical-team': [
+        {
+            question: "What is a good question to ask the transplant team?",
+            options: [
+                "\"Where is the best place to get coffee?\"",
+                "\"Who is the primary contact for urgent questions after hours?\"",
+                "\"Can we leave the hospital early?\"",
+                "\"Do you think the patient's favorite sports team will win?\""
+            ],
+            correctAnswer: "\"Who is the primary contact for urgent questions after hours?\""
+        },
+        {
+            question: "Is it appropriate for a caregiver to ask about support resources for themselves?",
+            options: [
+                "No, they should only ask about the patient",
+                "Yes, asking about caregiver support groups or counselors is a good idea",
+                "Only if the patient is doing perfectly well",
+                "No, the hospital doesn't offer such things"
+            ],
+            correctAnswer: "Yes, asking about caregiver support groups or counselors is a good idea"
+        }
     ]
 };
 
