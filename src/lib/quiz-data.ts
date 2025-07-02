@@ -114,54 +114,29 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
     ],
     'post-transplant-recovery': [
         {
-            question: "When are the first few months after a kidney transplant considered?",
-            options: [
-                "The most stable period",
-                "A critical period of adjustment",
-                "A time to travel and celebrate",
-                "A time to stop all medications"
-            ],
-            correctAnswer: "A critical period of adjustment"
+            question: "For the first 6 weeks after your transplant, what is the maximum weight you should lift?",
+            options: ["1 kg", "5 kg", "10 kg", "20 kg"],
+            correctAnswer: "5 kg"
         },
         {
-            question: "How does the frequency of your check-ups change over time after a transplant?",
-            options: [
-                "They become more frequent",
-                "They stay the same",
-                "They become less frequent (e.g., from daily to weekly)",
-                "You only need one check-up"
-            ],
-            correctAnswer: "They become less frequent (e.g., from daily to weekly)"
+            question: "Which of the following activities should be avoided for the first 3 months post-transplant?",
+            options: ["Walking on a treadmill", "Gentle stretching", "Horseback riding", "Cooking"],
+            correctAnswer: "Horseback riding"
         },
         {
-            question: "What is one reason wound healing might be slower after surgery?",
-            options: [
-                "Drinking too much water",
-                "Sleeping too much",
-                "Certain medications or conditions like diabetes",
-                "Eating too much protein"
-            ],
-            correctAnswer: "Certain medications or conditions like diabetes"
+            question: "What should you do if you notice your surgical incision is oozing fluid?",
+            options: ["Put a larger bandage on it", "Wait for it to stop on its own", "Apply some lotion", "Contact your doctor immediately"],
+            correctAnswer: "Contact your doctor immediately"
         },
         {
-            question: "What should you do if you notice any changes in your health after going home?",
-            options: [
-                "Wait a week to see if it gets better",
-                "Search for remedies online",
-                "Report it to your health care team as soon as possible",
-                "Ask a friend for advice"
-            ],
-            correctAnswer: "Report it to your health care team as soon as possible"
+            question: "Why is it recommended to avoid crowded public places for the first 3 months?",
+            options: ["To save money", "To reduce the risk of infection", "To get more rest at home", "To avoid loud noises"],
+            correctAnswer: "To reduce the risk of infection"
         },
         {
-            question: "Why might you need to arrange temporary accommodation after discharge?",
-            options: [
-                "To have a vacation",
-                "If you live a long distance from the transplant hospital",
-                "Because your home needs to be redecorated",
-                "It is a mandatory rule for all patients"
-            ],
-            correctAnswer: "If you live a long distance from the transplant hospital"
+            question: "What is the recommendation regarding tobacco use after a transplant?",
+            options: ["It is safe in moderation", "It is only a risk before surgery", "It is strongly discouraged", "It is fine as long as you don't smoke"],
+            correctAnswer: "It is strongly discouraged"
         }
     ],
     'immunosuppressants': [
@@ -372,54 +347,54 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
     ],
     'long-term-care': [
         {
-            question: "Why is it important to attend all your transplant clinic appointments, even if you feel well?",
+            question: "Why is it critical to attend all transplant appointments, even if you feel well?",
             options: [
-                "To see your friends at the clinic",
-                "Early signs of rejection can be detected in tests before you feel symptoms",
-                "It's a good excuse to take a day off work",
-                "To get your blood pressure checked for free"
+                "To get out of the house for a day.",
+                "Because problems like rejection can be found in tests before you feel symptoms.",
+                "It's a hospital rule with no medical reason.",
+                "To check your weight."
             ],
-            correctAnswer: "Early signs of rejection can be detected in tests before you feel symptoms"
+            correctAnswer: "Because problems like rejection can be found in tests before you feel symptoms."
         },
         {
-            question: "What is described in the module as a 'unique gift' that should be treated with respect?",
+            question: "What is a major benefit of post-transplant life mentioned in the module?",
             options: [
-                "The hospital food",
-                "Your first post-transplant vacation",
-                "Your transplanted kidney",
-                "Your new diet plan"
+                "You never have to take medication again.",
+                "You can eat more junk food.",
+                "Greater personal freedom from the schedule of dialysis.",
+                "You get free parking at the hospital."
             ],
-            correctAnswer: "Your transplanted kidney"
+            correctAnswer: "Greater personal freedom from the schedule of dialysis."
         },
         {
-            question: "What should you do if your transplant team strongly advises you to have an investigation or test?",
+            question: "How should you view your new kidney?",
             options: [
-                "Get a second opinion from the internet",
-                "Ignore their advice if you feel fine",
-                "Trust their expertise as they have good reasons for their recommendation",
-                "Postpone it until you have more time"
+                "As a temporary fix.",
+                "As a unique gift that deserves respect and care.",
+                "As something that doesn't require much thought.",
+                "As your own property to do with as you wish."
             ],
-            correctAnswer: "Trust their expertise as they have good reasons for their recommendation"
+            correctAnswer: "As a unique gift that deserves respect and care."
         },
         {
-            question: "What is one of the major benefits you can enjoy after a successful transplant?",
+            question: "What should you do if your transplant team strongly recommends a test?",
             options: [
-                "The ability to stop all medications",
-                "Greater personal freedom from dialysis",
-                "Never having to see a doctor again",
-                "Eating anything you want without any restrictions at all"
+                "Postpone it until you feel sick.",
+                "Ask for a different, easier test.",
+                "Trust their advice, as they have good reasons for it.",
+                "Ignore the advice if you feel fine."
             ],
-            correctAnswer: "Greater personal freedom from dialysis"
+            correctAnswer: "Trust their advice, as they have good reasons for it."
         },
         {
-            question: "If you start feeling unwell between scheduled appointments, what is the best course of action?",
+            question: "If you feel unwell between appointments, you should:",
             options: [
-                "Wait until your next appointment to mention it",
-                "Contact your transplant team immediately",
-                "Ask a family member what to do",
-                "Take some over-the-counter medication"
+                "Wait until your next scheduled visit.",
+                "Search online for a diagnosis.",
+                "Contact your transplant team immediately.",
+                "Take some leftover antibiotics."
             ],
-            correctAnswer: "Contact your transplant team immediately"
+            correctAnswer: "Contact your transplant team immediately."
         }
     ],
     'donor-evaluation': [

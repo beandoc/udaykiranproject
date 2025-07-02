@@ -231,53 +231,61 @@ const postTransplantRecoveryContent = (
     <div className="space-y-4 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">Living With Your New Kidney</h2>
         <p>You should be able to return to normal activities and work within three to six months of your transplant. You will need to allow time for your wound to heal and for your stomach muscles to get strong again. Regular exercise is an important part of staying healthy. It is recommended that you start regular exercise under the guidance of your health care team.</p>
-        <p>It is recommended that you do not drive a car until six weeks after your transplant. You should also avoid any heavy lifting for six weeks.</p>
-        <p>Check the colour of your urine regularly. If the colour is too dark drink some water. If the colour is unusual, red or the urine is frothy speak to your health care team.</p>
         <p>You will need to manage your medications carefully. It is important that you take your medications exactly as prescribed by your doctor. Support from your pharmacist as well as a pill organizer might be needed as there will be a large number of medications needed at specific times of the day.</p>
         
-        <h3 className="text-xl font-bold font-headline pt-4">More Tips on Staying Healthy</h3>
-        <p>Living a healthy lifestyle is key to protecting your new kidney. Here are some important tips to follow:</p>
-        <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 pt-2">
-            <div className="space-y-3">
-                <h4 className="font-bold">Avoid Infections</h4>
+        <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Hygiene and Self-Care at Home</h3>
+        <p>Keeping yourself healthy and avoiding infection is crucial after your transplant. Here are some key guidelines for self-care as you recover.</p>
+
+        <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 pt-2">
+            <div>
+                <h4 className="font-bold mb-2">Oral Hygiene</h4>
                 <ul className="list-disc list-inside space-y-1">
-                    <li>Wash your hands frequently and thoroughly.</li>
-                    <li>Keep your vaccinations up to date.</li>
-                    <li>Limit contact with people who have colds or viruses.</li>
-                    <li>Clean and treat any cuts or scratches immediately.</li>
+                    <li>Maintain good oral hygiene by brushing with a soft-bristled toothbrush twice a day.</li>
+                    <li>Replace your toothbrush every 2-3 months to prevent bacteria buildup.</li>
                 </ul>
             </div>
-            <div className="space-y-3">
-                <h4 className="font-bold">Reduce Your Risk of Skin Cancer</h4>
+            <div>
+                <h4 className="font-bold mb-2">Personal Hygiene</h4>
                 <ul className="list-disc list-inside space-y-1">
-                    <li>Protect your skin from the sun with clothing, sunscreen, and a hat.</li>
-                    <li>Get regular screenings for common cancers as advised by your doctor.</li>
+                    <li>Take a shower at least once a day.</li>
+                    <li>Always wear clean clothes.</li>
+                    <li>Until your wound has fully healed and staples are removed, you can clean your body with a wet towel.</li>
+                    <li>After bathing, gently pat the incision area dry. If you notice any fluid oozing or suspect an infection, contact your doctor immediately.</li>
                 </ul>
             </div>
-            <div className="space-y-3">
-                 <h4 className="font-bold">Be a Non-Smoker</h4>
-                 <p>Smoking increases your risk of serious health problems like lung cancer, stroke, and heart attack, and can reduce the long-term success of your transplant.</p>
+            <div>
+                 <h4 className="font-bold mb-2">Avoid Crowded Places</h4>
+                 <p>For the first three months after your transplant, it's best to avoid crowded public places like cinemas, restaurants, and busy stores to reduce your risk of infection. Also, limit contact with animals and birds.</p>
             </div>
-             <div className="space-y-3">
-                 <h4 className="font-bold">Report Illness Promptly</h4>
-                 <p>If you get sick, contact your healthcare team right away. Quick treatment can prevent damage to your new kidney.</p>
+             <div>
+                 <h4 className="font-bold mb-2">Avoid Tobacco</h4>
+                 <p>The use of tobacco in any form is strongly discouraged. Smoking increases your surgical risk, raises the chance of cancer, heart attack, and stroke, and can damage your blood vessels.</p>
             </div>
-            <div className="space-y-3">
-                 <h4 className="font-bold">Maintain a Healthy Weight</h4>
-                 <p>Your anti-rejection medications might increase your appetite. Talk to your doctor or dietitian about strategies to manage your weight effectively.</p>
+        </div>
+
+        <h3 className="text-xl font-bold font-headline pt-4 border-t mt-6">Activity Restrictions</h3>
+        <p>While you'll soon be able to resume an active life, there are some important restrictions to follow during your recovery to ensure you heal properly.</p>
+        <div className="space-y-4 pt-2">
+            <div className="p-4 bg-muted/50 rounded-lg">
+                <h4 className="font-bold">Lifting Restrictions</h4>
+                 <ul className="list-disc list-inside space-y-1">
+                    <li><strong>First 6 weeks:</strong> Do not lift anything heavier than 5 kg.</li>
+                    <li><strong>6 to 12 weeks:</strong> Do not lift anything heavier than 10 kg.</li>
+                    <li><strong>After 3 months:</strong> There are no specific restrictions, but always exercise caution.</li>
+                </ul>
             </div>
-            <div className="space-y-3">
-                <h4 className="font-bold">Practice Good Food Safety</h4>
-                <ul className="list-disc list-inside space-y-1">
-                    <li>Wash hands before preparing food and eating.</li>
-                    <li>Use separate cutting boards for raw and cooked meats.</li>
-                    <li>Cook foods thoroughly, ensuring no pink is left in meat.</li>
-                    <li>Avoid high-risk foods like soft cheeses (brie, camembert), pâté, and raw seafood to prevent food poisoning.</li>
+            <div className="p-4 bg-muted/50 rounded-lg">
+                <h4 className="font-bold">General Activity</h4>
+                 <ul className="list-disc list-inside space-y-1">
+                    <li>Avoid jogging or running on hard surfaces (like asphalt or cement) for the first 3 months.</li>
+                    <li>Avoid "bouncing" activities like motorcycling or horseback riding for the first 3 months.</li>
+                    <li>Do not take baths or go swimming until your incision has completely healed.</li>
                 </ul>
             </div>
         </div>
     </div>
 );
+
 
 const mentalHealthSupportContent = (
     <div className="space-y-4 text-base leading-relaxed">
@@ -366,7 +374,7 @@ const donorEvaluationContent = (
         </div>
 
         <div>
-            <h3 className="text-xl font-bold font-headline mb-2">What does a “full evaluation” involve?</h3>
+            <h3 className="text-xl font-bold font-headline mt-4 mb-2">What does a “full evaluation” involve?</h3>
             <p>The evaluation is a comprehensive process, often taking place over two days. It's designed to give you a complete picture of what's involved and to ensure donation is safe for you. You will meet with the living donor team, have more blood work done, and complete imaging scans.</p>
             <p className="font-semibold mt-4">You can expect to meet with the following team members:</p>
             <ul className="list-disc list-inside space-y-3 pl-4 mt-2">
@@ -378,11 +386,12 @@ const donorEvaluationContent = (
         </div>
 
         <div>
-            <h3 className="text-xl font-bold font-headline mb-2">Medical Tests During Evaluation</h3>
+            <h3 className="text-xl font-bold font-headline mt-4 mb-2">Medical Tests During Evaluation</h3>
             <p>You will have lab work and imaging tests to check on your health. Blood and urine samples will check your overall health and confirm if you are a good match for the recipient. Imaging tests like a chest X-ray and CT scan help the team see the size and structure of your kidneys and their blood supply, which helps them decide which kidney is better to donate, allowing you to keep the healthier of the two.</p>
         </div>
     </div>
 );
+
 
 const donorEligibilityContent = (
     <div className="space-y-4 text-base leading-relaxed">
@@ -391,7 +400,7 @@ const donorEligibilityContent = (
         <h3 className="text-xl font-bold font-headline pt-4">Conditions That May Prevent Donation</h3>
         <p>Some of the common reasons a person may not be eligible to donate include:</p>
         <ul className="list-disc list-inside space-y-2 pl-4 columns-1 md:columns-2">
-            <li>Having cancer, a history of cancer, hepatitis, or AIDS.</li>
+            <li>Having cancer, a history of cancer, hepatitis or AIDS.</li>
             <li>Having diabetes or a high risk of developing it.</li>
             <li>Significant heart or lung problems, including uncontrolled high blood pressure.</li>
             <li>Being significantly overweight.</li>
@@ -431,8 +440,8 @@ const donorSurgeryOverviewContent = (
             <li>Bleeding or infection in the surgical area.</li>
             <li>Developing a hernia if you lift anything too heavy too soon after surgery.</li>
             <li>Getting a Urinary Tract Infection (UTI) from the catheter used during surgery.</li>
+            <li>The risk of death from this surgery is extremely low, at just <strong>0.03%</strong> (or 3 in every 10,000 donors).</li>
         </ul>
-        <p className="pt-2">It's important to know that the risk of death from this surgery is extremely low, at just <strong>0.03%</strong> (or 3 in every 10,000 donors).</p>
     </div>
 );
 
@@ -464,32 +473,26 @@ const risksAndBenefitsContent = (
 );
 
 const longTermCareContent = (
-    <div className="space-y-6 text-base leading-relaxed">
-        <div>
-            <h3 className="text-xl font-bold font-headline mb-2">Honoring Your Gift</h3>
-            <p>Your new kidney is a precious gift, whether it comes from a living or deceased donor. It represents a second chance at health, and it's important to treat it with the utmost care and respect. Remember that many people are still waiting for this opportunity, so embracing your health and following your care plan is the best way to honor this gift.</p>
-        </div>
-
-        <div>
-            <h3 className="text-xl font-bold font-headline mb-2">Embracing Your New Freedom</h3>
-            <p>One of the most significant rewards of a successful transplant is a newfound sense of freedom. Without the demands of dialysis, you'll have more time and energy for work, hobbies, family, and friends. You'll also find more flexibility in your diet and greater opportunities to travel. Embracing this freedom is a wonderful part of your new life.</p>
-        </div>
-
-        <div className="p-6 rounded-lg bg-destructive/10 border-l-4 border-destructive">
-            <h3 className="text-xl font-bold font-headline text-destructive-foreground">Your Health Partnership: Critical Reminders</h3>
-            <div className="space-y-4 mt-4 text-destructive-foreground/90">
-                 <div>
-                    <h4 className="font-semibold">Never Miss Appointments</h4>
-                    <p>Your follow-up appointments are a cornerstone of your long-term health. It is absolutely crucial that you attend every scheduled visit, even when you feel perfectly well. Often, the earliest signs of a problem, like rejection, can only be detected through blood tests. By the time you feel symptoms, the issue may have become much more serious. If you do feel unwell, don't wait for your next appointment—contact your transplant team immediately.</p>
-                </div>
-                <div>
-                     <h4 className="font-semibold">Trust Your Transplant Team</h4>
-                    <p>Your transplant team is your partner in this journey. Follow their advice closely. They will not ask you to undergo unnecessary tests. If they recommend an investigation, it is because they have a good reason and believe it is essential for your health. Open communication and collaboration with your team are key to your long-term success.</p>
-                </div>
-            </div>
-        </div>
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Your New Kidney: A Lifelong Partnership</h2>
+        <p>Whether your new kidney came from a living or a deceased donor, it's a unique gift that deserves respect and care. Many people wait a long time for this opportunity, so embracing your health and sticking to your care plan is the best way to honor this gift and avoid wasting it.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Embracing Your New Freedom</h3>
+        <p>After your transplant, you'll experience a greater sense of personal freedom. You'll have more time for work, hobbies, and family, without the scheduling demands of dialysis. You'll also enjoy more flexibility with your diet and new opportunities for travel.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Your Role in Long-Term Success</h3>
+        <p>Your long-term health depends on a partnership between you and your transplant team. Here are your key responsibilities:</p>
+        <ul className="list-disc list-inside space-y-3 pl-4">
+            <li>
+                <strong>Never Miss Appointments:</strong> It is crucial that you attend all your transplant clinic appointments, even when you feel perfectly healthy. The earliest signs of rejection often appear in blood tests before you feel any symptoms. By the time symptoms are obvious, it might be too late to easily treat the problem. If you feel unwell, contact your team immediately—don't wait for your next scheduled visit.
+            </li>
+            <li>
+                <strong>Follow Your Team's Advice:</strong> Your transplant team will not ask you to do unnecessary tests. If they recommend an investigation, trust that they have good reasons. Following their guidance is essential for protecting your health.
+            </li>
+        </ul>
     </div>
 );
+
 
 
 export const contentData: ModuleContent = {
