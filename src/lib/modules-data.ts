@@ -45,6 +45,7 @@ export const donorModules: Module[] = [
     { title: 'Potential Risks and Benefits', status: 'Not Started', slug: 'risks-and-benefits' },
     { title: 'Long-term Health Monitoring', status: 'Not Started', slug: 'donor-long-term-health' },
     { title: 'Support Resources', status: 'Not Started', slug: 'donor-support-resources' },
+    { title: 'Patient Responsibilities', status: 'Not Started', slug: 'patient-responsibilities' },
 ];
 
 export const caregiverModules: Module[] = [
@@ -56,6 +57,7 @@ export const caregiverModules: Module[] = [
     { title: 'Recognizing Warning Signs', status: 'Not Started', slug: 'recognizing-warning-signs' },
     { title: 'Self-Care for Caregivers', status: 'Not Started', slug: 'self-care-for-caregivers' },
     { title: 'Communication with Medical Team', status: 'Not Started', slug: 'communication-with-medical-team' },
+    { title: 'Patient Responsibilities', status: 'Not Started', slug: 'patient-responsibilities' },
 ];
 
 export const modulesByRole: ModulesByRole = {
