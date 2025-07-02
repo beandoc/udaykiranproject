@@ -1,3 +1,4 @@
+
 'use client';
 
 import {
@@ -18,24 +19,24 @@ export default function MedicationGuidePage() {
     {
         name: "Tacrolimus",
         instructions: [
-            t('medsTacrolimus1'),
-            t('medsTacrolimus2'),
-            t('medsTacrolimus3'),
-            t('medsTacrolimus4'),
-            t('medsTacrolimus5'),
+            "Tacrolimus is a key medicine that stops your body from rejecting your new kidney. Most transplant patients take it. For it to work, you must take it exactly as prescribed.",
+            "Take your dose at the same time every day to keep a stable level of the medicine in your body. Take it on an empty stomach (1 hour before or 2-3 hours after food).",
+            "**Never change the brand of your Tacrolimus without talking to your doctor.** Different brands (like immediate-release, Astagraf XL, or Envarsus) are not the same and require different doses. Stick to the one your doctor prescribes.",
+            "Common side effects include shakiness, headaches, and diarrhea. It can also affect your blood pressure or blood sugar. Always tell your transplant team about any side effects you notice.",
+            "Never stop taking this medicine or change the dose on your own, even if you feel completely healthy. It works silently every day to protect your kidney."
         ],
-        warning: t('medsGrapefruitWarning')
+        warning: "Do not drink grapefruit juice while taking this medication."
     },
     {
         name: "Cyclosporine",
         instructions: [
-            t('medsCyclosporine1'),
-            t('medsCyclosporine2'),
-            t('medsCyclosporine3'),
-            t('medsCyclosporine4'),
-            t('medsCyclosporine5'),
+            "Take your dose at the same time each day. If you miss a dose, take it as soon as you remember unless it's nearly time for your next one. Never take two doses to make up for a missed one.",
+            "Swallow capsules whole with a glass of water.",
+            "If using the oral solution, you can mix it with orange or apple juice to improve the taste. After taking the solution, add a little more juice to the glass, swirl, and drink again to ensure you've taken the full dose.",
+            "Compared to other medications, Cyclosporine is more likely to cause side effects like unwanted hair growth, swollen gums, or high blood pressure. Let your team know if you notice these.",
+            "Do not have PUVA light therapy (a treatment for psoriasis) while taking Cyclosporine."
         ],
-        warning: t('medsGrapefruitWarning')
+        warning: "Do not drink grapefruit juice while taking this medication."
     },
     {
         name: "Mycophenolate Mofetil (MMF)",
