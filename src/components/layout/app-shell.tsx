@@ -27,7 +27,8 @@ import {
   Languages,
   Contact,
   ListChecks,
-  ClipboardCheck
+  ClipboardCheck,
+  Sparkles
 } from 'lucide-react';
 import { Button } from '../ui/button';
 import {
@@ -44,6 +45,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   const mainNav = [
     { href: '/', labelKey: 'navDashboard', icon: LayoutDashboard },
+    { href: '/assistant', labelKey: 'navAssistant', icon: Sparkles },
     { href: '/modules', labelKey: 'navEducationalModules', icon: BookOpen },
     { href: '/resources', labelKey: 'navResourceLibrary', icon: Library },
     { href: '/readiness', labelKey: 'navReadiness', icon: ClipboardCheck },
