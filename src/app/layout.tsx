@@ -4,8 +4,8 @@ import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Kidney Transplant Education Hub',
-  description: 'An education hub for kidney transplant patients.',
+  title: 'Kidney Care Hub',
+  description: 'Your transplant journey companion.',
 };
 
 export default function RootLayout({
