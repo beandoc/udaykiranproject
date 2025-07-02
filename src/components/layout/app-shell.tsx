@@ -22,7 +22,6 @@ import {
   LayoutDashboard,
   Library,
   Pill,
-  Heart,
   Bell,
   Moon,
   Languages,
@@ -63,7 +62,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         <SidebarHeader className="p-4">
             <Link href="/" className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                    <Heart className="w-6 h-6 fill-current" />
+                    <HeartPulse className="w-6 h-6" />
                 </div>
                  <div className="group-data-[collapsible=icon]:hidden">
                   <h1 className="text-lg font-headline font-bold text-foreground">{t('appTitle')}</h1>
