@@ -5,8 +5,8 @@ import { AppProvider } from '@/context/app-context';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Kidney Transplant Education Hub',
-  description: 'Your transplant journey companion.',
+  title: 'Nirogyam: Your Transplant Companion',
+  description: 'Your personalized hub for kidney transplant education and support.',
 };
 
 export default function RootLayout({
