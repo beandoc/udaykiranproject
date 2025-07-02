@@ -265,9 +265,33 @@ const mentalHealthSupportContent = (
             <li><strong>Changing Relationships:</strong> As you regain your health and independence, your relationships with family and friends may shift. Everyone needs time to adapt to the new dynamic.</li>
             <li><strong>Anxiety About Rejection:</strong> Worrying about rejection is a common fear. It can make you anxious before check-ups, followed by relief when you get good news. This emotional roller-coaster is something many patients experience.</li>
             <li><strong>Managing Medications:</strong> The number of new medications and their potential side effects can feel daunting. Don't hesitate to discuss these concerns with your care team.</li>
-            <li><strong>Survivor's Guilt:</strong> You might feel guilty that you received a transplant while others are still waiting. This is a recognized feeling, and talking about it can help.</li>
+            <li><strong>Survivor's Guilt:</strong> You might feel guilty that you received a transplant while others are still on dialysis. This is a recognized feeling, and talking about it can help.</li>
         </ul>
         <p className="pt-2">Remember, you are not alone in these feelings. Your transplant team, including social workers and psychologists, are there to support you through every step of this journey.</p>
+    </div>
+);
+
+const understandingRejectionContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Understanding the Risk of Rejection</h2>
+        <p>Anti-rejection medications (immunosuppressants) are a lifelong requirement for as long as your new kidney is functioning. They work by partially suppressing your immune system to prevent it from identifying the transplanted kidney as a foreign object and attacking it.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Know Your Medications</h3>
+        <p>It's vital to understand your medications fully. For each one, make sure you know:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4">
+            <li>When and how to take them</li>
+            <li>What you should do if you miss a dose</li>
+            <li>Any potential dietary restrictions</li>
+            <li>How they might interact with other medications</li>
+            <li>Common side effects to watch for</li>
+            <li>How to store them correctly</li>
+        </ul>
+        <p className="pt-2">Your pharmacist is an excellent resource for this information, and using a pill organizer can help you stay on track with your schedule.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">What Are Rejection Episodes?</h3>
+        <p>It's not uncommon to experience rejection episodes, especially in the early period after your transplant. Often, these are so subtle that they are only detected through your routine blood tests. In most cases, these episodes can be successfully treated by simply adjusting your medications.</p>
+        <p>More significant rejection episodes might require additional treatments, like plasma exchange (a process to remove harmful antibodies from your blood) or other specialized infusions. The good news is that most rejection can be managed effectively.</p>
+        <p>However, it's crucial to remember that rejection can happen at any time. This is why strictly following your medication schedule, attending all check-ups, and reporting any new symptoms to your team is so important for the long-term health of your new kidney.</p>
     </div>
 );
 
@@ -280,6 +304,7 @@ export const contentData: ModuleContent = {
     'surgery-day': surgeryDayExperienceContent,
     'post-transplant-recovery': postTransplantRecoveryContent,
     'mental-health-support': mentalHealthSupportContent,
+    'understanding-rejection': understandingRejectionContent,
 };
 
 // Placeholder for other modules

@@ -317,6 +317,58 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             ],
             correctAnswer: "No, this is a common myth and is not possible."
         }
+    ],
+    'understanding-rejection': [
+        {
+            question: "Why are anti-rejection medications essential after a kidney transplant?",
+            options: [
+                "To prevent colds and flu",
+                "To lower your blood sugar",
+                "To stop your immune system from attacking the new kidney",
+                "To help the kidney produce more urine"
+            ],
+            correctAnswer: "To stop your immune system from attacking the new kidney"
+        },
+        {
+            question: "For how long must you take anti-rejection medications?",
+            options: [
+                "For the first year only",
+                "Only when you feel unwell",
+                "For as long as the transplanted kidney is working",
+                "Until the surgical wound has healed"
+            ],
+            correctAnswer: "For as long as the transplanted kidney is working"
+        },
+        {
+            question: "What is a common way that early, subtle rejection episodes are detected?",
+            options: [
+                "By checking your temperature",
+                "Through regular blood tests",
+                "Through a new pain in your arm",
+                "By a change in your appetite"
+            ],
+            correctAnswer: "Through regular blood tests"
+        },
+        {
+            question: "If you miss a dose of your anti-rejection medication, what should you do first?",
+            options: [
+                "Take a double dose next time to catch up",
+                "Skip it and wait for the next scheduled dose",
+                "Follow the specific instructions given to you by your transplant team",
+                "Stop taking the medication completely until you feel sick"
+            ],
+            correctAnswer: "Follow the specific instructions given to you by your transplant team"
+        },
+        {
+            question: "Can transplant rejection episodes be treated?",
+            options: [
+                "No, any rejection means the transplant has failed completely",
+                "Yes, most episodes can be managed successfully, often by adjusting medications",
+                "Only if you go back to the hospital for another surgery",
+                "Only in the first week after transplant"
+            ],
+            correctAnswer: "Yes, most episodes can be managed successfully, often by adjusting medications"
+        }
     ]
 };
 

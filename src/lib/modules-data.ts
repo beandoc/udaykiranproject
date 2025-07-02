@@ -17,6 +17,7 @@ export const patientModules: Module[] = [
   { title: 'Surgery Day Experience', duration: 16, status: 'Not Started', slug: 'surgery-day' },
   { title: 'Post-Transplant Recovery', duration: 24, status: 'Not Started', slug: 'post-transplant-recovery' },
   { title: 'Immunosuppressive Medications', duration: 26, status: 'Not Started', slug: 'immunosuppressants' },
+  { title: 'Understanding Risk of Rejection', duration: 15, status: 'Not Started', slug: 'understanding-rejection' },
   { title: 'Recognizing Complications', duration: 20, status: 'Not Started', slug: 'recognizing-complications' },
   { title: 'Long-term Care', duration: 22, status: 'Not Started', slug: 'long-term-care' },
   { title: 'Lifestyle Management', duration: 19, status: 'Not Started', slug: 'lifestyle-management' },
