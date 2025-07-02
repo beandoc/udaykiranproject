@@ -27,7 +27,8 @@ import {
   Moon,
   Languages,
   Contact,
-  ListChecks
+  ListChecks,
+  ClipboardCheck
 } from 'lucide-react';
 import { Button } from '../ui/button';
 import {
@@ -46,6 +47,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     { href: '/', labelKey: 'navDashboard', icon: LayoutDashboard },
     { href: '/modules', labelKey: 'navEducationalModules', icon: BookOpen },
     { href: '/resources', labelKey: 'navResourceLibrary', icon: Library },
+    { href: '/readiness', labelKey: 'navReadiness', icon: ClipboardCheck },
     { href: '/contacts', labelKey: 'navContacts', icon: Contact },
   ];
   
@@ -108,7 +110,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="text-sm font-medium px-3">
                       <Languages className="mr-2 h-5 w-5" />
-                      {t('languageLabel')}
+                      <span>{t('languageLabel')}</span>
                   </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
