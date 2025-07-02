@@ -22,6 +22,7 @@ export default function MedicationGuidePage() {
             t('medsTacrolimus2'),
             t('medsTacrolimus3'),
             t('medsTacrolimus4'),
+            t('medsTacrolimus5'),
         ],
         warning: t('medsGrapefruitWarning')
     },
