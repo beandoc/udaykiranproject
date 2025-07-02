@@ -7,6 +7,25 @@ import Link from "next/link";
 import { useAppContext, type Role, type Activity } from "@/context/app-context";
 import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
+import type { SVGProps } from 'react';
+
+const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    {...props}
+  >
+    <path d="M3 21l1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
+    <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a4 4 0 0 1-4-4v-1a.5.5 0 0 0-1 0z" />
+  </svg>
+);
 
 const roles = [
     { name: 'Patient', icon: User, descriptionKey: 'rolePatientDesc' },
@@ -44,7 +63,7 @@ export default function Home() {
 
     const quickLinks = [
         { href: '/tools/medication', labelKey: 'linkImmunosuppressants', descriptionKey: 'linkImmunosuppressantsDesc', icon: Pill },
-        { href: '#', labelKey: 'linkFollow', descriptionKey: 'linkFollowDesc', icon: MessageSquare },
+        { href: 'https://whatsapp.com/channel/0029Vb5gVK6A2pLFXRiHT23R', labelKey: 'linkFollow', descriptionKey: 'linkFollowDesc', icon: WhatsAppIcon },
     ]
 
     const responsibilities = [
@@ -121,7 +140,7 @@ export default function Home() {
                     </CardHeader>
                     <CardContent className="space-y-4">
                         {quickLinks.map((link) => (
-                            <Link href={link.href} key={link.labelKey} className="block p-4 rounded-lg hover:bg-muted/50 transition-colors">
+                            <Link href={link.href} key={link.labelKey} className="block p-4 rounded-lg hover:bg-muted/50 transition-colors" target={link.href.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer">
                                 <div className="flex items-center gap-4">
                                     <div className="p-3 rounded-full bg-primary/10 text-primary">
                                         <link.icon className="w-6 h-6" />
@@ -191,6 +210,30 @@ export default function Home() {
 
             <Card>
                 <CardHeader>
+                    <CardTitle className="font-headline text-xl">{t('patientResponsibilitiesTitle')}</CardTitle>
+                    <CardDescription>{t('patientResponsibilitiesDesc')}</CardDescription>
+                </CardHeader>
+                <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {responsibilities.map((resp) => (
+                        <div key={resp.titleKey} className="flex items-start gap-4">
+                            <div className="flex-shrink-0 mt-1">
+                                <resp.icon className="w-6 h-6 text-primary" />
+                            </div>
+                            <div>
+                                <h4 className="font-semibold">{t(resp.titleKey)}</h4>
+                                <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
+                                    {resp.points.map((pointKey) => (
+                                        <li key={pointKey}>{t(pointKey)}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    ))}
+                </CardContent>
+            </Card>
+            
+            <Card>
+                <CardHeader>
                     <CardTitle className="font-headline text-xl">{t('dosTitle')}</CardTitle>
                     <CardDescription>{t('dosDesc')}</CardDescription>
                 </CardHeader>
@@ -223,30 +266,6 @@ export default function Home() {
                             <div>
                                 <h4 className="font-semibold">{t(item.titleKey)}</h4>
                                 <p className="mt-1 text-sm text-muted-foreground">{t(item.descriptionKey)}</p>
-                            </div>
-                        </div>
-                    ))}
-                </CardContent>
-            </Card>
-
-             <Card>
-                <CardHeader>
-                    <CardTitle className="font-headline text-xl">{t('patientResponsibilitiesTitle')}</CardTitle>
-                    <CardDescription>{t('patientResponsibilitiesDesc')}</CardDescription>
-                </CardHeader>
-                <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {responsibilities.map((resp) => (
-                        <div key={resp.titleKey} className="flex items-start gap-4">
-                            <div className="flex-shrink-0 mt-1">
-                                <resp.icon className="w-6 h-6 text-primary" />
-                            </div>
-                            <div>
-                                <h4 className="font-semibold">{t(resp.titleKey)}</h4>
-                                <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
-                                    {resp.points.map((pointKey) => (
-                                        <li key={pointKey}>{t(pointKey)}</li>
-                                    ))}
-                                </ul>
                             </div>
                         </div>
                     ))}

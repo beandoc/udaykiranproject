@@ -16,7 +16,6 @@ import {
   SidebarGroup,
   SidebarGroupLabel,
 } from '@/components/ui/sidebar';
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   BookOpen,
   HeartPulse,
@@ -122,9 +121,9 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <Moon className="h-5 w-5" />
                 <span className="sr-only">{t('toggleTheme')}</span>
             </Button>
-            <Avatar className="h-9 w-9">
-              <AvatarFallback className="bg-primary/20">JD</AvatarFallback>
-            </Avatar>
+            <div className="text-sm font-semibold text-foreground pr-2">
+              Command Hospital Pune
+            </div>
         </div>
         </header>
         <main className="flex-1 overflow-auto p-4 md:p-6 lg:p-8">
