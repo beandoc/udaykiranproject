@@ -155,10 +155,10 @@ const surgeryDayExperienceContent = (
         <h3 className="text-xl font-bold font-headline pt-4">After the Surgery</h3>
         <div className="grid md:grid-cols-2 gap-8 items-start">
             <div className="space-y-4">
-                <p>It's normal to experience some pain around the incision site after surgery, and you will receive pain medication to manage it.</p>
-                <p>The new kidney might start producing urine right away, or it may take a few days. If you need dialysis temporarily, don't worry—it doesn’t mean the transplant has failed. The kidney just needs a little more time to "wake up" and start functioning.</p>
-                <p>A catheter will be placed in your bladder for about five days to drain urine and help your medical team monitor the kidney's function. You might also have temporary tubes near the wound to drain excess fluid, which are typically removed after a few days.</p>
-                <p>Daily blood tests are a standard part of recovery. They are used to monitor your new kidney's function, check the levels of your anti-rejection medication, and catch any potential issues early.</p>
+                <p>After the transplant surgery, it is normal to feel some pain around your wound. You will be given medication to help with this.</p>
+                <p>Your transplanted kidney may start to make urine immediately, or you may need dialysis for a few days. If you need dialysis, it does not mean that your transplanted kidney will not work. It just may need a bit of time to recover from the transplant procedure.</p>
+                <p>A catheter will be placed in your bladder for around five days to drain your urine into a bag. This helps your health care team to check that your kidney is working well. Often there are tubes from your wound draining away extra fluid. These are usually removed after a few days.</p>
+                <p>You will have blood tests every day to check the function of your transplanted kidney, to measure medication levels, and to detect any problems early so they can be treated quickly.</p>
             </div>
             <div className="space-y-2">
                 <Image 
@@ -174,16 +174,16 @@ const surgeryDayExperienceContent = (
         </div>
         
         <h3 className="text-xl font-bold font-headline pt-8">Recovery in the Hospital</h3>
-        <p>Your care team will continue to monitor your new kidney's performance with daily blood tests, checking levels like creatinine and eGFR. For many, these values will improve significantly, returning to a healthier range.</p>
-        <p>Fluid intake is also closely watched. Nurses will track how much you drink, and as your new kidney begins to function well, you'll likely be able to drink more fluids than before.</p>
-        <p>Getting mobile is a key part of recovery. A physiotherapist may provide an exercise plan, and you will be encouraged to do coughing, breathing, and leg exercises to:</p>
+        <p>The blood tests for creatinine and eGFR measure how well your kidney is working. These may already be familiar to you. In many cases, your creatinine and eGFR will improve significantly, returning to a healthier range.</p>
+        <p>The amount of fluid you take in is important. The nurses may be asking you regularly how much you have had to drink. If your new kidney is working well, the amount of fluid you are able to drink will increase.</p>
+        <p>It is important to do coughing, breathing, and leg exercises while you are restricted to bed rest. This helps to:</p>
          <ul className="list-disc list-inside space-y-2 pl-4">
             <li>Keep your airways clear and reduce the risk of chest infections.</li>
             <li>Encourage good blood flow and prevent blood clots in your legs.</li>
         </ul>
-        <p>Most patients are able to sit up in a chair the day after surgery and can expect to be walking within a couple of days.</p>
-        <p>Preventing infection is a top priority. For this reason, your visitor numbers might be limited, and you may be in a separate room to minimize exposure to germs.</p>
-        <p>The length of your hospital stay depends on your recovery, but most people are ready to go home within six to ten days. Everyone's journey is different, so it's okay if you feel better right away or need a bit more time to adjust.</p>
+        <p>A physiotherapist may assist you with an exercise plan. You will probably be able to sit out of bed on the first day after your surgery. You should be able to go for a walk within a couple of days.</p>
+        <p>Reducing the risk of an infection is very important. For this reason, your visitor numbers may be limited, and you may be in a separate room to minimize exposure to germs.</p>
+        <p>The length of time that you will need to stay in hospital after the transplant surgery will depend on how well your body responds to the new kidney and whether you have any complications. Most people are in hospital for between six and ten days. You may feel better immediately after your surgery, or you may take longer to adjust.</p>
         
         <h3 className="text-2xl font-bold font-headline pt-8 border-t mt-8">The Living Donor Transplant Experience</h3>
         <p>If you are receiving a kidney from a living donor, the process has a few extra, well-planned steps. Here’s what you can expect.</p>
@@ -483,20 +483,25 @@ const donorRecoveryTimelineContent = (
 
 const risksAndBenefitsContent = (
     <div className="space-y-4 text-base leading-relaxed">
-        <h2 className="text-2xl font-bold font-headline">Understanding the Risks of Living Donation</h2>
-        <p>Deciding to be a living kidney donor is a significant choice. While it is a very safe procedure, it's important to be fully aware of the potential physical and emotional risks involved. The transplant team will discuss these with you in detail.</p>
+        <h2 className="text-2xl font-bold font-headline">Long-Term Health After Donation</h2>
+        <p>Deciding to be a living kidney donor is a generous act, and it's natural to have questions about your own health in the future. The great news is that extensive research shows that living donors can live a normal, healthy life with one kidney.</p>
 
-        <h3 className="text-xl font-bold font-headline pt-4">Physical Risks</h3>
-        <p>Donating a kidney is a major surgery, and like any operation, it carries some risks. Although serious complications are rare, they can include issues like infection, bleeding, blood clots, or nerve damage. Your surgeon will explain every possibility so you can make an informed decision.</p>
+        <h3 className="text-xl font-bold font-headline pt-4">How Your Body Adapts</h3>
+        <p>The human body is remarkable. When one kidney is removed, the remaining kidney gets bigger and works harder to take over the job of the donated one. This process is called <strong>"compensatory growth."</strong></p>
+        <p>Studies show that after donation, a donor's total kidney function (how well the kidneys filter waste) returns to about <strong>70-80%</strong> of what it was with two kidneys. This is more than enough to stay healthy and live a full life. Donating a kidney does not impact your life expectancy.</p>
         
-        <h4 className="font-semibold pt-2">Life with One Kidney</h4>
-        <p>A common question is, "What happens after donation?" The good news is that the human body is remarkable. Your remaining kidney will grow larger and work harder to compensate. It can provide up to 75% of the function that two kidneys would, which is more than enough for a healthy life. Donating a kidney does not impact your life expectancy.</p>
-        <p>While the long-term outlook is excellent, donors may have a slightly increased risk of developing high blood pressure or having small amounts of protein in their urine as they age. This is why regular health check-ups after donation are important to monitor your health.</p>
+        <h3 className="text-xl font-bold font-headline pt-4">Long-Term Health Considerations</h3>
+        <p>While the outlook is excellent, there are a few things to be aware of for the long term:</p>
+        <ul className="list-disc list-inside space-y-3 pl-4">
+            <li><strong>Blood Pressure:</strong> Donors have a slightly higher-than-average risk of developing high blood pressure later in life. Maintaining a healthy diet and getting regular physical activity are key to staying healthy. This is especially important for donors who may want to become pregnant after donation.</li>
+            <li><strong>Kidney Failure:</strong> The risk of a donor's remaining kidney failing later in life is very low—less than 1% of people who donate ever need dialysis or a transplant themselves. This risk is only slightly higher than that of the general population.</li>
+            <li><strong>Priority on the Waitlist:</strong> In the rare event that a former living donor does need a kidney transplant in the future, they are given a high-priority position on the national transplant waiting list.</li>
+        </ul>
 
-        <h3 className="text-xl font-bold font-headline pt-4">Emotional Well-being</h3>
-        <p>The vast majority of living donors report feeling a great sense of satisfaction from their decision. Many feel positive about the experience, even if the transplant outcome isn't perfect.</p>
-        <p>However, it's also normal to experience a mix of emotions. Some donors may feel anxious or down after the surgery, which can be a normal reaction to any major life event. These feelings can be more likely if the recipient has a complicated recovery.</p>
-        <p>It's crucial to remember that support is always available. If you experience any emotional difficulties, your healthcare team can connect you with resources and support to help you manage these feelings.</p>
+        <h3 className="text-xl font-bold font-headline pt-4">Your Emotional Well-being</h3>
+        <p>The vast majority of living donors (80–90%) report feeling very positive and satisfied with their decision to donate, even long after the surgery. It is a profoundly rewarding experience for many.</p>
+        <p>However, it's also normal to feel anxious or depressed for a short time after the donation. This can be a natural response to a major life event. These feelings are not uncommon, even when both you and the recipient are doing well.</p>
+        <p>It is vital to talk to the transplant team about how you're feeling, both physically and emotionally, during your follow-up visits. Your emotional health is just as important as your physical recovery, and support is always available.</p>
     </div>
 );
 

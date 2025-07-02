@@ -582,54 +582,54 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
     ],
     'risks-and-benefits': [
         {
-            question: "Is donating a kidney considered a minor or major surgery?",
+            question: "What is 'compensatory growth' in a living kidney donor?",
             options: [
-                "Minor surgery, like getting stitches",
-                "It is not a surgery",
-                "Major surgery with potential risks",
-                "A simple outpatient procedure"
+                "The donor grows taller after surgery",
+                "The remaining kidney grows to take over the work of the donated one",
+                "The donor receives financial compensation",
+                "The surgical scar grows over time"
             ],
-            correctAnswer: "Major surgery with potential risks"
+            correctAnswer: "The remaining kidney grows to take over the work of the donated one"
         },
         {
-            question: "What happens to the donor's remaining kidney after donation?",
+            question: "After donation, about what percentage of original kidney function can a donor expect to have long-term?",
             options: [
-                "It shrinks and works less",
-                "It increases in size and function to compensate",
-                "It stays the same and provides exactly 50% function",
-                "It needs to be replaced later"
+                "Exactly 50%",
+                "Less than 40%",
+                "About 70-80%",
+                "100%"
             ],
-            correctAnswer: "It increases in size and function to compensate"
+            correctAnswer: "About 70-80%"
         },
         {
-            question: "Does donating a kidney affect the donor's life expectancy?",
+            question: "Compared to the general population, the risk of a donor needing a transplant later in life is:",
             options: [
-                "Yes, it shortens it significantly",
-                "Yes, but only by a year or two",
-                "No, it has no impact on life span",
-                "It's unknown"
+                "Much higher",
+                "Exactly the same",
+                "Slightly higher, but still less than 1%",
+                "Lower"
             ],
-            correctAnswer: "No, it has no impact on life span"
+            correctAnswer: "Slightly higher, but still less than 1%"
         },
         {
-            question: "How do most living donors feel about their decision to donate?",
+            question: "What is a key way for donors to stay healthy and reduce long-term risks?",
             options: [
-                "They usually regret it",
-                "They feel very satisfied and positive",
-                "They are mostly indifferent",
-                "They feel angry"
+                "Avoiding all exercise",
+                "Eating a healthy diet and staying physically active",
+                "Only drinking bottled water",
+                "Taking the recipient's medications"
             ],
-            correctAnswer: "They feel very satisfied and positive"
+            correctAnswer: "Eating a healthy diet and staying physically active"
         },
         {
-            question: "What should a donor do if they experience anxiety or depression after the surgery?",
+            question: "What should a donor do if they feel anxious or depressed after the surgery?",
             options: [
-                "Ignore the feelings",
-                "Talk to their healthcare team for support",
-                "Pretend everything is fine",
-                "Stop going to check-ups"
+                "Ignore the feelings and hope they go away",
+                "Pretend everything is fine so as not to worry anyone",
+                "Talk to the transplant team about their physical and emotional health",
+                "Stop going to follow-up visits"
             ],
-            correctAnswer: "Talk to their healthcare team for support"
+            correctAnswer: "Talk to the transplant team about their physical and emotional health"
         }
     ]
 };
