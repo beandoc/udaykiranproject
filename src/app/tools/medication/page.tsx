@@ -41,22 +41,26 @@ export default function MedicationGuidePage() {
     {
         name: "Mycophenolate Mofetil (MMF)",
         instructions: [
-            t('medsMmf1'),
-            t('medsMmf2'),
-        ]
+            "This medication is very effective at preventing rejection. It's often preferred for its effectiveness and fewer side effects compared to older drugs.",
+            "Take tablets with meals and swallow them whole. Do not chew, crush, or split them. Capsules should not be opened.",
+            "The most common side effects are stomach-related, like diarrhea, nausea, or cramping. If these are a problem, your doctor might switch you to a different form (EC-MPS) which can be gentler on the stomach."
+        ],
+        warning: "This medication causes birth defects. It must NOT be used by women who are pregnant or might become pregnant unless they are using highly effective, long-acting contraception. If you are considering pregnancy, you must speak with your transplant team, as you will need to switch to a different medication like Azathioprine."
     },
      {
         name: "Azathioprine",
         instructions: [
-            t('medsAzathioprine1'),
-            t('medsAzathioprine2'),
+            "This medication is an alternative to Mycophenolate. It is often used for patients who have side effects from Mycophenolate, or for women who are pregnant or planning to become pregnant.",
+            "Take Azathioprine with or immediately after food to prevent an upset stomach.",
+            "It can sometimes cause nausea or vomiting. It's important to continue taking it, but tell your doctor if these symptoms become severe.",
+            "A serious side effect is a drop in your white blood cell count, which increases infection risk. Your team will monitor this closely with regular blood tests."
         ]
     },
     {
         name: "Prednisolone",
         instructions: [
-            t('medsPrednisolone1'),
-            t('medsPrednisolone2'),
+            "Your daily dose of Prednisolone may consist of several tablets.",
+            "It's common to take the entire daily dose all at once in the morning with food to reduce stomach irritation."
         ]
     }
   ]
@@ -83,7 +87,7 @@ export default function MedicationGuidePage() {
                         <AccordionContent className="pt-4 space-y-4 text-base">
                             <ul className="list-disc list-inside space-y-3">
                                 {med.instructions.map((inst, index) => (
-                                    <li key={index}>{inst}</li>
+                                    <li key={index} dangerouslySetInnerHTML={{ __html: inst.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></li>
                                 ))}
                             </ul>
                             {med.warning && (
