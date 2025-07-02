@@ -1,9 +1,9 @@
 'use client';
 
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { User, UserCheck, Users, PlayCircle, HeartPulse } from "lucide-react";
+import { User, UserCheck, Users, PlayCircle, HeartPulse, ListChecks } from "lucide-react";
 import Link from "next/link";
 import { useAppContext, type Role } from "@/context/app-context";
 import { cn } from "@/lib/utils";
@@ -46,36 +46,36 @@ export default function Home() {
                  <HeartPulse className="absolute -bottom-8 -right-8 w-40 h-40 text-white/10" />
             </Card>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <Card className="lg:col-span-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Card className="flex flex-col">
                     <CardHeader>
                         <CardTitle className="font-headline text-xl">{t('defineRole')}</CardTitle>
                         <CardDescription>{t('selectRolePrompt')}</CardDescription>
                     </CardHeader>
-                    <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <CardContent className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 gap-4 flex-grow">
                         {roles.map((r) => (
                             <button
                                 key={r.name}
                                 onClick={() => setRole(r.name as Role)}
                                 className={cn(
-                                    "p-6 text-left rounded-lg border-2 transition-all duration-200 ease-in-out flex flex-col items-center justify-center text-center hover:-translate-y-1",
+                                    "p-4 text-left rounded-lg border-2 transition-all duration-200 ease-in-out flex flex-col items-center justify-center text-center hover:-translate-y-1",
                                     role === r.name
                                     ? "bg-primary/10 border-primary scale-105 shadow-lg"
                                     : "bg-card hover:bg-muted/50"
                                 )}
                             >
                                 <r.icon className={cn(
-                                    "w-10 h-10 mb-4",
+                                    "w-8 h-8 mb-3",
                                     role === r.name ? "text-primary" : "text-muted-foreground"
                                 )} />
-                                <h3 className="font-bold text-lg">{t(`role${r.name}`)}</h3>
-                                <p className="text-sm text-muted-foreground mt-1">{t(r.descriptionKey)}</p>
+                                <h3 className="font-bold">{t(`role${r.name}`)}</h3>
+                                <p className="text-xs text-muted-foreground mt-1">{t(r.descriptionKey)}</p>
                             </button>
                         ))}
                     </CardContent>
                 </Card>
                 
-                 <Card className="flex flex-col">
+                <Card className="flex flex-col">
                     <CardHeader>
                         <CardTitle className="font-headline text-xl">{t('pathProgressTitle')}</CardTitle>
                         <CardDescription>{t(titleKey)}</CardDescription>
@@ -92,9 +92,26 @@ export default function Home() {
                         </div>
                     </CardContent>
                     <CardFooter>
-                         <Button asChild className="w-full">
+                        <Button asChild className="w-full">
                             <Link href="/modules">
                                 {t('continueLearning')} <PlayCircle className="ml-2 w-4 h-4" />
+                            </Link>
+                        </Button>
+                    </CardFooter>
+                </Card>
+
+                <Card className="flex flex-col">
+                    <CardHeader>
+                        <CardTitle className="font-headline text-xl">{t('patientResponsibilitiesTitle')}</CardTitle>
+                        <CardDescription>{t('patientResponsibilitiesDesc')}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow flex items-center justify-center">
+                        <ListChecks className="w-16 h-16 text-primary/20" />
+                    </CardContent>
+                    <CardFooter>
+                        <Button asChild className="w-full">
+                            <Link href="/modules/patient-responsibilities">
+                                {t('moduleActionReview')}
                             </Link>
                         </Button>
                     </CardFooter>
