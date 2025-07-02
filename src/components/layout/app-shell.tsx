@@ -48,7 +48,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   ];
   
   const toolsNav = [
-    { href: '/tools/medication', labelKey: 'toolMedicationTracker', icon: Pill },
+    { href: '/tools/medication', labelKey: 'toolImmunosuppressants', icon: Pill },
     { href: '/tools/symptoms', labelKey: 'toolSymptomLog', icon: HeartPulse },
   ];
 

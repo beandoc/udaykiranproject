@@ -43,7 +43,7 @@ export default function Home() {
     const { role, setRole, t, activities } = useAppContext();
 
     const quickLinks = [
-        { href: '/tools/medication', labelKey: 'linkMeds', descriptionKey: 'linkMedsDesc', icon: Pill },
+        { href: '/tools/medication', labelKey: 'linkImmunosuppressants', descriptionKey: 'linkImmunosuppressantsDesc', icon: Pill },
         { href: '#', labelKey: 'linkFollow', descriptionKey: 'linkFollowDesc', icon: MessageSquare },
     ]
 
