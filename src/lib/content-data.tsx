@@ -204,10 +204,50 @@ const postTransplantRecoveryContent = (
         <p>You can generally expect to return to normal activities and work within three to six months of your transplant. This period allows time for your surgical wound to heal and your stomach muscles to regain strength.</p>
         <p>Regular exercise is a vital part of staying healthy. It's recommended to begin an exercise routine under the guidance of your healthcare team.</p>
         <p>For your safety, you should not drive for at least six weeks after your transplant. It's also important to avoid any heavy lifting during this initial recovery period.</p>
-        
-        <h3 className="text-xl font-bold font-headline pt-4">Self-Monitoring and Care at Home</h3>
-        <p>Pay attention to the color of your urine. If it appears too dark, increase your water intake. If you notice any unusual colors, redness, or if your urine is frothy, contact your healthcare team.</p>
+        <p>Pay close attention to the color of your urine. If it appears too dark, increase your water intake. If you notice any unusual colors, redness, or if your urine is frothy, contact your healthcare team.</p>
         <p>Managing your medications is one of your most important responsibilities. You must take your medications exactly as prescribed. With a large number of medications required at specific times, using a pill organizer and getting support from your pharmacist can be extremely helpful.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">More Tips on Staying Healthy</h3>
+        <p>Living a healthy lifestyle is key to protecting your new kidney. Here are some important tips to follow:</p>
+        <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 pt-2">
+            <div className="space-y-3">
+                <h4 className="font-bold">Avoid Infections</h4>
+                <ul className="list-disc list-inside space-y-1">
+                    <li>Wash your hands frequently and thoroughly.</li>
+                    <li>Keep all your vaccinations up to date.</li>
+                    <li>Limit contact with people who have colds or viruses.</li>
+                    <li>Clean and treat any cuts or scratches immediately.</li>
+                </ul>
+            </div>
+            <div className="space-y-3">
+                <h4 className="font-bold">Reduce Cancer Risk</h4>
+                <ul className="list-disc list-inside space-y-1">
+                    <li>Protect your skin from the sun with clothing, sunscreen, and a hat.</li>
+                    <li>Get regular screenings for common cancers as advised by your doctor.</li>
+                </ul>
+            </div>
+            <div className="space-y-3">
+                 <h4 className="font-bold">Be a Non-Smoker</h4>
+                 <p>Smoking increases your risk of serious health issues and can reduce the long-term success of your transplant.</p>
+            </div>
+             <div className="space-y-3">
+                 <h4 className="font-bold">Report Illness Promptly</h4>
+                 <p>If you get sick, contact your healthcare team right away. Quick treatment can prevent damage to your new kidney.</p>
+            </div>
+            <div className="space-y-3">
+                 <h4 className="font-bold">Maintain a Healthy Weight</h4>
+                 <p>Your anti-rejection medications might increase your appetite. Talk to your doctor or dietitian about strategies to manage your weight effectively.</p>
+            </div>
+            <div className="space-y-3">
+                <h4 className="font-bold">Practice Good Food Safety</h4>
+                <ul className="list-disc list-inside space-y-1">
+                    <li>Wash hands before preparing food and eating.</li>
+                    <li>Use separate cutting boards for raw and cooked meats.</li>
+                    <li>Cook foods thoroughly, ensuring no pink is left in meat.</li>
+                    <li>Avoid high-risk foods like soft cheeses (brie, camembert), pâté, and raw seafood to prevent food poisoning.</li>
+                </ul>
+            </div>
+        </div>
     </div>
 );
 
