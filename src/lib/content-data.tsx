@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { modulesByRole } from './modules-data';
 
@@ -70,10 +71,31 @@ const understandingLivingDonationContent = (
     </div>
 );
 
+const transplantEvaluationProcessContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">The Transplant Evaluation Process</h2>
+        <p>Before being placed on the kidney transplant waiting list, you must undergo a series of comprehensive tests. This evaluation, often called a "transplant work-up," is designed to ensure that you are physically and mentally prepared for both the transplant surgery and the lifelong care required afterward.</p>
+        <p>This thorough assessment helps your medical team confirm that a transplant is the safest and most effective treatment for you.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">What does the evaluation include?</h3>
+        <p>The medical tests used to assess your health before a transplant are extensive and may include:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4">
+            <li><strong>Overall Health Assessment:</strong> A general review of your health, including your weight and other vital metrics.</li>
+            <li><strong>Blood Tests:</strong> To check for blood type, compatibility, and screen for various conditions.</li>
+            <li><strong>Dental Check-up:</strong> To identify and treat any potential sources of infection before the transplant.</li>
+            <li><strong>Cancer Screenings:</strong> Routine screenings such as Pap smears, prostate exams, and bowel cancer checks are important.</li>
+            <li><strong>Heart and Lung Tests:</strong> X-rays and other diagnostic tests to ensure your heart and lungs are strong enough for surgery.</li>
+            <li><strong>Vascular and Bladder Exams:</strong> Tests to check the health of your arteries, veins, and bladder to ensure they can support the new kidney.</li>
+        </ul>
+        <p className="pt-2">Successfully completing this work-up is a critical step on your journey toward receiving a new kidney.</p>
+    </div>
+);
+
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
     'understanding-living-donation': understandingLivingDonationContent,
+    'evaluation-process': transplantEvaluationProcessContent,
 };
 
 // Placeholder for other modules
