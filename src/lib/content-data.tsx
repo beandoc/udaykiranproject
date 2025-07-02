@@ -312,6 +312,38 @@ const understandingRejectionContent = (
     </div>
 );
 
+const immunosuppressiveMedicationsContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Side Effects of Anti-Rejection Medications</h2>
+        <p>While anti-rejection medications are essential, they can come with side effects. The good news is that your medical team can usually manage these by adjusting the dosage of your medication. It's important to communicate openly with your team about how you're feeling.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Common Side Effects</h3>
+        <p>Some of the possible side effects you might experience include:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4 columns-1 md:columns-2">
+            <li>Increased risk of getting infections</li>
+            <li>Puffiness in your face or stomach</li>
+            <li>Changes in hair, like unwanted growth or hair loss</li>
+            <li>Increased appetite and potential weight gain</li>
+            <li>Mood swings</li>
+            <li>Higher risk of developing high blood pressure, diabetes, or some cancers (especially skin cancer)</li>
+            <li>Pimples or acne</li>
+            <li>Muscle weakness or shakiness in your hands</li>
+            <li>Stomach problems, such as indigestion or diarrhea</li>
+        </ul>
+        <p className="pt-2">If any of these side effects become a concern, make sure to discuss them with your healthcare team. There are often ways to manage them.</p>
+
+        <div className="mt-6 p-6 rounded-lg bg-destructive/10 border-l-4 border-destructive">
+            <h3 className="text-xl font-bold font-headline text-destructive-foreground">Important Reminders</h3>
+            <p className="mt-2 text-destructive-foreground/90">Always remember these key points for your safety:</p>
+            <ul className="list-disc list-inside space-y-3 mt-4 text-destructive-foreground/90">
+                <li><strong>Inform other doctors:</strong> If you see other health professionals (like a dentist or a specialist), always tell them you've had a kidney transplant and what medications you are taking.</li>
+                <li><strong>Check before taking *any* new medicine:</strong> Before you take any new medication—even those prescribed by another doctor or something you can buy over-the-counter at a pharmacy or supermarket—you must check with your nephrologist or transplant team first. Some common medicines can interfere with your anti-rejection drugs.</li>
+                <li><strong>Never stop your medication:</strong> Do not stop taking your anti-rejection medication for any reason unless you are explicitly told to do so by your transplant team. This is crucial for protecting your new kidney.</li>
+            </ul>
+        </div>
+    </div>
+);
+
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
@@ -322,6 +354,7 @@ export const contentData: ModuleContent = {
     'post-transplant-recovery': postTransplantRecoveryContent,
     'mental-health-support': mentalHealthSupportContent,
     'understanding-rejection': understandingRejectionContent,
+    'immunosuppressants': immunosuppressiveMedicationsContent,
 };
 
 // Placeholder for other modules
