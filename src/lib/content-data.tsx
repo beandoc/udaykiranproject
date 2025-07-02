@@ -4,8 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCross, Fish, Leaf, Beef, Milk, Carrot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 type ModuleContent = {
     [key: string]: React.ReactNode;
@@ -301,6 +302,7 @@ const postTransplantRecoveryContent = (
             <AlertTitle>Planning a Pregnancy?</AlertTitle>
             <AlertDescription>
                 <p>If you wish to become pregnant, it is critical to plan carefully with your transplant team. We recommend waiting at least two years after your transplant.</p>
+
                 <ul className="list-disc list-inside space-y-2 pl-4 mt-3">
                     <li>Some immunosuppressive drugs can cause birth defects and must be changed before you try to conceive.</li>
                     <li>There are special risks for both mother and child, including a higher risk of high blood pressure, premature birth, and a slight increase in the risk of birth defects.</li>
@@ -386,6 +388,90 @@ const immunosuppressiveMedicationsContent = (
                 <li><strong>Never stop your medication:</strong> Do not stop taking your anti-rejection medication for any reason unless you are explicitly told to do so by your transplant team. This is crucial for protecting your new kidney.</li>
             </ul>
         </div>
+    </div>
+);
+
+const dietAndNutritionContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Eating Well After Your Transplant</h2>
+        <p>Good nutrition is essential for a speedy recovery and for keeping your new kidney healthy for the long term. The goal is to eat a well-balanced diet.</p>
+
+        <Card>
+            <CardHeader>
+                <CardTitle className="font-headline text-xl">Your Post-Transplant Diet</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <p>Focus on including these food groups in your daily meals:</p>
+                <ul className="list-none space-y-3">
+                    <li className="flex items-start gap-3"><Beef className="h-6 w-6 text-primary flex-shrink-0 mt-1" /><div><span className="font-semibold">Lean Proteins:</span> Choose from lean meats, poultry, fish, eggs, and legumes (like beans and peas).</div></li>
+                    <li className="flex items-start gap-3"><Milk className="h-6 w-6 text-primary flex-shrink-0 mt-1" /><div><span className="font-semibold">Low-Fat Dairy:</span> Opt for low-fat or non-fat milk, cheese, and yogurt.</div></li>
+                    <li className="flex items-start gap-3"><Carrot className="h-6 w-6 text-primary flex-shrink-0 mt-1" /><div><span className="font-semibold">Fruits & Vegetables:</span> Aim for at least 5-6 servings every day.</div></li>
+                    <li className="flex items-start gap-3"><Leaf className="h-6 w-6 text-primary flex-shrink-0 mt-1" /><div><span className="font-semibold">Whole Grains:</span> Include whole-grain breads, cereals, and brown rice.</div></li>
+                </ul>
+                <p className="pt-2">Staying hydrated is also key. Be sure to drink plenty of water and other fluids throughout the day.</p>
+            </CardContent>
+        </Card>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Foods to Limit or Avoid</h3>
+        <div className="space-y-4">
+            <Alert variant="destructive">
+                <Ban className="h-4 w-4" />
+                <AlertTitle>Avoid Grapefruit</AlertTitle>
+                <AlertDescription>
+                    Absolutely avoid grapefruit and grapefruit juice. They can interfere with the levels of your anti-rejection medications like Tacrolimus and Cyclosporine.
+                </AlertDescription>
+            </Alert>
+            
+            <Alert>
+                <UtensilsCross className="h-4 w-4" />
+                <AlertTitle>Reduce Your Salt Intake</AlertTitle>
+                <AlertDescription>
+                    Too much salt (sodium) can cause swelling and raise your blood pressure. Try to avoid high-sodium foods such as:
+                    <ul className="list-disc list-inside mt-2">
+                        <li>Processed foods (canned goods, bottled sauces, frozen meals)</li>
+                        <li>Most fast food and restaurant meals</li>
+                        <li>Salty snacks like chips</li>
+                        <li>Pickles and papad</li>
+                    </ul>
+                </AlertDescription>
+            </Alert>
+        </div>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Choosing the Right Fats</h3>
+        <p>Limiting saturated "bad" fats is important for your heart health. Focus on incorporating more "good" fats into your diet.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <Card className="border-green-500">
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-green-700 font-headline text-lg"><Leaf /> Good Fats (Mono-unsaturated)</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <ul className="list-disc list-inside">
+                        <li>Olives and Olive Oil</li>
+                        <li>Nuts and Nut Oils</li>
+                        <li>Fish Oil</li>
+                        <li>Legumes (Beans, Lentils)</li>
+                        <li>Avocado</li>
+                    </ul>
+                </CardContent>
+            </Card>
+            <Card className="border-red-500">
+                 <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-red-700 font-headline text-lg"><Ban /> Bad Fats (Saturated & Trans Fats)</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <ul className="list-disc list-inside">
+                        <li>Coconut Oil & Palm Oil</li>
+                        <li>Animal Fats (Butter, Ghee)</li>
+                        <li>High-fat dairy products</li>
+                        <li>High-fat meats (like bacon)</li>
+                        <li>Fried and processed foods</li>
+                    </ul>
+                </CardContent>
+            </Card>
+        </div>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Fill Up on Fiber</h3>
+        <p>Fiber helps reduce cholesterol and control blood sugar. You can find plenty of fiber in whole-grain bread, oatmeal, brown rice, raw fruits, and raw vegetables.</p>
     </div>
 );
 
@@ -530,6 +616,7 @@ export const contentData: ModuleContent = {
     'mental-health-support': mentalHealthSupportContent,
     'understanding-rejection': understandingRejectionContent,
     'immunosuppressants': immunosuppressiveMedicationsContent,
+    'diet-and-nutrition': dietAndNutritionContent,
     'long-term-care': longTermCareContent,
     'donor-evaluation': donorEvaluationContent,
     'donor-eligibility': donorEligibilityContent,

@@ -129,14 +129,41 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             correctAnswer: "Plan carefully with the transplant team"
         },
         {
-            question: "True or False: Sexual activity is dangerous and can harm your new kidney.",
-            options: ["True", "False"],
-            correctAnswer: "False"
+            question: "What is the lifting restriction for the first 6 weeks after transplant?",
+            options: ["No restriction", "Anything less than 2 kg", "Anything less than 5 kg", "Anything less than 15 kg"],
+            correctAnswer: "Anything less than 5 kg"
         },
         {
-            question: "What is a key recommendation for women of child-bearing age if they are NOT planning a pregnancy?",
-            options: ["Avoid all sexual activity", "Rely on the calendar method", "Use a reliable form of birth control", "They do not need birth control"],
-            correctAnswer: "Use a reliable form of birth control"
+            question: "What should you do to maintain good oral hygiene?",
+            options: ["Brush once a week", "Use a hard-bristled toothbrush", "Brush twice a day with a soft brush and replace it every 2-3 months", "Avoid dentists"],
+            correctAnswer: "Brush twice a day with a soft brush and replace it every 2-3 months"
+        }
+    ],
+    'diet-and-nutrition': [
+        {
+            question: "Which fruit and its juice should be strictly avoided after a transplant?",
+            options: ["Apple", "Orange", "Banana", "Grapefruit"],
+            correctAnswer: "Grapefruit"
+        },
+        {
+            question: "Which of these foods is considered a 'Good Fat'?",
+            options: ["Butter", "Coconut Oil", "Olive Oil", "Bacon"],
+            correctAnswer: "Olive Oil"
+        },
+        {
+            question: "Why is it important to avoid salty foods like pickles and chips?",
+            options: ["They can stain your teeth", "They can cause excessive swelling and raise blood pressure", "They don't taste good", "They are too expensive"],
+            correctAnswer: "They can cause excessive swelling and raise blood pressure"
+        },
+        {
+            question: "What is a good source of dietary fiber?",
+            options: ["White bread", "Sugary drinks", "Brown rice and oatmeal", "Fried foods"],
+            correctAnswer: "Brown rice and oatmeal"
+        },
+        {
+            question: "How many servings of fruits and vegetables are recommended each day?",
+            options: ["One serving", "Two to three servings", "At least five to six servings", "As many as you can eat"],
+            correctAnswer: "At least five to six servings"
         }
     ],
     'immunosuppressants': [
