@@ -125,12 +125,41 @@ const transplantMatchingContent = (
     </div>
 );
 
+const surgeryDayExperienceContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">What to Expect on Surgery Day</h2>
+        <p>Being prepared for your kidney transplant surgery can help ease some of the anxiety. Here’s a general overview of what happens before and during the procedure.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Before the Surgery</h3>
+        <p>Once you are admitted to the hospital, you will undergo a final series of checks to ensure you are ready for the operation. This typically includes:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4">
+            <li>A thorough physical examination by the medical team.</li>
+            <li>You may need to have one last dialysis session to ensure your body is in the best possible state for surgery.</li>
+            <li>You will begin taking anti-rejection medications. These are crucial to prepare your immune system and help prevent your body from rejecting the new kidney.</li>
+        </ul>
+        <p className="pt-2">It's important to know that the surgery may be postponed if any last-minute health concerns arise, such as an active infection.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">During the Surgery</h3>
+        <p>The transplant operation itself usually takes about two to three hours. Here's what happens in the operating room:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4">
+            <li>The surgeon will make an incision in your lower abdomen, either on the right or left side.</li>
+            <li>The new, healthy kidney is carefully placed in your pelvis.</li>
+            <li>The surgeon connects the new kidney’s artery and vein to the major blood vessels that lead to your leg. This establishes blood flow to the new organ.</li>
+            <li>The new kidney’s ureter (the tube that drains urine) is then connected to your bladder.</li>
+        </ul>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">What About My Old Kidneys?</h3>
+        <p>A common question is whether the old, failed kidneys are removed. In most cases, they are left in place. This avoids a more extensive surgery. However, if your kidneys are causing problems (for example, if they are very large due to polycystic kidney disease and causing pain or infection), they may be removed in a separate procedure before your transplant.</p>
+    </div>
+);
+
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
     'understanding-living-donation': understandingLivingDonationContent,
     'evaluation-process': transplantEvaluationProcessContent,
     'transplant-matching': transplantMatchingContent,
+    'surgery-day': surgeryDayExperienceContent,
 };
 
 // Placeholder for other modules

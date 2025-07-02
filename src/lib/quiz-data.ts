@@ -59,6 +59,58 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             correctAnswer: "Rejection"
         },
     ],
+    'surgery-day': [
+        {
+            question: "How long does a typical kidney transplant surgery last?",
+            options: [
+                "Less than 1 hour",
+                "About 2 to 3 hours",
+                "5 to 6 hours",
+                "Over 8 hours"
+            ],
+            correctAnswer: "About 2 to 3 hours"
+        },
+        {
+            question: "Where is the new kidney placed during the transplant operation?",
+            options: [
+                "In place of one of the old kidneys",
+                "In the chest cavity",
+                "In the lower abdomen (pelvis)",
+                "Attached to the liver"
+            ],
+            correctAnswer: "In the lower abdomen (pelvis)"
+        },
+        {
+            question: "What usually happens to the original, failed kidneys?",
+            options: [
+                "They are always removed",
+                "They are usually left in place",
+                "They dissolve over time",
+                "They are donated to science during the surgery"
+            ],
+            correctAnswer: "They are usually left in place"
+        },
+        {
+            question: "Why might a planned transplant surgery need to be cancelled or postponed?",
+            options: [
+                "The patient feels nervous",
+                "The patient has an active infection",
+                "The surgeon is running late",
+                "The hospital is too busy"
+            ],
+            correctAnswer: "The patient has an active infection"
+        },
+        {
+            question: "When do patients typically start taking anti-rejection medication?",
+            options: [
+                "A week after surgery",
+                "Only if signs of rejection appear",
+                "A month before surgery",
+                "Before the surgery begins"
+            ],
+            correctAnswer: "Before the surgery begins"
+        }
+    ],
     'immunosuppressants': [
         {
             question: "What is the most important thing to remember about taking immunosuppressive medications?",
