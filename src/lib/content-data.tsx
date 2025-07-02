@@ -199,6 +199,15 @@ const postTransplantRecoveryContent = (
         <h3 className="text-xl font-bold font-headline pt-4">Planning for Your Discharge</h3>
         <p>It's important to plan where you will stay after being discharged from the hospital. If you live far from the transplant center, you may need to arrange for temporary accommodation nearby for the first few weeks to be close to your medical team for follow-up appointments.</p>
         <p>Start thinking about these arrangements early. Discuss potential travel and accommodation assistance programs with your hospital's social worker or transplant coordinator, as many centers offer resources to help with these logistics.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Returning to Daily Life</h3>
+        <p>You can generally expect to return to normal activities and work within three to six months of your transplant. This period allows time for your surgical wound to heal and your stomach muscles to regain strength.</p>
+        <p>Regular exercise is a vital part of staying healthy. It's recommended to begin an exercise routine under the guidance of your healthcare team.</p>
+        <p>For your safety, you should not drive for at least six weeks after your transplant. It's also important to avoid any heavy lifting during this initial recovery period.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Self-Monitoring and Care at Home</h3>
+        <p>Pay attention to the color of your urine. If it appears too dark, increase your water intake. If you notice any unusual colors, redness, or if your urine is frothy, contact your healthcare team.</p>
+        <p>Managing your medications is one of your most important responsibilities. You must take your medications exactly as prescribed. With a large number of medications required at specific times, using a pill organizer and getting support from your pharmacist can be extremely helpful.</p>
     </div>
 );
 
