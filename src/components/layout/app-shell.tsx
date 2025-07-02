@@ -17,12 +17,18 @@ import {
   SidebarGroupLabel,
 } from '@/components/ui/sidebar';
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {
   BookOpen,
+  Globe,
   HeartPulse,
   LayoutDashboard,
   Library,
   Pill,
-  Sparkles,
 } from 'lucide-react';
 import { Button } from '../ui/button';
 
@@ -40,7 +46,6 @@ const mainNav = [
   { href: '/', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/modules', label: 'Educational Modules', icon: BookOpen },
   { href: '/resources', label: 'Resource Library', icon: Library },
-  { href: '/assistant', label: 'AI Assistant', icon: Sparkles },
 ];
 
 const toolsNav = [
@@ -59,7 +64,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                     <KidneyIcon className="w-5 h-5" />
                 </div>
-                <h1 className="text-xl font-headline font-bold text-foreground">Kidney Compass</h1>
+                <h1 className="text-xl font-headline font-bold text-foreground">Kidney Transplant Education Hub</h1>
             </Link>
         </SidebarHeader>
         <SidebarContent>
@@ -95,8 +100,20 @@ export function AppShell({ children }: { children: ReactNode }) {
       <SidebarInset>
         <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm lg:h-[60px] lg:px-6">
           <SidebarTrigger className="md:hidden" />
-          <div className="flex-1">
-          </div>
+          <div className="flex-1" />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Globe className="h-[1.2rem] w-[1.2rem]" />
+                <span className="sr-only">Select language</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem>English</DropdownMenuItem>
+              <DropdownMenuItem>हिन्दी (Hindi)</DropdownMenuItem>
+              <DropdownMenuItem>मराठी (Marathi)</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </header>
         <main className="flex-1 overflow-auto p-4 md:p-6 lg:p-8">
             {children}

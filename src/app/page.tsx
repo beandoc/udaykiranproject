@@ -1,9 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, HeartPulse, Library, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, HeartPulse, Library, User, HeartHandshake, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 
 export default function Home() {
   return (
@@ -31,21 +33,33 @@ export default function Home() {
           </CardContent>
         </Card>
 
-        <Card className="bg-secondary">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 font-headline">
-              <Sparkles className="text-primary" />
-              <span>AI Assistant</span>
-            </CardTitle>
-            <CardDescription>Have questions? Get reliable answers instantly.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button asChild className="w-full">
-              <Link href="/assistant">
-                Ask a Question <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </CardContent>
+        <Card>
+            <CardHeader>
+                <CardTitle className="font-headline">Define Your Role</CardTitle>
+                <CardDescription>Personalize your experience by selecting your role.</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <RadioGroup defaultValue="patient" className="space-y-4">
+                    <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="patient" id="patient" />
+                        <Label htmlFor="patient" className="flex items-center gap-2 font-normal">
+                            <User className="h-4 w-4 text-muted-foreground" /> <span>Patient</span>
+                        </Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="donor" id="donor" />
+                        <Label htmlFor="donor" className="flex items-center gap-2 font-normal">
+                            <HeartHandshake className="h-4 w-4 text-muted-foreground" /> <span>Donor</span>
+                        </Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="caregiver" id="caregiver" />
+                        <Label htmlFor="caregiver" className="flex items-center gap-2 font-normal">
+                            <Users className="h-4 w-4 text-muted-foreground" /> <span>Caregiver</span>
+                        </Label>
+                    </div>
+                </RadioGroup>
+            </CardContent>
         </Card>
       </div>
 

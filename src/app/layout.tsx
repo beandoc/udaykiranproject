@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Kidney Compass',
+  title: 'Kidney Transplant Education Hub',
   description: 'An education hub for kidney transplant patients.',
 };
 
