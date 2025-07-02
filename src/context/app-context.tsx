@@ -1,13 +1,13 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 
 import en from '@/lib/locales/en.json';
 import hi from '@/lib/locales/hi.json';
 import { modulesByRole as initialModulesByRole, type ModulesByRole as ModulesByRoleType, type Module } from '@/lib/modules-data';
 
-type Translations = { [key: string]: string | { [key: string]: string } };
+type Translations = { [key: string]: string | { [key:string]: string } };
 const translations: { [key: string]: Translations } = { en, hi };
 
 export type Role = 'Patient' | 'Donor' | 'Caregiver';
@@ -42,9 +42,13 @@ const initialActivities: Activity[] = [
 export function AppProvider({ children }: { children: ReactNode }) {
   const [role, setRole] = useState<Role>('Patient');
   const [language, setLanguage] = useState<Language>('en');
-  const [activities, setActivities] = useState<Activity[]>(initialActivities);
+  const [activities, setActivities] = useState<Activity[]>([]);
   const [modulesByRole, setModulesByRole] = useState<ModulesByRoleType>(initialModulesByRole);
 
+  useEffect(() => {
+    // This effect ensures initialActivities are set only on the client
+    setActivities(initialActivities);
+  }, []);
 
   const t = useCallback((key: string, options?: { [key: string]: string | number }) => {
     const langFile = translations[language];

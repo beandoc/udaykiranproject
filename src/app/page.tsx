@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, CheckCircle, ClipboardList, Clock, Heart, MessageSquare, Pill, ShieldCheck, Star, User, UserCheck, Users } from "lucide-react";
+import { BookOpen, CheckCircle, ClipboardList, Clock, Heart, MessageSquare, Pill, ShieldCheck, Star, User, UserCheck, Users, CalendarDays, GlassWater, PhoneForwarded, ShowerHead, ShieldQuestion, Apple, HeartPulse } from "lucide-react";
 import Link from "next/link";
 import { useAppContext, type Role, type Activity } from "@/context/app-context";
 import { cn } from "@/lib/utils";
@@ -75,6 +75,18 @@ export default function Home() {
         },
     ];
 
+    const dosList = [
+        { icon: Pill, titleKey: 'dosTakeMedsTitle', descriptionKey: 'dosTakeMedsDesc' },
+        { icon: CalendarDays, titleKey: 'dosKeepAppointmentsTitle', descriptionKey: 'dosKeepAppointmentsDesc' },
+        { icon: GlassWater, titleKey: 'dosStayHydratedTitle', descriptionKey: 'dosStayHydratedDesc' },
+        { icon: PhoneForwarded, titleKey: 'dosReportIssuesTitle', descriptionKey: 'dosReportIssuesDesc' },
+        { icon: ShowerHead, titleKey: 'dosPracticeHygieneTitle', descriptionKey: 'dosPracticeHygieneDesc' },
+        { icon: ShieldQuestion, titleKey: 'dosCheckNewMedsTitle', descriptionKey: 'dosCheckNewMedsDesc' },
+        { icon: Apple, titleKey: 'dosWashProduceTitle', descriptionKey: 'dosWashProduceDesc' },
+        { icon: HeartPulse, titleKey: 'dosExerciseSafelyTitle', descriptionKey: 'dosExerciseSafelyDesc' },
+    ];
+
+
     return (
         <div className="space-y-8">
             <Card className="relative isolate overflow-hidden bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-xl">
@@ -119,7 +131,7 @@ export default function Home() {
                         <CardTitle className="font-headline text-xl">{t('recentActivity')}</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                        {activities.map((activity) => {
+                        {activities.length > 0 ? activities.map((activity) => {
                             const Icon = iconMap[activity.icon];
                             return (
                                 <div key={activity.id} className="flex items-center gap-4">
@@ -132,7 +144,9 @@ export default function Home() {
                                     </div>
                                 </div>
                             )
-                        })}
+                        }) : (
+                            <p className="text-sm text-muted-foreground">{t('noRecentActivity')}</p>
+                        )}
                     </CardContent>
                 </Card>
             </div>
@@ -161,6 +175,26 @@ export default function Home() {
                             <h3 className="font-bold text-lg">{t(`role${r.name}`)}</h3>
                             <p className="text-sm text-muted-foreground mt-1">{t(r.descriptionKey)}</p>
                         </button>
+                    ))}
+                </CardContent>
+            </Card>
+
+            <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline text-xl">{t('dosTitle')}</CardTitle>
+                    <CardDescription>{t('dosDesc')}</CardDescription>
+                </CardHeader>
+                <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {dosList.map((item) => (
+                        <div key={item.titleKey} className="flex items-start gap-4">
+                            <div className="flex-shrink-0 mt-1">
+                                <item.icon className="w-6 h-6 text-primary" />
+                            </div>
+                            <div>
+                                <h4 className="font-semibold">{t(item.titleKey)}</h4>
+                                <p className="mt-1 text-sm text-muted-foreground">{t(item.descriptionKey)}</p>
+                            </div>
+                        </div>
                     ))}
                 </CardContent>
             </Card>
