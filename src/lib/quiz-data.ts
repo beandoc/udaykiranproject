@@ -369,6 +369,58 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             ],
             correctAnswer: "Yes, most episodes can be managed successfully, often by adjusting medications"
         }
+    ],
+    'donor-evaluation': [
+        {
+            question: "What is the primary purpose of the medical assessment for a potential living donor?",
+            options: [
+                "To ensure the donation is safe for the donor.",
+                "To see how much the donor can be paid.",
+                "To practice the surgery.",
+                "To get a discount on hospital fees."
+            ],
+            correctAnswer: "To ensure the donation is safe for the donor."
+        },
+        {
+            question: "Which of these is NOT a key requirement for being a living kidney donor?",
+            options: [
+                "Good overall health.",
+                "Normal kidney function.",
+                "Having the exact same hobbies as the recipient.",
+                "Emotional suitability for donation."
+            ],
+            correctAnswer: "Having the exact same hobbies as the recipient."
+        },
+        {
+            question: "What happens if a previously unknown health problem is discovered in the donor during the evaluation?",
+            options: [
+                "The process stops immediately and the donor is sent home.",
+                "The donor is ignored and the team looks for someone else.",
+                "The donor receives support and is referred to a specialist for care.",
+                "The donor has to pay for all the tests."
+            ],
+            correctAnswer: "The donor receives support and is referred to a specialist for care."
+        },
+        {
+            question: "Which of the following tests is part of the donor evaluation process?",
+            options: [
+                "A driving test.",
+                "A cooking class.",
+                "A test for blood and tissue type compatibility.",
+                "An IQ test."
+            ],
+            correctAnswer: "A test for blood and tissue type compatibility."
+        },
+        {
+            question: "Besides medical tests, what other type of assessment is typically part of the donor evaluation?",
+            options: [
+                "A financial audit.",
+                "A psychological assessment.",
+                "A fashion consultation.",
+                "A review of their social media."
+            ],
+            correctAnswer: "A psychological assessment."
+        }
     ]
 };
 

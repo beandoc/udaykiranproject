@@ -344,6 +344,29 @@ const immunosuppressiveMedicationsContent = (
     </div>
 );
 
+const donorEvaluationContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">The Medical Evaluation for Living Donors</h2>
+        <p>Becoming a living kidney donor is a generous act. To ensure it's safe for you, the potential donor must have normal kidney function, be in good overall health, and be emotionally prepared for the donation process. The evaluation involves a series of medical tests and a psychological assessment.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">The Medical Assessment</h3>
+        <p>If you are considering becoming a living donor, you'll undergo a thorough medical check-up. The primary goal is to ensure that donating a kidney is safe for you, both immediately and in the long run. The transplant team will also confirm that you are fit for surgery and that your kidney is suitable for donation.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">What Tests Are Involved?</h3>
+        <p>A number of tests are required to ensure a living donor is a suitable match. These may include:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4">
+            <li>Tissue and blood type matching with the recipient.</li>
+            <li>Testing the recipient for any antibodies that might react to the donor's kidney.</li>
+            <li>Blood tests and scans to check that your own kidneys are working well and show no signs of damage.</li>
+            <li>Screening for viruses that could cause infection.</li>
+            <li>General health checks for heart disease, lung problems, diabetes, and cancer.</li>
+        </ul>
+
+        <h3 className="text-xl font-bold font-headline pt-4">What if a Health Issue is Found?</h3>
+        <p>During these tests, it's possible to discover a health problem you weren't aware of. If this happens, the medical team will provide full support and refer you to a specialist for care.</p>
+    </div>
+);
+
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
@@ -355,6 +378,7 @@ export const contentData: ModuleContent = {
     'mental-health-support': mentalHealthSupportContent,
     'understanding-rejection': understandingRejectionContent,
     'immunosuppressants': immunosuppressiveMedicationsContent,
+    'donor-evaluation': donorEvaluationContent,
 };
 
 // Placeholder for other modules
