@@ -64,7 +64,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                     <KidneyIcon className="w-5 h-5" />
                 </div>
-                <h1 className="text-xl font-headline font-bold text-foreground">Kidney Transplant Education Hub</h1>
+                <h1 className="text-xl font-headline font-bold text-foreground group-data-[collapsible=icon]:hidden">Kidney Hub</h1>
             </Link>
         </SidebarHeader>
         <SidebarContent>
@@ -74,7 +74,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                     <SidebarMenuButton asChild isActive={pathname === item.href}>
                         <Link href={item.href}>
                         <item.icon />
-                        {item.label}
+                        <span>{item.label}</span>
                         </Link>
                     </SidebarMenuButton>
                     </SidebarMenuItem>
@@ -88,7 +88,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                         <SidebarMenuButton asChild isActive={pathname === item.href}>
                             <Link href={item.href}>
                             <item.icon />
-                            {item.label}
+                            <span>{item.label}</span>
                             </Link>
                         </SidebarMenuButton>
                         </SidebarMenuItem>

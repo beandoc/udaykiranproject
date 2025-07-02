@@ -7,6 +7,25 @@ import Link from "next/link";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 
+function InfoCard({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) {
+  return (
+    <Link href={href} className="group">
+      <Card className="h-full transition-colors hover:border-primary hover:bg-primary/5">
+        <CardHeader className="flex-row items-start gap-4 space-y-0">
+          <div className="p-3 rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
+            {icon}
+          </div>
+          <div className="flex-1">
+            <CardTitle className="font-headline text-lg mb-1">{title}</CardTitle>
+            <CardDescription>{description}</CardDescription>
+          </div>
+        </CardHeader>
+      </Card>
+    </Link>
+  )
+}
+
+
 export default function Home() {
   return (
     <div className="grid gap-8">
@@ -64,33 +83,24 @@ export default function Home() {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card>
-            <CardHeader>
-                <BookOpen className="w-8 h-8 mb-2 text-primary" />
-                <CardTitle className="font-headline">Educational Modules</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <CardDescription>Explore comprehensive guides on your transplant journey.</CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-                <HeartPulse className="w-8 h-8 mb-2 text-primary" />
-                <CardTitle className="font-headline">Health Tools</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <CardDescription>Track medications and log symptoms to stay on top of your health.</CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-                <Library className="w-8 h-8 mb-2 text-primary" />
-                <CardTitle className="font-headline">Resource Library</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <CardDescription>Access a curated list of links, articles, and support groups.</CardDescription>
-            </CardContent>
-          </Card>
+          <InfoCard 
+            href="/modules"
+            icon={<BookOpen className="w-6 h-6 text-primary" />} 
+            title="Educational Modules"
+            description="Explore guides on your transplant journey."
+          />
+          <InfoCard 
+            href="/tools/symptoms"
+            icon={<HeartPulse className="w-6 h-6 text-primary" />}
+            title="Health Tools"
+            description="Track medications and log symptoms."
+          />
+          <InfoCard 
+            href="/resources"
+            icon={<Library className="w-6 h-6 text-primary" />}
+            title="Resource Library"
+            description="Access curated articles and support groups."
+          />
       </div>
 
        <Card className="w-full">

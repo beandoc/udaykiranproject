@@ -5,21 +5,17 @@ export default function SymptomLogPage() {
   return (
     <div>
       <h1 className="text-3xl font-bold font-headline tracking-tight mb-8">Symptom Log</h1>
-      <Card className="text-center flex flex-col items-center">
-        <CardHeader className="items-center">
+      <div className="flex flex-col items-center justify-center text-center p-10 border-2 border-dashed rounded-lg bg-card">
           <div className="p-4 bg-primary/10 rounded-full mb-4">
             <HeartPulse className="w-12 h-12 text-primary" />
           </div>
-          <CardTitle className="font-headline">Symptom Logging Feature Coming Soon</CardTitle>
-          <CardDescription className="max-w-md">
+          <h2 className="text-2xl font-bold font-headline">Symptom Logging Feature Coming Soon</h2>
+          <p className="max-w-md mt-2 text-muted-foreground">
             Soon you'll be able to easily log any symptoms you experience. This tool will help you and your
             care team monitor your health and spot trends over time with visual graphs.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">We're working on making this feature intuitive and helpful.</p>
-        </CardContent>
-      </Card>
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">We're working on making this feature intuitive and helpful.</p>
+        </div>
     </div>
   );
 }
