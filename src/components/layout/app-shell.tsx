@@ -131,9 +131,15 @@ export function AppShell({ children }: { children: ReactNode }) {
             </div>
         </div>
         </header>
-        <main className="flex-1 overflow-auto p-4 md:p-6 lg:p-8">
+        <div className="flex-1 overflow-auto p-4 md:p-6 lg:p-8">
             {children}
-        </main>
+        </div>
+        <footer className="border-t px-6 py-4 text-center text-xs text-muted-foreground">
+            <p className="mb-2 max-w-3xl mx-auto">
+                {t('footerDisclaimer')}
+            </p>
+            <p>{t('footerCopyright')}</p>
+        </footer>
       </SidebarInset>
     </SidebarProvider>
   );
