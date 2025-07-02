@@ -358,8 +358,7 @@ const immunosuppressiveMedicationsContent = (
 
 const donorEvaluationContent = (
     <div className="space-y-6 text-base leading-relaxed">
-        <h2 className="text-2xl font-bold font-headline">The Evaluation Process for Living Donors</h2>
-        
+         <h2 className="text-2xl font-bold font-headline">The Evaluation Process for Living Donors</h2>
         <div>
             <h3 className="text-xl font-bold font-headline mb-2">How to Start the Process</h3>
             <p>To begin your journey as a living donor, the first step is to contact a transplant center. For a "directed donation" to a specific person, you must contact the center where the recipient is waitlisted. If you wish to be a "non-directed" donor to anyone in need, you can contact any transplant center.</p>
