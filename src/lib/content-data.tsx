@@ -88,6 +88,24 @@ const transplantEvaluationProcessContent = (
             <li><strong>Vascular and Bladder Exams:</strong> Tests to check the health of your arteries, veins, and bladder to ensure they can support the new kidney.</li>
         </ul>
         <p className="pt-2">Successfully completing this work-up is a critical step on your journey toward receiving a new kidney.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Living Donor Assessment</h3>
+        <p>If someone offers to be your living donor, they will undergo a similar evaluation to ensure they are healthy enough to donate. This includes tests to confirm their kidney is in good condition and to check for compatibility with you. The entire assessment for both you and a potential donor can take several months to complete, depending on individual health factors.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Staying Healthy While You Wait</h3>
+        <p>It's vital to maintain your health while on the transplant waiting list to ensure the best possible outcome. Key steps include:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4">
+            <li>Adhering to your regular dialysis schedule.</li>
+            <li>Following your recommended diet and fluid restrictions.</li>
+            <li>Taking all medications as prescribed.</li>
+            <li>Managing your weight with diet and physical activity.</li>
+            <li>Visiting your dentist regularly to prevent infections.</li>
+            <li>Protecting your skin from the sun to help prevent skin cancer post-transplant.</li>
+            <li>Being a non-smoker.</li>
+            <li>Keeping all your vaccinations up to date.</li>
+            <li>Avoiding blood transfusions, if possible.</li>
+        </ul>
+        <p className="pt-2">You will also need routine blood tests for tissue typing and antibody screening. These are essential for finding a compatible donor, so it is crucial not to miss them. Regular reviews with your care team are also an opportunity to discuss any concerns you have during your transplant preparation.</p>
     </div>
 );
 
