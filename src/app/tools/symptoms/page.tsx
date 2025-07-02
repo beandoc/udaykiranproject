@@ -9,15 +9,17 @@ import { cn } from "@/lib/utils";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useToast } from "@/hooks/use-toast";
 import { Frown, Meh, Smile } from "lucide-react";
+import { useAppContext } from "@/context/app-context";
 
 const symptoms = ["Fever", "Fatigue", "Nausea", "Pain", "Headache", "Shortness of Breath", "Swelling"];
 const moods = [
-    { name: 'Good', icon: Smile, color: 'text-green-500' },
-    { name: 'Okay', icon: Meh, color: 'text-yellow-500' },
-    { name: 'Bad', icon: Frown, color: 'text-red-500' },
+    { name: 'Good', icon: Smile, color: 'text-green-500', tKey: 'symptomsFeelingGood' },
+    { name: 'Okay', icon: Meh, color: 'text-yellow-500', tKey: 'symptomsFeelingOkay' },
+    { name: 'Bad', icon: Frown, color: 'text-red-500', tKey: 'symptomsFeelingBad' },
 ];
 
 export default function SymptomLogPage() {
+    const { t } = useAppContext();
     const [selectedMood, setSelectedMood] = useState<string | null>(null);
     const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([]);
     const [notes, setNotes] = useState("");
@@ -26,8 +28,8 @@ export default function SymptomLogPage() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         toast({
-            title: "Symptoms Logged",
-            description: "Your symptom report has been saved successfully.",
+            title: t('symptomsToastTitle'),
+            description: t('symptomsToastDesc'),
             variant: "default",
         });
         // Reset form
@@ -36,18 +38,28 @@ export default function SymptomLogPage() {
         setNotes("");
     }
 
+    const symptomTKeys: {[key: string]: string} = {
+        "Fever": "symptomFever",
+        "Fatigue": "symptomFatigue",
+        "Nausea": "symptomNausea",
+        "Pain": "symptomPain",
+        "Headache": "symptomHeadache",
+        "Shortness of Breath": "symptomShortnessOfBreath",
+        "Swelling": "symptomSwelling",
+    };
+
     return (
         <div className="space-y-8">
-            <h1 className="text-3xl font-bold font-headline tracking-tight">Symptom Log</h1>
+            <h1 className="text-3xl font-bold font-headline tracking-tight">{t('symptomsTitle')}</h1>
             <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline text-xl">Daily Symptom Check</CardTitle>
-                    <CardDescription>Log your symptoms to share with your care team.</CardDescription>
+                    <CardTitle className="font-headline text-xl">{t('symptomsCardTitle')}</CardTitle>
+                    <CardDescription>{t('symptomsCardDesc')}</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <form onSubmit={handleSubmit} className="space-y-8">
                         <div className="space-y-4">
-                            <Label className="text-base font-semibold">How are you feeling today?</Label>
+                            <Label className="text-base font-semibold">{t('symptomsFeelingPrompt')}</Label>
                             <div className="flex gap-4">
                                 {moods.map(mood => (
                                     <button
@@ -60,14 +72,14 @@ export default function SymptomLogPage() {
                                         )}
                                     >
                                         <mood.icon className={cn("w-8 h-8", mood.color)} />
-                                        <span className="text-sm font-medium">{mood.name}</span>
+                                        <span className="text-sm font-medium">{t(mood.tKey)}</span>
                                     </button>
                                 ))}
                             </div>
                         </div>
 
                         <div className="space-y-4">
-                            <Label className="text-base font-semibold">Any symptoms to report?</Label>
+                            <Label className="text-base font-semibold">{t('symptomsReportPrompt')}</Label>
                             <ToggleGroup
                                 type="multiple"
                                 variant="outline"
@@ -77,23 +89,23 @@ export default function SymptomLogPage() {
                             >
                                 {symptoms.map(symptom => (
                                     <ToggleGroupItem key={symptom} value={symptom} className="rounded-full">
-                                        {symptom}
+                                        {t(symptomTKeys[symptom] || symptom)}
                                     </ToggleGroupItem>
                                 ))}
                             </ToggleGroup>
                         </div>
                         
                         <div className="space-y-2">
-                             <Label htmlFor="notes" className="text-base font-semibold">Additional notes</Label>
+                             <Label htmlFor="notes" className="text-base font-semibold">{t('symptomsNotesLabel')}</Label>
                              <Textarea
                                 id="notes"
                                 value={notes}
                                 onChange={(e) => setNotes(e.target.value)}
-                                placeholder="Any other symptoms or concerns..."
+                                placeholder={t('symptomsNotesPlaceholder')}
                              />
                         </div>
 
-                        <Button type="submit" size="lg">Save Symptom Report</Button>
+                        <Button type="submit" size="lg">{t('symptomsSubmitButton')}</Button>
                     </form>
                 </CardContent>
             </Card>

@@ -8,6 +8,7 @@ import { useAppContext } from "@/context/app-context";
 import { modulesByRole, type Module } from "@/lib/modules-data";
 
 function ModuleCard({ module }: { module: Module }) {
+    const { t } = useAppContext();
     const isCompleted = module.status === 'Completed';
 
     return (
@@ -19,16 +20,16 @@ function ModuleCard({ module }: { module: Module }) {
                     <div className="w-6 h-6 flex-shrink-0 rounded-full border-2 border-muted-foreground" />
                 )}
                 <div>
-                    <h3 className="font-semibold">{module.title}</h3>
+                    <h3 className="font-semibold">{t(module.title)}</h3>
                     <p className="text-sm text-muted-foreground flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5" />
-                        <span>{module.duration} min</span>
+                        <span>{module.duration} {t('moduleDurationMin')}</span>
                     </p>
                 </div>
             </div>
             <Button asChild variant={isCompleted ? 'outline' : 'default'} size="sm">
                 <Link href={`/modules/${module.slug}`}>
-                    {isCompleted ? 'Review' : 'Start'}
+                    {isCompleted ? t('moduleActionReview') : t('moduleActionStart')}
                     <PlayCircle className="ml-2 w-4 h-4" />
                 </Link>
             </Button>
@@ -37,16 +38,23 @@ function ModuleCard({ module }: { module: Module }) {
 }
 
 export default function ModulesPage() {
-    const { role } = useAppContext();
-    const { title, modules } = modulesByRole[role];
+    const { role, t } = useAppContext();
+    const roleData = modulesByRole[role];
+    const { modules } = roleData;
+
+    const titleKey = {
+        Patient: "pathTitlePatient",
+        Donor: "pathTitleDonor",
+        Caregiver: "pathTitleCaregiver"
+    }[role];
 
     return (
         <div className="space-y-8">
             <Card className="bg-primary/5">
                 <CardHeader>
-                    <CardTitle className="font-headline text-2xl md:text-3xl">{title}</CardTitle>
+                    <CardTitle className="font-headline text-2xl md:text-3xl">{t(titleKey)}</CardTitle>
                     <CardDescription>
-                        Follow this learning path to prepare for your transplant journey.
+                        {t('pathDescription')}
                     </CardDescription>
                 </CardHeader>
             </Card>

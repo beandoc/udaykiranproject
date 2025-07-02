@@ -8,37 +8,37 @@ import { useAppContext, type Role } from "@/context/app-context";
 import { cn } from "@/lib/utils";
 
 const roles = [
-    { name: 'Patient', icon: User, description: 'I am a kidney transplant patient.' },
-    { name: 'Donor', icon: UserCheck, description: 'I am considering or am a kidney donor.' },
-    { name: 'Caregiver', icon: Users, description: 'I am supporting a patient or donor.' },
+    { name: 'Patient', icon: User, descriptionKey: 'rolePatientDesc' },
+    { name: 'Donor', icon: UserCheck, descriptionKey: 'roleDonorDesc' },
+    { name: 'Caregiver', icon: Users, descriptionKey: 'roleCaregiverDesc' },
 ] as const;
 
-const quickLinks = [
-    { href: '/tools/medication', label: 'Medications', description: 'Track your meds', icon: Pill },
-    { href: '#', label: 'Follow Nirgyam', description: 'Educational WhatsApp channel', icon: MessageSquare },
-]
-
-const recentActivity = [
-    { text: 'Completed "Understanding Immunosuppression"', time: '2 hours ago', icon: CheckCircle, color: 'text-green-500 bg-green-100' },
-    { text: 'Earned "Knowledge Seeker" badge', time: 'Yesterday', icon: Star, color: 'text-blue-500 bg-blue-100' },
-    { text: 'Posted in "Post-Transplant Support" forum', time: '2 days ago', icon: MessageSquare, color: 'text-purple-500 bg-purple-100' },
-]
-
 export default function Home() {
-    const { role, setRole } = useAppContext();
+    const { role, setRole, t } = useAppContext();
+
+    const quickLinks = [
+        { href: '/tools/medication', labelKey: 'linkMeds', descriptionKey: 'linkMedsDesc', icon: Pill },
+        { href: '#', labelKey: 'linkFollow', descriptionKey: 'linkFollowDesc', icon: MessageSquare },
+    ]
+    
+    const recentActivity = [
+        { textKey: 'activityCompleted', timeKey: 'timeHoursAgo', icon: CheckCircle, color: 'text-green-500 bg-green-100' },
+        { textKey: 'activityEarned', timeKey: 'timeYesterday', icon: Star, color: 'text-blue-500 bg-blue-100' },
+        { textKey: 'activityPosted', timeKey: 'timeDaysAgo', icon: MessageSquare, color: 'text-purple-500 bg-purple-100' },
+    ]
 
     return (
         <div className="space-y-8">
             <Card className="relative isolate overflow-hidden bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-xl">
                 <div className="p-8">
                     <h1 className="text-3xl md:text-4xl font-bold font-headline tracking-tight">
-                        Welcome, {role}!
+                        {t('welcome', { role: t(`role${role}`) })}
                     </h1>
                     <p className="mt-2 max-w-2xl text-lg text-primary-foreground/80">
-                        Your personalized hub for kidney transplant education and support.
+                        {t('personalizedHub')}
                     </p>
                     <Button asChild size="lg" className="mt-6 bg-white text-primary hover:bg-white/90 shadow-lg px-8 py-6 text-base font-semibold">
-                        <Link href="/modules">Explore Your Learning Path</Link>
+                        <Link href="/modules">{t('exploreLearningPath')}</Link>
                     </Button>
                 </div>
                  <Heart className="absolute -bottom-8 -right-8 w-40 h-40 text-white/10" />
@@ -47,18 +47,18 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card>
                     <CardHeader>
-                        <CardTitle className="font-headline text-xl">Quick Links</CardTitle>
+                        <CardTitle className="font-headline text-xl">{t('quickLinks')}</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         {quickLinks.map((link) => (
-                            <Link href={link.href} key={link.label} className="block p-4 rounded-lg hover:bg-muted/50 transition-colors">
+                            <Link href={link.href} key={link.labelKey} className="block p-4 rounded-lg hover:bg-muted/50 transition-colors">
                                 <div className="flex items-center gap-4">
                                     <div className="p-3 rounded-full bg-primary/10 text-primary">
                                         <link.icon className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <p className="font-semibold">{link.label}</p>
-                                        <p className="text-sm text-muted-foreground">{link.description}</p>
+                                        <p className="font-semibold">{t(link.labelKey)}</p>
+                                        <p className="text-sm text-muted-foreground">{t(link.descriptionKey)}</p>
                                     </div>
                                 </div>
                             </Link>
@@ -68,7 +68,7 @@ export default function Home() {
 
                  <Card>
                     <CardHeader>
-                        <CardTitle className="font-headline text-xl">Recent Activity</CardTitle>
+                        <CardTitle className="font-headline text-xl">{t('recentActivity')}</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         {recentActivity.map((activity, index) => (
@@ -77,8 +77,8 @@ export default function Home() {
                                     <activity.icon className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <p className="font-medium text-sm">{activity.text}</p>
-                                    <p className="text-xs text-muted-foreground">{activity.time}</p>
+                                    <p className="font-medium text-sm">{t(activity.textKey)}</p>
+                                    <p className="text-xs text-muted-foreground">{t(activity.timeKey)}</p>
                                 </div>
                             </div>
                         ))}
@@ -88,8 +88,8 @@ export default function Home() {
             
             <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline text-xl">Define Your Role</CardTitle>
-                    <CardDescription>Select your role to personalize your learning experience.</CardDescription>
+                    <CardTitle className="font-headline text-xl">{t('defineRole')}</CardTitle>
+                    <CardDescription>{t('selectRolePrompt')}</CardDescription>
                 </CardHeader>
                 <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {roles.map((r) => (
@@ -107,8 +107,8 @@ export default function Home() {
                                 "w-10 h-10 mb-4",
                                 role === r.name ? "text-primary" : "text-muted-foreground"
                             )} />
-                            <h3 className="font-bold text-lg">{r.name}</h3>
-                            <p className="text-sm text-muted-foreground mt-1">{r.description}</p>
+                            <h3 className="font-bold text-lg">{t(`role${r.name}`)}</h3>
+                            <p className="text-sm text-muted-foreground mt-1">{t(r.descriptionKey)}</p>
                         </button>
                     ))}
                 </CardContent>

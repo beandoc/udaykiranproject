@@ -14,11 +14,13 @@ import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen }
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { contentData } from "@/lib/content-data";
+import { useAppContext } from "@/context/app-context";
 
 export default function ModulePage() {
     const params = useParams();
     const slug = params.slug as string;
     const { toast } = useToast();
+    const { t } = useAppContext();
     
     const [viewMode, setViewMode] = useState<'content' | 'quiz'>('content');
 
@@ -38,7 +40,7 @@ export default function ModulePage() {
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleAnswerSelect = (answer: string) => {
-        if (isSubmitted) return;
+        if (selectedAnswers[currentQuestionIndex] !== null) return;
         const newAnswers = [...selectedAnswers];
         newAnswers[currentQuestionIndex] = answer;
         setSelectedAnswers(newAnswers);
@@ -60,8 +62,8 @@ export default function ModulePage() {
         setIsSubmitted(true);
         const correctCount = selectedAnswers.filter((answer, index) => answer === questions[index].correctAnswer).length;
         toast({
-            title: "Quiz Submitted!",
-            description: `You scored ${correctCount} out of ${questions.length}.`,
+            title: t('quizResultsTitle'),
+            description: t('quizResultsScore', { score: correctCount, total: questions.length }),
         });
     };
 
@@ -77,10 +79,10 @@ export default function ModulePage() {
     if (!moduleInfo) {
         return (
             <div className="text-center">
-                <h1 className="text-2xl font-bold">Module not found</h1>
-                <p className="text-muted-foreground">Could not find a module for this path.</p>
+                <h1 className="text-2xl font-bold">{t('moduleNotFoundTitle')}</h1>
+                <p className="text-muted-foreground">{t('moduleNotFoundDesc')}</p>
                 <Button asChild className="mt-4">
-                    <Link href="/modules">Back to Modules</Link>
+                    <Link href="/modules">{t('moduleNotFoundBack')}</Link>
                 </Button>
             </div>
         )
@@ -88,16 +90,17 @@ export default function ModulePage() {
 
     const currentQuestion = questions[currentQuestionIndex];
     const selectedAnswer = selectedAnswers[currentQuestionIndex];
+    const isAnswered = selectedAnswer !== null;
 
     if (viewMode === 'content') {
         return (
              <div className="max-w-4xl mx-auto space-y-6">
                 <Card>
                     <CardHeader>
-                        <p className="text-sm font-medium text-primary">{moduleTitle}</p>
-                        <CardTitle className="font-headline text-3xl">Educational Content</CardTitle>
+                        <p className="text-sm font-medium text-primary">{t(moduleTitle)}</p>
+                        <CardTitle className="font-headline text-3xl">{t('contentTitle')}</CardTitle>
                         <CardDescription>
-                            Read through the material below. When you're ready, you can test your knowledge with a short quiz.
+                            {t('contentDescription')}
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -106,16 +109,16 @@ export default function ModulePage() {
                     <CardFooter className="flex-col items-stretch gap-4 sm:flex-row sm:justify-between">
                          <Button variant="outline" asChild>
                             <Link href="/modules">
-                                <ChevronLeft className="mr-2 h-4 w-4" /> Back to Learning Path
+                                <ChevronLeft className="mr-2 h-4 w-4" /> {t('contentBackToPath')}
                             </Link>
                         </Button>
                         {questions && questions.length > 0 ? (
                              <Button onClick={() => setViewMode('quiz')} size="lg">
-                                Start Knowledge Check <HelpCircle className="ml-2 h-4 w-4" />
+                                {t('contentStartQuiz')} <HelpCircle className="ml-2 h-4 w-4" />
                             </Button>
                         ) : (
                              <Button disabled size="lg">
-                                Quiz Coming Soon
+                                {t('contentQuizComingSoon')}
                             </Button>
                         )}
                     </CardFooter>
@@ -127,10 +130,10 @@ export default function ModulePage() {
     if (questions.length === 0) {
         return (
             <div className="text-center">
-                <h1 className="text-2xl font-bold">Quiz not found</h1>
-                <p className="text-muted-foreground">Could not find a quiz for this module.</p>
+                <h1 className="text-2xl font-bold">{t('quizNotFoundTitle')}</h1>
+                <p className="text-muted-foreground">{t('quizNotFoundDesc')}</p>
                 <Button onClick={() => setViewMode('content')} className="mt-4">
-                    <ChevronLeft className="mr-2 h-4 w-4" /> Back to Content
+                    <ChevronLeft className="mr-2 h-4 w-4" /> {t('quizBackToContent')}
                 </Button>
             </div>
         )
@@ -140,8 +143,9 @@ export default function ModulePage() {
         return (
             <Card className="max-w-3xl mx-auto">
                 <CardHeader className="text-center">
-                    <CardTitle className="font-headline text-2xl">Quiz Results</CardTitle>
-                    <CardDescription>You scored {score} out of {questions.length}!</CardDescription>
+                    <CardTitle className="font-headline text-2xl">{t('quizResultsTitle')}</CardTitle>
+                     <CardDescription>{t('quizResultsCongrats')}</CardDescription>
+                    <p className="text-lg font-semibold pt-2">{t('quizResultsScore', { score: score, total: questions.length })}</p>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     {questions.map((q, index) => {
@@ -152,12 +156,12 @@ export default function ModulePage() {
                                 <p className="font-semibold">{index + 1}. {q.question}</p>
                                 <p className={`mt-2 text-sm flex items-center gap-2 ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>
                                     {isCorrect ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
-                                    Your answer: {userAnswer || 'Not answered'}
+                                    {t('quizUserAnswer')} {userAnswer || t('quizNotAnswered')}
                                 </p>
                                 {!isCorrect && (
                                     <p className="mt-1 text-sm text-green-700 flex items-center gap-2">
                                         <CheckCircle className="w-4 h-4" />
-                                        Correct answer: {q.correctAnswer}
+                                        {t('quizCorrectAnswer')} {q.correctAnswer}
                                     </p>
                                 )}
                             </div>
@@ -169,13 +173,13 @@ export default function ModulePage() {
                         resetQuiz();
                         setViewMode('content');
                     }} className="w-full sm:w-auto">
-                        <BookOpen className="mr-2 h-4 w-4" /> Review Content
+                        <BookOpen className="mr-2 h-4 w-4" /> {t('quizReviewContent')}
                     </Button>
                     <Button onClick={resetQuiz} className="w-full sm:w-auto">
-                        Retake Quiz
+                        {t('quizRetake')}
                     </Button>
                     <Button asChild className="w-full sm:w-auto" size="lg">
-                        <Link href="/modules">Back to Learning Path</Link>
+                        <Link href="/modules">{t('quizBackToPath')}</Link>
                     </Button>
                 </CardFooter>
             </Card>
@@ -185,14 +189,14 @@ export default function ModulePage() {
     return (
         <div className="max-w-3xl mx-auto space-y-6">
             <div className="text-center">
-                <p className="text-sm font-medium text-primary">{moduleTitle}</p>
-                <h1 className="text-2xl font-bold font-headline tracking-tight mt-1">Quick Knowledge Check</h1>
+                <p className="text-sm font-medium text-primary">{t(moduleTitle)}</p>
+                <h1 className="text-2xl font-bold font-headline tracking-tight mt-1">{t('quizTitle')}</h1>
                 <Progress value={progress} className="mt-4" />
             </div>
 
             <Card>
                 <CardHeader>
-                    <CardTitle>Question {currentQuestionIndex + 1} of {questions.length}</CardTitle>
+                    <CardTitle>{t('quizQuestionOf', { current: currentQuestionIndex + 1, total: questions.length })}</CardTitle>
                     <CardDescription className="text-lg pt-2">{currentQuestion.question}</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -200,13 +204,28 @@ export default function ModulePage() {
                         value={selectedAnswer ?? undefined}
                         onValueChange={handleAnswerSelect}
                         className="space-y-3"
-                        disabled={isSubmitted}
+                        disabled={isAnswered}
                     >
                         {currentQuestion.options.map((option, index) => {
+                            const isCorrect = option === currentQuestion.correctAnswer;
+                            const isSelected = selectedAnswer === option;
+
                             return (
-                                <Label key={index} htmlFor={`option-${index}`} className={cn("flex items-center gap-4 p-4 border rounded-lg cursor-pointer hover:bg-muted/50 transition-colors", selectedAnswer === option ? "border-primary bg-primary/10" : "")}>
-                                    <RadioGroupItem value={option} id={`option-${index}`} />
+                                <Label key={index} htmlFor={`option-${index}`} className={cn(
+                                    "flex items-center gap-4 p-4 border rounded-lg cursor-pointer transition-colors",
+                                    !isAnswered && "hover:bg-muted/50",
+                                    isAnswered && isCorrect && "border-green-500 bg-green-100/50 text-green-900 font-semibold",
+                                    isAnswered && isSelected && !isCorrect && "border-red-500 bg-red-100/50 text-red-900 font-semibold",
+                                    isAnswered && !isSelected && !isCorrect && "opacity-60 cursor-not-allowed",
+                                    isAnswered && "cursor-default"
+                                )}>
+                                    <RadioGroupItem value={option} id={`option-${index}`} className={cn(
+                                        isAnswered && isCorrect && "border-green-600 text-green-600",
+                                        isAnswered && isSelected && !isCorrect && "border-red-600 text-red-600"
+                                    )} />
                                     <span>{option}</span>
+                                    {isAnswered && isCorrect && <CheckCircle className="ml-auto w-5 h-5 text-green-600" />}
+                                    {isAnswered && isSelected && !isCorrect && <XCircle className="ml-auto w-5 h-5 text-red-600" />}
                                 </Label>
                             )
                         })}
@@ -216,17 +235,17 @@ export default function ModulePage() {
 
             <div className="flex justify-between items-center">
                  <Button variant="outline" onClick={() => setViewMode('content')}>
-                    <BookOpen className="mr-2 h-4 w-4" /> Back to Content
+                    <BookOpen className="mr-2 h-4 w-4" /> {t('quizBackToContent')}
                 </Button>
                 <div className="flex gap-2">
                     <Button variant="outline" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
-                        <ChevronLeft className="mr-2 h-4 w-4" /> Previous
+                        <ChevronLeft className="mr-2 h-4 w-4" /> {t('quizPrevious')}
                     </Button>
                     {currentQuestionIndex === questions.length - 1 ? (
-                        <Button onClick={handleSubmit} disabled={!selectedAnswer}>Submit Quiz</Button>
+                        <Button onClick={handleSubmit} disabled={!selectedAnswer}>{t('quizSubmit')}</Button>
                     ) : (
                         <Button onClick={handleNext} disabled={!selectedAnswer}>
-                            Next <ChevronRight className="ml-2 h-4 w-4" />
+                            {t('quizNext')} <ChevronRight className="ml-2 h-4 w-4" />
                         </Button>
                     )}
                 </div>

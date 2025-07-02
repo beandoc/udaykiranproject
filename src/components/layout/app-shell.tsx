@@ -35,20 +35,22 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-
-const mainNav = [
-  { href: '/', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/modules', label: 'Educational Modules', icon: BookOpen },
-  { href: '/resources', label: 'Resource Library', icon: Library },
-];
-
-const toolsNav = [
-  { href: '/tools/medication', label: 'Medication Tracker', icon: Pill },
-  { href: '/tools/symptoms', label: 'Symptom Log', icon: HeartPulse },
-];
+import { useAppContext } from '@/context/app-context';
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const { t, setLanguage } = useAppContext();
+
+  const mainNav = [
+    { href: '/', labelKey: 'navDashboard', icon: LayoutDashboard },
+    { href: '/modules', labelKey: 'navEducationalModules', icon: BookOpen },
+    { href: '/resources', labelKey: 'navResourceLibrary', icon: Library },
+  ];
+  
+  const toolsNav = [
+    { href: '/tools/medication', labelKey: 'toolMedicationTracker', icon: Pill },
+    { href: '/tools/symptoms', labelKey: 'toolSymptomLog', icon: HeartPulse },
+  ];
 
   return (
     <SidebarProvider>
@@ -59,8 +61,8 @@ export function AppShell({ children }: { children: ReactNode }) {
                     <Heart className="w-6 h-6 fill-current" />
                 </div>
                  <div className="group-data-[collapsible=icon]:hidden">
-                  <h1 className="text-lg font-headline font-bold text-foreground">Kidney Transplant Hub</h1>
-                  <p className="text-xs text-muted-foreground">Your journey companion</p>
+                  <h1 className="text-lg font-headline font-bold text-foreground">{t('appTitle')}</h1>
+                  <p className="text-xs text-muted-foreground">{t('appSubtitle')}</p>
                 </div>
             </Link>
         </SidebarHeader>
@@ -71,21 +73,21 @@ export function AppShell({ children }: { children: ReactNode }) {
                     <SidebarMenuButton asChild isActive={pathname === item.href}>
                         <Link href={item.href}>
                         <item.icon />
-                        <span>{item.label}</span>
+                        <span>{t(item.labelKey)}</span>
                         </Link>
                     </SidebarMenuButton>
                     </SidebarMenuItem>
                 ))}
             </SidebarMenu>
             <SidebarGroup className="mt-4">
-                <SidebarGroupLabel>Health Tools</SidebarGroupLabel>
+                <SidebarGroupLabel>{t('groupHealthTools')}</SidebarGroupLabel>
                 <SidebarMenu>
                     {toolsNav.map((item) => (
                         <SidebarMenuItem key={item.href}>
                         <SidebarMenuButton asChild isActive={pathname === item.href}>
                             <Link href={item.href}>
                             <item.icon />
-                            <span>{item.label}</span>
+                            <span>{t(item.labelKey)}</span>
                             </Link>
                         </SidebarMenuButton>
                         </SidebarMenuItem>
@@ -103,22 +105,22 @@ export function AppShell({ children }: { children: ReactNode }) {
               <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon" className="rounded-full">
                       <Globe className="h-5 w-5" />
-                      <span className="sr-only">Select language</span>
+                      <span className="sr-only">{t('selectLanguage')}</span>
                   </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                  <DropdownMenuItem>English</DropdownMenuItem>
-                  <DropdownMenuItem>हिन्दी (Hindi)</DropdownMenuItem>
-                  <DropdownMenuItem>मराठी (Marathi)</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setLanguage('en')}>{t('langEnglish')}</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setLanguage('hi')}>{t('langHindi')}</DropdownMenuItem>
+                  <DropdownMenuItem disabled>{t('langMarathi')}</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <Button variant="ghost" size="icon" className="rounded-full">
                 <Bell className="h-5 w-5" />
-                <span className="sr-only">Notifications</span>
+                <span className="sr-only">{t('notifications')}</span>
             </Button>
             <Button variant="ghost" size="icon" className="rounded-full">
                 <Moon className="h-5 w-5" />
-                <span className="sr-only">Toggle theme</span>
+                <span className="sr-only">{t('toggleTheme')}</span>
             </Button>
             <Avatar className="h-9 w-9">
               <AvatarFallback className="bg-primary/20">JD</AvatarFallback>

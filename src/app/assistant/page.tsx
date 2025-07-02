@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Sparkles, Bot, User, CheckCircle2 } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useAppContext } from '@/context/app-context';
 
 const FormSchema = z.object({
   question: z.string().min(10, { message: 'Please enter a question of at least 10 characters.' }),
@@ -22,6 +23,7 @@ const FormSchema = z.object({
 type FormValues = z.infer<typeof FormSchema>;
 
 export default function AssistantPage() {
+  const { t } = useAppContext();
   const [lastQuestion, setLastQuestion] = useState<string | null>(null);
   const [response, setResponse] = useState<AnswerTransplantQuestionsOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -44,7 +46,7 @@ export default function AssistantPage() {
       const result = await answerTransplantQuestions({ question: data.question });
       setResponse(result);
     } catch (err) {
-      setError('Sorry, something went wrong. Please try again.');
+      setError(t('assistantError'));
       console.error(err);
     } finally {
       setIsLoading(false);
@@ -55,8 +57,8 @@ export default function AssistantPage() {
   return (
     <div className="flex flex-col h-[calc(100vh-120px)]">
       <header className="mb-8 text-center">
-        <h1 className="text-3xl font-bold font-headline tracking-tight">AI Assistant</h1>
-        <p className="text-muted-foreground">Your trusted partner for transplant-related questions.</p>
+        <h1 className="text-3xl font-bold font-headline tracking-tight">{t('assistantTitle')}</h1>
+        <p className="text-muted-foreground">{t('assistantDescription')}</p>
       </header>
 
       <div className="flex-grow space-y-6 overflow-y-auto pr-4">
@@ -106,7 +108,7 @@ export default function AssistantPage() {
                         <div className="mt-4">
                             <Badge variant="outline" className="bg-accent/20 border-accent/50 text-accent-foreground">
                                 <CheckCircle2 className="mr-1.5 h-3.5 w-3.5" />
-                                Reliable Source
+                                {t('assistantReliableSource')}
                             </Badge>
                         </div>
                     )}
@@ -119,10 +121,10 @@ export default function AssistantPage() {
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2 font-headline">
                         <Sparkles className="text-primary"/>
-                        <span>Ask me anything!</span>
+                        <span>{t('assistantDefaultCardTitle')}</span>
                     </CardTitle>
                     <CardDescription>
-                        For example: "What are the common side effects of anti-rejection medications?"
+                        {t('assistantDefaultCardDesc')}
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -140,7 +142,7 @@ export default function AssistantPage() {
                   <FormItem className="flex-grow">
                     <FormControl>
                       <Textarea
-                        placeholder="Type your question about kidney transplants here..."
+                        placeholder={t('assistantFormPlaceholder')}
                         className="min-h-12 resize-none bg-card"
                         {...field}
                       />
@@ -150,7 +152,7 @@ export default function AssistantPage() {
                 )}
               />
               <Button type="submit" disabled={isLoading} size="lg">
-                  {isLoading ? 'Thinking...' : 'Ask'}
+                  {isLoading ? t('assistantFormButtonLoading') : t('assistantFormButton')}
               </Button>
             </form>
           </Form>
