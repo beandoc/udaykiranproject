@@ -6,18 +6,18 @@ export type Module = {
 };
 
 export const patientModules: Module[] = [
-  { title: 'Understanding Kidney Disease', duration: 2, status: 'Completed', slug: 'understanding-kidney-disease' },
+  { title: 'Understanding Kidney Disease', duration: 3, status: 'Completed', slug: 'understanding-kidney-disease' },
   { title: 'Chronic Kidney Disease Stages', duration: 1, status: 'Completed', slug: 'ckd-stages' },
   { title: 'Treatment Options Overview', duration: 1, status: 'Completed', slug: 'treatment-options' },
   { title: 'Dialysis vs Transplant', duration: 1, status: 'Not Started', slug: 'dialysis-vs-transplant' },
-  { title: 'Transplant Evaluation Process', duration: 2, status: 'Not Started', slug: 'evaluation-process' },
+  { title: 'Transplant Evaluation Process', duration: 3, status: 'Not Started', slug: 'evaluation-process' },
   { title: 'Finding a Donor', duration: 1, status: 'Not Started', slug: 'finding-a-donor' },
   { title: 'Understanding Transplant Matching', duration: 2, status: 'Not Started', slug: 'transplant-matching' },
   { title: 'Pre-Surgery Preparation', duration: 1, status: 'Not Started', slug: 'pre-surgery-prep' },
   { title: 'Surgery Day Experience', duration: 6, status: 'Not Started', slug: 'surgery-day' },
-  { title: 'Post-Transplant Recovery', duration: 4, status: 'Not Started', slug: 'post-transplant-recovery' },
+  { title: 'Post-Transplant Recovery', duration: 3, status: 'Not Started', slug: 'post-transplant-recovery' },
   { title: 'Immunosuppressive Medications', duration: 2, status: 'Not Started', slug: 'immunosuppressants' },
-  { title: 'Understanding Risk of Rejection', duration: 3, status: 'Not Started', slug: 'understanding-rejection' },
+  { title: 'Understanding Risk of Rejection', duration: 2, status: 'Not Started', slug: 'understanding-rejection' },
   { title: 'Recognizing Complications', duration: 1, status: 'Not Started', slug: 'recognizing-complications' },
   { title: 'Long-term Care', duration: 1, status: 'Not Started', slug: 'long-term-care' },
   { title: 'Lifestyle Management', duration: 1, status: 'Not Started', slug: 'lifestyle-management' },
@@ -28,12 +28,12 @@ export const patientModules: Module[] = [
 export const donorModules: Module[] = [
     { title: 'Understanding Living Donation', duration: 2, status: 'Completed', slug: 'understanding-living-donation' },
     { title: 'Donor Eligibility Criteria', duration: 1, status: 'Completed', slug: 'donor-eligibility' },
-    { title: 'Medical Evaluation Process', duration: 1, status: 'Not Started', slug: 'donor-evaluation' },
+    { title: 'Medical Evaluation Process', duration: 2, status: 'Not Started', slug: 'donor-evaluation' },
     { title: 'Understanding Transplant Matching', duration: 2, status: 'Not Started', slug: 'transplant-matching' },
     { title: 'Psychological Assessment', duration: 1, status: 'Not Started', slug: 'psychological-assessment' },
-    { title: 'Surgical Procedure Overview', duration: 2, status: 'Not Started', slug: 'donor-surgery' },
+    { title: 'Surgical Procedure Overview', duration: 1, status: 'Not Started', slug: 'donor-surgery' },
     { title: 'Recovery Timeline', duration: 1, status: 'Not Started', slug: 'donor-recovery' },
-    { title: 'Potential Risks and Benefits', duration: 3, status: 'Not Started', slug: 'risks-and-benefits' },
+    { title: 'Potential Risks and Benefits', duration: 2, status: 'Not Started', slug: 'risks-and-benefits' },
     { title: 'Long-term Health Monitoring', duration: 1, status: 'Not Started', slug: 'donor-long-term-health' },
     { title: 'Support Resources', duration: 1, status: 'Not Started', slug: 'donor-support-resources' },
 ];
@@ -48,6 +48,29 @@ export const caregiverModules: Module[] = [
     { title: 'Self-Care for Caregivers', duration: 1, status: 'Not Started', slug: 'self-care-for-caregivers' },
     { title: 'Communication with Medical Team', duration: 1, status: 'Not Started', slug: 'communication-with-medical-team' },
 ];
+
+// Helper to calculate reading time
+const countWords = (node: React.ReactNode): number => {
+    if (typeof node === 'string') {
+        return node.trim().split(/\s+/).length;
+    }
+    if (React.isValidElement(node) && node.props.children) {
+        return React.Children.toArray(node.props.children).reduce((acc, child) => acc + countWords(child), 0);
+    }
+    if (Array.isArray(node)) {
+        return node.reduce((acc, child) => acc + countWords(child), 0);
+    }
+    return 0;
+};
+
+// Words per minute
+const WPM = 200; 
+
+const calculateReadingTime = (content: React.ReactNode) => {
+    const wordCount = countWords(content);
+    const time = Math.ceil(wordCount / WPM);
+    return Math.max(1, time); // Ensure at least 1 minute
+}
 
 export const modulesByRole = {
     Patient: { title: "Kidney Patient Education Path", modules: patientModules },

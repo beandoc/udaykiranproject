@@ -214,23 +214,11 @@ const surgeryDayExperienceContent = (
 
 const postTransplantRecoveryContent = (
     <div className="space-y-4 text-base leading-relaxed">
-        <h2 className="text-2xl font-bold font-headline">Going Home After Your Transplant</h2>
-        <p>Caring for yourself after your kidney transplant is crucial, especially during the first few months, which is a critical period of adjustment. It's essential to follow your doctor's instructions closely and immediately report any changes in your health to your care team.</p>
-        
-        <h3 className="text-xl font-bold font-headline pt-4">Regular Check-ups</h3>
-        <p>You will have frequent check-ups to monitor your new kidney's function. Initially, these appointments may be very frequent, gradually becoming less so as you recover—moving to weekly, and then monthly.</p>
-        <p>During these visits, your medical team will assess your surgical wound to ensure it's healing properly and check for any signs of organ rejection. Factors like certain medications, diabetes, or obesity can slow down wound healing. If you have any of these risk factors, you may be monitored more closely.</p>
-
-        <h3 className="text-xl font-bold font-headline pt-4">Planning for Your Discharge</h3>
-        <p>It's important to plan where you will stay after being discharged from the hospital. If you live far from the transplant center, you may need to arrange for temporary accommodation nearby for the first few weeks to be close to your medical team for follow-up appointments.</p>
-        <p>Start thinking about these arrangements early. Discuss potential travel and accommodation assistance programs with your hospital's social worker or transplant coordinator, as many centers offer resources to help with these logistics.</p>
-        
-        <h3 className="text-xl font-bold font-headline pt-4">Returning to Daily Life</h3>
-        <p>You can generally expect to return to normal activities and work within three to six months of your transplant. This period allows time for your surgical wound to heal and for your stomach muscles to regain strength.</p>
-        <p>Regular exercise is a vital part of staying healthy. It's recommended to begin an exercise routine under the guidance of your healthcare team.</p>
-        <p>For your safety, you should not drive for at least six weeks after your transplant. It's also important to avoid any heavy lifting during this initial recovery period.</p>
-        <p>Pay close attention to the color of your urine. If it appears too dark, increase your water intake. If you notice any unusual colors, redness, or if your urine is frothy, contact your healthcare team.</p>
-        <p>Managing your medications is one of your most important responsibilities. You must take your medications exactly as prescribed. With a large number of medications required at specific times, using a pill organizer and getting support from your pharmacist can be extremely helpful.</p>
+        <h2 className="text-2xl font-bold font-headline">Living With Your New Kidney</h2>
+        <p>You should be able to return to normal activities and work within three to six months of your transplant. You will need to allow time for your wound to heal and for your stomach muscles to get strong again. Regular exercise is an important part of staying healthy. It is recommended that you start regular exercise under the guidance of your health care team.</p>
+        <p>It is recommended that you do not drive a car until six weeks after your transplant. You should also avoid any heavy lifting for six weeks.</p>
+        <p>Check the colour of your urine regularly. If the colour is too dark drink some water. If the colour is unusual, red or the urine is frothy speak to your health care team.</p>
+        <p>You will need to manage your medications carefully. It is important that you take your medications exactly as prescribed by your doctor. Support from your pharmacist as well as a pill organizer might be needed as there will be a large number of medications needed at specific times of the day.</p>
         
         <h3 className="text-xl font-bold font-headline pt-4">More Tips on Staying Healthy</h3>
         <p>Living a healthy lifestyle is key to protecting your new kidney. Here are some important tips to follow:</p>
@@ -239,13 +227,13 @@ const postTransplantRecoveryContent = (
                 <h4 className="font-bold">Avoid Infections</h4>
                 <ul className="list-disc list-inside space-y-1">
                     <li>Wash your hands frequently and thoroughly.</li>
-                    <li>Keep all your vaccinations up to date.</li>
+                    <li>Keep your vaccinations up to date.</li>
                     <li>Limit contact with people who have colds or viruses.</li>
                     <li>Clean and treat any cuts or scratches immediately.</li>
                 </ul>
             </div>
             <div className="space-y-3">
-                <h4 className="font-bold">Reduce Cancer Risk</h4>
+                <h4 className="font-bold">Reduce Your Risk of Skin Cancer</h4>
                 <ul className="list-disc list-inside space-y-1">
                     <li>Protect your skin from the sun with clothing, sunscreen, and a hat.</li>
                     <li>Get regular screenings for common cancers as advised by your doctor.</li>
@@ -253,7 +241,7 @@ const postTransplantRecoveryContent = (
             </div>
             <div className="space-y-3">
                  <h4 className="font-bold">Be a Non-Smoker</h4>
-                 <p>Smoking increases your risk of serious health issues and can reduce the long-term success of your transplant.</p>
+                 <p>Smoking increases your risk of serious health problems like lung cancer, stroke, and heart attack, and can reduce the long-term success of your transplant.</p>
             </div>
              <div className="space-y-3">
                  <h4 className="font-bold">Report Illness Promptly</h4>
@@ -298,40 +286,24 @@ const mentalHealthSupportContent = (
 
 const understandingRejectionContent = (
     <div className="space-y-4 text-base leading-relaxed">
-        <h2 className="text-2xl font-bold font-headline">Understanding the Risk of Rejection</h2>
-        <p>Anti-rejection medications (immunosuppressants) are a lifelong requirement for as long as your new kidney is functioning. They work by partially suppressing your immune system to prevent it from identifying the transplanted kidney as a foreign object and attacking it.</p>
-        
-        <h3 className="text-xl font-bold font-headline pt-4">Know Your Medications</h3>
-        <p>It's vital to understand your medications fully. For each one, make sure you know:</p>
-        <ul className="list-disc list-inside space-y-2 pl-4">
-            <li>When and how to take them</li>
-            <li>What you should do if you miss a dose</li>
-            <li>Any potential dietary restrictions</li>
-            <li>How they might interact with other medications</li>
-            <li>Common side effects to watch for</li>
-            <li>How to store them correctly</li>
-        </ul>
-        <p className="pt-2">Your pharmacist is an excellent resource for this information, and using a pill organizer can help you stay on track with your schedule.</p>
+        <h2 className="text-2xl font-bold font-headline">Understanding Transplant Rejection</h2>
+        <p>You must take anti-rejection medications for as long as your transplanted kidney is working. These medications partially block your body’s immune system to prevent it from attacking your new kidney.</p>
+        <p>There are many different medications used to prevent rejection. For each one, it's vital to know when and how to take them, what to do if you miss a dose, and any potential side effects or dietary restrictions. Your pharmacist is a great resource, and using a pill organizer can be very helpful.</p>
+        <p>In the early period after your transplant, you may have some rejection episodes. Often, these are only detected by your regular blood tests. These episodes can usually be managed with changes to your medications. Some cases may require extra treatments like plasma exchange (to remove harmful antibodies) or special infusions. Most rejection episodes can be treated successfully. However, rejection can happen at any time, which is why it's crucial to follow all medical instructions and attend regular check-ups.</p>
 
-        <h3 className="text-xl font-bold font-headline pt-4">What Are Rejection Episodes?</h3>
-        <p>It's not uncommon to experience rejection episodes, especially in the early period after your transplant. Often, these are so subtle that they are only detected through your routine blood tests. In most cases, these episodes can be successfully treated by simply adjusting your medications.</p>
-        <p>More significant rejection episodes might require additional treatments, like plasma exchange (a process to remove harmful antibodies from your blood) or other specialized infusions. The good news is that most rejection can be managed effectively.</p>
-        <p>However, it's crucial to remember that rejection can happen at any time. This is why strictly following your medication schedule, attending all check-ups, and reporting any new symptoms to your team is so important for the long-term health of your new kidney.</p>
-        
-        <h3 className="text-xl font-bold font-headline pt-4">Types of Rejection</h3>
-        <p>There are different types of rejection, each occurring on a different timeline:</p>
+        <h3 className="text-xl font-bold font-headline pt-4">Types of Rejection Episodes</h3>
         <ul className="list-none space-y-4 pl-0">
             <li className="p-4 bg-muted/50 rounded-lg">
                 <h4 className="font-bold">Hyperacute Rejection</h4>
-                <p>This is a very rare type that can happen within minutes or hours of surgery. It is caused by a severe, immediate immune response. This type cannot be treated, and the new kidney must be removed right away.</p>
+                <p>This is very rare and can occur minutes or hours after the transplant. It is untreatable, and the kidney must be removed immediately.</p>
             </li>
             <li className="p-4 bg-muted/50 rounded-lg">
                 <h4 className="font-bold">Acute Rejection</h4>
-                <p>This is a more common type, often happening within the first few weeks or months. It involves a sudden inflammation of the new kidney. Acute rejection might cause pain or fever, but often there are no symptoms, which is why your routine blood tests are so important. If your lab results show a problem, a kidney biopsy might be needed to confirm it. Fortunately, most cases of acute rejection can be successfully treated with changes to your medication.</p>
+                <p>This type usually occurs in the first few weeks. It often has no symptoms and is detected by rising creatinine levels in your blood tests. A biopsy of the kidney is often used to confirm the diagnosis. Mild acute rejection is common and can usually be treated successfully with medication changes.</p>
             </li>
             <li className="p-4 bg-muted/50 rounded-lg">
                 <h4 className="font-bold">Chronic Rejection</h4>
-                <p>This is a slow, long-term process where the new kidney gradually becomes damaged and scarred over several years. It can be caused by antibodies that your body develops over time against the new kidney. This type of rejection is harder to treat and can eventually lead to kidney failure, requiring a return to dialysis or another transplant.</p>
+                <p>This is a gradual process of scarring and damage that occurs over several years. It can be difficult to treat and may eventually lead to kidney failure, requiring a return to dialysis or another transplant.</p>
             </li>
         </ul>
     </div>
@@ -350,7 +322,7 @@ const immunosuppressiveMedicationsContent = (
             <li>Changes in hair, like unwanted growth or hair loss</li>
             <li>Increased appetite and potential weight gain</li>
             <li>Mood swings</li>
-            <li>Higher risk of developing high blood pressure, diabetes, or some cancers (especially skin cancer)</li>
+            <li>Higher risk of developing high blood pressure, diabetes, or some cancers (particularly skin cancer)</li>
             <li>Pimples or acne</li>
             <li>Muscle weakness or shakiness in your hands</li>
             <li>Stomach problems, such as indigestion or diarrhea</li>
@@ -371,11 +343,22 @@ const immunosuppressiveMedicationsContent = (
 
 const donorEvaluationContent = (
     <div className="space-y-4 text-base leading-relaxed">
-        <h2 className="text-2xl font-bold font-headline">The Medical Evaluation for Living Donors</h2>
-        <p>Becoming a living kidney donor is a generous act. To ensure it's safe for you, the potential donor must have normal kidney function, be in good overall health, and be emotionally prepared for the donation process. The evaluation involves a series of medical tests and a psychological assessment.</p>
+        <h2 className="text-2xl font-bold font-headline">The Evaluation Process for Living Donors</h2>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">How to Start the Process</h3>
+        <p>To begin your journey as a living donor, the first step is to get in touch with a transplant center. Here’s what you need to know:</p>
+        <ul className="list-disc list-inside space-y-2 pl-4">
+            <li><strong>If you are donating to a specific person (a "directed donation"):</strong> You must contact the transplant center where the recipient is on the waitlist. Your evaluation will be handled by the same center.</li>
+            <li><strong>If you are donating to any person in need (a "non-directed donation"):</strong> You have the flexibility to contact any transplant center to begin your evaluation process.</li>
+        </ul>
+        <p className="pt-2">Regardless of the path you choose, the medical team will guide you through the next steps.</p>
 
+        <h3 className="text-xl font-bold font-headline pt-4">Building Your Support System</h3>
+        <p>Deciding to become a living donor is a significant choice. It's highly recommended to talk openly about your decision with family and trusted friends. Sharing information and including them in your process can provide you with a strong support network and help answer any questions they might have.</p>
+        <p>Many potential donors also find it incredibly helpful to connect with someone who has already gone through the donation experience. Hearing a firsthand account can offer valuable insights and reassurance.</p>
+        
         <h3 className="text-xl font-bold font-headline pt-4">The Medical Assessment</h3>
-        <p>If you are considering being a living donor, you'll undergo a thorough medical check-up. The primary goal is to ensure that donating a kidney is safe for you, both immediately and in the long run. The transplant team will also confirm that you are fit for surgery and that your kidney is suitable for donation.</p>
+        <p>The core of the evaluation is a thorough medical check-up. The primary goal is to ensure that donating a kidney is safe for you, both immediately and in the long run. The transplant team will also confirm that you are fit for surgery and that your kidney is suitable for donation.</p>
 
         <h3 className="text-xl font-bold font-headline pt-4">What Tests Are Involved?</h3>
         <p>A number of tests are required to ensure a living donor is a suitable match. These may include:</p>
@@ -430,17 +413,16 @@ const psychologicalAssessmentContent = (
 const donorSurgeryOverviewContent = (
     <div className="space-y-4 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">The Donor's Surgical Procedure</h2>
-        
         <h3 className="text-xl font-bold font-headline pt-4">What does the operation involve?</h3>
-        <p>As a living donor, you will be put to sleep with general anesthesia, just like in any major surgery. To help manage pain afterward, most transplant centers use "pain blocks," which numb the abdominal area for 12-24 hours. This approach significantly reduces discomfort and the need for pain medication after you wake up.</p>
-        <p>The surgery to remove the kidney typically takes about <strong>two to three hours</strong>. Most procedures are done laparoscopically (keyhole surgery), where the surgeon makes two or three very small incisions to remove the kidney with specialized tools. Most donors are able to get up and walk around on the same day as their surgery.</p>
+        <p>As a living donor, you will be put to sleep with general anesthesia. Most transplant centers also use "pain blocks," which numb the abdominal area for 12-24 hours to lessen pain after the surgery.</p>
+        <p>The surgery to remove the kidney typically takes about <strong>two to three hours</strong>. Most procedures are done laparoscopically (keyhole surgery), using tiny incisions and a camera to remove the kidney.</p>
 
         <h3 className="text-xl font-bold font-headline pt-4">What are the risks of surgery?</h3>
-        <p>Like any surgery, there are some risks involved. The transplant team will discuss these with you in detail. The most common risks include:</p>
+        <p>Like any surgery, there are some risks involved. The most common risks include:</p>
         <ul className="list-disc list-inside space-y-2 pl-4">
-            <li><strong>Bleeding or Infection:</strong> As with any surgical cut, there's a risk of bleeding or infection at the incision site.</li>
-            <li><strong>Hernia:</strong> If you lift something too heavy soon after surgery, you could develop a hernia (a bulge where the incision was made).</li>
-            <li><strong>Urinary Tract Infection (UTI):</strong> A temporary tube (catheter) is placed in your bladder during surgery to drain urine. This can sometimes lead to a UTI.</li>
+            <li>Bleeding or infection in the surgical area.</li>
+            <li>Developing a hernia if you lift anything too heavy too soon after surgery.</li>
+            <li>Getting a Urinary Tract Infection (UTI) from the catheter used during surgery.</li>
         </ul>
         <p className="pt-2">It's important to know that the risk of death from this surgery is extremely low, at just <strong>0.03%</strong> (or 3 in every 10,000 donors).</p>
     </div>
@@ -449,11 +431,8 @@ const donorSurgeryOverviewContent = (
 const donorRecoveryTimelineContent = (
     <div className="space-y-4 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">The Donor's Recovery Journey</h2>
-        <p>Recovering from kidney donation surgery is a process that requires time and care. Understanding what to expect can help donors prepare for the weeks following the procedure.</p>
-        
-        <h3 className="text-xl font-bold font-headline pt-4">How long will I need to recover?</h3>
-        <p>Your recovery begins right after the surgery. Most donors stay in the hospital for just <strong>one to two nights</strong>. Pain medication is usually only needed for a short time.</p>
-        <p>A full recovery generally takes about <strong>four to six weeks</strong>. However, many donors can return to work much sooner. If you have a desk job or other non-physical work, you might be able to return after just two weeks. If your job is more physically demanding, your employer may offer a temporary desk-based role during your recovery.</p>
+        <p>Most donors stay in the hospital for just <strong>one to two nights</strong>. Pain medication is usually only needed for a short time. You can expect to be up and walking on the same day as your surgery.</p>
+        <p>A full recovery generally takes about <strong>four to six weeks</strong>. However, many donors can return to work much sooner. If you have a desk job, you might be able to return after just two weeks. If your job is more physically demanding, your employer may offer a temporary desk-based role during your recovery.</p>
         <p>It's very important to talk to your transplant team about when it's safe for you to return to work, sports, and other physical activities. Following their guidance will ensure you heal properly and avoid complications.</p>
     </div>
 );
@@ -461,23 +440,17 @@ const donorRecoveryTimelineContent = (
 const risksAndBenefitsContent = (
     <div className="space-y-4 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">Long-Term Health After Donation</h2>
-        <p>Deciding to be a living kidney donor is a generous act, and it's natural to have questions about your own health in the future. The great news is that extensive research shows that living donors can live a normal, healthy life with one kidney.</p>
-
-        <h3 className="text-xl font-bold font-headline pt-4">How Your Body Adapts</h3>
-        <p>The human body is remarkable. When one kidney is removed, the remaining kidney gets bigger and works harder to take over the job of the donated one. This process is called <strong>"compensatory growth."</strong></p>
-        <p>Studies show that after donation, a donor's total kidney function (how well the kidneys filter waste) returns to about <strong>70-80%</strong> of what it was with two kidneys. This is more than enough to stay healthy and live a full life. Donating a kidney does not impact your life expectancy.</p>
+        <p>Research has shown that living donors can live a normal, healthy life with one kidney. When one kidney is removed, the other grows to take over the work of the donated one. This is called “compensatory growth.” Studies show that after donation, a donor’s total kidney function returns to roughly 70-80% of what it was with two kidneys, which is more than enough to stay healthy.</p>
         
         <h3 className="text-xl font-bold font-headline pt-4">Long-Term Health Considerations</h3>
         <p>While the outlook is excellent, there are a few things to be aware of for the long term:</p>
         <ul className="list-disc list-inside space-y-3 pl-4">
-            <li><strong>Blood Pressure:</strong> Donors have a slightly higher-than-average risk of developing high blood pressure later in life. Maintaining a healthy diet and getting regular physical activity are key to staying healthy. This is especially important for donors who may want to become pregnant after donation.</li>
-            <li><strong>Kidney Failure:</strong> The risk of a donor's remaining kidney failing later in life is very low—less than 1% of people who donate ever need dialysis or a transplant themselves. This risk is only slightly higher than that of the general population.</li>
-            <li><strong>Priority on the Waitlist:</strong> In the rare event that a former living donor does need a kidney transplant in the future, they are given a high-priority position on the national transplant waiting list.</li>
+            <li><strong>Blood Pressure:</strong> Donors have a slightly higher than average risk of developing high blood pressure. Maintaining a healthy diet and getting regular physical activity are key to staying healthy, especially for female donors who may want to become pregnant after donation.</li>
+            <li><strong>Kidney Failure:</strong> The risk of a donor's remaining kidney failing is very low—less than 1% of donors ever need dialysis or a transplant themselves. This is only slightly higher than the average person's risk. In the rare event a former donor does need a kidney, they are given high priority on the transplant waitlist.</li>
         </ul>
 
-        <h3 className="text-xl font-bold font-headline pt-4">Your Emotional Well-being</h3>
-        <p>The vast majority of living donors (80–90%) report feeling very positive and satisfied with their decision to donate, even long after the surgery. It is a profoundly rewarding experience for many.</p>
-        <p>However, it's also normal to feel anxious or depressed for a short time after the donation. This can be a natural response to a major life event. These feelings are not uncommon, even when both you and the recipient are doing well.</p>
+        <h3 className="text-xl font-bold font-headline pt-4">What to Expect Emotionally</h3>
+        <p>Most living donors (80–90%) report feeling very positive about their decision to donate. However, it's also normal to feel anxious or depressed for a short time after the donation as you process the experience. These feelings are not uncommon, even when both you and the recipient are doing well.</p>
         <p>It is vital to talk to the transplant team about how you're feeling, both physically and emotionally, during your follow-up visits. Your emotional health is just as important as your physical recovery, and support is always available.</p>
     </div>
 );

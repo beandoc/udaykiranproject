@@ -382,14 +382,14 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             correctAnswer: "To ensure the donation is safe for the donor."
         },
         {
-            question: "Which of these is NOT a key requirement for being a living kidney donor?",
+            question: "What is a good first step when considering becoming a living donor?",
             options: [
-                "Good overall health.",
-                "Normal kidney function.",
-                "Having the exact same hobbies as the recipient.",
-                "Emotional suitability for donation."
+                "Book a vacation for after the surgery.",
+                "Buy a new car.",
+                "Talk to your family and trusted friends about your decision.",
+                "Keep it a complete secret from everyone."
             ],
-            correctAnswer: "Having the exact same hobbies as the recipient."
+            correctAnswer: "Talk to your family and trusted friends about your decision."
         },
         {
             question: "What happens if a previously unknown health problem is discovered in the donor during the evaluation?",
@@ -412,14 +412,14 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             correctAnswer: "A test for blood and tissue type compatibility."
         },
         {
-            question: "Besides medical tests, what other type of assessment is typically part of the donor evaluation?",
+            question: "If you want to donate to a specific person, where should you start the evaluation process?",
             options: [
-                "A financial audit.",
-                "A psychological assessment.",
-                "A fashion consultation.",
-                "A review of their social media."
+                "At any transplant center in the country.",
+                "At your local family doctor's office.",
+                "At the same transplant center where the recipient is waitlisted.",
+                "By calling the national organ registry."
             ],
-            correctAnswer: "A psychological assessment."
+            correctAnswer: "At the same transplant center where the recipient is waitlisted."
         }
     ],
     'donor-eligibility': [
