@@ -251,6 +251,26 @@ const postTransplantRecoveryContent = (
     </div>
 );
 
+const mentalHealthSupportContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Looking After Your Emotional Well-being</h2>
+        <p>A kidney transplant is a major, life-changing event that can bring a lot of positive changes. However, it's also completely normal to experience a wide range of emotions as you adjust. You might have mood swings or feel stressed or down as you get used to your new reality and new medications. These feelings are common. It's important to remember that talking to someone early on is the best way to get the support you need.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Common Emotional Experiences</h3>
+        <p>It's common to navigate complex feelings after a transplant. You might find yourself thinking about:</p>
+        <ul className="list-disc list-inside space-y-3 pl-4">
+            <li><strong>Adjusting to the New Organ:</strong> It can feel strange to have an organ from another person inside you. While some people worry about taking on the donor's personality, rest assured this is not possible.</li>
+            <li><strong>Feelings About the Donor:</strong> If you received a kidney from a deceased donor, it's normal to feel a mix of gratitude for your second chance at health and sadness for the donor's family. These complex emotions are a natural part of the process.</li>
+            <li><strong>A New Sense of Normal:</strong> After a long illness, feeling "normal" again can be overwhelming in itself. It’s a big adjustment.</li>
+            <li><strong>Changing Relationships:</strong> As you regain your health and independence, your relationships with family and friends may shift. Everyone needs time to adapt to the new dynamic.</li>
+            <li><strong>Anxiety About Rejection:</strong> Worrying about rejection is a common fear. It can make you anxious before check-ups, followed by relief when you get good news. This emotional roller-coaster is something many patients experience.</li>
+            <li><strong>Managing Medications:</strong> The number of new medications and their potential side effects can feel daunting. Don't hesitate to discuss these concerns with your care team.</li>
+            <li><strong>Survivor's Guilt:</strong> You might feel guilty that you received a transplant while others are still waiting. This is a recognized feeling, and talking about it can help.</li>
+        </ul>
+        <p className="pt-2">Remember, you are not alone in these feelings. Your transplant team, including social workers and psychologists, are there to support you through every step of this journey.</p>
+    </div>
+);
+
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
@@ -259,6 +279,7 @@ export const contentData: ModuleContent = {
     'transplant-matching': transplantMatchingContent,
     'surgery-day': surgeryDayExperienceContent,
     'post-transplant-recovery': postTransplantRecoveryContent,
+    'mental-health-support': mentalHealthSupportContent,
 };
 
 // Placeholder for other modules

@@ -1,3 +1,4 @@
+
 import { modulesByRole } from './modules-data';
 
 export type QuizQuestion = {
@@ -263,6 +264,58 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
                 "Normal blood pressure"
             ],
             correctAnswer: "Fever, flu-like symptoms, or pain over the transplant site"
+        }
+    ],
+    'mental-health-support': [
+        {
+            question: "Is it normal to experience mood swings or feel stressed after a transplant?",
+            options: [
+                "No, you should feel happy all the time.",
+                "Yes, it's a common and normal part of adjusting to a major life event.",
+                "Only for the first day.",
+                "It means the medication is not working."
+            ],
+            correctAnswer: "Yes, it's a common and normal part of adjusting to a major life event."
+        },
+        {
+            question: "If you have complex feelings about receiving an organ from a deceased donor, what is a good first step?",
+            options: [
+                "Ignore the feelings and hope they go away.",
+                "Acknowledge that these mixed emotions are normal and valid.",
+                "Feel guilty about being happy.",
+                "Stop taking your medication."
+            ],
+            correctAnswer: "Acknowledge that these mixed emotions are normal and valid."
+        },
+        {
+            question: "What common emotional 'roller-coaster' might a transplant patient experience?",
+            options: [
+                "Feeling hungry and then full.",
+                "Feeling sleepy and then awake.",
+                "Feeling anxious before medical appointments and relieved after good news.",
+                "Feeling cold and then hot."
+            ],
+            correctAnswer: "Feeling anxious before medical appointments and relieved after good news."
+        },
+        {
+            question: "If you feel overwhelmed by your emotions after your transplant, what is the best thing to do?",
+            options: [
+                "Keep it to yourself.",
+                "Talk about it with your transplant team, a counselor, or a support group.",
+                "Go on a long vacation immediately.",
+                "Change your diet."
+            ],
+            correctAnswer: "Talk about it with your transplant team, a counselor, or a support group."
+        },
+        {
+            question: "Is it possible to develop the personality of your organ donor?",
+            options: [
+                "Yes, it happens frequently.",
+                "No, this is a common myth and is not possible.",
+                "Only if the donor was a close relative.",
+                "It depends on the blood type match."
+            ],
+            correctAnswer: "No, this is a common myth and is not possible."
         }
     ]
 };
