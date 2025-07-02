@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -12,16 +12,19 @@ import { quizData, type QuizQuestion } from "@/lib/quiz-data";
 import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
-import { contentData } from "@/lib/content-data";
+import { getContentDataForLang } from "@/lib/content-data";
 import { useAppContext } from "@/context/app-context";
 
 export default function ModulePage() {
     const params = useParams();
     const slug = params.slug as string;
     const { toast } = useToast();
-    const { t, role, modulesByRole, updateModuleStatus } = useAppContext();
+    const { t, role, modulesByRole, updateModuleStatus, language } = useAppContext();
     
     const [viewMode, setViewMode] = useState<'content' | 'quiz'>('content');
+
+    const contentDataForLang = useMemo(() => getContentDataForLang(language), [language]);
+    const moduleContent = contentDataForLang[slug];
 
     const [questions, setQuestions] = useState<QuizQuestion[]>(() => {
         return quizData[slug] || [];
@@ -30,7 +33,6 @@ export default function ModulePage() {
     const moduleInfo = modulesByRole[role].modules.find(module => module.slug === slug);
 
     const moduleTitle = moduleInfo?.title || 'Module';
-    const moduleContent = contentData[slug];
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswers, setSelectedAnswers] = useState<(string | null)[]>(Array(questions.length).fill(null));

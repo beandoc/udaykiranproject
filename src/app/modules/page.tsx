@@ -1,5 +1,6 @@
 'use client';
 
+import * as React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -8,13 +9,37 @@ import { CheckCircle, Clock, PlayCircle, Star } from "lucide-react";
 import Link from "next/link";
 import { useAppContext } from "@/context/app-context";
 import type { Module } from "@/lib/modules-data";
-import { contentData } from "@/lib/content-data";
-import { calculateReadingTime } from "@/lib/utils";
+import { getContentDataForLang } from "@/lib/content-data";
+
+// Helper to calculate reading time
+const countWords = (node: React.ReactNode): number => {
+    if (typeof node === 'string') {
+        return node.trim().split(/\s+/).length;
+    }
+    if (React.isValidElement(node) && node.props.children) {
+        return React.Children.toArray(node.props.children).reduce((acc, child) => acc + countWords(child), 0);
+    }
+    if (Array.isArray(node)) {
+        return node.reduce((acc, child) => acc + countWords(child), 0);
+    }
+    return 0;
+};
+
+// Words per minute
+const WPM = 200; 
+
+const calculateReadingTime = (slug: string, language: string) => {
+    const contentData = getContentDataForLang(language);
+    const content = contentData[slug];
+    const wordCount = countWords(content);
+    const time = Math.ceil(wordCount / WPM);
+    return Math.max(1, time); // Ensure at least 1 minute
+}
 
 function ModuleCard({ module, isNext }: { module: Module, isNext: boolean }) {
-    const { t } = useAppContext();
+    const { t, language } = useAppContext();
     const isCompleted = module.status === 'Completed';
-    const duration = calculateReadingTime(contentData[module.slug]);
+    const duration = calculateReadingTime(module.slug, language);
 
     return (
         <div className={`flex items-center justify-between p-4 bg-card rounded-lg border transition-all ${isNext && !isCompleted ? 'border-primary shadow-md' : ''}`}>
