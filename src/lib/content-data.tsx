@@ -1,7 +1,11 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { modulesByRole } from './modules-data';
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Video } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 type ModuleContent = {
     [key: string]: React.ReactNode;
@@ -130,6 +134,17 @@ const surgeryDayExperienceContent = (
     <div className="space-y-4 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">What to Expect on Surgery Day</h2>
         <p>Being prepared for your kidney transplant surgery can help ease some of the anxiety. Here’s a general overview of what happens before, during, and after the procedure.</p>
+        
+        <Alert className="mt-6">
+            <Video className="h-4 w-4" />
+            <AlertTitle>Visual Learner? Watch a Video!</AlertTitle>
+            <AlertDescription className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                <p>To see how the surgery works, check out our animated video guide.</p>
+                <Button asChild variant="outline" size="sm" className="mt-2 sm:mt-0">
+                    <Link href="/resources">Go to Resource Library</Link>
+                </Button>
+            </AlertDescription>
+        </Alert>
 
         <h3 className="text-xl font-bold font-headline pt-4">Before the Surgery</h3>
         <p>Once you are admitted to the hospital, you will undergo a final series of checks to ensure you are ready for the operation. This typically includes:</p>
