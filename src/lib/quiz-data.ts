@@ -528,56 +528,56 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
     ],
     'donor-surgery': [
         {
-            question: "What is the most common method for removing a kidney from a living donor?",
-            options: ["Open nephrectomy", "Laparoscopic (keyhole) surgery", "Robotic surgery", "Ultrasound extraction"],
-            correctAnswer: "Laparoscopic (keyhole) surgery"
+            question: "How long does the living donor surgery typically take?",
+            options: ["Less than 1 hour", "Two to three hours", "Four to five hours", "Over six hours"],
+            correctAnswer: "Two to three hours"
         },
         {
-            question: "What is a major advantage of laparoscopic surgery for the donor?",
-            options: ["It is a faster operation", "It results in less pain and a quicker recovery", "It guarantees the kidney will work better", "It does not leave any scars"],
-            correctAnswer: "It results in less pain and a quicker recovery"
+            question: "What is a 'pain block' used for in donor surgery?",
+            options: ["To put the donor to sleep", "To numb the belly area and reduce pain after surgery", "To prevent infections", "To make the surgery go faster"],
+            correctAnswer: "To numb the belly area and reduce pain after surgery"
         },
         {
-            question: "What does a surgeon use to see inside the donor's body during a laparoscopic procedure?",
-            options: ["X-ray goggles", "A microscope", "A laparoscope (a thin tube with a camera)", "A small mirror"],
-            correctAnswer: "A laparoscope (a thin tube with a camera)"
+            question: "What is a common risk associated with having a urinary catheter during surgery?",
+            options: ["A hernia", "A Urinary Tract Infection (UTI)", "Bleeding", "High blood pressure"],
+            correctAnswer: "A Urinary Tract Infection (UTI)"
         },
         {
-            question: "In which situation might an open nephrectomy be performed instead of a laparoscopic one?",
-            options: ["If the donor requests it for a bigger scar", "If the donor's anatomy is not suitable for keyhole surgery", "If the hospital's power goes out", "If the donor is left-handed"],
-            correctAnswer: "If the donor's anatomy is not suitable for keyhole surgery"
+            question: "To avoid a hernia after surgery, what should a donor be careful not to do?",
+            options: ["Eat too much", "Sleep on their side", "Lift anything heavy", "Walk too soon"],
+            correctAnswer: "Lift anything heavy"
         },
         {
-            question: "How is the donor's kidney removed from the body in keyhole surgery?",
-            options: ["It is broken into small pieces first", "It is pulled out through one of the tiny incisions", "It is removed through a slightly larger single incision", "It is teleported out"],
-            correctAnswer: "It is removed through a slightly larger single incision"
+            question: "The risk of death from living donor surgery is extremely low, at about:",
+            options: ["3 in 100", "3 in 1,000", "3 in 10,000", "3 in 100,000"],
+            correctAnswer: "3 in 10,000"
         }
     ],
     'donor-recovery': [
         {
-            question: "What is the typical hospital stay for a living kidney donor after surgery?",
-            options: ["One day", "Two to three weeks", "Four to ten days", "Over a month"],
-            correctAnswer: "Four to ten days"
+            question: "How long do most living donors stay in the hospital after surgery?",
+            options: ["One to two nights", "Three to four nights", "One week", "Two weeks"],
+            correctAnswer: "One to two nights"
         },
         {
-            question: "For how long should a living donor avoid driving and heavy lifting after surgery?",
-            options: ["For two days", "For two weeks", "For at least six weeks", "Until they feel like it"],
-            correctAnswer: "For at least six weeks"
+            question: "What is the general timeframe for a full recovery after donation?",
+            options: ["One to two weeks", "Two to three weeks", "Four to six weeks", "Two to three months"],
+            correctAnswer: "Four to six weeks"
         },
         {
-            question: "Which type of surgery generally leads to a faster recovery for the donor?",
-            options: ["Open nephrectomy", "Laparoscopic (keyhole) surgery", "Both are the same", "Neither, recovery is always 6 months"],
-            correctAnswer: "Laparoscopic (keyhole) surgery"
+            question: "When can a donor with a non-physical (desk) job often return to work?",
+            options: ["The next day", "After about two weeks", "After six weeks", "After three months"],
+            correctAnswer: "After about two weeks"
         },
         {
-            question: "What is a normal experience for the donor immediately after surgery?",
-            options: ["Feeling no pain at all", "Feeling pain around the wound", "Being able to run a marathon", "Going home the same day"],
-            correctAnswer: "Feeling pain around the wound"
+            question: "What are most donors able to do on the same day as their surgery?",
+            options: ["Drive home", "Eat a large meal", "Go for a short walk", "Return to work"],
+            correctAnswer: "Go for a short walk"
         },
         {
-            question: "Why is it important to follow all of the doctor's recovery instructions?",
-            options: ["To get a discount on the hospital bill", "Because it is a legal requirement", "To reduce infection risk and support healing", "To be able to drive sooner"],
-            correctAnswer: "To reduce infection risk and support healing"
+            question: "Who should a donor talk to before returning to physical activities like sports?",
+            options: ["Their boss", "Their family", "The transplant team", "Other donors"],
+            correctAnswer: "The transplant team"
         }
     ],
     'risks-and-benefits': [
