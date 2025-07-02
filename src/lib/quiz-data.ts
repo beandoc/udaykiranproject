@@ -111,6 +111,58 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             correctAnswer: "Before the surgery begins"
         }
     ],
+    'post-transplant-recovery': [
+        {
+            question: "When are the first few months after a kidney transplant considered?",
+            options: [
+                "The most stable period",
+                "A critical period of adjustment",
+                "A time to travel and celebrate",
+                "A time to stop all medications"
+            ],
+            correctAnswer: "A critical period of adjustment"
+        },
+        {
+            question: "How does the frequency of your check-ups change over time after a transplant?",
+            options: [
+                "They become more frequent",
+                "They stay the same",
+                "They become less frequent (e.g., from daily to weekly)",
+                "You only need one check-up"
+            ],
+            correctAnswer: "They become less frequent (e.g., from daily to weekly)"
+        },
+        {
+            question: "What is one reason wound healing might be slower after surgery?",
+            options: [
+                "Drinking too much water",
+                "Sleeping too much",
+                "Certain medications or conditions like diabetes",
+                "Eating too much protein"
+            ],
+            correctAnswer: "Certain medications or conditions like diabetes"
+        },
+        {
+            question: "What should you do if you notice any changes in your health after going home?",
+            options: [
+                "Wait a week to see if it gets better",
+                "Search for remedies online",
+                "Report it to your health care team as soon as possible",
+                "Ask a friend for advice"
+            ],
+            correctAnswer: "Report it to your health care team as soon as possible"
+        },
+        {
+            question: "Why might you need to arrange temporary accommodation after discharge?",
+            options: [
+                "To have a vacation",
+                "If you live a long distance from the transplant hospital",
+                "Because your home needs to be redecorated",
+                "It is a mandatory rule for all patients"
+            ],
+            correctAnswer: "If you live a long distance from the transplant hospital"
+        }
+    ],
     'immunosuppressants': [
         {
             question: "What is the most important thing to remember about taking immunosuppressive medications?",

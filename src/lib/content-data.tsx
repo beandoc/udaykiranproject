@@ -184,7 +184,21 @@ const surgeryDayExperienceContent = (
         <p>Most patients are able to sit up in a chair the day after surgery and can expect to be walking within a couple of days.</p>
         <p>Preventing infection is a top priority. For this reason, your visitor numbers might be limited, and you may be in a separate room to minimize exposure to germs.</p>
         <p>The length of your hospital stay depends on your recovery, but most people are ready to go home within six to ten days. Everyone's journey is different, so it's okay if you feel better right away or need a bit more time to adjust.</p>
+    </div>
+);
 
+const postTransplantRecoveryContent = (
+    <div className="space-y-4 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Going Home After Your Transplant</h2>
+        <p>Caring for yourself after your kidney transplant is crucial, especially during the first few months, which is a critical period of adjustment. It's essential to follow your doctor's instructions closely and immediately report any changes in your health to your care team.</p>
+        
+        <h3 className="text-xl font-bold font-headline pt-4">Regular Check-ups</h3>
+        <p>You will have frequent check-ups to monitor your new kidney's function. Initially, these appointments may be very frequent, gradually becoming less so as you recover—moving to weekly, and then monthly.</p>
+        <p>During these visits, your medical team will assess your surgical wound to ensure it's healing properly and check for any signs of organ rejection. Factors like certain medications, diabetes, or obesity can slow down wound healing. If you have any of these risk factors, you may be monitored more closely.</p>
+
+        <h3 className="text-xl font-bold font-headline pt-4">Planning for Your Discharge</h3>
+        <p>It's important to plan where you will stay after being discharged from the hospital. If you live far from the transplant center, you may need to arrange for temporary accommodation nearby for the first few weeks to be close to your medical team for follow-up appointments.</p>
+        <p>Start thinking about these arrangements early. Discuss potential travel and accommodation assistance programs with your hospital's social worker or transplant coordinator, as many centers offer resources to help with these logistics.</p>
     </div>
 );
 
@@ -195,6 +209,7 @@ export const contentData: ModuleContent = {
     'evaluation-process': transplantEvaluationProcessContent,
     'transplant-matching': transplantMatchingContent,
     'surgery-day': surgeryDayExperienceContent,
+    'post-transplant-recovery': postTransplantRecoveryContent,
 };
 
 // Placeholder for other modules
