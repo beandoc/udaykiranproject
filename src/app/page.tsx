@@ -1,12 +1,12 @@
 'use client';
 
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, MessageSquare, CheckCircle, Star, User, UserCheck, Users } from "lucide-react";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { User, UserCheck, Users, PlayCircle, HeartPulse } from "lucide-react";
 import Link from "next/link";
-import { useAppContext, type Role, type Activity } from "@/context/app-context";
+import { useAppContext, type Role } from "@/context/app-context";
 import { cn } from "@/lib/utils";
-import type { LucideIcon } from "lucide-react";
 
 const roles = [
     { name: 'Patient', icon: User, descriptionKey: 'rolePatientDesc' },
@@ -14,33 +14,20 @@ const roles = [
     { name: 'Caregiver', icon: Users, descriptionKey: 'roleCaregiverDesc' },
 ] as const;
 
-const iconMap: { [key: string]: LucideIcon } = {
-  CheckCircle,
-  Star,
-  MessageSquare,
-};
-
-function formatTimeAgo(timestamp: number, t: (key: string) => string): string {
-    const now = Date.now();
-    const seconds = Math.floor((now - timestamp) / 1000);
-    const days = Math.floor(seconds / (24 * 60 * 60));
-
-    if (days >= 2) {
-        return t('timeDaysAgo', { count: days });
-    }
-    if (days === 1) {
-        return t('timeYesterday');
-    }
-    const hours = Math.floor(seconds / 3600);
-    if (hours >= 1) {
-        return t('timeHoursAgo', { count: hours });
-    }
-    return t('timeJustNow');
-}
-
-
 export default function Home() {
-    const { role, setRole, t, activities } = useAppContext();
+    const { role, setRole, t, modulesByRole } = useAppContext();
+    const roleData = modulesByRole[role];
+    const { modules } = roleData;
+
+    const titleKey = {
+        Patient: "pathTitlePatient",
+        Donor: "pathTitleDonor",
+        Caregiver: "pathTitleCaregiver"
+    }[role];
+    
+    const completedModules = modules.filter(m => m.status === 'Completed').length;
+    const totalModules = modules.length;
+    const progress = totalModules > 0 ? (completedModules / totalModules) * 100 : 0;
 
     return (
         <div className="space-y-8">
@@ -56,76 +43,61 @@ export default function Home() {
                         <Link href="/modules">{t('exploreLearningPath')}</Link>
                     </Button>
                 </div>
-                 <Heart className="absolute -bottom-8 -right-8 w-40 h-40 text-white/10" />
+                 <HeartPulse className="absolute -bottom-8 -right-8 w-40 h-40 text-white/10" />
             </Card>
 
-            <Card>
-                <CardHeader>
-                    <CardTitle className="font-headline text-xl">{t('defineRole')}</CardTitle>
-                    <CardDescription>{t('selectRolePrompt')}</CardDescription>
-                </CardHeader>
-                <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {roles.map((r) => (
-                        <button
-                            key={r.name}
-                            onClick={() => setRole(r.name as Role)}
-                            className={cn(
-                                "p-6 text-left rounded-lg border-2 transition-all duration-200 ease-in-out flex flex-col items-center justify-center text-center hover:-translate-y-1",
-                                role === r.name
-                                ? "bg-primary/10 border-primary scale-105 shadow-lg"
-                                : "bg-card hover:bg-muted/50"
-                            )}
-                        >
-                            <r.icon className={cn(
-                                "w-10 h-10 mb-4",
-                                role === r.name ? "text-primary" : "text-muted-foreground"
-                            )} />
-                            <h3 className="font-bold text-lg">{t(`role${r.name}`)}</h3>
-                            <p className="text-sm text-muted-foreground mt-1">{t(r.descriptionKey)}</p>
-                        </button>
-                    ))}
-                </CardContent>
-            </Card>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                 <Link href="/modules/patient-responsibilities" className="block h-full">
-                    <Card className="transition-all duration-200 ease-in-out hover:shadow-lg hover:-translate-y-1 h-full">
-                        <CardHeader>
-                            <CardTitle className="font-headline text-xl">{t('patientResponsibilitiesTitle')}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                            <p className="text-sm text-muted-foreground">
-                                {t('patientResponsibilitiesDesc')}
-                            </p>
-                            <div className={cn(buttonVariants({ variant: 'outline' }), "mt-2 pointer-events-none")}>
-                                Read More
-                            </div>
-                        </CardContent>
-                    </Card>
-                </Link>
-
-                 <Card>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <Card className="lg:col-span-2">
                     <CardHeader>
-                        <CardTitle className="font-headline text-xl">{t('recentActivity')}</CardTitle>
+                        <CardTitle className="font-headline text-xl">{t('defineRole')}</CardTitle>
+                        <CardDescription>{t('selectRolePrompt')}</CardDescription>
                     </CardHeader>
-                    <CardContent className="space-y-4">
-                        {activities.length > 0 ? activities.map((activity) => {
-                            const Icon = iconMap[activity.icon];
-                            return (
-                                <div key={activity.id} className="flex items-center gap-4">
-                                    <div className={cn("p-3 rounded-full", activity.color)}>
-                                        {Icon && <Icon className="w-5 h-5" />}
-                                    </div>
-                                    <div>
-                                        <p className="font-medium text-sm">{t(activity.textKey, activity.options)}</p>
-                                        <p className="text-xs text-muted-foreground">{formatTimeAgo(activity.timestamp, t)}</p>
-                                    </div>
-                                </div>
-                            )
-                        }) : (
-                            <p className="text-sm text-muted-foreground">{t('noRecentActivity')}</p>
-                        )}
+                    <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {roles.map((r) => (
+                            <button
+                                key={r.name}
+                                onClick={() => setRole(r.name as Role)}
+                                className={cn(
+                                    "p-6 text-left rounded-lg border-2 transition-all duration-200 ease-in-out flex flex-col items-center justify-center text-center hover:-translate-y-1",
+                                    role === r.name
+                                    ? "bg-primary/10 border-primary scale-105 shadow-lg"
+                                    : "bg-card hover:bg-muted/50"
+                                )}
+                            >
+                                <r.icon className={cn(
+                                    "w-10 h-10 mb-4",
+                                    role === r.name ? "text-primary" : "text-muted-foreground"
+                                )} />
+                                <h3 className="font-bold text-lg">{t(`role${r.name}`)}</h3>
+                                <p className="text-sm text-muted-foreground mt-1">{t(r.descriptionKey)}</p>
+                            </button>
+                        ))}
                     </CardContent>
+                </Card>
+                
+                 <Card className="flex flex-col">
+                    <CardHeader>
+                        <CardTitle className="font-headline text-xl">{t('pathProgressTitle')}</CardTitle>
+                        <CardDescription>{t(titleKey)}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow space-y-4 flex flex-col justify-center">
+                        <div className="space-y-2">
+                            <div className="flex justify-between items-center mb-1">
+                                <p className="text-sm font-medium text-muted-foreground">
+                                    {t('modulesCompleted', { completed: completedModules, total: totalModules })}
+                                </p>
+                                <span className="text-sm font-bold text-primary">{Math.round(progress)}%</span>
+                            </div>
+                            <Progress value={progress} />
+                        </div>
+                    </CardContent>
+                    <CardFooter>
+                         <Button asChild className="w-full">
+                            <Link href="/modules">
+                                {t('continueLearning')} <PlayCircle className="ml-2 w-4 h-4" />
+                            </Link>
+                        </Button>
+                    </CardFooter>
                 </Card>
             </div>
         </div>

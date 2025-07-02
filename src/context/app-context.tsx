@@ -36,20 +36,11 @@ type AppContextType = {
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-const initialActivities: Activity[] = [
-    { id: '1', textKey: 'activityPosted', timestamp: Date.now() - 2 * 24 * 60 * 60 * 1000, icon: 'MessageSquare', color: 'text-purple-500 bg-purple-100' },
-];
-
 export function AppProvider({ children }: { children: ReactNode }) {
   const [role, setRole] = useState<Role>('Patient');
   const [language, setLanguage] = useState<Language>('en');
   const [activities, setActivities] = useState<Activity[]>([]);
   const [modulesByRole, setModulesByRole] = useState<ModulesByRoleType>(initialModulesByRole);
-
-  useEffect(() => {
-    // This effect ensures initialActivities are set only on the client
-    setActivities(initialActivities);
-  }, []);
 
   const t = useCallback((key: string, options?: { [key: string]: string | number }) => {
     const langFile = translations[language] || translations['en'];
