@@ -372,54 +372,54 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
     ],
     'donor-evaluation': [
         {
-            question: "What is the primary purpose of the medical assessment for a potential living donor?",
+            question: "Who is the main point of contact for a living donor throughout the evaluation process?",
             options: [
-                "To ensure the donation is safe for the donor.",
-                "To see how much the donor can be paid.",
-                "To practice the surgery.",
-                "To get a discount on hospital fees."
+                "The Surgeon",
+                "The Dietitian",
+                "The Nurse Coordinator",
+                "The Nephrologist"
             ],
-            correctAnswer: "To ensure the donation is safe for the donor."
+            correctAnswer: "The Nurse Coordinator"
         },
         {
-            question: "What is a good first step when considering becoming a living donor?",
+            question: "What is one purpose of imaging tests like a CT scan during the donor evaluation?",
             options: [
-                "Book a vacation for after the surgery.",
-                "Buy a new car.",
-                "Talk to your family and trusted friends about your decision.",
-                "Keep it a complete secret from everyone."
+                "To check the donor's height",
+                "To help decide which kidney is healthier for the donor to keep",
+                "To test the donor's eyesight",
+                "To see if the donor has any broken bones"
             ],
-            correctAnswer: "Talk to your family and trusted friends about your decision."
+            correctAnswer: "To help decide which kidney is healthier for the donor to keep"
         },
         {
-            question: "What happens if a previously unknown health problem is discovered in the donor during the evaluation?",
+            question: "If a potential donor wants to donate to a specific person, where must their evaluation take place?",
             options: [
-                "The process stops immediately and the donor is sent home.",
-                "The donor is ignored and the team looks for someone else.",
-                "The donor receives support and is referred to a specialist for care.",
-                "The donor has to pay for all the tests."
+                "At any hospital in the country",
+                "At the same transplant center as the recipient",
+                "At their local doctor's office",
+                "They can do the evaluation online"
             ],
-            correctAnswer: "The donor receives support and is referred to a specialist for care."
+            correctAnswer: "At the same transplant center as the recipient"
         },
         {
-            question: "Which of the following tests is part of the donor evaluation process?",
+            question: "Which team member discusses the donor's kidney health and function?",
             options: [
-                "A driving test.",
-                "A cooking class.",
-                "A test for blood and tissue type compatibility.",
-                "An IQ test."
+                "The Surgeon",
+                "The Dietitian",
+                "The Nurse Coordinator",
+                "The Nephrologist"
             ],
-            correctAnswer: "A test for blood and tissue type compatibility."
+            correctAnswer: "The Nephrologist"
         },
         {
-            question: "If you want to donate to a specific person, where should you start the evaluation process?",
+            question: "What is the role of the dietitian in the donor evaluation process?",
             options: [
-                "At any transplant center in the country.",
-                "At your local family doctor's office.",
-                "At the same transplant center where the recipient is waitlisted.",
-                "By calling the national organ registry."
+                "To prescribe medication",
+                "To perform the surgery",
+                "To review eating habits and discuss a healthy diet",
+                "To draw blood for lab work"
             ],
-            correctAnswer: "At the same transplant center where the recipient is waitlisted."
+            correctAnswer: "To review eating habits and discuss a healthy diet"
         }
     ],
     'donor-eligibility': [

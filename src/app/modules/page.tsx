@@ -8,10 +8,13 @@ import { CheckCircle, Clock, PlayCircle, Star } from "lucide-react";
 import Link from "next/link";
 import { useAppContext } from "@/context/app-context";
 import { modulesByRole, type Module } from "@/lib/modules-data";
+import { contentData } from "@/lib/content-data";
+import { calculateReadingTime } from "@/lib/utils";
 
 function ModuleCard({ module, isNext }: { module: Module, isNext: boolean }) {
     const { t } = useAppContext();
     const isCompleted = module.status === 'Completed';
+    const duration = calculateReadingTime(contentData[module.slug]);
 
     return (
         <div className={`flex items-center justify-between p-4 bg-card rounded-lg border transition-all ${isNext && !isCompleted ? 'border-primary shadow-md' : ''}`}>
@@ -33,7 +36,7 @@ function ModuleCard({ module, isNext }: { module: Module, isNext: boolean }) {
                     </h3>
                     <p className="text-sm text-muted-foreground flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5" />
-                        <span>{module.duration} {t('moduleDurationRead')}</span>
+                        <span>{duration} {t('moduleDurationRead')}</span>
                     </p>
                 </div>
             </div>

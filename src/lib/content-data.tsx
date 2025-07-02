@@ -351,27 +351,25 @@ const donorEvaluationContent = (
             <li><strong>If you are donating to a specific person (a "directed donation"):</strong> You must contact the transplant center where the recipient is on the waitlist. Your evaluation will be handled by the same center.</li>
             <li><strong>If you are donating to any person in need (a "non-directed donation"):</strong> You have the flexibility to contact any transplant center to begin your evaluation process.</li>
         </ul>
-        <p className="pt-2">Regardless of the path you choose, the medical team will guide you through the next steps.</p>
+        <p className="pt-2">It's highly recommended to talk openly about your decision with family and trusted friends. Many potential donors also find it helpful to connect with someone who has already gone through the donation experience to learn from their journey.</p>
 
-        <h3 className="text-xl font-bold font-headline pt-4">Building Your Support System</h3>
-        <p>Deciding to become a living donor is a significant choice. It's highly recommended to talk openly about your decision with family and trusted friends. Sharing information and including them in your process can provide you with a strong support network and help answer any questions they might have.</p>
-        <p>Many potential donors also find it incredibly helpful to connect with someone who has already gone through the donation experience. Hearing a firsthand account can offer valuable insights and reassurance.</p>
-        
-        <h3 className="text-xl font-bold font-headline pt-4">The Medical Assessment</h3>
-        <p>The core of the evaluation is a thorough medical check-up. The primary goal is to ensure that donating a kidney is safe for you, both immediately and in the long run. The transplant team will also confirm that you are fit for surgery and that your kidney is suitable for donation.</p>
-
-        <h3 className="text-xl font-bold font-headline pt-4">What Tests Are Involved?</h3>
-        <p>A number of tests are required to ensure a living donor is a suitable match. These may include:</p>
-        <ul className="list-disc list-inside space-y-2 pl-4">
-            <li>Tissue and blood type matching with the recipient.</li>
-            <li>Testing the recipient for any antibodies that might react to the donor's kidney.</li>
-            <li>Blood tests and scans to check that your own kidneys are working well and show no signs of damage.</li>
-            <li>Screening for viruses that could cause infection.</li>
-            <li>General health checks for heart disease, lung problems, diabetes, and cancer.</li>
+        <h3 className="text-xl font-bold font-headline pt-4">What does a “full evaluation” involve?</h3>
+        <p>The evaluation is a comprehensive process, often taking place over two days. It's designed to give you a complete picture of what's involved and to ensure donation is safe for you. During this time, you will meet with the living donor team, have more blood work done, and complete imaging scans.</p>
+        <p className="font-semibold">You can expect to meet with the following team members:</p>
+        <ul className="list-disc list-inside space-y-3 pl-4 mt-2">
+            <li><strong>Nurse Coordinator:</strong> Your main point of contact throughout the entire process. They will answer your questions, review results, and keep you informed.</li>
+            <li><strong>Nephrologist (Kidney Doctor):</strong> They will discuss your kidney health and confirm you are healthy enough to donate.</li>
+            <li><strong>Surgeon:</strong> The surgeon will explain the surgical procedure, including pain management, and answer any questions about your recovery.</li>
+            <li><strong>Dietitian:</strong> They will review your eating habits and discuss what a healthy, well-balanced diet looks like to keep you healthy before and after donation.</li>
         </ul>
 
-        <h3 className="text-xl font-bold font-headline pt-4">What if a Health Issue is Found?</h3>
-        <p>During these tests, it's possible to discover a health problem you weren't aware of. If this happens, the medical team will provide full support and refer you to a specialist for care.</p>
+        <h3 className="text-xl font-bold font-headline pt-4">Medical Tests During Evaluation</h3>
+        <p>At a minimum, you will have the following tests:</p>
+        <ul className="list-disc list-inside space-y-3 pl-4 mt-2">
+            <li><strong>Lab Work:</strong> A new set of blood and urine samples will be taken to check on your overall health and to confirm you are a good match for the intended recipient.</li>
+            <li><strong>Imaging:</strong> Tests like a chest X-ray and a CT scan help the team see the size and structure of your kidneys and their blood supply. These images also help them decide which kidney is better to donate, allowing you to keep the healthier of the two.</li>
+        </ul>
+        <p className="pt-2">During these tests, it's possible to discover a health problem you weren't aware of. If this happens, the medical team will provide full support and refer you to a specialist for care.</p>
     </div>
 );
 
@@ -413,12 +411,11 @@ const psychologicalAssessmentContent = (
 const donorSurgeryOverviewContent = (
     <div className="space-y-4 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">The Donor's Surgical Procedure</h2>
-        <h3 className="text-xl font-bold font-headline pt-4">What does the operation involve?</h3>
         <p>As a living donor, you will be put to sleep with general anesthesia. Most transplant centers also use "pain blocks," which numb the abdominal area for 12-24 hours to lessen pain after the surgery.</p>
         <p>The surgery to remove the kidney typically takes about <strong>two to three hours</strong>. Most procedures are done laparoscopically (keyhole surgery), using tiny incisions and a camera to remove the kidney.</p>
 
         <h3 className="text-xl font-bold font-headline pt-4">What are the risks of surgery?</h3>
-        <p>Like any surgery, there are some risks involved. The most common risks include:</p>
+        <p>Like any major surgery, there are some risks to be aware of. The most common include:</p>
         <ul className="list-disc list-inside space-y-2 pl-4">
             <li>Bleeding or infection in the surgical area.</li>
             <li>Developing a hernia if you lift anything too heavy too soon after surgery.</li>
@@ -431,7 +428,7 @@ const donorSurgeryOverviewContent = (
 const donorRecoveryTimelineContent = (
     <div className="space-y-4 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">The Donor's Recovery Journey</h2>
-        <p>Most donors stay in the hospital for just <strong>one to two nights</strong>. Pain medication is usually only needed for a short time. You can expect to be up and walking on the same day as your surgery.</p>
+        <p>You can expect to be up and walking on the same day as your surgery. Most donors stay in the hospital for just <strong>one to two nights</strong>, and pain medication is usually only needed for a short time.</p>
         <p>A full recovery generally takes about <strong>four to six weeks</strong>. However, many donors can return to work much sooner. If you have a desk job, you might be able to return after just two weeks. If your job is more physically demanding, your employer may offer a temporary desk-based role during your recovery.</p>
         <p>It's very important to talk to your transplant team about when it's safe for you to return to work, sports, and other physical activities. Following their guidance will ensure you heal properly and avoid complications.</p>
     </div>
