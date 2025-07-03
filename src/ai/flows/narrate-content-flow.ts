@@ -7,11 +7,11 @@
  */
 
 import { ai } from '@/ai/genkit';
-import { z } from 'genkit';
+import { z } from 'zod';
 import wav from 'wav';
 import { googleAI } from '@genkit-ai/googleai';
 
-export const NarrateContentOutputSchema = z.object({
+const NarrateContentOutputSchema = z.object({
   audioDataUri: z
     .string()
     .describe("The generated audio as a data URI. Expected format: 'data:audio/wav;base64,<encoded_data>'."),
