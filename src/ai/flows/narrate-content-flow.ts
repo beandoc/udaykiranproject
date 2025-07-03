@@ -16,7 +16,6 @@ const NarrateContentOutputSchema = z.object({
     .describe("The generated audio as a data URI. Expected format: 'data:audio/wav;base64,<encoded_data>'."),
 });
 
-// This type is used internally and not exported, which is valid for "use server" files.
 type NarrateContentOutput = z.infer<typeof NarrateContentOutputSchema>;
 
 export async function narrateContent(text: string): Promise<NarrateContentOutput> {
