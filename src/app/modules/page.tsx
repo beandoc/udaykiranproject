@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Clock, PlayCircle, Star, PartyPopper } from "lucide-react";
+import { CheckCircle, Clock, PlayCircle, Star, PartyPopper, LayoutDashboard } from "lucide-react";
 import Link from "next/link";
 import { useAppContext } from "@/context/app-context";
 import type { Module } from "@/lib/modules-data";
@@ -142,6 +142,14 @@ export default function ModulesPage() {
                     {modules.map((module, index) => (
                         <ModuleCard key={module.slug} module={module} isNext={index === nextModuleIndex} />
                     ))}
+                     <div className="flex justify-center pt-4">
+                        <Button asChild variant="outline">
+                            <Link href="/">
+                                <LayoutDashboard className="mr-2 h-4 w-4" />
+                                {t('navDashboard')}
+                            </Link>
+                        </Button>
+                    </div>
                 </div>
             )}
         </div>
