@@ -40,7 +40,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useAppContext } from '@/context/app-context';
-import { SheetClose } from '../ui/sheet';
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
