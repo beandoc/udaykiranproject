@@ -28,7 +28,7 @@ export const patientModules: Module[] = [
     slug: 'understanding-kidney-disease', 
     audioSrc: {
         en: '/audio/understanding-kidney-disease-en.mp3',
-        hi: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3', // Placeholder
+        hi: '/audio/understanding-kidney-disease-hi.mp3',
         mr: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3'  // Placeholder
     }
   },
