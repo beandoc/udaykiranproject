@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Progress } from "@/components/ui/progress";
 import { User, UserCheck, Users, PlayCircle, HeartPulse, PartyPopper } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useAppContext, type Role } from "@/context/app-context";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +17,7 @@ const roles = [
 
 export default function Home() {
     const { role, setRole, t, modulesByRole } = useAppContext();
+    const router = useRouter();
     const roleData = modulesByRole[role];
     const { modules } = roleData;
 
@@ -31,6 +33,11 @@ export default function Home() {
     
     const nextModuleIndex = modules.findIndex(m => m.status === 'Not Started');
     const nextModule = nextModuleIndex !== -1 ? modules[nextModuleIndex] : null;
+
+    const handleRoleDoubleClick = (newRole: Role) => {
+        setRole(newRole);
+        router.push('/modules');
+    };
 
     return (
         <div className="space-y-8">
@@ -60,6 +67,7 @@ export default function Home() {
                             <button
                                 key={r.name}
                                 onClick={() => setRole(r.name as Role)}
+                                onDoubleClick={() => handleRoleDoubleClick(r.name as Role)}
                                 className={cn(
                                     "p-4 text-left rounded-lg border-2 transition-all duration-200 ease-in-out flex flex-col items-center justify-center text-center hover:-translate-y-1 h-32",
                                     role === r.name

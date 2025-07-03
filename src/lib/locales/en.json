@@ -40,7 +40,7 @@
     },
     "timeJustNow": "Just now",
     "defineRole": "I am a",
-    "selectRolePrompt": "Select your role to personalize the experience.",
+    "selectRolePrompt": "Select your role to view your progress. Double-click a role to jump to the learning path.",
     "rolePatient": "Patient",
     "rolePatientDesc": "I am a kidney transplant patient.",
     "roleDonor": "Donor",
