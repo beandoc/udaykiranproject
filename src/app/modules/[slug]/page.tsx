@@ -95,6 +95,10 @@ export default function ModulePage() {
     const handleNarration = async () => {
         setNarrationState('loading');
         setAudioSrc(null);
+        toast({
+            title: t('narrateToastTitle'),
+            description: t('narrateToastDesc'),
+        });
         try {
             const textToNarrate = extractText(moduleContent);
             if (!textToNarrate.trim()) {
@@ -107,8 +111,8 @@ export default function ModulePage() {
             console.error("Narration failed:", error);
             setNarrationState('error');
             toast({
-                title: "Narration Failed",
-                description: "Could not generate audio for this content. Please try again later.",
+                title: t('narrateFailTitle'),
+                description: t('narrateFailDesc'),
                 variant: "destructive"
             });
             setTimeout(() => setNarrationState('idle'), 3000);
@@ -155,9 +159,9 @@ export default function ModulePage() {
                             </Link>
                         </Button>
                         <div className="flex flex-col sm:flex-row gap-2">
-                             <Button onClick={handleNarration} disabled={narrationState === 'loading'} variant="secondary">
+                            <Button onClick={handleNarration} disabled={narrationState === 'loading' || narrationState === 'playing'} variant="secondary">
                                 {narrationState === 'loading' ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Volume2 className="mr-2 h-4 w-4" />}
-                                {t('narrateContent')}
+                                {narrationState === 'loading' ? t('narratingContent') : t('narrateContent')}
                             </Button>
                             {questions && questions.length > 0 ? (
                                 <Button onClick={() => setViewMode('quiz')} size="lg">
@@ -178,7 +182,13 @@ export default function ModulePage() {
                             <CardDescription>{t('contentNarrationDesc')}</CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <audio controls autoPlay src={audioSrc} className="w-full">
+                            <audio
+                                controls
+                                autoPlay
+                                src={audioSrc}
+                                className="w-full"
+                                onEnded={() => setNarrationState('idle')}
+                            >
                                 Your browser does not support the audio element.
                             </audio>
                         </CardContent>
