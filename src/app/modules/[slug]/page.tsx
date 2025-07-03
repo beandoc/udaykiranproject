@@ -32,7 +32,15 @@ export default function ModulePage() {
     });
 
     const moduleInfo = modulesByRole[role].modules.find(module => module.slug === slug);
-    const audioSrcForCurrentLang = moduleInfo?.audioSrc?.[language as keyof typeof moduleInfo.audioSrc];
+    
+    // Safely get the audio source for the current language
+    const getAudioSrcForLang = () => {
+        if (moduleInfo && moduleInfo.audioSrc && typeof moduleInfo.audioSrc === 'object') {
+            return moduleInfo.audioSrc[language as keyof typeof moduleInfo.audioSrc];
+        }
+        return undefined;
+    };
+    const audioSrcForCurrentLang = getAudioSrcForLang();
 
     const moduleTitle = moduleInfo?.title || 'Module';
 
