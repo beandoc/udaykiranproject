@@ -211,6 +211,9 @@ export default function ModulePage() {
     }
 
     if (isSubmitted) {
+        const allModules = modulesByRole[role].modules;
+        const areAllComplete = allModules.every(m => m.status === 'Completed');
+
         return (
             <Card className="max-w-3xl mx-auto">
                 <CardHeader className="text-center">
@@ -249,9 +252,15 @@ export default function ModulePage() {
                     <Button onClick={resetQuiz} className="w-full sm:w-auto">
                         {t('quizRetake')}
                     </Button>
-                    <Button asChild className="w-full sm:w-auto" size="lg">
-                        <Link href="/modules">{t('quizBackToPath')}</Link>
-                    </Button>
+                    {areAllComplete ? (
+                        <Button asChild className="w-full sm:w-auto" size="lg">
+                            <Link href="/">{t('allModulesCompleteButton')}</Link>
+                        </Button>
+                    ) : (
+                        <Button asChild className="w-full sm:w-auto" size="lg">
+                            <Link href="/modules">{t('quizBackToPath')}</Link>
+                        </Button>
+                    )}
                 </CardFooter>
             </Card>
         )
