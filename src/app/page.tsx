@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { User, UserCheck, Users, PlayCircle, HeartPulse, ListChecks } from "lucide-react";
+import { User, UserCheck, Users, PlayCircle, HeartPulse, PartyPopper } from "lucide-react";
 import Link from "next/link";
 import { useAppContext, type Role } from "@/context/app-context";
 import { cn } from "@/lib/utils";
@@ -28,6 +28,9 @@ export default function Home() {
     const completedModules = modules.filter(m => m.status === 'Completed').length;
     const totalModules = modules.length;
     const progress = totalModules > 0 ? (completedModules / totalModules) * 100 : 0;
+    
+    const nextModuleIndex = modules.findIndex(m => m.status === 'Not Started');
+    const nextModule = nextModuleIndex !== -1 ? modules[nextModuleIndex] : null;
 
     return (
         <div className="space-y-8">
@@ -101,22 +104,41 @@ export default function Home() {
                         </CardFooter>
                     </Card>
 
-                    <Card className="flex flex-col">
-                        <CardHeader>
-                            <CardTitle className="font-headline text-xl">{t('patientResponsibilitiesTitle')}</CardTitle>
-                            <CardDescription>{t('patientResponsibilitiesDesc')}</CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex-grow flex items-center justify-center">
-                            <ListChecks className="w-16 h-16 text-primary/20" />
-                        </CardContent>
-                        <CardFooter>
-                            <Button asChild className="w-full">
-                                <Link href="/modules/patient-responsibilities">
-                                    {t('moduleActionReview')}
-                                </Link>
-                            </Button>
-                        </CardFooter>
-                    </Card>
+                    {nextModule ? (
+                        <Card className="flex flex-col">
+                            <CardHeader>
+                                <CardTitle className="font-headline text-xl">{t('nextUpPrompt')}</CardTitle>
+                                <CardDescription>{t(nextModule.title)}</CardDescription>
+                            </CardHeader>
+                            <CardContent className="flex-grow flex items-center justify-center">
+                                <PlayCircle className="w-16 h-16 text-primary/20" />
+                            </CardContent>
+                            <CardFooter>
+                                <Button asChild className="w-full">
+                                    <Link href={`/modules/${nextModule.slug}`}>
+                                        {t('moduleActionStart')}
+                                    </Link>
+                                </Button>
+                            </CardFooter>
+                        </Card>
+                    ) : (
+                         <Card className="flex flex-col">
+                            <CardHeader>
+                                <CardTitle className="font-headline text-xl">{t('allModulesCompleteTitle')}</CardTitle>
+                                <CardDescription>{t('allModulesCompleteDesc')}</CardDescription>
+                            </CardHeader>
+                            <CardContent className="flex-grow flex items-center justify-center">
+                                <PartyPopper className="w-16 h-16 text-primary/20" />
+                            </CardContent>
+                            <CardFooter>
+                                <Button asChild className="w-full">
+                                    <Link href="/modules">
+                                        {t('reviewYourPath')}
+                                    </Link>
+                                </Button>
+                            </CardFooter>
+                        </Card>
+                    )}
                 </div>
             </div>
         </div>

@@ -30,7 +30,7 @@ export default function ReadinessPage() {
                 </AlertDescription>
             </Alert>
 
-            <Tabs defaultValue={role.toLowerCase()} className="w-full">
+            <Tabs defaultValue={role === 'Donor' ? 'donor' : 'patient'} className="w-full">
                 <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger value="patient">
                         <User className="mr-2 h-4 w-4" />
