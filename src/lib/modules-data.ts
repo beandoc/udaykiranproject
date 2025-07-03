@@ -44,7 +44,6 @@ export const donorModules: Module[] = [
     { title: 'Recovery Timeline', status: 'Not Started', slug: 'donor-recovery' },
     { title: 'Potential Risks and Benefits', status: 'Not Started', slug: 'risks-and-benefits' },
     { title: 'Long-term Health Monitoring', status: 'Not Started', slug: 'donor-long-term-health' },
-    { title: 'Support Resources', status: 'Not Started', slug: 'donor-support-resources' },
     { title: 'Patient Responsibilities', status: 'Not Started', slug: 'patient-responsibilities' },
 ];
 
@@ -62,6 +61,6 @@ export const caregiverModules: Module[] = [
 
 export const modulesByRole: ModulesByRole = {
     Patient: { title: "Kidney Patient Education Path", modules: patientModules },
-    Donor: { title: "Living Donor Education Path", modules: donorModules },
+    Donor: { title: "Kidney Donor Education Path", modules: donorModules },
     Caregiver: { title: "Caregiver Support Path", modules: caregiverModules },
 }
