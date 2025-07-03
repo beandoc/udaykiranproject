@@ -9,11 +9,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { quizData, type QuizQuestion } from "@/lib/quiz-data";
-import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen } from "lucide-react";
+import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen, Volume2, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { getContentDataForLang } from "@/lib/content-data";
 import { useAppContext } from "@/context/app-context";
+import { narrateContent } from "@/ai/flows/narrate-content-flow";
+import React from "react";
 
 export default function ModulePage() {
     const params = useParams();
@@ -22,6 +24,8 @@ export default function ModulePage() {
     const { t, role, modulesByRole, updateModuleStatus, language } = useAppContext();
     
     const [viewMode, setViewMode] = useState<'content' | 'quiz'>('content');
+    const [narrationState, setNarrationState] = useState<'idle' | 'loading' | 'playing' | 'error'>('idle');
+    const [audioSrc, setAudioSrc] = useState<string | null>(null);
 
     const contentDataForLang = useMemo(() => getContentDataForLang(language), [language]);
     const moduleContent = contentDataForLang[slug];
@@ -53,7 +57,7 @@ export default function ModulePage() {
 
     const handlePrevious = () => {
         if (currentQuestionIndex > 0) {
-            setCurrentQuestionIndex(currentQuestionIndex - 1);
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
         }
     };
     
@@ -75,6 +79,40 @@ export default function ModulePage() {
         setCurrentQuestionIndex(0);
         setSelectedAnswers(Array(questions.length).fill(null));
         setIsSubmitted(false);
+    };
+
+    const extractText = (node: React.ReactNode): string => {
+        if (!node) return '';
+        if (typeof node === 'string') return node;
+        if (typeof node === 'number') return String(node);
+        if (Array.isArray(node)) return node.map(extractText).join(' ');
+        if (React.isValidElement(node) && node.props.children) {
+          return React.Children.toArray(node.props.children).map(extractText).join(' ');
+        }
+        return '';
+    };
+
+    const handleNarration = async () => {
+        setNarrationState('loading');
+        setAudioSrc(null);
+        try {
+            const textToNarrate = extractText(moduleContent);
+            if (!textToNarrate.trim()) {
+                throw new Error("No text content found to narrate.");
+            }
+            const result = await narrateContent(textToNarrate);
+            setAudioSrc(result.audioDataUri);
+            setNarrationState('playing');
+        } catch (error) {
+            console.error("Narration failed:", error);
+            setNarrationState('error');
+            toast({
+                title: "Narration Failed",
+                description: "Could not generate audio for this content. Please try again later.",
+                variant: "destructive"
+            });
+            setTimeout(() => setNarrationState('idle'), 3000);
+        }
     };
     
     const score = selectedAnswers.filter((answer, index) => answer === questions[index].correctAnswer).length;
@@ -116,17 +154,36 @@ export default function ModulePage() {
                                 <ChevronLeft className="mr-2 h-4 w-4" /> {t('contentBackToPath')}
                             </Link>
                         </Button>
-                        {questions && questions.length > 0 ? (
-                             <Button onClick={() => setViewMode('quiz')} size="lg">
-                                {t('contentStartQuiz')} <HelpCircle className="ml-2 h-4 w-4" />
+                        <div className="flex flex-col sm:flex-row gap-2">
+                             <Button onClick={handleNarration} disabled={narrationState === 'loading'} variant="secondary">
+                                {narrationState === 'loading' ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Volume2 className="mr-2 h-4 w-4" />}
+                                {t('narrateContent')}
                             </Button>
-                        ) : (
-                             <Button disabled size="lg">
-                                {t('contentQuizComingSoon')}
-                            </Button>
-                        )}
+                            {questions && questions.length > 0 ? (
+                                <Button onClick={() => setViewMode('quiz')} size="lg">
+                                    {t('contentStartQuiz')} <HelpCircle className="ml-2 h-4 w-4" />
+                                </Button>
+                            ) : (
+                                <Button disabled size="lg">
+                                    {t('contentQuizComingSoon')}
+                                </Button>
+                            )}
+                        </div>
                     </CardFooter>
                 </Card>
+                {audioSrc && narrationState === 'playing' && (
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>{t('contentNarrationTitle')}</CardTitle>
+                            <CardDescription>{t('contentNarrationDesc')}</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <audio controls autoPlay src={audioSrc} className="w-full">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </CardContent>
+                    </Card>
+                )}
             </div>
         )
     }
