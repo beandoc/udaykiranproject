@@ -40,7 +40,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useAppContext } from '@/context/app-context';
-import { SheetClose, SheetDescription, SheetTitle } from '../ui/sheet';
+import { SheetClose } from '../ui/sheet';
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -65,8 +65,6 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <SidebarProvider>
       <Sidebar>
-          <SheetTitle className="sr-only">Main Menu</SheetTitle>
-          <SheetDescription className="sr-only">The main navigation sidebar for the application.</SheetDescription>
         <SidebarHeader className="p-4">
             <Link href="/" className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
