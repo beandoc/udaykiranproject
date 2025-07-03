@@ -1,0 +1,1 @@
+This folder is for your audio files. Upload your MP3s here, and then reference them in the code using a path like '/audio/your-filename.mp3'.
