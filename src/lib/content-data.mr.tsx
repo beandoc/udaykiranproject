@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale, FlaskConical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -948,7 +948,7 @@ const understandingYourRoleContent = (
 const supportingPreTransplantContent = (
     <div className="space-y-6 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">प्रत्यारोपणापूर्वी समर्थन देणे</h2>
-        <p>येथे एक काळजीवाहक अनेकदा खूप मोठी प्रत्यक्ष भूमिका बजावतो. या तणावपूर्ण काळात तुमचे व्यावहारिक समर्थन खूप मोठा फरक करू शकते.</p>
+        <p>येथे एक काळजीवाहक अनेकदा खूप मोठी प्रत्यक्ष भूमिका बजावतो. तुमचे व्यावहारिक समर्थन या तणावपूर्ण काळात खूप मोठा फरक करू शकते.</p>
 
         <ul className="list-none space-y-4">
             <li className="flex items-start gap-4">
@@ -1146,6 +1146,66 @@ const communicationWithMedicalTeamContent = (
     </div>
 );
 
+const donorLongTermHealthContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">किडनी दान केल्यानंतर निरोगी राहणे</h2>
+        <p>किडनी दान करणे हे एक उदार, जीवन वाचवणारे कृत्य आहे. दानानंतर, तुमच्या दीर्घकालीन आरोग्याची काळजी घेणे खूप महत्त्वाचे आहे. तुम्हाला निरोगी राहण्यास मदत करण्यासाठी येथे एक सोपी मार्गदर्शक तत्त्वे आहेत.</p>
+
+        <div className="space-y-4">
+            <div className="flex items-start gap-4">
+                <HeartPulse className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">तुमचा रक्तदाब नियमितपणे तपासा</h4>
+                    <p className="text-muted-foreground">उच्च रक्तदाब तुमच्या उर्वरित किडनीवर परिणाम करू शकतो. तो निरोगी मर्यादेत ठेवण्यासाठी घरी किंवा डॉक्टरांकडून नियमितपणे तपासा.</p>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <FlaskConical className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">वार्षिक किडनी तपासणी करा</h4>
+                    <p className="text-muted-foreground">वर्षातून एकदा, तुमच्या किडनीच्या कार्याची तपासणी करण्यासाठी रक्त तपासणी आणि प्रथिनांसाठी मूत्र तपासणी करा. यामुळे तुमची किडनी चांगली काम करत असल्याची खात्री होते.</p>
+                </div>
+            </div>
+             <div className="flex items-start gap-4">
+                <Scale className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">निरोगी वजन राखा आणि सक्रिय रहा</h4>
+                    <p className="text-muted-foreground">निरोगी वजन आणि नियमित शारीरिक हालचाल (जसे की चालणे किंवा स्ट्रेचिंग) तुमच्या किडनीवरील दाब कमी करते आणि तुमचे हृदय निरोगी ठेवते.</p>
+                </div>
+            </div>
+             <div className="flex items-start gap-4">
+                <Heart className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">एक निरोगी जीवनशैली जगा</h4>
+                    <p className="text-muted-foreground">धूम्रपान आणि जास्त मद्यपान टाळा. पुरेशी झोप घेणे आणि तणावाचे व्यवस्थापन करणे या लहान सवयी तुमच्या किडनीचे रक्षण करण्यासाठी खूप मदत करतात.</p>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <UserCheck className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">वर्षातून एकदा किडनी तज्ञांना भेटा</h4>
+                    <p className="text-muted-foreground">तुमच्या किडनीच्या आरोग्यावर लक्ष ठेवण्यासाठी आणि कोणत्याही बदलांवर तज्ञ मार्गदर्शन मिळवण्यासाठी दरवर्षी एका नेफ्रॉलॉजिस्टला भेटा.</p>
+                </div>
+            </div>
+             <div className="flex items-start gap-4">
+                <Ban className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">हानिकारक औषधे टाळा</h4>
+                    <p className="text-muted-foreground">काही वेदनाशामक (जसे की आयबुप्रोफेन) किंवा तुमच्या किडनीला हानी पोहोचवणारी इतर औषधे घेऊ नका. कोणतेही नवीन औषध घेण्यापूर्वी नेहमी तुमच्या डॉक्टरांना विचारा.</p>
+                </div>
+            </div>
+        </div>
+
+        <Alert>
+            <Info className="h-4 w-4" />
+            <AlertTitle>एक आयुष्यभराचे आरोग्य</AlertTitle>
+            <AlertDescription>
+                लक्षात ठेवा: एका किडनीसहही, तुम्ही दीर्घ आणि निरोगी आयुष्य जगू शकता. तुमच्या वार्षिक तपासण्यांवर लक्ष ठेवणे आणि तुमच्या शरीराची चांगली काळजी घेणे ही गुरुकिल्ली आहे.
+            </AlertDescription>
+        </Alert>
+    </div>
+);
+
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
@@ -1177,7 +1237,8 @@ export const contentData: ModuleContent = {
     'communication-with-medical-team': communicationWithMedicalTeamContent,
     'physical-activity-and-exercise': physicalActivityAndExerciseContent,
     'understanding-graft-health': understandingGraftHealthContent,
-    'post-transplant-diabetes': postTransplantDiabetesContent
+    'post-transplant-diabetes': postTransplantDiabetesContent,
+    'donor-long-term-health': donorLongTermHealthContent,
 };
 
 // Placeholder for other modules

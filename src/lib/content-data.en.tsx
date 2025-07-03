@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale, FlaskConical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -1146,6 +1146,66 @@ const communicationWithMedicalTeamContent = (
     </div>
 );
 
+const donorLongTermHealthContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">Staying Healthy After Kidney Donation</h2>
+        <p>Donating a kidney is a generous, life-saving act. After your donation, taking care of your long-term health is very important. Here's a simple guide to help you stay well.</p>
+
+        <div className="space-y-4">
+            <div className="flex items-start gap-4">
+                <HeartPulse className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Check Your Blood Pressure Regularly</h4>
+                    <p className="text-muted-foreground">High blood pressure can affect your remaining kidney. Check it regularly at home or with a doctor to keep it in a healthy range.</p>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <FlaskConical className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Get Annual Kidney Check-ups</h4>
+                    <p className="text-muted-foreground">Once a year, get a blood test to check your kidney function and a urine test to check for protein. This ensures your kidney is working well.</p>
+                </div>
+            </div>
+             <div className="flex items-start gap-4">
+                <Scale className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Maintain a Healthy Weight and Stay Active</h4>
+                    <p className="text-muted-foreground">A healthy weight and regular physical activity (like walking or stretching) reduce pressure on your kidney and keep your heart healthy.</p>
+                </div>
+            </div>
+             <div className="flex items-start gap-4">
+                <Heart className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Live a Healthy Lifestyle</h4>
+                    <p className="text-muted-foreground">Avoid smoking and excessive alcohol. Getting enough sleep and managing stress are small habits that go a long way in protecting your kidney.</p>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <UserCheck className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">See a Kidney Specialist Yearly</h4>
+                    <p className="text-muted-foreground">Visit a nephrologist every year to monitor your kidney health and get expert guidance on any changes.</p>
+                </div>
+            </div>
+             <div className="flex items-start gap-4">
+                <Ban className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">Avoid Harmful Medications</h4>
+                    <p className="text-muted-foreground">Do not take certain painkillers (like ibuprofen) or other medicines that can harm your kidney. Always ask your doctor before taking any new medication.</p>
+                </div>
+            </div>
+        </div>
+
+        <Alert>
+            <Info className="h-4 w-4" />
+            <AlertTitle>A Lifetime of Health</AlertTitle>
+            <AlertDescription>
+                Remember: even with one kidney, you can live a long and healthy life. Staying on top of your yearly checks and taking good care of your body is the key.
+            </AlertDescription>
+        </Alert>
+    </div>
+);
+
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
@@ -1177,7 +1237,8 @@ export const contentData: ModuleContent = {
     'communication-with-medical-team': communicationWithMedicalTeamContent,
     'physical-activity-and-exercise': physicalActivityAndExerciseContent,
     'understanding-graft-health': understandingGraftHealthContent,
-    'post-transplant-diabetes': postTransplantDiabetesContent
+    'post-transplant-diabetes': postTransplantDiabetesContent,
+    'donor-long-term-health': donorLongTermHealthContent,
 };
 
 // Placeholder for other modules

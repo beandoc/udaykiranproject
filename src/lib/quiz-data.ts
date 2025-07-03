@@ -632,6 +632,58 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             correctAnswer: "Because chronic rejection can start silently without any symptoms"
         }
     ],
+    'donor-long-term-health': [
+        {
+            question: "How often should a kidney donor have their kidney function tested after donation?",
+            options: [
+                "Every month",
+                "Every year",
+                "Only if they feel sick",
+                "They don't need to get tested"
+            ],
+            correctAnswer: "Every year"
+        },
+        {
+            question: "What is one of the most important things for a donor to do to protect their remaining kidney?",
+            options: [
+                "Drink a lot of coffee",
+                "Maintain a healthy weight and stay active",
+                "Avoid all fruits and vegetables",
+                "Sleep only four hours a night"
+            ],
+            correctAnswer: "Maintain a healthy weight and stay active"
+        },
+        {
+            question: "Which type of medication should donors be very careful with and always ask a doctor about before taking?",
+            options: [
+                "Vitamins",
+                "Painkillers like ibuprofen",
+                "Allergy medicine",
+                "Antacids"
+            ],
+            correctAnswer: "Painkillers like ibuprofen"
+        },
+        {
+            question: "What does an annual urine test check for in a kidney donor?",
+            options: [
+                "Sugar levels",
+                "Bacteria",
+                "Protein, which can be a sign of kidney stress",
+                "Hydration levels"
+            ],
+            correctAnswer: "Protein, which can be a sign of kidney stress"
+        },
+        {
+            question: "Why is it important for a donor to see a nephrologist (kidney specialist) yearly?",
+            options: [
+                "To get a discount on medication",
+                "To monitor their overall kidney health and get expert guidance",
+                "To fulfill a legal requirement",
+                "It is not important"
+            ],
+            correctAnswer: "To monitor their overall kidney health and get expert guidance"
+        }
+    ],
     'donor-evaluation': [
         {
             question: "Who is the main point of contact for a living donor throughout the evaluation process?",

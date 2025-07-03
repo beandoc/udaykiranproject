@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale, FlaskConical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -705,7 +705,7 @@ const donorRecoveryTimelineContent = (
 const risksAndBenefitsContent = (
     <div className="space-y-4 text-base leading-relaxed">
         <h2 className="text-2xl font-bold font-headline">दान के बाद दीर्घकालिक स्वास्थ्य</h2>
-        <p>शोध से पता चला ہے कि जीवित दाता एक किडनी के साथ एक सामान्य, स्वस्थ जीवन जी सकते हैं। जब एक किडनी निकाल दी जाती है, तो दूसरी दान की गई किडनी का काम संभालने के लिए बढ़ती है। इसे "प्रतिपूरक वृद्धि" कहा जाता है। अध्ययनों से पता चलता है कि दान के बाद, एक दाता का कुल किडनी कार्य लगभग 70-80% तक वापस आ जाता है जो दो किडनी के साथ था, जो स्वस्थ रहने के लिए पर्याप्त से अधिक है।</p>
+        <p>शोध से पता चला है कि जीवित दाता एक किडनी के साथ एक सामान्य, स्वस्थ जीवन जी सकते हैं। जब एक किडनी निकाल दी जाती है, तो दूसरी दान की गई किडनी का काम संभालने के लिए बढ़ती है। इसे "प्रतिपूरक वृद्धि" कहा जाता है। अध्ययनों से पता चलता है कि दान के बाद, एक दाता का कुल किडनी कार्य लगभग 70-80% तक वापस आ जाता है जो दो किडनी के साथ था, जो स्वस्थ रहने के लिए पर्याप्त से अधिक है।</p>
         
         <h3 className="text-xl font-bold font-headline pt-4">दीर्घकालिक स्वास्थ्य विचार</h3>
         <p>जबकि दृष्टिकोण उत्कृष्ट है, लंबे समय के लिए कुछ चीजों के बारे में पता होना चाहिए:</p>
@@ -1146,6 +1146,66 @@ const communicationWithMedicalTeamContent = (
     </div>
 );
 
+const donorLongTermHealthContent = (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h2 className="text-2xl font-bold font-headline">किडनी दान करने के बाद स्वस्थ रहना</h2>
+        <p>किडनी दान करना एक उदार, जीवन रक्षक कार्य है। दान के बाद, अपने दीर्घकालिक स्वास्थ्य का ध्यान रखना बहुत महत्वपूर्ण है। यहाँ आपको स्वस्थ रहने में मदद करने के लिए एक सरल मार्गदर्शिका दी गई है।</p>
+
+        <div className="space-y-4">
+            <div className="flex items-start gap-4">
+                <HeartPulse className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">नियमित रूप से अपना रक्तचाप जांचें</h4>
+                    <p className="text-muted-foreground">उच्च रक्तचाप आपकी शेष किडनी को प्रभावित कर सकता है। इसे नियमित रूप से घर पर या डॉक्टर से जांच कराएं ताकि इसे एक स्वस्थ सीमा में रखा जा सके।</p>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <FlaskConical className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">वार्षिक किडनी जांच कराएं</h4>
+                    <p className="text-muted-foreground">साल में एक बार, अपनी किडनी की कार्यप्रणाली की जांच के लिए रक्त परीक्षण और प्रोटीन की जांच के लिए मूत्र परीक्षण कराएं। यह सुनिश्चित करता है कि आपकी किडनी अच्छी तरह से काम कर रही है।</p>
+                </div>
+            </div>
+             <div className="flex items-start gap-4">
+                <Scale className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">स्वस्थ वजन बनाए रखें और सक्रिय रहें</h4>
+                    <p className="text-muted-foreground">एक स्वस्थ वजन और नियमित शारीरिक गतिविधि (जैसे चलना या स्ट्रेचिंग) आपकी किडनी पर दबाव कम करती है और आपके दिल को स्वस्थ रखती है।</p>
+                </div>
+            </div>
+             <div className="flex items-start gap-4">
+                <Heart className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">एक स्वस्थ जीवन शैली जिएं</h4>
+                    <p className="text-muted-foreground">धूम्रपान और अत्यधिक शराब से बचें। पर्याप्त नींद लेना और तनाव का प्रबंधन करना छोटी आदतें हैं जो आपकी किडनी की सुरक्षा में एक लंबा रास्ता तय करती हैं।</p>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <UserCheck className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">सालाना एक किडनी विशेषज्ञ से मिलें</h4>
+                    <p className="text-muted-foreground">अपनी किडनी के स्वास्थ्य की निगरानी करने और किसी भी बदलाव पर विशेषज्ञ मार्गदर्शन प्राप्त करने के लिए हर साल एक नेफ्रोलॉजिस्ट से मिलें।</p>
+                </div>
+            </div>
+             <div className="flex items-start gap-4">
+                <Ban className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                <div>
+                    <h4 className="font-semibold">हानिकारक दवाओं से बचें</h4>
+                    <p className="text-muted-foreground">कुछ दर्दनाशक (जैसे इबुप्रोफेन) या अन्य दवाएं न लें जो आपकी किडनी को नुकसान पहुंचा सकती हैं। कोई भी नई दवा लेने से पहले हमेशा अपने डॉक्टर से पूछें।</p>
+                </div>
+            </div>
+        </div>
+
+        <Alert>
+            <Info className="h-4 w-4" />
+            <AlertTitle>एक जीवन भर का स्वास्थ्य</AlertTitle>
+            <AlertDescription>
+            याद रखें: एक किडनी के साथ भी, आप एक लंबा और स्वस्थ जीवन जी सकते हैं। अपनी वार्षिक जांच पर बने रहना और अपने शरीर की अच्छी देखभाल करना ही कुंजी है।
+            </AlertDescription>
+        </Alert>
+    </div>
+);
+
 
 export const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
@@ -1177,7 +1237,8 @@ export const contentData: ModuleContent = {
     'communication-with-medical-team': communicationWithMedicalTeamContent,
     'physical-activity-and-exercise': physicalActivityAndExerciseContent,
     'understanding-graft-health': understandingGraftHealthContent,
-    'post-transplant-diabetes': postTransplantDiabetesContent
+    'post-transplant-diabetes': postTransplantDiabetesContent,
+    'donor-long-term-health': donorLongTermHealthContent,
 };
 
 // Placeholder for other modules
