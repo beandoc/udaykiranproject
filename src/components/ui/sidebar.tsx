@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetTitle,
@@ -211,10 +212,6 @@ const Sidebar = React.forwardRef<
             }
             side={side}
           >
-            <SheetTitle className="sr-only">Main Menu</SheetTitle>
-            <SheetDescription className="sr-only">
-              The main navigation sidebar for the application.
-            </SheetDescription>
             <div className="flex h-full w-full flex-col">{children}</div>
           </SheetContent>
         </Sheet>
@@ -558,6 +555,7 @@ const SidebarMenuButton = React.forwardRef<
       size = "default",
       tooltip,
       className,
+      children,
       ...props
     },
     ref
@@ -573,8 +571,15 @@ const SidebarMenuButton = React.forwardRef<
         data-active={isActive}
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
         {...props}
-      />
+      >
+        {children}
+      </Comp>
     )
+
+    // On mobile, wrap the button in SheetClose to automatically close the sidebar on navigation.
+    if (isMobile) {
+      return <SheetClose asChild>{button}</SheetClose>
+    }
 
     if (!tooltip) {
       return button

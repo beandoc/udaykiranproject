@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { ReactNode } from 'react';
+import { useTheme } from 'next-themes';
 import {
   SidebarProvider,
   Sidebar,
@@ -24,6 +25,7 @@ import {
   Pill,
   Bell,
   Moon,
+  Sun,
   Languages,
   Contact,
   ListChecks,
@@ -38,10 +40,12 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useAppContext } from '@/context/app-context';
+import { SheetClose, SheetDescription, SheetTitle } from '../ui/sheet';
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const { t, setLanguage } = useAppContext();
+  const { setTheme, theme } = useTheme();
 
   const mainNav = [
     { href: '/', labelKey: 'navDashboard', icon: LayoutDashboard },
@@ -61,6 +65,8 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <SidebarProvider>
       <Sidebar>
+          <SheetTitle className="sr-only">Main Menu</SheetTitle>
+          <SheetDescription className="sr-only">The main navigation sidebar for the application.</SheetDescription>
         <SidebarHeader className="p-4">
             <Link href="/" className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
@@ -124,8 +130,8 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <Bell className="h-5 w-5" />
                 <span className="sr-only">{t('notifications')}</span>
             </Button>
-            <Button variant="ghost" size="icon" className="rounded-full">
-                <Moon className="h-5 w-5" />
+            <Button variant="ghost" size="icon" className="rounded-full" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+                {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
                 <span className="sr-only">{t('toggleTheme')}</span>
             </Button>
             <div className="text-sm font-semibold text-foreground pr-2">

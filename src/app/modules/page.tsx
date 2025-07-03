@@ -1,16 +1,16 @@
 'use client';
 
 import * as React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Clock, PlayCircle, Star } from "lucide-react";
+import { CheckCircle, Clock, PlayCircle, Star, PartyPopper } from "lucide-react";
 import Link from "next/link";
 import { useAppContext } from "@/context/app-context";
 import type { Module } from "@/lib/modules-data";
 import { getContentDataForLang } from "@/lib/content-data";
 import { cn } from '@/lib/utils';
-import { buttonVariants } from '@/components/ui/button';
+import { buttonVariants, Button } from '@/components/ui/button';
 
 // Helper to calculate reading time
 const countWords = (node: React.ReactNode): number => {
@@ -100,6 +100,7 @@ export default function ModulesPage() {
     const totalModules = modules.length;
     const progress = totalModules > 0 ? (completedModules / totalModules) * 100 : 0;
     const nextModuleIndex = modules.findIndex(m => m.status === 'Not Started');
+    const allModulesCompleted = totalModules > 0 && completedModules === totalModules;
 
     return (
         <div className="space-y-8">
@@ -123,11 +124,26 @@ export default function ModulesPage() {
                 </CardContent>
             </Card>
 
-            <div className="space-y-4">
-                {modules.map((module, index) => (
-                    <ModuleCard key={module.slug} module={module} isNext={index === nextModuleIndex} />
-                ))}
-            </div>
+            {allModulesCompleted ? (
+                <Card>
+                    <CardHeader className="items-center text-center">
+                        <PartyPopper className="w-12 h-12 text-yellow-500" />
+                        <CardTitle className="font-headline text-2xl mt-4">{t('allModulesCompleteTitle')}</CardTitle>
+                        <CardDescription>{t('allModulesCompleteDesc')}</CardDescription>
+                    </CardHeader>
+                    <CardFooter className="justify-center">
+                        <Button asChild>
+                            <Link href="/">{t('allModulesCompleteButton')}</Link>
+                        </Button>
+                    </CardFooter>
+                </Card>
+            ) : (
+                <div className="space-y-4">
+                    {modules.map((module, index) => (
+                        <ModuleCard key={module.slug} module={module} isNext={index === nextModuleIndex} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 }
