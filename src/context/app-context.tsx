@@ -41,6 +41,37 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>('en');
   const [activities, setActivities] = useState<Activity[]>([]);
   const [modulesByRole, setModulesByRole] = useState<ModulesByRoleType>(initialModulesByRole);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // This effect runs once on the client to load persisted state from localStorage
+  useEffect(() => {
+    setIsMounted(true);
+    try {
+      const storedRole = localStorage.getItem('app-role') as Role | null;
+      const storedLanguage = localStorage.getItem('app-language') as Language | null;
+
+      if (storedRole && ['Patient', 'Donor', 'Caregiver'].includes(storedRole)) {
+        setRole(storedRole);
+      }
+      if (storedLanguage && ['en', 'hi', 'mr'].includes(storedLanguage)) {
+        setLanguage(storedLanguage);
+      }
+    } catch (error) {
+      console.error("Could not load user preferences from localStorage.", error);
+    }
+  }, []);
+  
+  // This effect persists state changes to localStorage after the component has mounted
+  useEffect(() => {
+    if (isMounted) {
+      try {
+        localStorage.setItem('app-role', role);
+        localStorage.setItem('app-language', language);
+      } catch (error) {
+        console.error("Could not save user preferences to localStorage.", error);
+      }
+    }
+  }, [role, language, isMounted]);
 
   const t = useCallback((key: string, options?: { [key: string]: string | number }) => {
     const langFile = translations[language] || translations['en'];
@@ -119,6 +150,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
         return newModulesByRole;
     });
 }, [addActivity, t]);
+
+  // Avoid rendering children until the component has mounted on the client
+  // to prevent hydration mismatches with localStorage values.
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <AppContext.Provider value={{ role, setRole, language, setLanguage, t, activities, modulesByRole, updateModuleStatus }}>
