@@ -3,6 +3,7 @@ export type Module = {
   title: string;
   status: 'Completed' | 'Not Started';
   slug: string;
+  audioSrc?: string;
 };
 
 export type RoleData = {
@@ -17,7 +18,7 @@ export type ModulesByRole = {
 };
 
 export const patientModules: Module[] = [
-  { title: 'Understanding Kidney Disease', status: 'Completed', slug: 'understanding-kidney-disease' },
+  { title: 'Understanding Kidney Disease', status: 'Completed', slug: 'understanding-kidney-disease', audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' },
   { title: 'Patient Responsibilities', status: 'Not Started', slug: 'patient-responsibilities' },
   { title: 'Transplant Evaluation Process', status: 'Not Started', slug: 'evaluation-process' },
   { title: 'Understanding Transplant Matching', status: 'Not Started', slug: 'transplant-matching' },
@@ -35,7 +36,7 @@ export const patientModules: Module[] = [
 ];
 
 export const donorModules: Module[] = [
-    { title: 'Understanding Living Donation', status: 'Completed', slug: 'understanding-living-donation' },
+    { title: 'Understanding Living Donation', status: 'Completed', slug: 'understanding-living-donation', audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3' },
     { title: 'Donor Eligibility Criteria', status: 'Not Started', slug: 'donor-eligibility' },
     { title: 'Medical Evaluation Process', status: 'Not Started', slug: 'donor-evaluation' },
     { title: 'Understanding Transplant Matching', status: 'Not Started', slug: 'transplant-matching' },
@@ -48,7 +49,7 @@ export const donorModules: Module[] = [
 ];
 
 export const caregiverModules: Module[] = [
-    { title: 'Understanding Your Role', status: 'Completed', slug: 'understanding-your-role' },
+    { title: 'Understanding Your Role', status: 'Completed', slug: 'understanding-your-role', audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3' },
     { title: 'Supporting Pre-Transplant', status: 'Not Started', slug: 'supporting-pre-transplant' },
     { title: 'Hospital Stay Support', status: 'Not Started', slug: 'hospital-stay-support' },
     { title: 'Home Recovery Care', status: 'Not Started', slug: 'home-recovery-care' },

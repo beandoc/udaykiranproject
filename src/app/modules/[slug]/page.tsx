@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -9,13 +9,11 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { quizData, type QuizQuestion } from "@/lib/quiz-data";
-import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen, Volume2, Loader2 } from "lucide-react";
+import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen, Volume2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { getContentDataForLang } from "@/lib/content-data";
 import { useAppContext } from "@/context/app-context";
-import { narrateContent } from "@/ai/flows/narrate-content-flow";
-import React from "react";
 
 export default function ModulePage() {
     const params = useParams();
@@ -24,11 +22,9 @@ export default function ModulePage() {
     const { t, role, modulesByRole, updateModuleStatus, language } = useAppContext();
     
     const [viewMode, setViewMode] = useState<'content' | 'quiz'>('content');
-    const [narrationState, setNarrationState] = useState<'idle' | 'loading' | 'playing' | 'error'>('idle');
-    const [audioSrc, setAudioSrc] = useState<string | null>(null);
+    const [showAudioPlayer, setShowAudioPlayer] = useState(false);
 
-    const contentDataForLang = useMemo(() => getContentDataForLang(language), [language]);
-    const moduleContent = contentDataForLang[slug];
+    const moduleContent = getContentDataForLang(language)[slug];
 
     const [questions, setQuestions] = useState<QuizQuestion[]>(() => {
         return quizData[slug] || [];
@@ -80,44 +76,6 @@ export default function ModulePage() {
         setSelectedAnswers(Array(questions.length).fill(null));
         setIsSubmitted(false);
     };
-
-    const extractText = (node: React.ReactNode): string => {
-        if (!node) return '';
-        if (typeof node === 'string') return node;
-        if (typeof node === 'number') return String(node);
-        if (Array.isArray(node)) return node.map(extractText).join(' ');
-        if (React.isValidElement(node) && node.props.children) {
-          return React.Children.toArray(node.props.children).map(extractText).join(' ');
-        }
-        return '';
-    };
-
-    const handleNarration = async () => {
-        setNarrationState('loading');
-        setAudioSrc(null);
-        toast({
-            title: t('narrateToastTitle'),
-            description: t('narrateToastDesc'),
-        });
-        try {
-            const textToNarrate = extractText(moduleContent);
-            if (!textToNarrate.trim()) {
-                throw new Error("No text content found to narrate.");
-            }
-            const result = await narrateContent(textToNarrate);
-            setAudioSrc(result.audioDataUri);
-            setNarrationState('playing');
-        } catch (error) {
-            console.error("Narration failed:", error);
-            setNarrationState('error');
-            toast({
-                title: t('narrateFailTitle'),
-                description: t('narrateFailDesc'),
-                variant: "destructive"
-            });
-            setTimeout(() => setNarrationState('idle'), 3000);
-        }
-    };
     
     const score = selectedAnswers.filter((answer, index) => answer === questions[index].correctAnswer).length;
     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
@@ -159,10 +117,12 @@ export default function ModulePage() {
                             </Link>
                         </Button>
                         <div className="flex flex-col sm:flex-row gap-2">
-                            <Button onClick={handleNarration} disabled={narrationState === 'loading' || narrationState === 'playing'} variant="secondary">
-                                {narrationState === 'loading' ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Volume2 className="mr-2 h-4 w-4" />}
-                                {narrationState === 'loading' ? t('narratingContent') : t('narrateContent')}
-                            </Button>
+                             {moduleInfo?.audioSrc && (
+                                <Button onClick={() => setShowAudioPlayer(!showAudioPlayer)} variant="secondary">
+                                    <Volume2 className="mr-2 h-4 w-4" />
+                                    {showAudioPlayer ? t('hidePlayer') : t('listenToContent')}
+                                </Button>
+                            )}
                             {questions && questions.length > 0 ? (
                                 <Button onClick={() => setViewMode('quiz')} size="lg">
                                     {t('contentStartQuiz')} <HelpCircle className="ml-2 h-4 w-4" />
@@ -175,7 +135,7 @@ export default function ModulePage() {
                         </div>
                     </CardFooter>
                 </Card>
-                {audioSrc && narrationState === 'playing' && (
+                {showAudioPlayer && moduleInfo?.audioSrc && (
                     <Card>
                         <CardHeader>
                             <CardTitle>{t('contentNarrationTitle')}</CardTitle>
@@ -185,9 +145,9 @@ export default function ModulePage() {
                             <audio
                                 controls
                                 autoPlay
-                                src={audioSrc}
+                                src={moduleInfo.audioSrc}
                                 className="w-full"
-                                onEnded={() => setNarrationState('idle')}
+                                onEnded={() => setShowAudioPlayer(false)}
                             >
                                 Your browser does not support the audio element.
                             </audio>
@@ -242,7 +202,7 @@ export default function ModulePage() {
                         )
                     })}
                 </CardContent>
-                <CardFooter className="flex-col sm:flex-row gap-4 w-full">
+                <CardFooter className="flex-col sm:flex-row gap-4 w-full justify-center">
                     <Button variant="outline" onClick={() => {
                         resetQuiz();
                         setViewMode('content');
@@ -252,15 +212,9 @@ export default function ModulePage() {
                     <Button onClick={resetQuiz} className="w-full sm:w-auto">
                         {t('quizRetake')}
                     </Button>
-                    {areAllComplete ? (
-                        <Button asChild className="w-full sm:w-auto" size="lg">
-                            <Link href="/">{t('allModulesCompleteButton')}</Link>
-                        </Button>
-                    ) : (
-                        <Button asChild className="w-full sm:w-auto" size="lg">
-                            <Link href="/modules">{t('quizBackToPath')}</Link>
-                        </Button>
-                    )}
+                    <Button asChild className="w-full sm:w-auto" size="lg">
+                        <Link href="/modules">{t('quizBackToPath')}</Link>
+                    </Button>
                 </CardFooter>
             </Card>
         )
