@@ -11,25 +11,25 @@ export default function ContactsPage() {
         {
             icon: Phone,
             titleKey: "contactsClinicPhoneTitle",
-            value: "+91-XXX-XXX-XXXX",
+            valueKey: "contactsClinicPhoneValue",
             descriptionKey: "contactsClinicPhoneDesc"
         },
         {
             icon: MapPin,
             titleKey: "contactsClinicAddressTitle",
-            value: "Department of Nephrology, Command Hospital (SC), Pune",
+            valueKey: "contactsClinicAddressValue",
             descriptionKey: "contactsClinicAddressDesc"
         },
         {
             icon: CalendarDays,
             titleKey: "contactsOpdTitle",
-            value: "Monday & Thursday",
+            valueKey: "contactsOpdValue",
             descriptionKey: "contactsOpdDesc"
         },
         {
             icon: Hospital,
             titleKey: "contactsEmergencyTitle",
-            value: "Dial 102 or Hospital Emergency",
+            valueKey: "contactsEmergencyValue",
             descriptionKey: "contactsEmergencyDesc"
         }
     ]
@@ -50,7 +50,7 @@ export default function ContactsPage() {
                             </div>
                             <div>
                                 <h4 className="font-semibold">{t(detail.titleKey)}</h4>
-                                <p className="text-lg font-bold text-foreground mt-1">{detail.value}</p>
+                                <p className="text-lg font-bold text-foreground mt-1">{t(detail.valueKey)}</p>
                                 <p className="mt-1 text-sm text-muted-foreground">{t(detail.descriptionKey)}</p>
                             </div>
                         </div>
