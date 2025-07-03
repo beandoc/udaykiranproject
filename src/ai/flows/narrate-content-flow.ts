@@ -3,7 +3,6 @@
  * @fileOverview A flow for narrating text content using Text-to-Speech.
  *
  * - narrateContent - A function that converts a string of text into an audio data URI.
- * - NarrateContentOutput - The return type for the narrateContent function.
  */
 
 import { ai } from '@/ai/genkit';
@@ -16,7 +15,9 @@ const NarrateContentOutputSchema = z.object({
     .string()
     .describe("The generated audio as a data URI. Expected format: 'data:audio/wav;base64,<encoded_data>'."),
 });
-export type NarrateContentOutput = z.infer<typeof NarrateContentOutputSchema>;
+
+// This type is used internally and not exported, which is valid for "use server" files.
+type NarrateContentOutput = z.infer<typeof NarrateContentOutputSchema>;
 
 export async function narrateContent(text: string): Promise<NarrateContentOutput> {
   return narrateContentFlow(text);

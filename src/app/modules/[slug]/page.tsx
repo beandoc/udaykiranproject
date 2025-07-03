@@ -57,7 +57,7 @@ export default function ModulePage() {
 
     const handlePrevious = () => {
         if (currentQuestionIndex > 0) {
-            setCurrentQuestionIndex(currentQuestionIndex + 1);
+            setCurrentQuestionIndex(currentQuestionIndex - 1);
         }
     };
     
