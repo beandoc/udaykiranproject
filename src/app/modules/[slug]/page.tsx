@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,7 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { quizData, type QuizQuestion } from "@/lib/quiz-data";
-import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen, Volume2 } from "lucide-react";
+import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen, Volume2, LayoutDashboard } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { getContentDataForLang } from "@/lib/content-data";
@@ -17,6 +17,7 @@ import { useAppContext } from "@/context/app-context";
 
 export default function ModulePage() {
     const params = useParams();
+    const router = useRouter();
     const slug = params.slug as string;
     const { toast } = useToast();
     const { t, role, modulesByRole, updateModuleStatus, language } = useAppContext();
@@ -31,6 +32,7 @@ export default function ModulePage() {
     });
 
     const moduleInfo = modulesByRole[role].modules.find(module => module.slug === slug);
+    const audioSrcForCurrentLang = moduleInfo?.audioSrc?.[language as keyof typeof moduleInfo.audioSrc];
 
     const moduleTitle = moduleInfo?.title || 'Module';
 
@@ -117,7 +119,7 @@ export default function ModulePage() {
                             </Link>
                         </Button>
                         <div className="flex flex-col sm:flex-row gap-2">
-                             {moduleInfo?.audioSrc && (
+                             {audioSrcForCurrentLang && (
                                 <Button onClick={() => setShowAudioPlayer(!showAudioPlayer)} variant="secondary">
                                     <Volume2 className="mr-2 h-4 w-4" />
                                     {showAudioPlayer ? t('hidePlayer') : t('listenToContent')}
@@ -135,7 +137,7 @@ export default function ModulePage() {
                         </div>
                     </CardFooter>
                 </Card>
-                {showAudioPlayer && moduleInfo?.audioSrc && (
+                {showAudioPlayer && audioSrcForCurrentLang && (
                     <Card>
                         <CardHeader>
                             <CardTitle>{t('contentNarrationTitle')}</CardTitle>
@@ -145,7 +147,7 @@ export default function ModulePage() {
                             <audio
                                 controls
                                 autoPlay
-                                src={moduleInfo.audioSrc}
+                                src={audioSrcForCurrentLang}
                                 className="w-full"
                                 onEnded={() => setShowAudioPlayer(false)}
                             >
@@ -172,7 +174,8 @@ export default function ModulePage() {
 
     if (isSubmitted) {
         const allModules = modulesByRole[role].modules;
-        const areAllComplete = allModules.every(m => m.status === 'Completed');
+        const lastModuleSlug = allModules[allModules.length -1].slug
+        const isFinalModule = slug === lastModuleSlug
 
         return (
             <Card className="max-w-3xl mx-auto">
@@ -212,9 +215,16 @@ export default function ModulePage() {
                     <Button onClick={resetQuiz} className="w-full sm:w-auto">
                         {t('quizRetake')}
                     </Button>
-                    <Button asChild className="w-full sm:w-auto" size="lg">
-                        <Link href="/modules">{t('quizBackToPath')}</Link>
-                    </Button>
+                     {isFinalModule ? (
+                        <Button onClick={() => router.push('/')} className="w-full sm:w-auto" size="lg">
+                            <LayoutDashboard className="mr-2 h-4 w-4" />
+                            {t('navDashboard')}
+                        </Button>
+                    ) : (
+                        <Button asChild className="w-full sm:w-auto" size="lg">
+                            <Link href="/modules">{t('quizBackToPath')}</Link>
+                        </Button>
+                    )}
                 </CardFooter>
             </Card>
         )
