@@ -90,7 +90,7 @@ export default function ModulePage() {
     const score = selectedAnswers.filter((answer, index) => answer === questions[index].correctAnswer).length;
     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
 
-    if (!moduleInfo) {
+    if (!moduleInfo || !moduleContent) {
         return (
             <div className="text-center">
                 <h1 className="text-2xl font-bold">{t('moduleNotFoundTitle')}</h1>

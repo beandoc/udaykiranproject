@@ -2,7 +2,6 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { modulesByRole } from './modules-data';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale, FlaskConical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -1239,21 +1238,11 @@ export const contentData: ModuleContent = {
     'understanding-graft-health': understandingGraftHealthContent,
     'post-transplant-diabetes': postTransplantDiabetesContent,
     'donor-long-term-health': donorLongTermHealthContent,
+    'chronic-kidney-disease-stages': (<div>Content coming soon...</div>),
+    'treatment-options-overview': (<div>Content coming soon...</div>),
+    'dialysis-vs-transplant': (<div>Content coming soon...</div>),
+    'finding-a-donor': (<div>Content coming soon...</div>),
+    'pre-surgery-preparation': (<div>Content coming soon...</div>),
+    'recognizing-complications': (<div>Content coming soon...</div>),
+    'lifestyle-management': (<div>Content coming soon...</div>)
 };
-
-// Placeholder for other modules
-const defaultContent = (
-    <div className="space-y-4 text-base leading-relaxed">
-        <h2 className="text-2xl font-bold font-headline">सामग्री लवकरच येत आहे</h2>
-        <p>या मॉड्यूलची शैक्षणिक सामग्री सध्या तयार केली जात आहे. तपशीलवार माहितीसाठी कृपया नंतर पुन्हा तपासा.</p>
-    </div>
-);
-
-
-Object.values(modulesByRole).forEach(roleData => {
-    roleData.modules.forEach(module => {
-        if (!contentData[module.slug]) {
-            contentData[module.slug] = defaultContent;
-        }
-    });
-});
