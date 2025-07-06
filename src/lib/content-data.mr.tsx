@@ -1206,7 +1206,7 @@ const donorLongTermHealthContent = (
 );
 
 
-export const contentData: ModuleContent = {
+const contentData: ModuleContent = {
     'understanding-kidney-disease': understandingKidneyDiseaseContent,
     'understanding-living-donation': understandingLivingDonationContent,
     'evaluation-process': transplantEvaluationProcessContent,
@@ -1246,3 +1246,5 @@ export const contentData: ModuleContent = {
     'recognizing-complications': (<div>Content coming soon...</div>),
     'lifestyle-management': (<div>Content coming soon...</div>)
 };
+
+export default contentData;
