@@ -19,6 +19,27 @@ export type Resource = {
 
 export const resources: Resource[] = [
   {
+    type: 'podcast',
+    titleKey: 'podcastPatientEp1Title',
+    descriptionKey: 'podcastPatientEp1Desc',
+    src: '/podcasts/patient-episode-1.wav', 
+    icon: Podcast,
+  },
+  {
+    type: 'podcast',
+    titleKey: 'podcastPatientEp2Title',
+    descriptionKey: 'podcastPatientEp2Desc',
+    src: '/podcasts/example-podcast.mp3', // Placeholder until the real file is uploaded
+    icon: Podcast,
+  },
+  {
+    type: 'podcast',
+    titleKey: 'podcastPatientEp3Title',
+    descriptionKey: 'podcastPatientEp3Desc',
+    src: '/podcasts/example-podcast.mp3', // Placeholder until the real file is uploaded
+    icon: Podcast,
+  },
+  {
     type: 'video',
     titleKey: 'resourcesVideoTitle', // Youtube Video
     descriptionKey: 'resourcesVideoDesc',
