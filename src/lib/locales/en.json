@@ -303,5 +303,13 @@
     "patientResponsibilitiesTitle": "Your Responsibilities",
     "patientResponsibilitiesDesc": "A successful transplant journey is a partnership. Here’s how you can contribute to your own care.",
     "nextUpPrompt": "Next Up For You",
-    "reviewYourPath": "Review Your Learning Path"
+    "reviewYourPath": "Review Your Learning Path",
+    "podcastDonorEp1Title": "Donor Podcast: Episode 1 (Modules 1-5)",
+    "podcastDonorEp1Desc": "This episode covers the initial steps of donation: Understanding Living Donation, Eligibility, Evaluation, Matching, and the Psychological Assessment.",
+    "podcastDonorEp2Title": "Donor Podcast: Episode 2 (Modules 6-10)",
+    "podcastDonorEp2Desc": "This episode focuses on the surgical experience and beyond: The Procedure, Recovery, Risks & Benefits, Long-term Health, and Patient Responsibilities.",
+    "podcastCaregiverEp1Title": "Caregiver Podcast: Episode 1 (Modules 1-5)",
+    "podcastCaregiverEp1Desc": "This episode covers your foundational role: Understanding Your Role, Supporting Pre-Transplant, Hospital Stay, Home Recovery, and Medication Management.",
+    "podcastCaregiverEp2Title": "Caregiver Podcast: Episode 2 (Modules 6-9)",
+    "podcastCaregiverEp2Desc": "This episode focuses on crucial skills and self-care: Recognizing Warning Signs, Self-Care, Communicating with the Team, and understanding Patient Responsibilities."
 }

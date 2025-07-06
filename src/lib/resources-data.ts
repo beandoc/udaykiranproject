@@ -40,19 +40,40 @@ export const resources: Resource[] = [
     icon: Podcast,
   },
   {
+    type: 'podcast',
+    titleKey: 'podcastDonorEp1Title',
+    descriptionKey: 'podcastDonorEp1Desc',
+    src: '/podcasts/example-podcast.mp3', // Placeholder: Upload donor-episode-1.mp3
+    icon: Podcast,
+  },
+  {
+    type: 'podcast',
+    titleKey: 'podcastDonorEp2Title',
+    descriptionKey: 'podcastDonorEp2Desc',
+    src: '/podcasts/example-podcast.mp3', // Placeholder: Upload donor-episode-2.mp3
+    icon: Podcast,
+  },
+  {
+    type: 'podcast',
+    titleKey: 'podcastCaregiverEp1Title',
+    descriptionKey: 'podcastCaregiverEp1Desc',
+    src: '/podcasts/example-podcast.mp3', // Placeholder: Upload caregiver-episode-1.mp3
+    icon: Podcast,
+  },
+  {
+    type: 'podcast',
+    titleKey: 'podcastCaregiverEp2Title',
+    descriptionKey: 'podcastCaregiverEp2Desc',
+    src: '/podcasts/example-podcast.mp3', // Placeholder: Upload caregiver-episode-2.mp3
+    icon: Podcast,
+  },
+  {
     type: 'video',
     titleKey: 'resourcesVideoTitle', // Youtube Video
     descriptionKey: 'resourcesVideoDesc',
     src: 'https://www.youtube.com/embed/fELn4Fe9Ccc',
     icon: Youtube,
     isYoutube: true,
-  },
-  {
-    type: 'podcast',
-    titleKey: 'podcastTitle', // Web Podcast
-    descriptionKey: 'podcastDesc',
-    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', 
-    icon: Podcast,
   },
   {
     type: 'video',
@@ -62,11 +83,4 @@ export const resources: Resource[] = [
     icon: Video, // Using the 'Video' icon for local files
     isYoutube: false,
   },
-  {
-    type: 'podcast',
-    titleKey: 'localPodcastExampleTitle',
-    descriptionKey: 'localPodcastExampleDesc',
-    src: '/podcasts/example-podcast.mp3', // Example path for a local podcast
-    icon: Podcast,
-  }
 ];
