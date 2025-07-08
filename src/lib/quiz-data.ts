@@ -8,6 +8,28 @@ export type QuizQuestion = {
 };
 
 export const quizData: { [key: string]: QuizQuestion[] } = {
+    'anesthesia-risks': [
+        {
+            question: "What is a common, temporary side effect after general anesthesia?",
+            options: [
+                "Stroke",
+                "Sore throat",
+                "Digit gangrene",
+                "Cardiac arrest"
+            ],
+            correctAnswer: "Sore throat"
+        },
+        {
+            question: "Which of the following is a RARE but serious complication of general anesthesia?",
+            options: [
+                "Headache",
+                "Nausea and vomiting",
+                "Dental trauma",
+                "Severe allergy / anaphylaxis"
+            ],
+            correctAnswer: "Severe allergy / anaphylaxis"
+        }
+    ],
     'physical-activity-and-exercise': [
         {
             question: "Why is physical activity important after a kidney transplant?",
@@ -387,7 +409,7 @@ export const quizData: { [key: string]: QuizQuestion[] } = {
             question: "How should you handle a missed dose of your immunosuppressant?",
             options: [
                 "Take two doses at the next scheduled time",
-                "Skip the dose entirely",
+                "Skip it entirely",
                 "Follow the specific instructions given by your transplant team",
                 "Take the dose as soon as you remember, no matter how late"
             ],

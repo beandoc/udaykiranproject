@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -30,7 +31,8 @@ import {
   Contact,
   ListChecks,
   ClipboardCheck,
-  Sparkles
+  Sparkles,
+  HelpCircle
 } from 'lucide-react';
 import { Button } from '../ui/button';
 import {
@@ -59,6 +61,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     { href: '/tools/medication', labelKey: 'toolImmunosuppressants', icon: Pill },
     { href: '/tools/symptoms', labelKey: 'toolSymptomLog', icon: HeartPulse },
     { href: '/dos-and-donts', labelKey: 'navDosAndDonts', icon: ListChecks },
+    { href: '/faq', labelKey: 'navFaq', icon: HelpCircle },
   ];
 
   return (

@@ -29,13 +29,14 @@ export const patientModules: Module[] = [
     audioSrc: {
         en: '/audio/understanding-kidney-disease-en.mp3',
         hi: '/audio/understanding-kidney-disease-hi.mp3',
-        mr: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3'  // Placeholder
+        mr: '/podcasts/patient-episode-1-mr.wav'
     }
   },
   { title: 'Patient Responsibilities', status: 'Not Started', slug: 'patient-responsibilities' },
   { title: 'Transplant Evaluation Process', status: 'Not Started', slug: 'evaluation-process' },
   { title: 'Understanding Transplant Matching', status: 'Not Started', slug: 'transplant-matching' },
   { title: 'Surgery Day Experience', status: 'Not Started', slug: 'surgery-day' },
+  { title: 'Know Possible Risks of Anesthesia', status: 'Not Started', slug: 'anesthesia-risks'},
   { title: 'Post-Transplant Recovery', status: 'Not Started', slug: 'post-transplant-recovery' },
   { title: 'Immunosuppressive Medications', status: 'Not Started', slug: 'immunosuppressants' },
   { title: 'Medication Adherence', status: 'Not Started', slug: 'medication-adherence' },
@@ -64,6 +65,7 @@ export const donorModules: Module[] = [
     { title: 'Understanding Transplant Matching', status: 'Not Started', slug: 'transplant-matching' },
     { title: 'Psychological Assessment', status: 'Not Started', slug: 'psychological-assessment' },
     { title: 'Surgical Procedure Overview', status: 'Not Started', slug: 'donor-surgery' },
+    { title: 'Know Possible Risks of Anesthesia', status: 'Not Started', slug: 'anesthesia-risks'},
     { title: 'Recovery Timeline', status: 'Not Started', slug: 'donor-recovery' },
     { title: 'Potential Risks and Benefits', status: 'Not Started', slug: 'risks-and-benefits' },
     { title: 'Long-term Health Monitoring', status: 'Not Started', slug: 'donor-long-term-health' },
