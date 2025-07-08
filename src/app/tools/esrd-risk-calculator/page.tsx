@@ -38,7 +38,7 @@ type CalculationResult = {
     riskLifetime: number;
 } | null;
 
-// Calculation data from the NEJM 2016 paper's appendix
+// Corrected Hx values from NEJM 2016 paper's appendix
 const Hx_data = {
     'Male': {
         'White': {
@@ -105,11 +105,11 @@ export default function EsrdRiskCalculatorPage() {
         const eGFR3 = (Math.max(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 120.0), 90.0)) / 15.0;
         const eGFR4 = (120.0 - Math.max(data.eGFR, 120.0)) / 15.0;
         
-        // BMI splines - corrected implementation
-        const BMI1 = (Math.min(data.bmi, 30) - 25) / 5;
-        const BMI2 = (Math.max(data.bmi, 30) - 30) / 5;
+        // BMI splines with knots at 25 and 30
+        const BMI1 = (Math.min(data.bmi, 30) - 25) / 5.0;
+        const BMI2 = (Math.max(data.bmi, 30) - 30) / 5.0;
         
-        // Calculate B value
+        // Calculate B value (Linear sum of coefficients)
         let B = 0;
         B += (1.8879 * eGFR1);
         B += (0.4884 * eGFR2);
@@ -363,5 +363,3 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
       </div>
     );
 }
-
-    
