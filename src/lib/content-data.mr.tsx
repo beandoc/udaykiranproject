@@ -10,10 +10,10 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import type { ModuleContentData } from './content-data';
 
 const takeawayColors = [
-    "bg-primary/10 border-primary/20", 
-    "bg-accent/10 border-accent/20", 
-    "bg-yellow-100 dark:bg-yellow-900/30 border-yellow-500/20", 
-    "bg-muted/50 border-border"
+    "bg-blue-100/70 dark:bg-blue-900/30 border-blue-500/20", 
+    "bg-green-100/70 dark:bg-green-900/30 border-green-500/20", 
+    "bg-yellow-100/70 dark:bg-yellow-900/30 border-yellow-500/20", 
+    "bg-slate-100 dark:bg-slate-800/50 border-slate-500/20"
 ];
 
 const KeyTakeaways = ({ takeaways }: { takeaways: { icon: React.ElementType, text: string }[] }) => (
@@ -21,7 +21,7 @@ const KeyTakeaways = ({ takeaways }: { takeaways: { icon: React.ElementType, tex
         <h3 className="text-xl font-bold font-headline pt-4 border-t">मुख्य मुद्दे</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             {takeaways.map((takeaway, index) => (
-                <Card key={index} className={`border ${takeawayColors[index % takeawayColors.length]} transition-all duration-300 hover:shadow-md hover:-translate-y-1`}>
+                <Card key={index} className={`border ${takeawayColors[index % takeawayColors.length]} transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}>
                     <CardHeader>
                         <CardTitle className="flex items-start gap-3 text-base font-semibold">
                             <takeaway.icon className="text-primary h-6 w-6 mt-1 flex-shrink-0" />
