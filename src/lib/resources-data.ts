@@ -4,7 +4,7 @@ export type Resource = {
   type: 'video' | 'podcast' | 'document';
   titleKey: string;
   descriptionKey: string;
-  src: string;
+  src: string | { [key: string]: string | undefined };
   icon: React.ElementType;
   isYoutube?: boolean;
 };
@@ -15,14 +15,17 @@ export type Resource = {
 // 3. For local videos, set `type: 'video'` and `isYoutube: false`.
 // 4. For podcasts, set `type: 'podcast'`.
 // 5. Update `titleKey` and `descriptionKey` to match the text you want to display (add new entries to the .json language files if needed).
-// 6. Set the `src` to the path of your file (e.g., '/videos/your-video.mp4').
+// 6. Set the `src` to the path of your file (e.g., '/videos/your-video.mp4'). For language-specific podcasts, use an object: src: { en: '/path/en.mp3', hi: '/path/hi.mp3' }
 
 export const resources: Resource[] = [
   {
     type: 'podcast',
     titleKey: 'podcastPatientEp1Title',
     descriptionKey: 'podcastPatientEp1Desc',
-    src: '/podcasts/patient-episode-1.wav', 
+    src: {
+      en: '/podcasts/patient-episode-1.wav',
+      mr: '/podcasts/patient-episode-1-mr.wav',
+    },
     icon: Podcast,
   },
   {
