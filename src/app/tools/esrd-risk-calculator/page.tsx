@@ -41,12 +41,24 @@ type CalculationResult = {
 // Calculation data from the NEJM 2016 paper's appendix
 const Hx_data = {
     'Male': {
-        'White': { '15_year': { '15-25': 0.03, '25-34': 0.04, '35-44': 0.05, '45-54': 0.08, '55-64': 0.16, '65-74': 0.32, '75-80': 0.50 }, 'lifetime': { '15-25': 2.2, '25-34': 2.3, '35-44': 2.5, '45-54': 3.1, '55-64': 4.2, '65-74': 5.3, '75-80': 5.9 } },
-        'Black': { '15_year': { '15-25': 0.07, '25-34': 0.09, '35-44': 0.15, '45-54': 0.27, '55-64': 0.48, '65-74': 0.77, '75-80': 1.10 }, 'lifetime': { '15-25': 7.6, '25-34': 8.1, '35-44': 8.5, '45-54': 9.0, '55-64': 9.4, '65-74': 9.5, '75-80': 9.6 } }
+        'White': {
+            '15_year': { '15-25': 0.03, '25-34': 0.04, '35-44': 0.05, '45-54': 0.08, '55-64': 0.16, '65-74': 0.32, '75-80': 0.50 },
+            'lifetime': { '15-25': 0.22, '25-34': 0.23, '35-44': 0.25, '45-54': 0.31, '55-64': 0.42, '65-74': 0.53, '75-80': 0.59 }
+        },
+        'Black': {
+            '15_year': { '15-25': 0.07, '25-34': 0.09, '35-44': 0.15, '45-54': 0.27, '55-64': 0.48, '65-74': 0.77, '75-80': 1.10 },
+            'lifetime': { '15-25': 0.76, '25-34': 0.81, '35-44': 0.85, '45-54': 0.90, '55-64': 0.94, '65-74': 0.95, '75-80': 0.96 }
+        }
     },
     'Female': {
-        'White': { '15_year': { '15-25': 0.02, '25-34': 0.03, '35-44': 0.04, '45-54': 0.07, '55-64': 0.13, '65-74': 0.24, '75-80': 0.39 }, 'lifetime': { '15-25': 1.8, '25-34': 2.0, '35-44': 2.9, '45-54': 3.6, '55-64': 4.7, '65-74': 6.0, '75-80': 6.9 } },
-        'Black': { '15_year': { '15-25': 0.05, '25-34': 0.06, '35-44': 0.10, '45-54': 0.18, '55-64': 0.32, '65-74': 0.53, '75-80': 0.79 }, 'lifetime': { '15-25': 12.3, '25-34': 12.5, '35-44': 12.8, '45-54': 13.0, '55-64': 13.3, '65-74': 13.5, '75-80': 13.6 } }
+        'White': {
+            '15_year': { '15-25': 0.02, '25-34': 0.03, '35-44': 0.04, '45-54': 0.07, '55-64': 0.13, '65-74': 0.24, '75-80': 0.39 },
+            'lifetime': { '15-25': 0.18, '25-34': 0.20, '35-44': 0.29, '45-54': 0.36, '55-64': 0.47, '65-74': 0.60, '75-80': 0.69 }
+        },
+        'Black': {
+            '15_year': { '15-25': 0.05, '25-34': 0.06, '35-44': 0.10, '45-54': 0.18, '55-64': 0.32, '65-74': 0.53, '75-80': 0.79 },
+            'lifetime': { '15-25': 1.23, '25-34': 1.25, '35-44': 1.28, '45-54': 1.30, '55-64': 1.33, '65-74': 1.35, '75-80': 1.36 }
+        }
     }
 };
 
@@ -80,8 +92,11 @@ export default function EsrdRiskCalculatorPage() {
         const ageGroup = getAgeGroup(data.age);
         if (!ageGroup) return;
 
-        const hx_15_year = Hx_data[data.sex][data.race]['15_year'][ageGroup as keyof typeof Hx_data.Male.White['15_year']];
-        const hx_lifetime = Hx_data[data.sex][data.race]['lifetime'][ageGroup as keyof typeof Hx_data.Male.White['lifetime']];
+        // Assume race is 'White' for all calculations as per instruction
+        const race = 'White';
+
+        const hx_15_year = Hx_data[data.sex][race]['15_year'][ageGroup as keyof typeof Hx_data.Male.White['15_year']];
+        const hx_lifetime = Hx_data[data.sex][race]['lifetime'][ageGroup as keyof typeof Hx_data.Male.White['lifetime']];
         const eGFRbase = eGFRbase_data[ageGroup as keyof typeof eGFRbase_data];
 
         // eGFR splines
@@ -90,9 +105,9 @@ export default function EsrdRiskCalculatorPage() {
         const eGFR3 = (Math.max(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 120.0), 90.0)) / 15.0;
         const eGFR4 = (120.0 - Math.max(data.eGFR, 120.0)) / 15.0;
         
-        // BMI splines
-        const BMI1 = Math.min(data.bmi - 26.0, 4.0) / 4.0;
-        const BMI2 = Math.max(data.bmi - 30.0, 0.0) / 5.0;
+        // BMI splines - corrected implementation
+        const BMI1 = (Math.min(data.bmi, 30) - 25) / 5;
+        const BMI2 = (Math.max(data.bmi, 30) - 30) / 5;
         
         // Calculate B value
         let B = 0;
@@ -102,7 +117,8 @@ export default function EsrdRiskCalculatorPage() {
         B -= (0.2420 * eGFR4);
         B += (0.3500 * (data.sbp - 120.0) / 20.0);
         if (data.htnMed === 'Yes') B += 0.3012;
-        B += (-0.0241 * BMI1) + (0.1474 * BMI2);
+        B += (-0.0241 * BMI1);
+        B += (0.1474 * BMI2);
         if (data.diabetes === 'Yes') B += 1.1008;
         B += 1.0772 * (Math.log10(data.acr) - Math.log10(4.0));
         if (data.smokingHistory === "Former Smoker") B += 0.3700;
