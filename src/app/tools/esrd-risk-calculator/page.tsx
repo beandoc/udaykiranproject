@@ -145,12 +145,99 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
                                     <form onSubmit={form.handleSubmit(calculateESRDRisk)} className="space-y-4">
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <FormField control={form.control} name="age" render={({ field }) => ( <FormItem><FormLabel>Age (18-80 years)</FormLabel><FormControl><Input type="number" {...field} /></FormControl><FormMessage /></FormItem> )} />
-                                            <FormField control={form.control} name="sex" render={({ field }) => ( <FormItem><FormLabel>Sex</FormLabel><FormControl><RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex items-center pt-2 space-x-4"><FormItem><FormControl><RadioGroupItem value="Male" /> Male</FormControl></FormItem><FormItem><FormControl><RadioGroupItem value="Female" /> Female</FormControl></FormItem></RadioGroup></FormControl><FormMessage /></FormItem> )} />
+                                            <FormField
+                                                control={form.control}
+                                                name="sex"
+                                                render={({ field }) => (
+                                                    <FormItem>
+                                                    <FormLabel>Sex</FormLabel>
+                                                    <FormControl>
+                                                        <RadioGroup
+                                                        onValueChange={field.onChange}
+                                                        defaultValue={field.value}
+                                                        className="flex items-center pt-2 space-x-4"
+                                                        >
+                                                        <FormItem className="flex items-center space-x-2">
+                                                            <FormControl>
+                                                            <RadioGroupItem value="Male" id="sex-male"/>
+                                                            </FormControl>
+                                                            <Label htmlFor="sex-male" className="font-normal">Male</Label>
+                                                        </FormItem>
+                                                        <FormItem className="flex items-center space-x-2">
+                                                            <FormControl>
+                                                            <RadioGroupItem value="Female" id="sex-female"/>
+                                                            </FormControl>
+                                                            <Label htmlFor="sex-female" className="font-normal">Female</Label>
+                                                        </FormItem>
+                                                        </RadioGroup>
+                                                    </FormControl>
+                                                    <FormMessage />
+                                                    </FormItem>
+                                                )}
+                                            />
                                             <FormField control={form.control} name="eGFR" render={({ field }) => ( <FormItem><FormLabel>eGFR (mL/min/1.73m²)</FormLabel><FormControl><Input type="number" {...field} /></FormControl><FormMessage /></FormItem> )} />
                                             <FormField control={form.control} name="sbp" render={({ field }) => ( <FormItem><FormLabel>Systolic Blood Pressure (mmHg)</FormLabel><FormControl><Input type="number" {...field} /></FormControl><FormMessage /></FormItem> )} />
-                                            <FormField control={form.control} name="htnMed" render={({ field }) => ( <FormItem><FormLabel>Antihypertensive Medication</FormLabel><FormControl><RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex items-center pt-2 space-x-4"><FormItem><FormControl><RadioGroupItem value="Yes" /> On medication</FormControl></FormItem><FormItem><FormControl><RadioGroupItem value="No" /> None</FormControl></FormItem></RadioGroup></FormControl><FormMessage /></FormItem> )} />
+                                             <FormField
+                                                control={form.control}
+                                                name="htnMed"
+                                                render={({ field }) => (
+                                                    <FormItem>
+                                                        <FormLabel>Antihypertensive Medication</FormLabel>
+                                                        <FormControl>
+                                                            <RadioGroup
+                                                            onValueChange={field.onChange}
+                                                            defaultValue={field.value}
+                                                            className="flex items-center pt-2 space-x-4"
+                                                            >
+                                                            <FormItem className="flex items-center space-x-2">
+                                                                <FormControl>
+                                                                <RadioGroupItem value="Yes" id="htn-yes"/>
+                                                                </FormControl>
+                                                                <Label htmlFor="htn-yes" className="font-normal">On medication</Label>
+                                                            </FormItem>
+                                                            <FormItem className="flex items-center space-x-2">
+                                                                <FormControl>
+                                                                <RadioGroupItem value="No" id="htn-no" />
+                                                                </FormControl>
+                                                                <Label htmlFor="htn-no" className="font-normal">None</Label>
+                                                            </FormItem>
+                                                            </RadioGroup>
+                                                        </FormControl>
+                                                        <FormMessage />
+                                                    </FormItem>
+                                                )}
+                                            />
                                             <FormField control={form.control} name="bmi" render={({ field }) => ( <FormItem><FormLabel>BMI (kg/m²)</FormLabel><FormControl><Input type="number" step="0.1" {...field} /></FormControl><FormMessage /></FormItem> )} />
-                                            <FormField control={form.control} name="diabetes" render={({ field }) => ( <FormItem><FormLabel>Diabetes</FormLabel><FormControl><RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col pt-2 space-y-2"><FormItem><FormControl><RadioGroupItem value="Yes" /> Non-Insulin Dependent Diabetes</FormControl></FormItem><FormItem><FormControl><RadioGroupItem value="No" /> No Diabetes</FormControl></FormItem></RadioGroup></FormControl><FormMessage /></FormItem> )} />
+                                            <FormField
+                                                control={form.control}
+                                                name="diabetes"
+                                                render={({ field }) => (
+                                                    <FormItem>
+                                                        <FormLabel>Diabetes</FormLabel>
+                                                        <FormControl>
+                                                            <RadioGroup
+                                                            onValueChange={field.onChange}
+                                                            defaultValue={field.value}
+                                                            className="flex flex-col pt-2 space-y-2"
+                                                            >
+                                                                <FormItem className="flex items-center space-x-2">
+                                                                    <FormControl>
+                                                                        <RadioGroupItem value="Yes" id="diabetes-yes"/>
+                                                                    </FormControl>
+                                                                    <Label htmlFor="diabetes-yes" className="font-normal">Non-Insulin Dependent Diabetes</Label>
+                                                                </FormItem>
+                                                                <FormItem className="flex items-center space-x-2">
+                                                                    <FormControl>
+                                                                        <RadioGroupItem value="No" id="diabetes-no"/>
+                                                                    </FormControl>
+                                                                    <Label htmlFor="diabetes-no" className="font-normal">No Diabetes</Label>
+                                                                </FormItem>
+                                                            </RadioGroup>
+                                                        </FormControl>
+                                                        <FormMessage />
+                                                    </FormItem>
+                                                )}
+                                            />
                                             <FormField control={form.control} name="acr" render={({ field }) => ( <FormItem><FormLabel>Urine Albumin to Creatinine (mg/g)</FormLabel><FormControl><Input type="number" {...field} /></FormControl><FormMessage /></FormItem> )} />
                                         </div>
                                          <FormField control={form.control} name="smokingHistory" render={({ field }) => (
