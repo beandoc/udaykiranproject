@@ -38,39 +38,49 @@ type CalculationResult = {
     riskLifetime: number;
 } | null;
 
+// Data from NEJM Appendix, Section 4, Step 4, Page 9-10
 const Hx_data = {
-    'Male': {
-        'White': {
-            '15_year': { '15-25': 0.03, '25-34': 0.04, '35-44': 0.05, '45-54': 0.08, '55-64': 0.16, '65-74': 0.32, '75-80': 0.50 },
-            'lifetime': { '15-25': 0.22, '25-34': 0.23, '35-44': 0.25, '45-54': 0.31, '55-64': 0.42, '65-74': 0.53, '75-80': 0.59 }
+    '15_year': {
+        'Male': {
+            'White': { '15-25': 0.02, '26-34': 0.04, '35-44': 0.06, '45-54': 0.08, '55-64': 0.13, '65-74': 0.12, '75-84': 0.05 },
+            'Black': { '15-25': 0.08, '26-34': 0.16, '35-44': 0.24, '45-54': 0.27, '55-64': 0.32, '65-74': 0.14, '75-84': 0.12 }
         },
-        'Black': {
-            '15_year': { '15-25': 0.07, '25-34': 0.09, '35-44': 0.15, '45-54': 0.27, '55-64': 0.48, '65-74': 0.77, '75-80': 1.10 },
-            'lifetime': { '15-25': 0.76, '25-34': 0.81, '35-44': 0.85, '45-54': 0.90, '55-64': 0.94, '65-74': 0.95, '75-80': 0.96 }
+        'Female': {
+            'White': { '15-25': 0.01, '26-34': 0.03, '35-44': 0.04, '45-54': 0.06, '55-64': 0.08, '65-74': 0.07, '75-84': 0.03 },
+            'Black': { '15-25': 0.05, '26-34': 0.09, '35-44': 0.15, '45-54': 0.16, '55-64': 0.18, '65-74': 0.19, '75-84': 0.06 }
         }
     },
-    'Female': {
-        'White': {
-            '15_year': { '15-25': 0.02, '25-34': 0.03, '35-44': 0.04, '45-54': 0.07, '55-64': 0.13, '65-74': 0.24, '75-80': 0.39 },
-            'lifetime': { '15-25': 0.18, '25-34': 0.20, '35-44': 0.29, '45-54': 0.36, '55-64': 0.47, '65-74': 0.60, '75-80': 0.69 }
+    'lifetime': {
+        'Male': {
+            'White': { '15-25': 0.58, '26-34': 0.53, '35-44': 0.43, '45-54': 0.31, '55-64': 0.26, '65-74': 0.15, '75-84': 0.06 },
+            'Black': { '15-25': 1.62, '26-34': 1.33, '35-44': 1.00, '45-54': 0.66, '55-64': 0.49, '65-74': 0.17, '75-84': 0.12 }
         },
-        'Black': {
-            '15_year': { '15-25': 0.05, '25-34': 0.06, '35-44': 0.10, '45-54': 0.18, '55-64': 0.32, '65-74': 0.53, '75-80': 0.79 },
-            'lifetime': { '15-25': 1.23, '25-34': 1.25, '35-44': 1.28, '45-54': 1.30, '55-64': 1.33, '65-74': 1.35, '75-80': 1.36 }
+        'Female': {
+            'White': { '15-25': 0.35, '26-34': 0.38, '35-44': 0.29, '45-54': 0.21, '55-64': 0.15, '65-74': 0.08, '75-84': 0.03 },
+            'Black': { '15-25': 1.23, '26-34': 1.03, '35-44': 0.85, '45-54': 0.50, '55-64': 0.31, '65-74': 0.22, '75-84': 0.06 }
         }
     }
 };
 
-const eGFRbase_data = { '15-25': 114, '25-34': 106, '35-44': 98, '45-54': 90, '55-64': 82, '65-74': 74, '75-80': 66 };
+// Data from NEJM Appendix, Section 3, Page 8
+const eGFRbase_data = {
+    '15-25': 114,
+    '26-34': 106,
+    '35-44': 98,
+    '45-54': 90,
+    '55-64': 82,
+    '65-74': 74,
+    '75-84': 66
+};
 
 const getAgeGroup = (age: number) => {
-    if (age >= 18 && age <= 24) return '15-25';
-    if (age >= 25 && age <= 34) return '25-34';
+    if (age >= 18 && age <= 25) return '15-25';
+    if (age >= 26 && age <= 34) return '26-34';
     if (age >= 35 && age <= 44) return '35-44';
     if (age >= 45 && age <= 54) return '45-54';
     if (age >= 55 && age <= 64) return '55-64';
     if (age >= 65 && age <= 74) return '65-74';
-    if (age >= 75 && age <= 80) return '75-80';
+    if (age >= 75 && age <= 84) return '75-84'; // Form limits to 80, but data group extends to 84.
     return null;
 }
 
@@ -91,20 +101,22 @@ export default function EsrdRiskCalculatorPage() {
         const ageGroup = getAgeGroup(data.age);
         if (!ageGroup) return;
 
+        // Per user request, hardcode race to White for this implementation.
         const race = 'White';
 
-        const hx_15_year = Hx_data[data.sex][race]['15_year'][ageGroup as keyof typeof Hx_data.Male.White['15_year']];
-        const hx_lifetime = Hx_data[data.sex][race]['lifetime'][ageGroup as keyof typeof Hx_data.Male.White['lifetime']];
+        const hx_15_year = Hx_data['15_year'][data.sex][race][ageGroup as keyof typeof Hx_data['15_year']['Male']['White']];
+        const hx_lifetime = Hx_data['lifetime'][data.sex][race][ageGroup as keyof typeof Hx_data['lifetime']['Male']['White']];
         const eGFRbase = eGFRbase_data[ageGroup as keyof typeof eGFRbase_data];
 
-        // Spline calculations
+        // Spline calculations for eGFR
         const eGFR1 = (60.0 - Math.min(data.eGFR, 60.0)) / 15.0;
         const eGFR2 = (Math.min(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 90.0), 60.0)) / 15.0;
         const eGFR3 = (Math.max(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 120.0), 90.0)) / 15.0;
         const eGFR4 = (120.0 - Math.max(data.eGFR, 120.0)) / 15.0;
         
-        const bmi1_val = Math.max(0, Math.min(1, (data.bmi - 25.0) / 5.0));
-        const bmi2_val = Math.max(0, (data.bmi - 30.0) / 5.0);
+        // Spline calculations for BMI
+        const BMI1 = Math.min(data.bmi - 26, 5) / 5;
+        const BMI2 = Math.max(data.bmi - 30, 0) / 5;
 
         // B Value Calculation (Linear Predictor)
         let B = 0;
@@ -114,11 +126,11 @@ export default function EsrdRiskCalculatorPage() {
         B -= 0.2420 * eGFR4;
         B += 0.3500 * (data.sbp - 120.0) / 20.0;
         if (data.htnMed === 'Yes') B += 0.3012;
-        B -= 0.0241 * bmi1_val;
-        B += 0.1474 * bmi2_val;
+        B -= 0.0241 * BMI1;
+        B += 0.1474 * BMI2;
         if (data.diabetes === 'Yes') B += 1.1008;
-        // Using ACR ref of 30 as per NEJM correction
-        B += 1.0772 * (Math.log10(data.acr) - Math.log10(30.0)); 
+        // Using ACR ref of 4.0 as per NEJM paper appendix
+        B += 1.0772 * (Math.log10(data.acr) - Math.log10(4.0)); 
         if (data.smokingHistory === "Former Smoker") B += 0.3700;
         else if (data.smokingHistory === "Current Smoker") B += 0.5680;
         
