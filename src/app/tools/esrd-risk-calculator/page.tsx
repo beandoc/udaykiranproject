@@ -80,7 +80,7 @@ const getAgeGroup = (age: number) => {
     if (age >= 45 && age <= 54) return '45-54';
     if (age >= 55 && age <= 64) return '55-64';
     if (age >= 65 && age <= 74) return '65-74';
-    if (age >= 75 && age <= 84) return '75-84'; // Form limits to 80, but data group extends to 84.
+    if (age >= 75 && age <= 84) return '75-84';
     return null;
 }
 
@@ -101,24 +101,20 @@ export default function EsrdRiskCalculatorPage() {
         const ageGroup = getAgeGroup(data.age);
         if (!ageGroup) return;
 
-        // Per user request, hardcode race to White for this implementation.
         const race = 'White';
 
         const hx_15_year = Hx_data['15_year'][data.sex][race][ageGroup as keyof typeof Hx_data['15_year']['Male']['White']];
         const hx_lifetime = Hx_data['lifetime'][data.sex][race][ageGroup as keyof typeof Hx_data['lifetime']['Male']['White']];
         const eGFRbase = eGFRbase_data[ageGroup as keyof typeof eGFRbase_data];
 
-        // Spline calculations for eGFR
         const eGFR1 = (60.0 - Math.min(data.eGFR, 60.0)) / 15.0;
         const eGFR2 = (Math.min(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 90.0), 60.0)) / 15.0;
         const eGFR3 = (Math.max(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 120.0), 90.0)) / 15.0;
         const eGFR4 = (120.0 - Math.max(data.eGFR, 120.0)) / 15.0;
         
-        // Spline calculations for BMI
         const BMI1 = Math.min(data.bmi - 26, 5) / 5;
         const BMI2 = Math.max(data.bmi - 30, 0) / 5;
 
-        // B Value Calculation (Linear Predictor)
         let B = 0;
         B += 1.8879 * eGFR1;
         B += 0.4884 * eGFR2;
@@ -129,7 +125,6 @@ export default function EsrdRiskCalculatorPage() {
         B -= 0.0241 * BMI1;
         B += 0.1474 * BMI2;
         if (data.diabetes === 'Yes') B += 1.1008;
-        // Using ACR ref of 4.0 as per NEJM paper appendix
         B += 1.0772 * (Math.log10(data.acr) - Math.log10(4.0)); 
         if (data.smokingHistory === "Former Smoker") B += 0.3700;
         else if (data.smokingHistory === "Current Smoker") B += 0.5680;
