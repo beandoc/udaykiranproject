@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from "react";
@@ -14,6 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { getContentDataForLang } from "@/lib/content-data";
 import { useAppContext } from "@/context/app-context";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function ModulePage() {
     const params = useParams();
@@ -25,7 +27,7 @@ export default function ModulePage() {
     const [viewMode, setViewMode] = useState<'content' | 'quiz'>('content');
     const [showAudioPlayer, setShowAudioPlayer] = useState(false);
 
-    const moduleContent = getContentDataForLang(language)[slug];
+    const moduleContentData = getContentDataForLang(language)[slug];
 
     const [questions, setQuestions] = useState<QuizQuestion[]>(() => {
         return quizData[slug] || [];
@@ -33,7 +35,6 @@ export default function ModulePage() {
 
     const moduleInfo = modulesByRole[role].modules.find(module => module.slug === slug);
     
-    // Safely get the audio source for the current language
     const getAudioSrcForLang = () => {
         if (moduleInfo && moduleInfo.audioSrc && typeof moduleInfo.audioSrc === 'object') {
             return moduleInfo.audioSrc[language as keyof typeof moduleInfo.audioSrc];
@@ -90,7 +91,7 @@ export default function ModulePage() {
     const score = selectedAnswers.filter((answer, index) => answer === questions[index].correctAnswer).length;
     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
 
-    if (!moduleInfo || !moduleContent) {
+    if (!moduleInfo || !moduleContentData) {
         return (
             <div className="text-center">
                 <h1 className="text-2xl font-bold">{t('moduleNotFoundTitle')}</h1>
@@ -118,7 +119,22 @@ export default function ModulePage() {
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        {moduleContent}
+                        <Tabs defaultValue="standard" className="w-full">
+                            <TabsList className="grid w-full grid-cols-2">
+                                <TabsTrigger value="standard">{t('standardView')}</TabsTrigger>
+                                <TabsTrigger value="eli10">{t('simplifiedView')}</TabsTrigger>
+                            </TabsList>
+                            <TabsContent value="standard" className="mt-4">
+                                <div className="p-6 border rounded-lg">
+                                    {moduleContentData.standard}
+                                </div>
+                            </TabsContent>
+                            <TabsContent value="eli10" className="mt-4">
+                                <div className="p-6 border rounded-lg bg-muted/20">
+                                    {moduleContentData.eli10}
+                                </div>
+                            </TabsContent>
+                        </Tabs>
                     </CardContent>
                     <CardFooter className="flex-col items-stretch gap-4 sm:flex-row sm:justify-between">
                          <Button variant="outline" asChild>
