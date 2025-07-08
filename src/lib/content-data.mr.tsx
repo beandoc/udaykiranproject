@@ -9,14 +9,19 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import type { ModuleContentData } from './content-data';
 
-const takeawayColors = ["bg-blue-100 dark:bg-blue-950/50", "bg-green-100 dark:bg-green-950/50", "bg-orange-100 dark:bg-orange-950/50", "bg-gray-100 dark:bg-gray-800/50"];
+const takeawayColors = [
+    "bg-primary/10 border-primary/20", 
+    "bg-accent/10 border-accent/20", 
+    "bg-yellow-100 dark:bg-yellow-900/30 border-yellow-500/20", 
+    "bg-muted/50 border-border"
+];
 
 const KeyTakeaways = ({ takeaways }: { takeaways: { icon: React.ElementType, text: string }[] }) => (
     <div className="mt-8">
         <h3 className="text-xl font-bold font-headline pt-4 border-t">मुख्य मुद्दे</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             {takeaways.map((takeaway, index) => (
-                <Card key={index} className={`${takeawayColors[index % takeawayColors.length]} border-0`}>
+                <Card key={index} className={`border ${takeawayColors[index % takeawayColors.length]} transition-all duration-300 hover:shadow-md hover:-translate-y-1`}>
                     <CardHeader>
                         <CardTitle className="flex items-start gap-3 text-base font-semibold">
                             <takeaway.icon className="text-primary h-6 w-6 mt-1 flex-shrink-0" />
@@ -28,6 +33,7 @@ const KeyTakeaways = ({ takeaways }: { takeaways: { icon: React.ElementType, tex
         </div>
     </div>
 );
+
 
 const ELI10Layout = ({ title, explanation, takeaways }: { title: string, explanation: React.ReactNode, takeaways: { icon: React.ElementType, text: string }[] }) => (
     <div className="space-y-6 text-base leading-relaxed">

@@ -9,14 +9,19 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import type { ModuleContentData } from './content-data';
 
-const takeawayColors = ["bg-blue-100 dark:bg-blue-950/50", "bg-green-100 dark:bg-green-950/50", "bg-orange-100 dark:bg-orange-950/50", "bg-gray-100 dark:bg-gray-800/50"];
+const takeawayColors = [
+    "bg-primary/10 border-primary/20", 
+    "bg-accent/10 border-accent/20", 
+    "bg-yellow-100 dark:bg-yellow-900/30 border-yellow-500/20", 
+    "bg-muted/50 border-border"
+];
 
 const KeyTakeaways = ({ takeaways }: { takeaways: { icon: React.ElementType, text: string }[] }) => (
     <div className="mt-8">
         <h3 className="text-xl font-bold font-headline pt-4 border-t">मुख्य बातें</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             {takeaways.map((takeaway, index) => (
-                <Card key={index} className={`${takeawayColors[index % takeawayColors.length]} border-0`}>
+                <Card key={index} className={`border ${takeawayColors[index % takeawayColors.length]} transition-all duration-300 hover:shadow-md hover:-translate-y-1`}>
                     <CardHeader>
                         <CardTitle className="flex items-start gap-3 text-base font-semibold">
                             <takeaway.icon className="text-primary h-6 w-6 mt-1 flex-shrink-0" />
@@ -905,7 +910,7 @@ const contentData: ModuleContentData = {
             />
         )
     },
-    'diet-and-nutrition': {
+     'diet-and-nutrition': {
         standard: (
             <div className="space-y-6 text-base leading-relaxed">
                 <h2 className="text-2xl font-bold font-headline">आपके प्रत्यारोपण के बाद अच्छा खाना</h2>
@@ -1622,8 +1627,8 @@ const contentData: ModuleContentData = {
                     <li><strong>परिवहन:</strong> प्राप्तकर्ता की लगातार अनुवर्ती नियुक्तियाँ होंगी। आपको संभवतः परिवहन प्रदान करने की आवश्यकता होगी।</li>
                     <li><strong>महत्वपूर्ण संकेतों की निगरानी:</strong> आपको रक्तचाप, तापमान, रक्त शर्करा और द्रव सेवन/आउटपुट की जांच और रिकॉर्ड करने में मदद करने की आवश्यकता हो सकती है।</li>
                     <li><strong>संक्रमण नियंत्रण:</strong> इम्यूनोसप्रेस्ड प्राप्तकर्ता की सुरक्षा के लिए सख्त स्वच्छता प्रथाओं को बनाए रखने में मदद करें। इसमें लगातार हाथ धोना, बीमार संपर्कों से बचना और सुरक्षित भोजन संभालना शामिल है।</li>
-                    <li><strong>घरेलू मदद:</strong> खाना पकाने (अक्सर विशिष्ट आहार दिशानिर्देशों का पालन करते हुए), सफाई और कामों जैसी दैनिक जीवन की गतिविधियों में सहायता करना जारी रखें।</li>
-                    <li><strong>प्रतिबंधों को लागू करना:</strong> दाता और प्राप्तकर्ता दोनों के लिए पश्चात की गतिविधि प्रतिबंधों को धीरे से लागू करने में मदद करें, जैसे कि भारी उठाना नहीं।</li>
+                    <li><strong>घरगुती मदत:</strong> स्वयंपाक (अनेकदा विशिष्ट आहार मार्गदर्शक तत्त्वांचे पालन करणे), साफसफाई आणि कामांसारख्या दैनंदिन जीवनातील क्रियाकलापांमध्ये मदत करणे सुरू ठेवा.</li>
+                    <li><strong>निर्बंध लागू करणे:</strong> दाता आणि प्राप्तकर्ता दोघांसाठी शस्त्रक्रियेनंतरच्या क्रियाकलाप निर्बंधांना हळूवारपणे लागू करण्यास मदत करें, जसे की भारी उठाना नहीं।</li>
                 </ul>
                 <KeyTakeaways takeaways={caregiver_home_takeaways} />
             </div>
