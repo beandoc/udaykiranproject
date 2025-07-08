@@ -32,7 +32,8 @@ import {
   ListChecks,
   ClipboardCheck,
   Sparkles,
-  HelpCircle
+  HelpCircle,
+  Calculator,
 } from 'lucide-react';
 import { Button } from '../ui/button';
 import {
@@ -58,6 +59,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   ];
   
   const toolsNav = [
+    { href: '/tools/esrd-risk-calculator', label: 'ESRD Risk Tool', icon: Calculator },
     { href: '/tools/medication', labelKey: 'toolImmunosuppressants', icon: Pill },
     { href: '/tools/symptoms', labelKey: 'toolSymptomLog', icon: HeartPulse },
     { href: '/dos-and-donts', labelKey: 'navDosAndDonts', icon: ListChecks },
@@ -96,10 +98,10 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <SidebarMenu>
                     {toolsNav.map((item) => (
                         <SidebarMenuItem key={item.href}>
-                        <SidebarMenuButton asChild isActive={pathname === item.href}>
+                        <SidebarMenuButton asChild isActive={pathname.startsWith(item.href)}>
                             <Link href={item.href}>
                             <item.icon />
-                            <span>{t(item.labelKey)}</span>
+                            <span>{(item as any).labelKey ? t((item as any).labelKey) : (item as any).label}</span>
                             </Link>
                         </SidebarMenuButton>
                         </SidebarMenuItem>
