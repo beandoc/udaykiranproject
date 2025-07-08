@@ -15,6 +15,7 @@ import { Progress } from "@/components/ui/progress";
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Calculator, Copy, Info } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
+import { Label } from '@/components/ui/label';
 
 const FormSchema = z.object({
   age: z.coerce.number().min(18, { message: "Age must be between 18 and 80." }).max(80, { message: "Age must be between 18 and 80." }),
