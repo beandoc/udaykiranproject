@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale, FlaskConical, Target, Stethoscope, Lightbulb, User, CheckCircle, HandCoins, Building, FileText, Smile, ShieldQuestion } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale, FlaskConical, Target, Stethoscope, Lightbulb, User, CheckCircle, HandCoins, Building, FileText, Smile, ShieldQuestion, Thermometer, Frown, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -1639,7 +1639,7 @@ const contentData: ModuleContentData = {
                 }
                 takeaways={[
                     { icon: User, text: "You can't pour from an empty cup. Take care of yourself first." },
-                    { icon: Bed, text: "Make sure you get enough sleep and eat healthy food." },
+                    { icon: Bed, text: "Make sure you are getting enough sleep and eat healthy food." },
                     { icon: Smile, text: "Take breaks! Ask other family or friends to help out so you can rest." },
                     { icon: MessageSquare, text: "It's okay to talk to someone if you are feeling stressed or overwhelmed." }
                 ]}
@@ -1716,3 +1716,5 @@ const contentData: ModuleContentData = {
 };
 
 export default contentData;
+
+    
