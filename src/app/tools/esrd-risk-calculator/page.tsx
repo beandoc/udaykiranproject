@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -24,7 +25,7 @@ const FormSchema = z.object({
   eGFR: z.coerce.number().min(60, { message: "eGFR must be 60 or higher." }),
   sbp: z.coerce.number(),
   htnMed: z.enum(['Yes', 'No']),
-  bmi: z.coerce.number(),
+  bmi: z.coerce.number().min(20, { message: "BMI must be between 20 and 40." }).max(40, { message: "BMI must be between 20 and 40." }),
   diabetes: z.enum(['Yes', 'No']),
   acr: z.coerce.number().min(3, { message: "ACR must be 3 mg/g or higher." }),
   smokingHistory: z.enum(['Non-Smoker', 'Former Smoker', 'Current Smoker']),
@@ -73,7 +74,7 @@ export default function EsrdRiskCalculatorPage() {
 
     const calculateESRDRisk = (data: FormValues) => {
         const ageGroup = getAgeGroup(data.age);
-        if (!ageGroup) return; // Should be handled by validation
+        if (!ageGroup) return; 
 
         const hx_15_year = Hx_data[data.sex][data.race]['15_year'][ageGroup as keyof typeof Hx_data.Male.White['15_year']];
         const hx_lifetime = Hx_data[data.sex][data.race]['lifetime'][ageGroup as keyof typeof Hx_data.Male.White['lifetime']];
@@ -87,13 +88,25 @@ export default function EsrdRiskCalculatorPage() {
         const BMI1 = Math.min(data.bmi - 26.0, 5.0) / 5.0;
         const BMI2 = Math.max(data.bmi - 30.0, 0.0) / 5.0;
 
-        let B = (1.8879 * eGFR1) + (0.4884 * eGFR2) + (0.0203 * eGFR3) - (0.2420 * eGFR4) + (0.3500 * (data.sbp - 120.0) / 20.0);
+        let B = (1.8879 * eGFR1) + 
+                (0.4884 * eGFR2) + 
+                (0.0203 * eGFR3) - 
+                (0.2420 * eGFR4) + 
+                (0.3500 * (data.sbp - 120.0) / 20.0);
+        
         if (data.htnMed === 'Yes') B += 0.3012;
+        
         B += (-0.0241 * BMI1) + (0.1474 * BMI2);
+        
         if (data.diabetes === 'Yes') B += 1.1008;
+        
         B += 1.0772 * (Math.log10(data.acr) - Math.log10(4.0));
-        if (data.smokingHistory === "Former Smoker") B += 0.3700;
-        else if (data.smokingHistory === "Current Smoker") B += 0.5680;
+        
+        if (data.smokingHistory === "Former Smoker") {
+            B += 0.3700;
+        } else if (data.smokingHistory === "Current Smoker") {
+            B += 0.5680;
+        }
 
         const e_to_the_B = Math.exp(B);
         const esrd_incidence_15_year = (1 - Math.pow((1 - hx_15_year / 100), e_to_the_B)) * 100;
@@ -218,19 +231,19 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
                                                             <RadioGroup
                                                             onValueChange={field.onChange}
                                                             defaultValue={field.value}
-                                                            className="flex flex-col pt-2 space-y-2"
+                                                            className="flex items-center pt-2 space-x-4"
                                                             >
                                                                 <FormItem className="flex items-center space-x-2">
                                                                     <FormControl>
                                                                         <RadioGroupItem value="Yes" id="diabetes-yes"/>
                                                                     </FormControl>
-                                                                    <Label htmlFor="diabetes-yes" className="font-normal">Non-Insulin Dependent Diabetes</Label>
+                                                                    <Label htmlFor="diabetes-yes" className="font-normal">Yes</Label>
                                                                 </FormItem>
                                                                 <FormItem className="flex items-center space-x-2">
                                                                     <FormControl>
                                                                         <RadioGroupItem value="No" id="diabetes-no"/>
                                                                     </FormControl>
-                                                                    <Label htmlFor="diabetes-no" className="font-normal">No Diabetes</Label>
+                                                                    <Label htmlFor="diabetes-no" className="font-normal">No</Label>
                                                                 </FormItem>
                                                             </RadioGroup>
                                                         </FormControl>
