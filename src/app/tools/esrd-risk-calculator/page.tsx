@@ -27,7 +27,7 @@ const FormSchema = z.object({
   htnMed: z.enum(['Yes', 'No']),
   bmi: z.coerce.number().min(20, { message: "BMI must be between 20 and 40." }).max(40, { message: "BMI must be between 20 and 40." }),
   diabetes: z.enum(['Yes', 'No']),
-  acr: z.coerce.number().min(3, { message: "ACR must be 3 mg/g or higher." }),
+  acr: z.coerce.number().min(3, { message: "ACR must be between 3 and 280 mg/g." }).max(280, { message: "ACR must be between 3 and 280 mg/g." }),
   smokingHistory: z.enum(['Non-Smoker', 'Former Smoker', 'Current Smoker']),
 });
 
@@ -41,12 +41,12 @@ type CalculationResult = {
 // Calculation data from the NEJM 2016 paper's appendix
 const Hx_data = {
     'Male': {
-        'White': { '15_year': { '15-25': 0.03, '25-34': 0.04, '35-44': 0.05, '45-54': 0.08, '55-64': 0.16, '65-74': 0.32, '75-80': 0.50 }, 'lifetime': { '15-25': 0.22, '25-34': 0.23, '35-44': 0.25, '45-54': 0.31, '55-64': 0.42, '65-74': 0.53, '75-80': 0.59 } },
-        'Black': { '15_year': { '15-25': 0.07, '25-34': 0.09, '35-44': 0.15, '45-54': 0.27, '55-64': 0.48, '65-74': 0.77, '75-80': 1.10 }, 'lifetime': { '15-25': 0.76, '25-34': 0.81, '35-44': 0.85, '45-54': 0.90, '55-64': 0.94, '65-74': 0.95, '75-80': 0.96 } }
+        'White': { '15_year': { '15-25': 0.03, '25-34': 0.04, '35-44': 0.05, '45-54': 0.08, '55-64': 0.16, '65-74': 0.32, '75-80': 0.50 }, 'lifetime': { '15-25': 2.2, '25-34': 2.3, '35-44': 2.5, '45-54': 3.1, '55-64': 4.2, '65-74': 5.3, '75-80': 5.9 } },
+        'Black': { '15_year': { '15-25': 0.07, '25-34': 0.09, '35-44': 0.15, '45-54': 0.27, '55-64': 0.48, '65-74': 0.77, '75-80': 1.10 }, 'lifetime': { '15-25': 7.6, '25-34': 8.1, '35-44': 8.5, '45-54': 9.0, '55-64': 9.4, '65-74': 9.5, '75-80': 9.6 } }
     },
     'Female': {
-        'White': { '15_year': { '15-25': 0.02, '25-34': 0.03, '35-44': 0.04, '45-54': 0.07, '55-64': 0.13, '65-74': 0.24, '75-80': 0.39 }, 'lifetime': { '15-25': 0.18, '25-34': 0.20, '35-44': 0.29, '45-54': 0.36, '55-64': 0.47, '65-74': 0.60, '75-80': 0.69 } },
-        'Black': { '15_year': { '15-25': 0.05, '25-34': 0.06, '35-44': 0.10, '45-54': 0.18, '55-64': 0.32, '65-74': 0.53, '75-80': 0.79 }, 'lifetime': { '15-25': 1.23, '25-34': 1.25, '35-44': 1.28, '45-54': 1.30, '55-64': 1.33, '65-74': 1.35, '75-80': 1.36 } }
+        'White': { '15_year': { '15-25': 0.02, '25-34': 0.03, '35-44': 0.04, '45-54': 0.07, '55-64': 0.13, '65-74': 0.24, '75-80': 0.39 }, 'lifetime': { '15-25': 1.8, '25-34': 2.0, '35-44': 2.9, '45-54': 3.6, '55-64': 4.7, '65-74': 6.0, '75-80': 6.9 } },
+        'Black': { '15_year': { '15-25': 0.05, '25-34': 0.06, '35-44': 0.10, '45-54': 0.18, '55-64': 0.32, '65-74': 0.53, '75-80': 0.79 }, 'lifetime': { '15-25': 12.3, '25-34': 12.5, '35-44': 12.8, '45-54': 13.0, '55-64': 13.3, '65-74': 13.5, '75-80': 13.6 } }
     }
 };
 
@@ -217,7 +217,7 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
                                                     </FormItem>
                                                 )}
                                             />
-                                            <FormField control={form.control} name="bmi" render={({ field }) => ( <FormItem><FormLabel>BMI (kg/m²)</FormLabel><FormControl><Input type="number" step="0.1" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)} /></FormControl><FormMessage /></FormItem> )} />
+                                            <FormField control={form.control} name="bmi" render={({ field }) => ( <FormItem><FormLabel>BMI (20-40 kg/m²)</FormLabel><FormControl><Input type="number" step="0.1" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)} /></FormControl><FormMessage /></FormItem> )} />
                                             <FormField
                                                 control={form.control}
                                                 name="diabetes"
@@ -246,7 +246,7 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
                                                     </FormItem>
                                                 )}
                                             />
-                                            <FormField control={form.control} name="acr" render={({ field }) => ( <FormItem><FormLabel>Urine Albumin to Creatinine (mg/g)</FormLabel><FormControl><Input type="number" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)}/></FormControl><FormMessage /></FormItem> )} />
+                                            <FormField control={form.control} name="acr" render={({ field }) => ( <FormItem><FormLabel>Urine Albumin to Creatinine (3-280 mg/g)</FormLabel><FormControl><Input type="number" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)}/></FormControl><FormMessage /></FormItem> )} />
                                         </div>
                                          <FormField control={form.control} name="smokingHistory" render={({ field }) => (
                                             <FormItem>
@@ -347,3 +347,5 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
       </div>
     );
 }
+
+    
