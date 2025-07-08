@@ -97,21 +97,16 @@ export default function EsrdRiskCalculatorPage() {
         const hx_lifetime = Hx_data[data.sex][race]['lifetime'][ageGroup as keyof typeof Hx_data.Male.White['lifetime']];
         const eGFRbase = eGFRbase_data[ageGroup as keyof typeof eGFRbase_data];
 
+        // Spline calculations
         const eGFR1 = (60.0 - Math.min(data.eGFR, 60.0)) / 15.0;
         const eGFR2 = (Math.min(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 90.0), 60.0)) / 15.0;
         const eGFR3 = (Math.max(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 120.0), 90.0)) / 15.0;
         const eGFR4 = (120.0 - Math.max(data.eGFR, 120.0)) / 15.0;
+        
+        const bmi1_val = Math.max(0, Math.min(1, (data.bmi - 25.0) / 5.0));
+        const bmi2_val = Math.max(0, (data.bmi - 30.0) / 5.0);
 
-        let bmi1 = 0;
-        let bmi2 = 0;
-        if (data.bmi >= 25 && data.bmi < 30) {
-            bmi1 = (data.bmi - 25) / 5.0;
-            bmi2 = 0;
-        } else if (data.bmi >= 30) {
-            bmi1 = 1;
-            bmi2 = (data.bmi - 30) / 5.0;
-        }
-
+        // B Value Calculation (Linear Predictor)
         let B = 0;
         B += 1.8879 * eGFR1;
         B += 0.4884 * eGFR2;
@@ -119,10 +114,11 @@ export default function EsrdRiskCalculatorPage() {
         B -= 0.2420 * eGFR4;
         B += 0.3500 * (data.sbp - 120.0) / 20.0;
         if (data.htnMed === 'Yes') B += 0.3012;
-        B -= 0.0241 * bmi1;
-        B += 0.1474 * bmi2;
+        B -= 0.0241 * bmi1_val;
+        B += 0.1474 * bmi2_val;
         if (data.diabetes === 'Yes') B += 1.1008;
-        B += 1.0772 * (Math.log10(data.acr) - Math.log10(30.0));
+        // Using ACR ref of 30 as per NEJM correction
+        B += 1.0772 * (Math.log10(data.acr) - Math.log10(30.0)); 
         if (data.smokingHistory === "Former Smoker") B += 0.3700;
         else if (data.smokingHistory === "Current Smoker") B += 0.5680;
         
