@@ -22,8 +22,8 @@ const FormSchema = z.object({
   age: z.coerce.number().min(18, { message: "Age must be between 18 and 80." }).max(80, { message: "Age must be between 18 and 80." }),
   sex: z.enum(['Male', 'Female']),
   race: z.enum(['White', 'Black']).default('White'),
-  eGFR: z.coerce.number().min(60, { message: "eGFR must be 60 or higher." }),
-  sbp: z.coerce.number(),
+  eGFR: z.coerce.number().min(1, { message: "eGFR must be greater than 0." }),
+  sbp: z.coerce.number().min(1),
   htnMed: z.enum(['Yes', 'No']),
   bmi: z.coerce.number().min(20, { message: "BMI must be between 20 and 40." }).max(40, { message: "BMI must be between 20 and 40." }),
   diabetes: z.enum(['Yes', 'No']),
@@ -102,39 +102,49 @@ export default function EsrdRiskCalculatorPage() {
         if (!ageGroup) return;
 
         const race = 'White';
+        const sex = data.sex;
 
-        const hx_15_year = Hx_data['15_year'][data.sex][race][ageGroup as keyof typeof Hx_data['15_year']['Male']['White']];
-        const hx_lifetime = Hx_data['lifetime'][data.sex][race][ageGroup as keyof typeof Hx_data['lifetime']['Male']['White']];
+        const hx_15_year = Hx_data['15_year'][sex][race][ageGroup as keyof typeof Hx_data['15_year']['Male']['White']];
+        const hx_lifetime = Hx_data['lifetime'][sex][race][ageGroup as keyof typeof Hx_data['lifetime']['Male']['White']];
         const eGFRbase = eGFRbase_data[ageGroup as keyof typeof eGFRbase_data];
 
-        const eGFR1 = (60.0 - Math.min(data.eGFR, 60.0)) / 15.0;
-        const eGFR2 = (Math.min(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 90.0), 60.0)) / 15.0;
-        const eGFR3 = (Math.max(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 120.0), 90.0)) / 15.0;
-        const eGFR4 = (120.0 - Math.max(data.eGFR, 120.0)) / 15.0;
-        
-        const BMI1 = Math.min(data.bmi - 26, 5) / 5;
-        const BMI2 = Math.max(data.bmi - 30, 0) / 5;
+        const eGFR = data.eGFR;
+        const sbp = data.sbp;
+        const bmi = data.bmi;
+        const acr = data.acr;
 
+        // eGFR splines
+        const eGFR1 = (60.0 - Math.min(eGFR, 60.0)) / 15.0;
+        const eGFR2 = (Math.min(eGFRbase, 90.0) - Math.max(Math.min(eGFR, 90.0), 60.0)) / 15.0;
+        const eGFR3 = (Math.max(eGFRbase, 90.0) - Math.max(Math.min(eGFR, 120.0), 90.0)) / 15.0;
+        const eGFR4 = (120.0 - Math.max(eGFR, 120.0)) / 15.0;
+        
+        // BMI splines
+        const BMI1 = Math.min(bmi - 26.0, 5.0) / 5.0;
+        const BMI2 = Math.max(bmi - 30.0, 0) / 5.0;
+        
         let B = 0;
         B += 1.8879 * eGFR1;
         B += 0.4884 * eGFR2;
         B += 0.0203 * eGFR3;
         B -= 0.2420 * eGFR4;
-        B += 0.3500 * (data.sbp - 120.0) / 20.0;
+        B += 0.3500 * (sbp - 120.0) / 20.0;
         if (data.htnMed === 'Yes') B += 0.3012;
-        B -= 0.0241 * BMI1;
+        B -= 0.0241 * BMI1; 
         B += 0.1474 * BMI2;
         if (data.diabetes === 'Yes') B += 1.1008;
-        B += 1.0772 * (Math.log10(data.acr) - Math.log10(4.0)); 
+        if (acr > 0) { 
+             B += 1.0772 * (Math.log10(acr) - Math.log10(4.0));
+        }
         if (data.smokingHistory === "Former Smoker") B += 0.3700;
         else if (data.smokingHistory === "Current Smoker") B += 0.5680;
         
         const e_to_the_B = Math.exp(B);
         
-        const esrd_incidence_15_year = (1 - Math.pow((1 - hx_15_year / 100), e_to_the_B)) * 100;
-        const esrd_incidence_lifetime = (1 - Math.pow((1 - hx_lifetime / 100), e_to_the_B)) * 100;
+        const risk15Year = (1 - Math.pow((1 - hx_15_year / 100), e_to_the_B)) * 100;
+        const riskLifetime = (1 - Math.pow((1 - hx_lifetime / 100), e_to_the_B)) * 100;
         
-        setResults({ risk15Year: esrd_incidence_15_year, riskLifetime: esrd_incidence_lifetime });
+        setResults({ risk15Year, riskLifetime });
     };
 
     const copyResults = () => {
