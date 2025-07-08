@@ -67,38 +67,51 @@ export default function EsrdRiskCalculatorPage() {
     const [results, setResults] = React.useState<CalculationResult>(null);
     const form = useForm<FormValues>({
         resolver: zodResolver(FormSchema),
-        mode: 'onBlur'
+        mode: 'onBlur',
+        defaultValues: {
+            race: 'White',
+        }
     });
     
     const formValues = form.watch();
 
     const calculateESRDRisk = (data: FormValues) => {
         const ageGroup = getAgeGroup(data.age);
-        if (!ageGroup) return; 
+        if (!ageGroup) return;
 
+        // Look up base data
         const hx_15_year = Hx_data[data.sex][data.race]['15_year'][ageGroup as keyof typeof Hx_data.Male.White['15_year']];
         const hx_lifetime = Hx_data[data.sex][data.race]['lifetime'][ageGroup as keyof typeof Hx_data.Male.White['lifetime']];
         const eGFRbase = eGFRbase_data[ageGroup as keyof typeof eGFRbase_data];
 
+        // Calculate eGFR splines
         const eGFR1 = (60.0 - Math.min(data.eGFR, 60.0)) / 15.0;
         const eGFR2 = (Math.min(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 90.0), 60.0)) / 15.0;
         const eGFR3 = (Math.max(eGFRbase, 90.0) - Math.max(Math.min(data.eGFR, 120.0), 90.0)) / 15.0;
         const eGFR4 = (120.0 - Math.max(data.eGFR, 120.0)) / 15.0;
 
-        const BMI1 = Math.min(data.bmi - 26.0, 5.0) / 5.0;
-        const BMI2 = Math.max(data.bmi - 30.0, 0.0) / 5.0;
+        // Corrected BMI Spline calculation based on the NEJM paper's appendix formula
+        const bmi_term1 = -0.0241 * (Math.min(data.bmi, 30) - Math.min(data.bmi, 26)) / 4;
+        const bmi_term2 = 0.1474 * (Math.max(data.bmi, 30) - 30) / 5;
 
-        let B = (1.8879 * eGFR1) + 
-                (0.4884 * eGFR2) + 
-                (0.0203 * eGFR3) - 
-                (0.2420 * eGFR4) + 
-                (0.3500 * (data.sbp - 120.0) / 20.0);
+        // Calculate B value step-by-step for clarity and accuracy
+        let B = 0;
+        B += (1.8879 * eGFR1);
+        B += (0.4884 * eGFR2);
+        B += (0.0203 * eGFR3);
+        B -= (0.2420 * eGFR4);
+        B += (0.3500 * (data.sbp - 120.0) / 20.0);
         
-        if (data.htnMed === 'Yes') B += 0.3012;
+        if (data.htnMed === 'Yes') {
+            B += 0.3012;
+        }
         
-        B += (-0.0241 * BMI1) + (0.1474 * BMI2);
+        // Use the corrected BMI calculation
+        B += bmi_term1 + bmi_term2;
         
-        if (data.diabetes === 'Yes') B += 1.1008;
+        if (data.diabetes === 'Yes') {
+            B += 1.1008;
+        }
         
         B += 1.0772 * (Math.log10(data.acr) - Math.log10(4.0));
         
@@ -108,6 +121,7 @@ export default function EsrdRiskCalculatorPage() {
             B += 0.5680;
         }
 
+        // Calculate final projected incidence of ESRD
         const e_to_the_B = Math.exp(B);
         const esrd_incidence_15_year = (1 - Math.pow((1 - hx_15_year / 100), e_to_the_B)) * 100;
         const esrd_incidence_lifetime = (1 - Math.pow((1 - hx_lifetime / 100), e_to_the_B)) * 100;
@@ -129,7 +143,7 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
         });
     };
 
-    const filledFields = Object.values(formValues).filter(Boolean).length;
+    const filledFields = Object.values(formValues).filter(val => val !== undefined && val !== null && val !== '').length;
     const totalFields = Object.keys(FormSchema.shape).length;
     const progressPercentage = (filledFields / totalFields) * 100;
 
@@ -157,46 +171,43 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
                                 <Form {...form}>
                                     <form onSubmit={form.handleSubmit(calculateESRDRisk)} className="space-y-4">
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <FormField control={form.control} name="age" render={({ field }) => ( <FormItem><FormLabel>Age (18-80 years)</FormLabel><FormControl><Input type="number" {...field} /></FormControl><FormMessage /></FormItem> )} />
+                                            <FormField control={form.control} name="age" render={({ field }) => ( <FormItem><FormLabel>Age (18-80 years)</FormLabel><FormControl><Input type="number" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)} /></FormControl><FormMessage /></FormItem> )} />
                                             <FormField
                                                 control={form.control}
                                                 name="sex"
                                                 render={({ field }) => (
                                                     <FormItem>
                                                     <FormLabel>Sex</FormLabel>
-                                                    <FormControl>
-                                                        <RadioGroup
+                                                    <RadioGroup
                                                         onValueChange={field.onChange}
                                                         defaultValue={field.value}
                                                         className="flex items-center pt-2 space-x-4"
                                                         >
                                                         <FormItem className="flex items-center space-x-2">
                                                             <FormControl>
-                                                            <RadioGroupItem value="Male" id="sex-male"/>
+                                                                <RadioGroupItem value="Male" id="sex-male"/>
                                                             </FormControl>
                                                             <Label htmlFor="sex-male" className="font-normal">Male</Label>
                                                         </FormItem>
                                                         <FormItem className="flex items-center space-x-2">
-                                                            <FormControl>
-                                                            <RadioGroupItem value="Female" id="sex-female"/>
-                                                            </FormControl>
+                                                           <FormControl>
+                                                                <RadioGroupItem value="Female" id="sex-female"/>
+                                                           </FormControl>
                                                             <Label htmlFor="sex-female" className="font-normal">Female</Label>
                                                         </FormItem>
                                                         </RadioGroup>
-                                                    </FormControl>
                                                     <FormMessage />
                                                     </FormItem>
                                                 )}
                                             />
-                                            <FormField control={form.control} name="eGFR" render={({ field }) => ( <FormItem><FormLabel>eGFR (mL/min/1.73m²)</FormLabel><FormControl><Input type="number" {...field} /></FormControl><FormMessage /></FormItem> )} />
-                                            <FormField control={form.control} name="sbp" render={({ field }) => ( <FormItem><FormLabel>Systolic Blood Pressure (mmHg)</FormLabel><FormControl><Input type="number" {...field} /></FormControl><FormMessage /></FormItem> )} />
+                                            <FormField control={form.control} name="eGFR" render={({ field }) => ( <FormItem><FormLabel>eGFR (mL/min/1.73m²)</FormLabel><FormControl><Input type="number" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)} /></FormControl><FormMessage /></FormItem> )} />
+                                            <FormField control={form.control} name="sbp" render={({ field }) => ( <FormItem><FormLabel>Systolic Blood Pressure (mmHg)</FormLabel><FormControl><Input type="number" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)} /></FormControl><FormMessage /></FormItem> )} />
                                              <FormField
                                                 control={form.control}
                                                 name="htnMed"
                                                 render={({ field }) => (
                                                     <FormItem>
                                                         <FormLabel>Antihypertensive Medication</FormLabel>
-                                                        <FormControl>
                                                             <RadioGroup
                                                             onValueChange={field.onChange}
                                                             defaultValue={field.value}
@@ -204,31 +215,29 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
                                                             >
                                                             <FormItem className="flex items-center space-x-2">
                                                                 <FormControl>
-                                                                <RadioGroupItem value="Yes" id="htn-yes"/>
+                                                                    <RadioGroupItem value="Yes" id="htn-yes"/>
                                                                 </FormControl>
                                                                 <Label htmlFor="htn-yes" className="font-normal">On medication</Label>
                                                             </FormItem>
                                                             <FormItem className="flex items-center space-x-2">
                                                                 <FormControl>
-                                                                <RadioGroupItem value="No" id="htn-no" />
+                                                                    <RadioGroupItem value="No" id="htn-no" />
                                                                 </FormControl>
                                                                 <Label htmlFor="htn-no" className="font-normal">None</Label>
                                                             </FormItem>
                                                             </RadioGroup>
-                                                        </FormControl>
                                                         <FormMessage />
                                                     </FormItem>
                                                 )}
                                             />
-                                            <FormField control={form.control} name="bmi" render={({ field }) => ( <FormItem><FormLabel>BMI (kg/m²)</FormLabel><FormControl><Input type="number" step="0.1" {...field} /></FormControl><FormMessage /></FormItem> )} />
+                                            <FormField control={form.control} name="bmi" render={({ field }) => ( <FormItem><FormLabel>BMI (kg/m²)</FormLabel><FormControl><Input type="number" step="0.1" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)} /></FormControl><FormMessage /></FormItem> )} />
                                             <FormField
                                                 control={form.control}
                                                 name="diabetes"
                                                 render={({ field }) => (
                                                     <FormItem>
                                                         <FormLabel>Diabetes</FormLabel>
-                                                        <FormControl>
-                                                            <RadioGroup
+                                                        <RadioGroup
                                                             onValueChange={field.onChange}
                                                             defaultValue={field.value}
                                                             className="flex items-center pt-2 space-x-4"
@@ -246,12 +255,11 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
                                                                     <Label htmlFor="diabetes-no" className="font-normal">No</Label>
                                                                 </FormItem>
                                                             </RadioGroup>
-                                                        </FormControl>
                                                         <FormMessage />
                                                     </FormItem>
                                                 )}
                                             />
-                                            <FormField control={form.control} name="acr" render={({ field }) => ( <FormItem><FormLabel>Urine Albumin to Creatinine (mg/g)</FormLabel><FormControl><Input type="number" {...field} /></FormControl><FormMessage /></FormItem> )} />
+                                            <FormField control={form.control} name="acr" render={({ field }) => ( <FormItem><FormLabel>Urine Albumin to Creatinine (mg/g)</FormLabel><FormControl><Input type="number" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)}/></FormControl><FormMessage /></FormItem> )} />
                                         </div>
                                          <FormField control={form.control} name="smokingHistory" render={({ field }) => (
                                             <FormItem>
@@ -277,7 +285,7 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
                                         <div className="space-y-2 pt-4">
                                           <div className="flex justify-between text-sm text-muted-foreground">
                                             <span>Progress</span>
-                                            <span>{filledFields} / {totalFields} fields completed</span>
+                                            <span>{filledFields} / {totalFields - 1} fields completed</span>
                                           </div>
                                           <Progress value={progressPercentage} />
                                         </div>
