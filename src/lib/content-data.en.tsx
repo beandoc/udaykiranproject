@@ -9,16 +9,16 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import type { ModuleContentData } from './content-data';
 
-const ELI10Layout = ({ title, explanation, takeaways }: { title: string, explanation: React.ReactNode, takeaways: { icon: React.ElementType, text: string }[] }) => (
-    <div className="space-y-6 text-base leading-relaxed">
-        <h3 className="text-xl font-bold font-headline text-primary">{title}</h3>
-        {explanation}
-        <h4 className="text-lg font-bold font-headline pt-4">Key Takeaways</h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+const takeawayColors = ["bg-blue-100 dark:bg-blue-950/50", "bg-green-100 dark:bg-green-950/50", "bg-orange-100 dark:bg-orange-950/50", "bg-gray-100 dark:bg-gray-800/50"];
+
+const KeyTakeaways = ({ takeaways }: { takeaways: { icon: React.ElementType, text: string }[] }) => (
+    <div className="mt-8">
+        <h3 className="text-xl font-bold font-headline pt-4 border-t">Key Takeaways</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             {takeaways.map((takeaway, index) => (
-                <Card key={index} className="bg-primary/10">
+                <Card key={index} className={`${takeawayColors[index % takeawayColors.length]} border-0`}>
                     <CardHeader>
-                        <CardTitle className="flex items-start gap-3 text-base">
+                        <CardTitle className="flex items-start gap-3 text-base font-semibold">
                             <takeaway.icon className="text-primary h-6 w-6 mt-1 flex-shrink-0" />
                             <span>{takeaway.text}</span>
                         </CardTitle>
@@ -28,6 +28,241 @@ const ELI10Layout = ({ title, explanation, takeaways }: { title: string, explana
         </div>
     </div>
 );
+
+const ELI10Layout = ({ title, explanation, takeaways }: { title: string, explanation: React.ReactNode, takeaways: { icon: React.ElementType, text: string }[] }) => (
+    <div className="space-y-6 text-base leading-relaxed">
+        <h3 className="text-xl font-bold font-headline text-primary">{title}</h3>
+        {explanation}
+        <KeyTakeaways takeaways={takeaways} />
+    </div>
+);
+
+
+// --- Content Data Definitions ---
+
+const uKD_takeaways = [
+    { icon: Lightbulb, text: "A transplant is a treatment, not a cure. It helps you live a more active life without dialysis." },
+    { icon: Pill, text: "You must take special 'anti-rejection' medicine every day for the rest of your life." },
+    { icon: Users, text: "Kidneys can come from family/friends (living donors) or someone who has passed away." },
+    { icon: Heart, text: "Living donor kidneys often work better and last longer." }
+];
+
+const uLD_takeaways = [
+    { icon: Clock, text: "Living donation is much faster than waiting for a deceased donor." },
+    { icon: HeartHandshake, text: "A living donor can be family, a spouse, or even a good friend." },
+    { icon: CalendarClock, text: "The surgery can be planned, which is less stressful and better for the kidney." },
+    { icon: Target, text: "Kidneys from living donors usually have a higher success rate." }
+];
+
+const eval_takeaways = [
+    { icon: Stethoscope, text: "You must pass many health tests before getting a transplant." },
+    { icon: Heart, text: "Tests check if your heart and body are strong enough for surgery." },
+    { icon: UserCheck, text: "If you have a living donor, they need to pass all the health tests too." },
+    { icon: ShieldCheck, text: "Staying healthy while you wait is very important for a successful outcome." }
+];
+
+const match_takeaways = [
+    { icon: CheckCircle, text: "A donor's kidney must be a good match for your body to accept it." },
+    { icon: User, text: "Doctors check both your blood type and your tissue type (HLA)." },
+    { icon: Lightbulb, text: "The closer the match, the higher the chance of long-term success." },
+    { icon: Pill, text: "You must take anti-rejection medicine for life to protect the new kidney." }
+];
+
+const surgery_takeaways = [
+    { icon: ShieldCheck, text: "You'll have final health checks before the surgery." },
+    { icon: Bed, text: "The surgery takes 2-3 hours and you will be asleep." },
+    { icon: Home, text: "Your old kidneys are usually left inside your body." },
+    { icon: Building, text: "You will stay in the hospital for about a week to heal." }
+];
+
+const recovery_takeaways = [
+    { icon: Home, text: "You'll be able to go back to work and normal life in 3-6 months." },
+    { icon: ShieldCheck, text: "Staying very clean is important to avoid infections." },
+    { icon: Bike, text: "Start with gentle exercise like walking, but avoid heavy lifting." },
+    { icon: Users, text: "Avoid crowded places for the first few months to stay safe." }
+];
+
+const immuno_takeaways = [
+    { icon: ShieldAlert, text: "The medicine makes it easier to get infections, so you need to be careful." },
+    { icon: Smile, text: "Medicines can have side effects. Always tell your doctor how you are feeling." },
+    { icon: ShieldQuestion, text: "Always ask your transplant doctor before taking ANY new medicine, even from another doctor." },
+    { icon: Ban, text: "NEVER stop taking your transplant medicine unless your doctor tells you to." }
+];
+
+const adherence_takeaways = [
+    { icon: Target, text: "Taking your medicine correctly is your #1 priority." },
+    { icon: Clock, text: "Take your pills at the exact same time every day." },
+    { icon: Ban, text: "NEVER skip a dose or change the amount without talking to your doctor." },
+    { icon: BellRing, text: "Use alarms or pillboxes to help you remember." }
+];
+
+const rejection_takeaways = [
+    { icon: ShieldAlert, text: "Rejection is your body's immune system trying to 'protect' you from the new kidney." },
+    { icon: Pill, text: "Taking your medicine every day is the best way to prevent rejection." },
+    { icon: Stethoscope, text: "Doctors often find rejection in blood tests before you feel sick." },
+    { icon: CheckCircle, text: "Most of the time, rejection can be treated successfully with medicine." }
+];
+
+const graft_takeaways = [
+    { icon: Clock, text: "Sometimes a new kidney needs a few days to 'wake up' and start working." },
+    { icon: Pill, text: "Taking your medicine correctly is the most important thing YOU can do." },
+    { icon: HeartPulse, text: "Keeping your blood pressure and cholesterol in a healthy range is vital." },
+    { icon: HeartHandshake, text: "A better tissue match and a living donor can help the kidney last longer." }
+];
+
+const longterm_takeaways = [
+    { icon: ShieldCheck, text: "Your new kidney is a lifelong partner—take good care of it!" },
+    { icon: Stethoscope, text: "You have a higher risk of infections and cancer, so regular check-ups are key." },
+    { icon: CalendarClock, text: "Follow your doctor's schedule for cancer screenings like skin and colon checks." },
+    { icon: FileText, text: "Keeping up with all your health checks is essential for a long and healthy life." }
+];
+
+const diet_takeaways = [
+    { icon: Ban, text: "Absolutely no grapefruit! It messes with your important kidney medicine." },
+    { icon: UtensilsCrossed, text: "Eat less salt to help control your blood pressure." },
+    { icon: Carrot, text: "Eat a balanced diet with lots of fruits, vegetables, and lean protein." },
+    { icon: Leaf, text: "Choose 'good' fats like olive oil and avocado over 'bad' fats like butter." }
+];
+
+const exercise_takeaways = [
+    { icon: Bike, text: "Staying active is great for your heart and your new kidney." },
+    { icon: User, text: "Start with walking as soon as your doctors say it's okay." },
+    { icon: Ban, text: "Do not lift anything heavy for the first three months." },
+    { icon: ShieldQuestion, text: "Always ask your doctor before starting any new kind of exercise." }
+];
+
+const diabetes_takeaways = [
+    { icon: Pill, text: "The medicine for your kidney can sometimes cause high blood sugar (diabetes)." },
+    { icon: Stethoscope, text: "Your doctors will check your blood sugar regularly with tests." },
+    { icon: Scale, text: "Eating healthy and exercising are the best first steps to manage it." },
+    { icon: ShieldCheck, text: "Controlling your blood sugar is very important for protecting your new kidney." }
+];
+
+const mental_takeaways = [
+    { icon: Smile, text: "It's okay to have mixed feelings. This is a big change!" },
+    { icon: Heart, text: "Feeling worried about the new kidney or grateful to the donor is normal." },
+    { icon: MessageSquare, text: "Talking about your feelings is a very brave and healthy thing to do." },
+    { icon: Users, text: "Your transplant team has experts who can help you with your feelings." }
+];
+
+const patient_resp_takeaways = [
+    { icon: BookOpen, text: "Be a good student: learn about your health and ask questions." },
+    { icon: ClipboardList, text: "Follow the game plan your doctors give you." },
+    { icon: Clock, text: "Always be on time for your appointments." },
+    { icon: Users, text: "Be kind and respectful to the hospital staff and other patients." }
+];
+
+const donor_eval_takeaways = [
+    { icon: Stethoscope, text: "Doctors will do many tests to make sure you are healthy enough to donate." },
+    { icon: Users, text: "You'll meet a whole team of experts who will take care of you." },
+    { icon: Heart, text: "The team's number one job is to make sure the donation is safe for YOU." },
+    { icon: FileText, text: "The tests help doctors choose which of your two kidneys is better to donate." }
+];
+
+const donor_eligibility_takeaways = [
+    { icon: ShieldCheck, text: "To be a donor, you must be in very good health." },
+    { icon: Ban, text: "Some health problems, like diabetes or cancer, mean you can't donate." },
+    { icon: Heart, text: "These rules are here to protect your health first." },
+    { icon: UserCheck, text: "The transplant team will do tests to make sure donation is safe for you." }
+];
+
+const psych_takeaways = [
+    { icon: MessageSquare, text: "You will talk to an expert about your feelings and motivations." },
+    { icon: HandCoins, text: "They make sure no one is forcing you or paying you to donate." },
+    { icon: Lightbulb, text: "It's a chance to make sure you understand everything about the process." },
+    { icon: CheckCircle, text: "You can change your mind at any time, no questions asked." }
+];
+
+const donor_surgery_takeaways = [
+    { icon: Bed, text: "You will be asleep for the whole surgery and won't feel anything." },
+    { icon: Clock, text: "The operation usually takes about two to three hours." },
+    { icon: CheckCircle, text: "Doctors use 'keyhole' surgery with tiny cuts, so you heal quicker." },
+    { icon: ShieldCheck, text: "The surgery is very safe, but your team will explain all the small risks." }
+];
+
+const donor_recovery_takeaways = [
+    { icon: Building, text: "You will likely only stay in the hospital for 1-2 nights." },
+    { icon: Bike, text: "You will be encouraged to walk on the same day as your surgery." },
+    { icon: FileText, text: "You can often return to a desk job in about two weeks." },
+    { icon: Ban, text: "You must avoid heavy lifting for several weeks to let your body heal." }
+];
+
+const donor_risks_takeaways = [
+    { icon: Heart, text: "You can live a long, full, and healthy life with just one kidney." },
+    { icon: Stethoscope, text: "You'll need a yearly check-up to make sure your remaining kidney is happy." },
+    { icon: ShieldCheck, text: "The risk of your remaining kidney failing is extremely low." },
+    { icon: Smile, text: "Most donors feel very positive and proud about their decision to donate." }
+];
+
+const donor_long_term_takeaways = [
+    { icon: Stethoscope, text: "Get a kidney check-up every single year." },
+    { icon: Scale, text: "Stay active and maintain a healthy weight." },
+    { icon: Ban, text: "Avoid smoking and certain pain medicines that can hurt your kidney." },
+    { icon: Heart, text: "By being healthy, you protect your amazing gift to yourself and others." }
+];
+
+const caregiver_role_takeaways = [
+    { icon: HeartHandshake, text: "You are the emotional anchor for both the patient and the donor." },
+    { icon: BookOpen, text: "Learning the basics of the transplant process helps you be a better helper." },
+    { icon: Users, text: "You are a key player on the support team." },
+    { icon: Smile, text: "Your support and care make a huge difference in their recovery." }
+];
+
+const caregiver_pre_takeaways = [
+    { icon: CalendarClock, text: "Help with rides to and from the hospital." },
+    { icon: MessageSquare, text: "Go to appointments to listen and help ask questions." },
+    { icon: Home, text: "Help with chores and errands around the house." },
+    { icon: Heart, text: "Your practical help reduces their stress a lot." }
+];
+
+const caregiver_hospital_takeaways = [
+    { icon: Users, text: "Be the main person who gives updates to other family and friends." },
+    { icon: Smile, text: "Your presence is a huge comfort." },
+    { icon: HeartHandshake, text: "Help speak up for them if they need something from the nurses." },
+    { icon: Heart, text: "Remember to support the donor just as much as the patient." }
+];
+
+const caregiver_home_takeaways = [
+    { icon: CalendarClock, text: "Help with driving to follow-up doctor appointments." },
+    { icon: ShieldCheck, text: "Be a 'germ buster' by helping keep the house and hands very clean." },
+    { icon: Home, text: "Help with cooking, cleaning, and other chores." },
+    { icon: Ban, text: "Gently remind them of the 'no heavy lifting' rule." }
+];
+
+const caregiver_meds_takeaways = [
+    { icon: ClipboardList, text: "Help organize pills into a weekly pillbox." },
+    { icon: BellRing, text: "Help set daily alarms as reminders." },
+    { icon: CheckCircle, text: "Gently double-check that they have taken their medicine." },
+    { icon: FileText, text: "Help keep track of when they need to get more medicine from the pharmacy." }
+];
+
+const caregiver_warning_takeaways = [
+    { icon: Siren, text: "You are the first line of defense in spotting problems." },
+    { icon: Thermometer, text: "A fever is a major warning sign. Call the doctor immediately." },
+    { icon: Frown, text: "Trust your gut. If they just don't seem 'right', it's worth a phone call." },
+    { icon: Phone, text: "Don't wait. Calling the transplant team early is always the right choice." }
+];
+
+const caregiver_selfcare_takeaways = [
+    { icon: User, text: "You can't pour from an empty cup. Take care of yourself first." },
+    { icon: Bed, text: "Make sure you are getting enough sleep and eat healthy food." },
+    { icon: Smile, text: "Take breaks! Ask other family or friends to help out so you can rest." },
+    { icon: MessageSquare, text: "It's okay to talk to someone if you are feeling stressed or overwhelmed." }
+];
+
+const caregiver_comm_takeaways = [
+    { icon: HelpCircle, text: "There is no such thing as a silly question. Always ask if you are unsure." },
+    { icon: FileText, text: "Write your questions down before you go to the doctor." },
+    { icon: Phone, text: "Know who to call for urgent questions, especially after hours." },
+    { icon: Users, text: "Ask about support resources for you, the caregiver. You're important too!" }
+];
+
+const default_takeaways = [
+    { icon: Info, text: "Content is being prepared." },
+    { icon: Clock, text: "This module will be available soon." },
+    { icon: Lightbulb, text: "New information will help you on your journey." },
+    { icon: CheckCircle, text: "Please check back later for updates." },
+]
 
 const contentData: ModuleContentData = {
     'understanding-kidney-disease': {
@@ -73,6 +308,7 @@ const contentData: ModuleContentData = {
                         <p className="font-semibold">of transplanted kidneys working after five years (deceased donor)</p>
                     </div>
                 </div>
+                <KeyTakeaways takeaways={uKD_takeaways} />
             </div>
         ),
         eli10: (
@@ -81,12 +317,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Imagine your kidneys are like tiny cleaning machines for your blood. When they stop working well, it's called kidney failure. A transplant is like getting a brand new cleaning machine from someone else so your body can stay clean and healthy. You'll need to take special medicine every day to make sure your body and the new kidney become good friends and don't fight each other.</p>
                 }
-                takeaways={[
-                    { icon: Lightbulb, text: "A transplant is a treatment, not a cure. It helps you live a more active life without dialysis." },
-                    { icon: Pill, text: "You must take special 'anti-rejection' medicine every day for the rest of your life." },
-                    { icon: Users, text: "Kidneys can come from family/friends (living donors) or someone who has passed away." },
-                    { icon: Heart, text: "Living donor kidneys often work better and last longer." }
-                ]}
+                takeaways={uKD_takeaways}
             />
         )
     },
@@ -108,6 +339,7 @@ const contentData: ModuleContentData = {
                     <li>This planning gives both the donor and recipient time to prepare for the surgery and recovery.</li>
                     <li>Generally, transplants from living donors have a higher rate of long-term success compared to those from deceased donors.</li>
                 </ul>
+                <KeyTakeaways takeaways={uLD_takeaways} />
             </div>
         ),
         eli10: (
@@ -116,12 +348,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Think of needing a new kidney like needing a special spare part for your body. You can get this part from two places: from someone who has passed away, or from a kind person who is still alive and has an extra one to share (we all have two, but only need one!). Getting a kidney from a living person is often faster and the new part might work better and for longer.</p>
                 }
-                takeaways={[
-                    { icon: Clock, text: "Living donation is much faster than waiting for a deceased donor." },
-                    { icon: HeartHandshake, text: "A living donor can be family, a spouse, or even a good friend." },
-                    { icon: CalendarClock, text: "The surgery can be planned, which is less stressful and better for the kidney." },
-                    { icon: Target, text: "Kidneys from living donors usually have a higher success rate." }
-                ]}
+                takeaways={uLD_takeaways}
             />
         )
     },
@@ -161,6 +388,7 @@ const contentData: ModuleContentData = {
                     <li>Avoiding blood transfusions, if possible.</li>
                 </ul>
                 <p className="pt-2">You will also need routine blood tests for tissue typing and antibody screening. These are essential for finding a compatible donor, so it is crucial not to miss them. Regular reviews with your care team are also an opportunity to discuss any concerns you have during your transplant preparation.</p>
+                <KeyTakeaways takeaways={eval_takeaways} />
             </div>
         ),
         eli10: (
@@ -169,16 +397,10 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Before you can get a new kidney, doctors need to check if your body is ready for a big surgery. It's like a car getting a full check-up before a long race. They will check your heart, lungs, and even your teeth to make sure you are strong and healthy enough for the transplant. This is to keep you safe and give the new kidney the best chance to work well.</p>
                 }
-                takeaways={[
-                    { icon: Stethoscope, text: "You must pass many health tests before getting a transplant." },
-                    { icon: Heart, text: "Tests check if your heart and body are strong enough for surgery." },
-                    { icon: UserCheck, text: "If you have a living donor, they need to pass all the health tests too." },
-                    { icon: ShieldCheck, text: "Staying healthy while you wait is very important for a successful outcome." }
-                ]}
+                takeaways={eval_takeaways}
             />
         )
     },
-    // ... I will add ELI10 content for ALL other modules here following the same pattern ...
     'transplant-matching': {
         standard: (
             <div className="space-y-4 text-base leading-relaxed">
@@ -193,6 +415,7 @@ const contentData: ModuleContentData = {
                 <p>Your immune system is your body's defense force, protecting you from foreign invaders like germs. It identifies your own cells using special proteins on their surface called Human Leukocyte Antigens (HLA). You can think of these HLA proteins as your cells' unique ID cards.</p>
                 <p>A transplanted kidney comes with its own set of HLA ID cards. Your immune system will recognize these as "foreign" and may launch an attack, which is known as <strong>rejection</strong>. To prevent this, doctors try to find a donor whose HLA type is as close as possible to yours. A closer match can lead to better long-term success.</p>
                 <p>This is also why <strong>anti-rejection medications</strong> (immunosuppressants) are a lifelong necessity after a transplant. These medications work by "telling" your immune system to be less aggressive and to accept the new kidney, regardless of the HLA match.</p>
+                <KeyTakeaways takeaways={match_takeaways} />
             </div>
         ),
         eli10: (
@@ -201,12 +424,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>To get a new kidney, it has to be a good "match" for your body, like a key fitting into a lock. Doctors check two things. First, your blood type (like A, B, O) must match. Second, they check special "ID cards" on your cells called HLA. The closer the match, the better. Even with a good match, you'll need medicine to tell your body's defense team (your immune system) to be nice to the new kidney and not fight it.</p>
                 }
-                takeaways={[
-                    { icon: CheckCircle, text: "A donor's kidney must be a good match for your body to accept it." },
-                    { icon: User, text: "Doctors check both your blood type and your tissue type (HLA)." },
-                    { icon: Lightbulb, text: "The closer the match, the higher the chance of long-term success." },
-                    { icon: Pill, text: "You must take anti-rejection medicine for life to protect the new kidney." }
-                ]}
+                takeaways={match_takeaways}
             />
         )
     },
@@ -305,6 +523,7 @@ const contentData: ModuleContentData = {
                         <p className="text-xs text-center text-muted-foreground">Laparoscopic surgery involves several small incisions, leading to a quicker recovery.</p>
                     </div>
                 </div>
+                <KeyTakeaways takeaways={surgery_takeaways} />
             </div>
         ),
         eli10: (
@@ -313,12 +532,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>On surgery day, doctors will do some final checks. The surgery takes a few hours. They will put you to sleep so you don't feel anything. A surgeon will make a small opening in your lower belly and place the new kidney inside, connecting it to your blood vessels and bladder. Usually, they leave your old kidneys where they are. After you wake up, you will be in the hospital for about a week to recover and make sure the new kidney is working.</p>
                 }
-                takeaways={[
-                    { icon: ShieldCheck, text: "You'll have final health checks before the surgery." },
-                    { icon: Bed, text: "The surgery takes 2-3 hours and you will be asleep." },
-                    { icon: Home, text: "Your old kidneys are usually left inside your body." },
-                    { icon: Building, text: "You will stay in the hospital for about a week to heal." }
-                ]}
+                takeaways={surgery_takeaways}
             />
         )
     },
@@ -377,6 +591,7 @@ const contentData: ModuleContentData = {
                          <p>Pregnancy in a transplant recipient is considered high risk. All immunosuppressive medications carry some risk in pregnancy; in particular, mycophenolate mofetil/sodium and the mammalian (mechanistic) target of rapamycin (mTOR) inhibitors are contraindicated in pregnancy. The most effective safe form of contraception should be used to avoid unplanned pregnancies in transplant recipients.</p>
                     </AlertDescription>
                 </Alert>
+                <KeyTakeaways takeaways={recovery_takeaways} />
             </div>
         ),
         eli10: (
@@ -385,12 +600,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>After your surgery, your job is to heal and get strong. You'll need to be very careful to stay clean to avoid germs. It's important to take it easy at first. You can start walking, but no heavy lifting! After a few months, you'll feel much more like your old self and can get back to most of your normal activities, including work. Just remember to be gentle with your body as it heals.</p>
                 }
-                takeaways={[
-                    { icon: Home, text: "You'll be able to go back to work and normal life in 3-6 months." },
-                    { icon: ShieldCheck, text: "Staying very clean is important to avoid infections." },
-                    { icon: Bike, text: "Start with gentle exercise like walking, but avoid heavy lifting." },
-                    { icon: Users, text: "Avoid crowded places for the first few months to stay safe." }
-                ]}
+                takeaways={recovery_takeaways}
             />
         )
     },
@@ -424,6 +634,7 @@ const contentData: ModuleContentData = {
                         <li><strong>Never stop your medication:</strong> Do not stop taking your anti-rejection medication for any reason unless you are explicitly told to do so by your transplant team. This is crucial for protecting your new kidney.</li>
                     </ul>
                 </div>
+                <KeyTakeaways takeaways={immuno_takeaways} />
             </div>
         ),
         eli10: (
@@ -432,12 +643,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>The special medicine you take to protect your new kidney is very powerful. It works by telling your body's defense team (immune system) to be calm. Because your defense team is calmer, it's easier to get sick, so you have to be careful. The medicine can also have other effects, like making you hungry or shaky. If anything feels weird, just tell your doctor. They can often help without changing the important medicine.</p>
                 }
-                takeaways={[
-                    { icon: ShieldAlert, text: "The medicine makes it easier to get infections, so you need to be careful." },
-                    { icon: Smile, text: "Medicines can have side effects. Always tell your doctor how you are feeling." },
-                    { icon: ShieldQuestion, text: "Always ask your transplant doctor before taking ANY new medicine, even from another doctor." },
-                    { icon: Ban, text: "NEVER stop taking your transplant medicine unless your doctor tells you to." }
-                ]}
+                takeaways={immuno_takeaways}
             />
         )
     },
@@ -509,6 +715,7 @@ const contentData: ModuleContentData = {
                         </CardContent>
                     </Card>
                 </div>
+                <KeyTakeaways takeaways={adherence_takeaways} />
             </div>
         ),
         eli10: (
@@ -517,12 +724,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Taking your medicine every day, on time, is the MOST important job you have. Think of the medicine as a superhero shield for your new kidney. Even if you feel great, the shield must always be up to protect it. Missing even one dose can weaken the shield and let your body start fighting the kidney, which is very dangerous. Using a pillbox or setting a phone alarm can help you remember!</p>
                 }
-                takeaways={[
-                    { icon: Target, text: "Taking your medicine correctly is your #1 priority." },
-                    { icon: Clock, text: "Take your pills at the exact same time every day." },
-                    { icon: Ban, text: "NEVER skip a dose or change the amount without talking to your doctor." },
-                    { icon: BellRing, text: "Use alarms or pillboxes to help you remember." }
-                ]}
+                takeaways={adherence_takeaways}
             />
         )
     },
@@ -549,6 +751,7 @@ const contentData: ModuleContentData = {
                         <p>This is a gradual process of scarring and damage that occurs over several years. It can be difficult to treat and may eventually lead to kidney failure, requiring a return to dialysis or another transplant.</p>
                     </li>
                 </ul>
+                <KeyTakeaways takeaways={rejection_takeaways} />
             </div>
         ),
         eli10: (
@@ -557,12 +760,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>"Rejection" sounds scary, but it's just your body's defense team (your immune system) trying to do its job by fighting something new. That's why you take special medicine, to keep the defense team calm. Sometimes, they might still try to fight a little. Doctors can usually spot this early in your blood tests and give you stronger medicine to calm things down. The most important thing is to take your medicine every day to prevent this from happening.</p>
                 }
-                takeaways={[
-                    { icon: ShieldAlert, text: "Rejection is your body's immune system trying to 'protect' you from the new kidney." },
-                    { icon: Pill, text: "Taking your medicine every day is the best way to prevent rejection." },
-                    { icon: Stethoscope, text: "Doctors often find rejection in blood tests before you feel sick." },
-                    { icon: CheckCircle, text: "Most of the time, rejection can be treated successfully with medicine." }
-                ]}
+                takeaways={rejection_takeaways}
             />
         )
     },
@@ -622,6 +820,7 @@ const contentData: ModuleContentData = {
                         </CardContent>
                     </Card>
                 </div>
+                <KeyTakeaways takeaways={graft_takeaways} />
             </div>
         ),
         eli10: (
@@ -630,12 +829,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Think of your new kidney as a special new plant in your garden. To help it grow strong for many years, you need to do two things. First, you need to stop the "weeds" (your immune system) from attacking it by taking your medicine. Second, you need to give it good "soil and water" by keeping the rest of your body healthy—like controlling your blood pressure and eating well. Both jobs are super important!</p>
                 }
-                takeaways={[
-                    { icon: Clock, text: "Sometimes a new kidney needs a few days to 'wake up' and start working." },
-                    { icon: Pill, text: "Taking your medicine correctly is the most important thing YOU can do." },
-                    { icon: HeartPulse, text: "Keeping your blood pressure and cholesterol in a healthy range is vital." },
-                    { icon: HeartHandshake, text: "A better tissue match and a living donor can help the kidney last longer." }
-                ]}
+                takeaways={graft_takeaways}
             />
         )
     },
@@ -698,6 +892,7 @@ const contentData: ModuleContentData = {
                         </div>
                     </CardContent>
                 </Card>
+                <KeyTakeaways takeaways={longterm_takeaways} />
             </div>
         ),
         eli10: (
@@ -706,12 +901,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Taking care of your new kidney is a lifelong job. Because the medicine you take calms down your body's defense team, you need to be extra careful about getting sick. It also means you need to get regular check-ups for other health problems, like cancer, because finding things early is the best way to stay healthy. Your doctor will tell you exactly which check-ups you need and when.</p>
                 }
-                takeaways={[
-                    { icon: ShieldCheck, text: "Your new kidney is a lifelong partner—take good care of it!" },
-                    { icon: Stethoscope, text: "You have a higher risk of infections and cancer, so regular check-ups are key." },
-                    { icon: CalendarClock, text: "Follow your doctor's schedule for cancer screenings like skin and colon checks." },
-                    { icon: FileText, text: "Keeping up with all your health checks is essential for a long and healthy life." }
-                ]}
+                takeaways={longterm_takeaways}
             />
         )
     },
@@ -797,6 +987,7 @@ const contentData: ModuleContentData = {
                 
                 <h3 className="text-xl font-bold font-headline pt-4">Fill Up on Fiber</h3>
                 <p>Fiber helps reduce cholesterol and control blood sugar. You can find plenty of fiber in whole-grain bread, oatmeal, brown rice, raw fruits, and raw vegetables.</p>
+                <KeyTakeaways takeaways={diet_takeaways} />
             </div>
         ),
         eli10: (
@@ -805,12 +996,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Eating healthy is like putting the best fuel in a new car to make it run well for a long time. You should eat lots of colorful fruits and veggies, lean meats like chicken, and whole grains like brown rice. There are a few very important rules: no grapefruit, and not too much salt (found in chips and fast food). This helps keep your new kidney and your whole body happy!</p>
                 }
-                takeaways={[
-                    { icon: Ban, text: "Absolutely no grapefruit! It messes with your important kidney medicine." },
-                    { icon: UtensilsCrossed, text: "Eat less salt to help control your blood pressure." },
-                    { icon: Carrot, text: "Eat a balanced diet with lots of fruits, vegetables, and lean protein." },
-                    { icon: Leaf, text: "Choose 'good' fats like olive oil and avocado over 'bad' fats like butter." }
-                ]}
+                takeaways={diet_takeaways}
             />
         )
     },
@@ -854,6 +1040,7 @@ const contentData: ModuleContentData = {
                         In addition to daily walking, aim to include some resistance or strength training exercises about three times a week. Always discuss your exercise plans with your transplant team to ensure they are safe for you.
                     </AlertDescription>
                 </Alert>
+                <KeyTakeaways takeaways={exercise_takeaways} />
             </div>
         ),
         eli10: (
@@ -862,12 +1049,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Moving your body is super important for your new kidney! After surgery, you'll start with short walks. Walking helps you heal faster and keeps your heart strong. As you get better, you can walk more. The most important rule at the beginning is NO heavy lifting. You don't want to hurt your tummy muscles while they are healing. Just think: walk, walk, walk, but don't lift!</p>
                 }
-                takeaways={[
-                    { icon: Bike, text: "Staying active is great for your heart and your new kidney." },
-                    { icon: User, text: "Start with walking as soon as your doctors say it's okay." },
-                    { icon: Ban, text: "Do not lift anything heavy for the first three months." },
-                    { icon: ShieldQuestion, text: "Always ask your doctor before starting any new kind of exercise." }
-                ]}
+                takeaways={exercise_takeaways}
             />
         )
     },
@@ -931,6 +1113,7 @@ const contentData: ModuleContentData = {
                         </CardContent>
                     </Card>
                 </div>
+                <KeyTakeaways takeaways={diabetes_takeaways} />
             </div>
         ),
         eli10: (
@@ -939,12 +1122,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Sometimes, the medicine you take for your new kidney can make your blood sugar go too high, which is like having diabetes. This is common, but it's important to manage it. Your doctors will check your blood sugar with tests. To help, you'll need to eat healthy food, exercise, and maybe take some medicine for the sugar. Keeping your blood sugar in a good range protects your new kidney.</p>
                 }
-                takeaways={[
-                    { icon: Pill, text: "The medicine for your kidney can sometimes cause high blood sugar (diabetes)." },
-                    { icon: Stethoscope, text: "Your doctors will check your blood sugar regularly with tests." },
-                    { icon: Scale, text: "Eating healthy and exercising are the best first steps to manage it." },
-                    { icon: ShieldCheck, text: "Controlling your blood sugar is very important for protecting your new kidney." }
-                ]}
+                takeaways={diabetes_takeaways}
             />
         )
     },
@@ -966,6 +1144,7 @@ const contentData: ModuleContentData = {
                     <li><strong>Survivor's Guilt:</strong> You might feel guilty that you received a transplant while others are still on dialysis. This is a recognized feeling, and talking about it can help.</li>
                 </ul>
                 <p className="pt-2">Remember, you are not alone in these feelings. Your transplant team, including social workers and psychologists, are there to support you through every step of this journey.</p>
+                <KeyTakeaways takeaways={mental_takeaways} />
             </div>
         ),
         eli10: (
@@ -974,12 +1153,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Getting a new kidney is a very big deal! It's normal to have all sorts of feelings afterward - happy, worried, sad, and excited all at once. Your body and mind are getting used to a new normal. It's like moving to a new house; it's great, but it takes time to feel at home. If you ever feel down or worried, talking about it with your family or your doctor is the best thing you can do. You are not alone!</p>
                 }
-                takeaways={[
-                    { icon: Smile, text: "It's okay to have mixed feelings. This is a big change!" },
-                    { icon: Heart, text: "Feeling worried about the new kidney or grateful to the donor is normal." },
-                    { icon: MessageSquare, text: "Talking about your feelings is a very brave and healthy thing to do." },
-                    { icon: Users, text: "Your transplant team has experts who can help you with your feelings." }
-                ]}
+                takeaways={mental_takeaways}
             />
         )
     },
@@ -1053,6 +1227,7 @@ const contentData: ModuleContentData = {
                         </div>
                     </div>
                 </div>
+                <KeyTakeaways takeaways={patient_resp_takeaways} />
             </div>
         ),
         eli10: (
@@ -1061,12 +1236,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Having a new kidney is a team sport, and you are the team captain! Your job is to work with the doctors and nurses. This means asking questions when you're confused, telling them the truth about how you feel, and following the rules they give you to stay healthy. Being on time for your check-ups and being nice to everyone at the hospital are also part of being a great team captain.</p>
                 }
-                takeaways={[
-                    { icon: BookOpen, text: "Be a good student: learn about your health and ask questions." },
-                    { icon: ClipboardList, text: "Follow the game plan your doctors give you." },
-                    { icon: Clock, text: "Always be on time for your appointments." },
-                    { icon: Users, text: "Be kind and respectful to the hospital staff and other patients." }
-                ]}
+                takeaways={patient_resp_takeaways}
             />
         )
     },
@@ -1096,6 +1266,7 @@ const contentData: ModuleContentData = {
                     <h3 className="text-xl font-bold font-headline mt-4 mb-2">Medical Tests During Evaluation</h3>
                     <p>You will have lab work and imaging tests to check on your health. Blood and urine samples will check your overall health and confirm if you are a good match for the recipient. Imaging tests like a chest X-ray and CT scan help the team see the size and structure of your kidneys and their blood supply, which helps them decide which kidney is better to donate, allowing you to keep the healthier of the two.</p>
                 </div>
+                <KeyTakeaways takeaways={donor_eval_takeaways} />
             </div>
         ),
         eli10: (
@@ -1104,12 +1275,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>If you want to give one of your two kidneys, doctors need to make sure you are super healthy first. It's like a superhero needing a check-up before a mission! You will meet with a whole team of doctors and nurses who will ask you questions and do some tests, like taking pictures of your kidneys. They do all this to make sure the surgery is safe for you and that you'll stay healthy with one kidney.</p>
                 }
-                takeaways={[
-                    { icon: Stethoscope, text: "Doctors will do many tests to make sure you are healthy enough to donate." },
-                    { icon: Users, text: "You'll meet a whole team of experts who will take care of you." },
-                    { icon: Heart, text: "The team's number one job is to make sure the donation is safe for YOU." },
-                    { icon: FileText, text: "The tests help doctors choose which of your two kidneys is better to donate." }
-                ]}
+                takeaways={donor_eval_takeaways}
             />
         )
     },
@@ -1129,6 +1295,7 @@ const contentData: ModuleContentData = {
                     <li>Certain psychological concerns that might make the process too difficult.</li>
                 </ul>
                 <p className="pt-2">The transplant team is dedicated to helping potential donors fully understand the risks and benefits. Their primary responsibility is to ensure your well-being throughout the entire process.</p>
+                <KeyTakeaways takeaways={donor_eligibility_takeaways} />
             </div>
         ),
         eli10: (
@@ -1137,12 +1304,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Giving a kidney is a very kind gift, but it's only for people who are very healthy. The doctors have rules to keep everyone safe. If someone has certain health problems, like diabetes or heart trouble, they can't be a donor. This isn't to be mean; it's to protect the person who wants to donate. The doctors' main job is to make sure the donor stays safe and healthy for their whole life.</p>
                 }
-                takeaways={[
-                    { icon: ShieldCheck, text: "To be a donor, you must be in very good health." },
-                    { icon: Ban, text: "Some health problems, like diabetes or cancer, mean you can't donate." },
-                    { icon: Heart, text: "These rules are here to protect your health first." },
-                    { icon: UserCheck, text: "The transplant team will do tests to make sure donation is safe for you." }
-                ]}
+                takeaways={donor_eligibility_takeaways}
             />
         )
     },
@@ -1161,6 +1323,7 @@ const contentData: ModuleContentData = {
                 </ul>
                 <h3 className="text-xl font-bold font-headline pt-4">Your Decision is Respected</h3>
                 <p>It is crucial to know that you can change your mind about donating at any point, for any reason, right up until the surgery. Your decision will be respected, and the transplant team will support you no matter what you choose.</p>
+                <KeyTakeaways takeaways={psych_takeaways} />
             </div>
         ),
         eli10: (
@@ -1169,12 +1332,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Before you can donate, you'll have a friendly chat with an expert to talk about your feelings. They want to make sure you are donating because YOU want to, not because someone is making you or paying you. It's a time to ask questions and talk about any worries you might have. It's super important to know that you can change your mind at any time, even on the day of the surgery. It's your choice, and everyone will respect it.</p>
                 }
-                takeaways={[
-                    { icon: MessageSquare, text: "You will talk to an expert about your feelings and motivations." },
-                    { icon: HandCoins, text: "They make sure no one is forcing you or paying you to donate." },
-                    { icon: Lightbulb, text: "It's a chance to make sure you understand everything about the process." },
-                    { icon: CheckCircle, text: "You can change your mind at any time, no questions asked." }
-                ]}
+                takeaways={psych_takeaways}
             />
         )
     },
@@ -1193,6 +1351,7 @@ const contentData: ModuleContentData = {
                     <li>Getting a Urinary Tract Infection (UTI) from the catheter used during surgery.</li>
                     <li>The risk of death from this surgery is extremely low, at just <strong>0.03%</strong> (or 3 in every 10,000 donors).</li>
                 </ul>
+                <KeyTakeaways takeaways={donor_surgery_takeaways} />
             </div>
         ),
         eli10: (
@@ -1201,12 +1360,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>If you donate a kidney, the surgery is very safe. Doctors will give you medicine to make you sleep through the whole thing. It usually takes 2-3 hours. They make a few tiny cuts instead of one big one, which helps you heal faster. Like any surgery, there are some small risks, but the doctors and nurses are experts and will take great care of you.</p>
                 }
-                takeaways={[
-                    { icon: Bed, text: "You will be asleep for the whole surgery and won't feel anything." },
-                    { icon: Clock, text: "The operation usually takes about two to three hours." },
-                    { icon: CheckCircle, text: "Doctors use 'keyhole' surgery with tiny cuts, so you heal quicker." },
-                    { icon: ShieldCheck, text: "The surgery is very safe, but your team will explain all the small risks." }
-                ]}
+                takeaways={donor_surgery_takeaways}
             />
         )
     },
@@ -1217,6 +1371,7 @@ const contentData: ModuleContentData = {
                 <p>You can expect to be up and walking on the same day as your surgery. Most donors stay in the hospital for just <strong>one to two nights</strong>, and pain medication is usually only needed for a short time.</p>
                 <p>A full recovery generally takes about <strong>four to six weeks</strong>. However, many donors can return to work much sooner. If you have a desk job, you might be able to return after just two weeks. If your job is more physically demanding, your employer may offer a temporary desk-based role during your recovery.</p>
                 <p>It's very important to talk to your transplant team about when it's safe for you to return to work, sports, and other physical activities. Following their guidance will ensure you heal properly and avoid complications.</p>
+                <KeyTakeaways takeaways={donor_recovery_takeaways} />
             </div>
         ),
         eli10: (
@@ -1225,12 +1380,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>After your surgery, you will heal surprisingly fast! Most people are walking around on the same day and only stay in the hospital for a night or two. You'll feel a bit sore, but you'll get stronger every day. You'll need to take it easy for about a month, with no heavy lifting. Soon enough, you'll be back to your normal life, work, and activities, all while knowing you did something amazing for someone else.</p>
                 }
-                takeaways={[
-                    { icon: Building, text: "You will likely only stay in the hospital for 1-2 nights." },
-                    { icon: Bike, text: "You will be encouraged to walk on the same day as your surgery." },
-                    { icon: FileText, text: "You can often return to a desk job in about two weeks." },
-                    { icon: Ban, text: "You must avoid heavy lifting for several weeks to let your body heal." }
-                ]}
+                takeaways={donor_recovery_takeaways}
             />
         )
     },
@@ -1250,6 +1400,7 @@ const contentData: ModuleContentData = {
                 <h3 className="text-xl font-bold font-headline pt-4">What to Expect Emotionally</h3>
                 <p>Most living donors (80–90%) report feeling very positive about their decision to donate. However, it's also normal to feel anxious or depressed for a short time after the donation as you process the experience. These feelings are not uncommon, even when both you and the recipient are doing well.</p>
                 <p>It is vital to talk to the transplant team about how you're feeling, both physically and emotionally, during your follow-up visits. Your emotional health is just as important as your physical recovery, and support is always available.</p>
+                <KeyTakeaways takeaways={donor_risks_takeaways} />
             </div>
         ),
         eli10: (
@@ -1258,12 +1409,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>After you donate, your remaining kidney gets a little bigger and stronger to do the work of two. You can live a perfectly normal, long, and healthy life with just one kidney! You'll just need to get a check-up once a year to make sure everything is good. The best part is knowing you gave someone the amazing gift of health. Most donors feel very happy and proud of their decision for the rest of their lives.</p>
                 }
-                takeaways={[
-                    { icon: Heart, text: "You can live a long, full, and healthy life with just one kidney." },
-                    { icon: Stethoscope, text: "You'll need a yearly check-up to make sure your remaining kidney is happy." },
-                    { icon: ShieldCheck, text: "The risk of your remaining kidney failing is extremely low." },
-                    { icon: Smile, text: "Most donors feel very positive and proud about their decision to donate." }
-                ]}
+                takeaways={donor_risks_takeaways}
             />
         )
     },
@@ -1325,6 +1471,7 @@ const contentData: ModuleContentData = {
                         Remember: even with one kidney, you can live a long and healthy life. Staying on top of your yearly checks and taking good care of your body is the key.
                     </AlertDescription>
                 </Alert>
+                <KeyTakeaways takeaways={donor_long_term_takeaways} />
             </div>
         ),
         eli10: (
@@ -1333,12 +1480,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>After you give the amazing gift of a kidney, you have one hardworking kidney left. To keep it happy, you need to be its best friend! This means eating healthy food, playing and exercising, and avoiding things that are bad for it, like smoking. You also need to visit a kidney doctor once a year for a check-up, just to make sure everything is working perfectly. It's easy to stay healthy with one kidney!</p>
                 }
-                takeaways={[
-                    { icon: Stethoscope, text: "Get a kidney check-up every single year." },
-                    { icon: Scale, text: "Stay active and maintain a healthy weight." },
-                    { icon: Ban, text: "Avoid smoking and certain pain medicines that can hurt your kidney." },
-                    { icon: Heart, text: "By being healthy, you protect your amazing gift to yourself and others." }
-                ]}
+                takeaways={donor_long_term_takeaways}
             />
         )
     },
@@ -1362,6 +1504,7 @@ const contentData: ModuleContentData = {
                         </ul>
                     </CardContent>
                 </Card>
+                <KeyTakeaways takeaways={caregiver_role_takeaways} />
             </div>
         ),
         eli10: (
@@ -1370,12 +1513,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>As a caregiver, you are the SUPER sidekick for both the patient and the donor! You are the cheerleader, the helper, and the organizer. You don't have to be a doctor, but it helps to learn a little bit about the transplant so you know what's happening. Your job is to be the loving support that helps them both through this big adventure, making sure they feel safe and cared for.</p>
                 }
-                takeaways={[
-                    { icon: HeartHandshake, text: "You are the emotional anchor for both the patient and the donor." },
-                    { icon: BookOpen, text: "Learning the basics of the transplant process helps you be a better helper." },
-                    { icon: Users, text: "You are a key player on the support team." },
-                    { icon: Smile, text: "Your support and care make a huge difference in their recovery." }
-                ]}
+                takeaways={caregiver_role_takeaways}
             />
         )
     },
@@ -1408,6 +1546,7 @@ const contentData: ModuleContentData = {
                         </div>
                     </li>
                 </ul>
+                <KeyTakeaways takeaways={caregiver_pre_takeaways} />
             </div>
         ),
         eli10: (
@@ -1416,12 +1555,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Before the big surgery day, your job is to be an awesome helper. This can mean driving them to doctor's appointments, which there will be a lot of! You can also be a 'second pair of ears' at the doctor's office to help remember what was said. Helping with things at home, like making food or running errands, is also a super helpful way to support them when they are feeling tired.</p>
                 }
-                takeaways={[
-                    { icon: CalendarClock, text: "Help with rides to and from the hospital." },
-                    { icon: MessageSquare, text: "Go to appointments to listen and help ask questions." },
-                    { icon: Home, text: "Help with chores and errands around the house." },
-                    { icon: Heart, text: "Your practical help reduces their stress a lot." }
-                ]}
+                takeaways={caregiver_pre_takeaways}
             />
         )
     },
@@ -1465,6 +1599,7 @@ const contentData: ModuleContentData = {
                         </CardContent>
                     </Card>
                 </div>
+                <KeyTakeaways takeaways={caregiver_hospital_takeaways} />
             </div>
         ),
         eli10: (
@@ -1473,12 +1608,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>When they are in the hospital, you can be the information captain! You can tell other family and friends how things are going so the patient and donor can rest. Just being there and offering a familiar, smiling face can make them feel so much better and less scared. And don't forget, the donor also had a big surgery, so make sure they get lots of love and attention too!</p>
                 }
-                takeaways={[
-                    { icon: Users, text: "Be the main person who gives updates to other family and friends." },
-                    { icon: Smile, text: "Your presence is a huge comfort." },
-                    { icon: HeartHandshake, text: "Help speak up for them if they need something from the nurses." },
-                    { icon: Heart, text: "Remember to support the donor just as much as the patient." }
-                ]}
+                takeaways={caregiver_hospital_takeaways}
             />
         )
     },
@@ -1495,6 +1625,7 @@ const contentData: ModuleContentData = {
                     <li><strong>Household Help:</strong> Continue to assist with daily living activities like cooking (often following specific dietary guidelines), cleaning, and errands.</li>
                     <li><strong>Enforcing Restrictions:</strong> Gently help enforce post-operative activity restrictions for both the donor and recipient, such as no heavy lifting.</li>
                 </ul>
+                <KeyTakeaways takeaways={caregiver_home_takeaways} />
             </div>
         ),
         eli10: (
@@ -1503,12 +1634,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Once they are back home, your helper duties continue! You might need to drive them to more check-ups. A big part of your job is being a "germ buster" - making sure everything is super clean to keep the patient safe from getting sick. You can also help by cooking healthy meals, reminding them not to lift heavy things, and maybe even helping to check their temperature and blood pressure. You are the recovery supervisor!</p>
                 }
-                takeaways={[
-                    { icon: CalendarClock, text: "Help with driving to follow-up doctor appointments." },
-                    { icon: ShieldCheck, text: "Be a 'germ buster' by helping keep the house and hands very clean." },
-                    { icon: Home, text: "Help with cooking, cleaning, and other chores." },
-                    { icon: Ban, text: "Gently remind them of the 'no heavy lifting' rule." }
-                ]}
+                takeaways={caregiver_home_takeaways}
             />
         )
     },
@@ -1542,6 +1668,7 @@ const contentData: ModuleContentData = {
                         </div>
                     </CardContent>
                 </Card>
+                <KeyTakeaways takeaways={caregiver_meds_takeaways} />
             </div>
         ),
         eli10: (
@@ -1550,12 +1677,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>The patient has to take a LOT of important pills, and it's easy to get confused. You can be the 'Pill Co-Pilot'! You can help by putting the pills into a special box with days of the week on it. You can also help set alarms on a phone to remind them when it's time to take their medicine. Just helping them stay organized is one of the most important jobs you can do.</p>
                 }
-                takeaways={[
-                    { icon: ClipboardList, text: "Help organize pills into a weekly pillbox." },
-                    { icon: BellRing, text: "Help set daily alarms as reminders." },
-                    { icon: CheckCircle, text: "Gently double-check that they have taken their medicine." },
-                    { icon: FileText, text: "Help keep track of when they need to get more medicine from the pharmacy." }
-                ]}
+                takeaways={caregiver_meds_takeaways}
             />
         )
     },
@@ -1580,6 +1702,7 @@ const contentData: ModuleContentData = {
                         <p className="mt-3 font-semibold">Do not wait for the next scheduled appointment. Early intervention is key to treating potential problems like infection or rejection.</p>
                     </AlertDescription>
                 </Alert>
+                <KeyTakeaways takeaways={caregiver_warning_takeaways} />
             </div>
         ),
         eli10: (
@@ -1588,12 +1711,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>You are like a detective looking for clues that something might be wrong. If the patient gets a fever, has pain near their new kidney, or just seems really sick and 'not right', it's a sign to call the doctor right away. You see them every day, so you are the best person to notice if something is different. Don't wait—calling the doctor early is the best way to solve a problem quickly.</p>
                 }
-                takeaways={[
-                    { icon: Siren, text: "You are the first line of defense in spotting problems." },
-                    { icon: Thermometer, text: "A fever is a major warning sign. Call the doctor immediately." },
-                    { icon: Frown, text: "Trust your gut. If they just don't seem 'right', it's worth a phone call." },
-                    { icon: Phone, text: "Don't wait. Calling the transplant team early is always the right choice." }
-                ]}
+                takeaways={caregiver_warning_takeaways}
             />
         )
     },
@@ -1629,6 +1747,7 @@ const contentData: ModuleContentData = {
                         </CardContent>
                     </Card>
                 </div>
+                <KeyTakeaways takeaways={caregiver_selfcare_takeaways} />
             </div>
         ),
         eli10: (
@@ -1637,12 +1756,7 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Even superheroes need to rest and recharge their powers! Taking care of someone else is a big job, and you need to take care of yourself too. This means getting enough sleep, eating good food, and taking breaks to do things you enjoy. If you get too tired, you can't be a good helper. Taking care of yourself isn't selfish; it's how you stay strong enough to be an amazing sidekick.</p>
                 }
-                takeaways={[
-                    { icon: User, text: "You can't pour from an empty cup. Take care of yourself first." },
-                    { icon: Bed, text: "Make sure you are getting enough sleep and eat healthy food." },
-                    { icon: Smile, text: "Take breaks! Ask other family or friends to help out so you can rest." },
-                    { icon: MessageSquare, text: "It's okay to talk to someone if you are feeling stressed or overwhelmed." }
-                ]}
+                takeaways={caregiver_selfcare_takeaways}
             />
         )
     },
@@ -1668,6 +1782,7 @@ const contentData: ModuleContentData = {
                         </ul>
                     </CardContent>
                 </Card>
+                <KeyTakeaways takeaways={caregiver_comm_takeaways} />
             </div>
         ),
         eli10: (
@@ -1676,45 +1791,38 @@ const contentData: ModuleContentData = {
                 explanation={
                     <p>Talking to the doctors and nurses is super important. Don't ever be afraid to ask questions! There are no silly questions. It's a good idea to write your questions down before an appointment so you don't forget. You can ask about who to call if you have a question at night, or what you should be watching for at home. Being a good communicator makes you a valuable part of the team.</p>
                 }
-                takeaways={[
-                    { icon: HelpCircle, text: "There is no such thing as a silly question. Always ask if you are unsure." },
-                    { icon: FileText, text: "Write your questions down before you go to the doctor." },
-                    { icon: Phone, text: "Know who to call for urgent questions, especially after hours." },
-                    { icon: Users, text: "Ask about support resources for you, the caregiver. You're important too!" }
-                ]}
+                takeaways={caregiver_comm_takeaways}
             />
         )
     },
     'chronic-kidney-disease-stages': {
-        standard: (<div>Content coming soon...</div>),
-        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={[]}/>)
+        standard: (<div>Content coming soon...<KeyTakeaways takeaways={default_takeaways} /></div>),
+        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={default_takeaways}/>)
     },
     'treatment-options-overview': {
-        standard: (<div>Content coming soon...</div>),
-        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={[]}/>)
+        standard: (<div>Content coming soon...<KeyTakeaways takeaways={default_takeaways} /></div>),
+        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={default_takeaways}/>)
     },
     'dialysis-vs-transplant': {
-        standard: (<div>Content coming soon...</div>),
-        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={[]}/>)
+        standard: (<div>Content coming soon...<KeyTakeaways takeaways={default_takeaways} /></div>),
+        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={default_takeaways}/>)
     },
     'finding-a-donor': {
-        standard: (<div>Content coming soon...</div>),
-        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={[]}/>)
+        standard: (<div>Content coming soon...<KeyTakeaways takeaways={default_takeaways} /></div>),
+        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={default_takeaways}/>)
     },
     'pre-surgery-preparation': {
-        standard: (<div>Content coming soon...</div>),
-        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={[]}/>)
+        standard: (<div>Content coming soon...<KeyTakeaways takeaways={default_takeaways} /></div>),
+        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={default_takeaways}/>)
     },
     'recognizing-complications': {
-        standard: (<div>Content coming soon...</div>),
-        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={[]}/>)
+        standard: (<div>Content coming soon...<KeyTakeaways takeaways={default_takeaways} /></div>),
+        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={default_takeaways}/>)
     },
     'lifestyle-management': {
-        standard: (<div>Content coming soon...</div>),
-        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={[]}/>)
+        standard: (<div>Content coming soon...<KeyTakeaways takeaways={default_takeaways} /></div>),
+        eli10: (<ELI10Layout title="Explain Like I'm 10" explanation={<p>Content is being prepared and will be available soon. Please check back later.</p>} takeaways={default_takeaways}/>)
     }
 };
 
 export default contentData;
-
-    
