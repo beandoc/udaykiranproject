@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale, FlaskConical, Target, Stethoscope, Lightbulb, User, CheckCircle, HandCoins, Building, FileText, Smile, Phone, Thermometer, Frown } from 'lucide-react';
+import { Video, Info, Ban, UtensilsCrossed, Leaf, Beef, Milk, Carrot, ShieldCheck, HeartHandshake, BrainCircuit, UserCheck, MessageSquare, CalendarClock, School, BellRing, Users, BookOpen, ClipboardList, Clock, Heart, Bed, Home, Pill, Siren, HelpCircle, Bike, HeartPulse, ShieldAlert, Scale, FlaskConical, Target, Stethoscope, Lightbulb, User, CheckCircle, HandCoins, Building, FileText, Smile, Phone, Thermometer, Frown, ShieldQuestion } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -379,7 +379,7 @@ const contentData: ModuleContentData = {
             </div>
         ),
         eli10: (
-            <ELI10Layout
+             <ELI10Layout
                 title="मला १० वर्षांच्या मुलासारखे समजावून सांगा"
                 explanation={
                     <p>तुमच्या शस्त्रक्रियेनंतर, तुमचे काम बरे होणे आणि मजबूत होणे आहे. जंतू टाळण्यासाठी तुम्हाला खूप स्वच्छ राहावे लागेल. सुरुवातीला हळूवारपणे सुरुवात करणे महत्त्वाचे आहे. तुम्ही चालायला सुरुवात करू शकता, पण जड उचलण्याचे काम नाही! काही महिन्यांनंतर, तुम्हाला तुमच्या पूर्वीच्या स्थितीसारखे वाटेल आणि तुम्ही तुमच्या सामान्य कामांसह बहुतेक क्रियाकलापांमध्ये परत येऊ शकता. फक्त लक्षात ठेवा की तुमचे शरीर बरे होत असताना त्याच्याशी सौम्यपणे वागा.</p>
@@ -624,7 +624,7 @@ const contentData: ModuleContentData = {
             </div>
         ),
         eli10: (
-            <ELI10Layout
+             <ELI10Layout
                 title="मला १० वर्षांच्या मुलासारखे समजावून सांगा"
                 explanation={
                     <p>तुमच्या बागेतील एका विशेष नवीन रोपाप्रमाणे तुमच्या नवीन किडनीचा विचार करा. ते अनेक वर्षे मजबूत वाढण्यास मदत करण्यासाठी, तुम्हाला दोन गोष्टी करण्याची गरज आहे. प्रथम, तुम्हाला तुमचे औषध घेऊन "तण" (तुमची रोगप्रतिकार प्रणाली) त्यावर हल्ला करण्यापासून थांबवण्याची गरज आहे. दुसरे, तुम्हाला तुमच्या उर्वरित शरीराला निरोगी ठेवून त्याला चांगली "माती आणि पाणी" देण्याची गरज आहे - जसे की तुमचा रक्तदाब नियंत्रित करणे आणि चांगले खाणे. दोन्ही कामे खूप महत्त्वाची आहेत!</p>
@@ -1501,7 +1501,7 @@ const contentData: ModuleContentData = {
              <ELI10Layout
                 title="मला १० वर्षांच्या मुलासारखे समजावून सांगा"
                 explanation={
-                    <p>एकदा ते घरी परत आले की, तुमची मदतनीसाची कर्तव्ये सुरू राहतात! तुम्हाला त्यांना आणखी तपासणीसाठी न्यावे लागेल. तुमच्या कामाचा एक मोठा भाग म्हणजे "जंतूनाशक" असणे - रुग्णाला आजारी पडण्यापासून वाचवण्यासाठी सर्व काही खूप स्वच्छ असल्याची खात्री करणे. तुम्ही निरोगी जेवण बनवून, त्यांना जड वस्तू न उचलण्याची आठवण करून देऊन, आणि कदाचित त्यांचे तापमान आणि रक्तदाब तपासण्यात मदत करून देखील मदत करू शकता. तुम्ही पुनर्प्राप्ती पर्यवेक्षक आहात!</p>
+                    <p>एकदा ते घरी परत आले की, तुमची मदतनीसाची कर्तव्ये सुरू राहतात! तुम्हाला त्यांना आणखी तपासणीसाठी न्यावे लागेल. तुमच्या कामाचा एक मोठा भाग म्हणजे "जंतूनाशक" असणे - हे सुनिश्चित करणे की रुग्णाला आजारी पडण्यापासून वाचवण्यासाठी सर्व काही खूप स्वच्छ आहे. तुम्ही निरोगी जेवण बनवून, त्यांना जड वस्तू न उचलण्याची आठवण करून देऊन, आणि कदाचित त्यांचे तापमान आणि रक्तदाब तपासण्यात मदत करून देखील मदत करू शकता. तुम्ही पुनर्प्राप्ती पर्यवेक्षक आहात!</p>
                 }
                 takeaways={[
                     { icon: CalendarClock, text: "डॉक्टरांच्या पाठपुरावा भेटीसाठी गाडी चालविण्यात मदत करा." },
