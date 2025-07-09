@@ -972,7 +972,7 @@ const contentData: ModuleContentData = {
             />
         )
     },
-    'mental-health-support': {
+     'mental-health-support': {
         standard: (
             <div className="space-y-4 text-base leading-relaxed">
                 <h2 className="text-2xl font-bold font-headline">Looking After Your Emotional Well-being</h2>
@@ -1301,7 +1301,7 @@ const contentData: ModuleContentData = {
                 <p>While the outlook is excellent, there are a few things to be aware of for the long run:</p>
                 <ul className="list-disc list-inside space-y-3 pl-4">
                     <li><strong>Blood Pressure:</strong> Donors have a slightly higher than average risk of developing high blood pressure. Maintaining a healthy diet and getting regular physical activity is key to staying healthy.</li>
-                    <li><strong>Kidney Failure:</strong> The risk of a donor's remaining kidney failing is very low - less than 1% of donors ever need dialysis or a transplant. In the rare event a former donor needs a kidney, they are given high priority on the transplant waitlist.</li>
+                    <li><strong>Kidney Failure:</strong> The risk of a donor's remaining kidney failing is very low - less than 1% of donors ever need a dialysis or a transplant. In the rare event a former donor needs a kidney, they are given high priority on the transplant waitlist.</li>
                 </ul>
 
                 <h3 className="text-xl font-bold font-headline pt-4">What to Expect Emotionally</h3>
@@ -1898,5 +1898,6 @@ const contentData: ModuleContentData = {
 export default contentData;
 
     
+
 
 

@@ -1006,97 +1006,6 @@ const contentData: ModuleContentData = {
             />
         )
     },
-     'patient-responsibilities': {
-        standard: (
-            <div className="space-y-6 text-base leading-relaxed">
-                <h2 className="text-2xl font-bold font-headline">रुग्ण म्हणून तुमच्या जबाबदाऱ्या</h2>
-                <p>एक यशस्वी प्रत्यारोपण प्रवास ही एक भागीदारी आहे. तुमची सक्रिय भागीदारी तुमच्या स्वतःच्या काळजीसाठी महत्त्वाची आहे.</p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 mt-1">
-                            <BookOpen className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                            <h4 className="font-semibold">माहिती ठेवा</h4>
-                            <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
-                                <li>तुमच्या स्थितीबद्दल शक्य तितके जाणून घ्या.</li>
-                                <li>तुम्हाला काही समजले नसेल तर प्रश्न विचारा.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 mt-1">
-                            <ClipboardList className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                            <h4 className="font-semibold">तुमच्या उपचार कार्यक्रमाचे पालन करा</h4>
-                            <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
-                                <li>संपूर्ण आणि अचूक आरोग्य माहिती द्या.</li>
-                                <li>इतर डॉक्टरांना कळवा की तुम्ही प्रत्यारोपण प्राप्तकर्ता आहात.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 mt-1">
-                            <Clock className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                            <h4 className="font-semibold">वेळेवर या</h4>
-                            <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
-                                <li>सर्व भेटींसाठी वेळेवर या.</li>
-                                <li>तुमच्या भेटीसाठी तुमचे प्रयोगशाळा अहवाल उपलब्ध असल्याची खात्री करा.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 mt-1">
-                            <ShieldCheck className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                            <h4 className="font-semibold">सुविधा धोरणांचे पालन करा</h4>
-                            <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
-                                <li>सर्व रुग्णालय सुरक्षा धोरणांचे पालन करा.</li>
-                                <li>बरे होणारे वातावरण राखण्यास मदत करा (उदा. तंबाखू नाही).</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 mt-1">
-                            <Users className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                            <h4 className="font-semibold">विचारी बना</h4>
-                            <ul className="mt-1 space-y-1 text-sm text-muted-foreground list-disc list-inside">
-                                <li>इतर रुग्ण आणि कर्मचाऱ्यांशी आदराने वागा.</li>
-                                <li>आवाज कमी ठेवा.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <KeyTakeaways takeaways={[
-                    { icon: ClipboardList, text: "नियम: तुम्ही नेहमी तुमच्या आरोग्याबद्दल संपूर्ण आणि अचूक माहिती दिली पाहिजे." },
-                    { icon: Clock, text: "लक्षात ठेवा: सर्व भेटींना हजर रहा आणि खात्री करा की तुमच्या भेटीसाठी लॅब अहवाल उपलब्ध आहेत." },
-                    { icon: Target, text: "नियम: तुम्ही तुमच्या निर्धारित उपचार कार्यक्रमाचे कोणत्याही विचलनाशिवाय पालन केले पाहिजे." },
-                    { icon: ShieldQuestion, text: "कृती: जर तुम्ही नवीन डॉक्टरांचा सल्ला घेतला, तर तुम्ही त्यांना कळवले पाहिजे की तुम्ही प्रत्यारोपण प्राप्तकर्ता आहात." }
-                ]} />
-            </div>
-        ),
-        eli10: (
-             <ELI10Layout
-                title="मला १० वर्षांच्या मुलासारखे समजावून सांगा"
-                explanation={
-                    <p>नवीन किडनी असणे हा एक सांघिक खेळ आहे आणि तुम्ही संघाचे कर्णधार आहात! तुमचे काम डॉक्टर आणि परिचारिकांसोबत काम करणे आहे. याचा अर्थ जेव्हा तुम्ही गोंधळलेले असता तेव्हा प्रश्न विचारणे, तुम्ही कसे वाटत आहात याबद्दल त्यांना सत्य सांगणे आणि निरोगी राहण्यासाठी ते तुम्हाला जे नियम देतात त्यांचे पालन करणे. तुमच्या तपासणीसाठी वेळेवर असणे आणि रुग्णालयातील प्रत्येकाशी चांगले वागणे हे देखील एक महान संघ कर्णधार असण्याचा भाग आहे.</p>
-                }
-                takeaways={[
-                    { icon: ClipboardList, text: "नियम: तुम्ही नेहमी तुमच्या आरोग्याबद्दल संपूर्ण आणि अचूक माहिती दिली पाहिजे." },
-                    { icon: Clock, text: "लक्षात ठेवा: सर्व भेटींना हजर रहा आणि खात्री करा की तुमच्या भेटीसाठी लॅब अहवाल उपलब्ध आहेत." },
-                    { icon: Target, text: "नियम: तुम्ही तुमच्या निर्धारित उपचार कार्यक्रमाचे कोणत्याही विचलनाशिवाय पालन केले पाहिजे." },
-                    { icon: ShieldQuestion, text: "कृती: जर तुम्ही नवीन डॉक्टरांचा सल्ला घेतला, तर तुम्ही त्यांना कळवले पाहिजे की तुम्ही प्रत्यारोपण प्राप्तकर्ता आहात." }
-                ]}
-            />
-        )
-    },
      'donor-evaluation': {
         standard: (
             <div className="space-y-6 text-base leading-relaxed">
@@ -1310,7 +1219,7 @@ const contentData: ModuleContentData = {
                 <KeyTakeaways takeaways={[
                     { icon: Heart, text: "तथ्य: तुम्ही एका किडनीसह सामान्य, निरोगी जीवन जगू शकता." },
                     { icon: Stethoscope, text: "तथ्य: तुमची उर्वरित किडनी वाढते आणि तुमच्या मूळ क्षमतेच्या सुमारे ७०-८०% कार्य करते." },
-                    { icon: ShieldAlert, text: "धोका: तुम्हाला नंतर प्रत्यारोपणाची गरज भासण्याचा धोका खूप कमी आहे (<1%), परंतु गरज भासल्यास तुम्हाला उच्च प्राधान्य मिळते." },
+                    { icon: ShieldAlert, text: "धोका: तुम्हाला नंतर प्रत्यारोपणाची गरज भासण्याचा धोका खूप कमी आहे (<1%), पण गरज भासल्यास तुम्हाला उच्च प्राधान्य मिळते." },
                     { icon: Smile, text: "तथ्य: बहुतेक दाते (८०-९०%) त्यांच्या दान करण्याच्या निर्णयाबद्दल खूप सकारात्मक वाटतात." }
                 ]} />
             </div>
@@ -1324,7 +1233,7 @@ const contentData: ModuleContentData = {
                 takeaways={[
                     { icon: Heart, text: "तथ्य: तुम्ही एका किडनीसह सामान्य, निरोगी जीवन जगू शकता." },
                     { icon: Stethoscope, text: "तथ्य: तुमची उर्वरित किडनी वाढते आणि तुमच्या मूळ क्षमतेच्या सुमारे ७०-८०% कार्य करते." },
-                    { icon: ShieldAlert, text: "धोका: तुम्हाला नंतर प्रत्यारोपणाची गरज भासण्याचा धोका खूप कमी आहे (<1%), परंतु गरज भासल्यास तुम्हाला उच्च प्राधान्य मिळते." },
+                    { icon: ShieldAlert, text: "धोका: तुम्हाला नंतर प्रत्यारोपणाची गरज भासण्याचा धोका खूप कमी आहे (<1%), पण गरज भासल्यास तुम्हाला उच्च प्राधान्य मिळते." },
                     { icon: Smile, text: "तथ्य: बहुतेक दाते (८०-९०%) त्यांच्या दान करण्याच्या निर्णयाबद्दल खूप सकारात्मक वाटतात." }
                 ]}
             />

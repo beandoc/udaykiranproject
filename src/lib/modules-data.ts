@@ -32,7 +32,6 @@ export const patientModules: Module[] = [
         mr: '/podcasts/patient-episode-1-mr.wav'
     }
   },
-  { title: 'Patient Responsibilities', status: 'Not Started', slug: 'patient-responsibilities' },
   { title: 'Transplant Evaluation Process', status: 'Not Started', slug: 'evaluation-process' },
   { title: 'Understanding Transplant Matching', status: 'Not Started', slug: 'transplant-matching' },
   { title: 'Surgery Day Experience', status: 'Not Started', slug: 'surgery-day' },
