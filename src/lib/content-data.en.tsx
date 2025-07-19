@@ -74,10 +74,10 @@ const contentData: ModuleContentData = {
                 <p>A kidney transplant is not suitable for everyone. Contraindications include serious active infection, active or untreated malignancy, severe psychosocial problems, unstable coronary artery disease, refractory congestive heart failure, severe peripheral vascular disease, and other severe medical problems.</p>
                 
                 <KeyTakeaways takeaways={[
-                    { icon: Target, text: "Fact: 95% of transplants are working one year later." },
-                    { icon: Heart, text: "Living donor kidneys have a higher 5-year success rate (90%) than deceased donor kidneys (83%)." },
-                    { icon: Pill, text: "A transplant is a treatment, not a cure. You will need lifelong anti-rejection medication." },
-                    { icon: ShieldAlert, text: "Active infections or untreated cancer are major reasons why a transplant may not be possible." }
+                    { icon: Target, text: "A transplant is a treatment, not a cure. Lifelong care and medication are essential for success." },
+                    { icon: Heart, text: "Living donor kidneys generally have a higher long-term success rate than deceased donor kidneys." },
+                    { icon: Pill, text: "You must take anti-rejection medication for the entire life of the new kidney to prevent your body from fighting it." },
+                    { icon: ShieldAlert, text: "A transplant is not possible if you have other serious health issues like an active infection or untreated cancer." }
                 ]} />
             </div>
         ),
@@ -119,10 +119,10 @@ const contentData: ModuleContentData = {
                     <li>Generally, transplants from living donors have a higher rate of long-term success compared to those from deceased donors.</li>
                 </ul>
                 <KeyTakeaways takeaways={[
-                    { icon: Clock, text: "Fact: A living donor can shorten the wait time from years on the deceased list to just a few months." },
-                    { icon: CalendarClock, text: "A living donor transplant can be scheduled 'pre-emptively' before you even need to start dialysis." },
-                    { icon: Heart, text: "By minimizing 'cold ischemia time', living donor kidneys have a better long-term success rate." },
-                    { icon: HeartHandshake, text: "A living donor can be family, a friend, or even an unrelated altruistic person." }
+                    { icon: Clock, text: "A living donor can drastically shorten the wait time, often from years down to just months." },
+                    { icon: CalendarClock, text: "A living donor transplant can be scheduled 'pre-emptively', before dialysis is even needed." },
+                    { icon: Heart, text: "By minimizing the time outside the body, living donor kidneys often work better and last longer." },
+                    { icon: HeartHandshake, text: "A living donor can be a family member, a friend, or even an unrelated altruistic person." }
                 ]} />
             </div>
         ),
@@ -182,10 +182,10 @@ const contentData: ModuleContentData = {
                 </ul>
                 <p className="pt-2">You will also need routine blood tests for tissue typing and antibody screening. These are essential for finding a compatible donor, so it is crucial not to miss them. Regular reviews with your care team are also an opportunity to discuss any concerns you have during your transplant preparation.</p>
                 <KeyTakeaways takeaways={[
-                    { icon: Stethoscope, text: "Remember: The mandatory 'transplant work-up' is to ensure you are strong enough for surgery." },
-                    { icon: ShieldCheck, text: "Key tests include heart, lung, and dental exams to eliminate hidden infection risks." },
-                    { icon: Users, text: "Fact: Any potential living donor must also undergo a complete and separate health evaluation." },
-                    { icon: Target, text: "Critical: Adherence to your dialysis schedule and diet while waiting is essential for success." }
+                    { icon: Stethoscope, text: "The mandatory 'transplant work-up' ensures you are strong enough for a successful surgery." },
+                    { icon: ShieldCheck, text: "Key tests include heart, lung, and dental exams to eliminate hidden risks of infection." },
+                    { icon: Users, text: "Any potential living donor must also undergo a separate, complete health evaluation for their own safety." },
+                    { icon: Target, text: "Adhering to your dialysis schedule and diet while waiting is essential for a successful outcome." }
                 ]} />
             </div>
         ),
@@ -223,10 +223,10 @@ const contentData: ModuleContentData = {
                 <p>A transplanted kidney comes with its own set of HLA ID cards. Your immune system will recognize these as "foreign" and may launch an attack, which is known as <strong>rejection</strong>. To prevent this, doctors try to find a donor whose HLA type is as close as possible to yours. A closer match can lead to better long-term success.</p>
                 <p>This is also why <strong>anti-rejection medications</strong> (immunosuppressants) are a lifelong necessity after a transplant. These medications work by "telling" your immune system to be less aggressive and to accept the new kidney, regardless of the HLA match.</p>
                 <KeyTakeaways takeaways={[
-                    { icon: CheckCircle, text: "Rule #1: Blood group (A, B, AB, O) must be compatible for a deceased donor transplant." },
-                    { icon: User, text: "Rule #2: Tissue type (HLA) matching is crucial; a closer match reduces rejection risk." },
-                    { icon: Lightbulb, text: "Fact: ABO-incompatible transplants are now possible from living donors with special pre-treatment." },
-                    { icon: Pill, text: "Remember: You MUST take lifelong anti-rejection medication, regardless of the match quality." }
+                    { icon: CheckCircle, text: "The first check is for a compatible blood group (A, B, AB, O), which is essential for deceased donors." },
+                    { icon: User, text: "The second check is for tissue type (HLA); a closer match reduces the risk of rejection." },
+                    { icon: Lightbulb, text: "ABO-incompatible transplants are now possible from living donors with special pre-treatment." },
+                    { icon: Pill, text: "You must take lifelong anti-rejection medication, regardless of how good the match is." }
                 ]} />
             </div>
         ),
@@ -347,9 +347,9 @@ const contentData: ModuleContentData = {
                 </div>
                 <KeyTakeaways takeaways={[
                     { icon: Clock, text: "Expect the surgery to last 2-3 hours under general anesthesia." },
-                    { icon: Home, text: "Fact: Your old, failed kidneys are usually left inside your body." },
-                    { icon: CalendarClock, text: "A catheter will be in your bladder for around 5 days post-surgery to monitor urine." },
-                    { icon: Info, text: "Remember: Some new kidneys have 'delayed function' and may require temporary dialysis. This is not a sign of failure." }
+                    { icon: Home, text: "Your old, failed kidneys are usually left inside your body to simplify the surgery." },
+                    { icon: CalendarClock, text: "A urinary catheter will be in place for about five days post-surgery to monitor kidney function." },
+                    { icon: Info, text: "Some new kidneys need time to 'wake up' and may require temporary dialysis. This is not a sign of failure." }
                 ]} />
             </div>
         ),
@@ -415,10 +415,10 @@ const contentData: ModuleContentData = {
                 </Alert>
 
                 <KeyTakeaways takeaways={[
-                    { icon: Thermometer, text: "Warning: Call your doctor immediately for a fever over 100°F (38°C)." },
-                    { icon: Droplet, text: "Track your daily urine output and weight. A big drop in urine or a rapid weight gain requires an urgent call." },
-                    { icon: Users, text: "Precaution: Avoid crowded places and wear a mask in public for the first 3 months to prevent infection." },
-                    { icon: Ban, text: "Rule: For the first 3 months, eat only fresh, home-cooked food. Avoid all raw or outside food." }
+                    { icon: Thermometer, text: "A fever over 100°F (38°C) is a major warning sign. Call your doctor immediately." },
+                    { icon: Droplet, text: "Track your daily urine output and weight. A big drop in urine or rapid weight gain requires an urgent call." },
+                    { icon: Users, text: "Avoid crowded places and wear a mask in public for the first 3 months to prevent infection." },
+                    { icon: Ban, text: "For the first 3 months, eat only fresh, home-cooked food. Avoid all raw or outside food." }
                 ]} />
             </div>
         ),
@@ -472,10 +472,10 @@ const contentData: ModuleContentData = {
                     </ul>
                 </div>
                 <KeyTakeaways takeaways={[
-                    { icon: ShieldAlert, text: "Warning: Never stop taking your medication unless explicitly told to by your transplant team. This is a primary cause of rejection." },
-                    { icon: ShieldQuestion, text: "Rule: You must check with your transplant doctor before taking ANY new medicine, even over-the-counter or herbal drugs." },
-                    { icon: Users, text: "Fact: Increased risk of infection is a major side effect. You must be vigilant about hygiene." },
-                    { icon: Ban, text: "Remember: Grapefruit and its juice are strictly forbidden as they interfere with some of these medications." }
+                    { icon: ShieldAlert, text: "Never stop or change your medication on your own. This is a primary cause of rejection." },
+                    { icon: ShieldQuestion, text: "Check with your transplant doctor before taking ANY new medicine, even over-the-counter drugs." },
+                    { icon: Users, text: "A higher risk of infection is a major side effect. You must be vigilant about hygiene." },
+                    { icon: Ban, text: "Grapefruit and its juice are strictly forbidden as they interfere with some anti-rejection medications." }
                 ]} />
             </div>
         ),
@@ -568,10 +568,10 @@ const contentData: ModuleContentData = {
                     </Card>
                 </div>
                 <KeyTakeaways takeaways={[
-                    { icon: Target, text: "Warning: Never miss, stop, or change your medication dose on your own. This is a top cause of transplant failure." },
-                    { icon: ClipboardList, text: "Rule: Always keep an updated list of your medications and ensure you have at least one week's stock." },
-                    { icon: Ban, text: "Precaution: Do not take any over-the-counter drugs or herbal remedies without your doctor's approval." },
-                    { icon: Clock, text: "Remember: Take your pills at the exact same time every day to maintain stable drug levels." }
+                    { icon: Target, text: "Never miss, stop, or change your medication dose on your own. This is a top cause of transplant failure." },
+                    { icon: ClipboardList, text: "Always keep an updated list of your medications and ensure you have at least one week's stock." },
+                    { icon: Ban, text: "Do not take any over-the-counter drugs or herbal remedies without your doctor's approval." },
+                    { icon: Clock, text: "Take your pills at the exact same time every day to maintain stable drug levels in your blood." }
                 ]} />
             </div>
         ),
@@ -618,10 +618,10 @@ const contentData: ModuleContentData = {
                     </li>
                 </ul>
                 <KeyTakeaways takeaways={[
-                    { icon: CheckCircle, text: "Fact: Acute rejection is common in the first few weeks and is often treatable if caught early." },
-                    { icon: Clock, text: "Warning: Chronic rejection is a slow process that can occur over years and is harder to treat." },
-                    { icon: Stethoscope, text: "Remember: Rejection is often detected by blood tests before you feel any symptoms." },
-                    { icon: Pill, text: "Rule: Taking your medication correctly is the single best way to prevent rejection." }
+                    { icon: CheckCircle, text: "Acute rejection is common in the first few weeks and is often treatable if caught early by your team." },
+                    { icon: Clock, text: "Chronic rejection is a slower process that can occur over years and is harder to treat." },
+                    { icon: Stethoscope, text: "Rejection is often detected by blood tests before you feel any symptoms." },
+                    { icon: Pill, text: "Taking your medication correctly is the single best way to prevent all types of rejection." }
                 ]} />
             </div>
         ),
@@ -630,7 +630,7 @@ const contentData: ModuleContentData = {
                 title="Explain Like I'm 10: The Body's Security Team"
                 explanation={
                     <div className="space-y-4">
-                        <p>The word "rejection" sounds very scary, but let's think of it in a simpler way. Your body has its own security team called the immune system. Its job is to patrol your body and attack anything it doesn't recognize, like a germ. Because your new kidney came from someone else, your security team might see it and think, "Hey, you're not from around here!" and try to fight it off. This "fight" is what doctors call rejection.</p>
+                        <p>"Rejection" sounds like a very scary word, but let's think of it in a simpler way. Your body has its own security team called the immune system. Its job is to patrol your body and attack anything it doesn't recognize, like a germ. Because your new kidney came from someone else, your security team might see it and think, "Hey, you're not from around here!" and try to fight it off. This "fight" is what doctors call rejection.</p>
                         <p>That's where your "friendship medicine" comes in. It's like a special memo you give to your security team every day that says, "Everyone calm down. This new kidney is a friend and a VIP. Do not attack."</p>
                         <p>Sometimes, especially in the beginning, the security team might still get a little suspicious and start to investigate the new kidney. This is called "acute rejection." Doctors can usually spot this very early with your regular blood tests, long before you even feel sick. When they see it, they can give you a little extra or different medicine to remind the security team to back off. Catching it early is the key, and most of the time, it's easily solved. This is why taking your medicine perfectly and going to all your check-ups is so vital!</p>
                     </div>
@@ -701,10 +701,10 @@ const contentData: ModuleContentData = {
                     </Card>
                 </div>
                 <KeyTakeaways takeaways={[
-                    { icon: Pill, text: "Warning: Medication non-adherence is a primary cause of late kidney loss." },
-                    { icon: HeartPulse, text: "Rule: You must control your blood pressure and cholesterol to protect the kidney's blood vessels." },
-                    { icon: ShieldAlert, text: "Fact: Your body can develop new antibodies against the kidney over time, causing late rejection." },
-                    { icon: HeartHandshake, text: "Fact: Living donor kidneys generally have higher long-term success rates." }
+                    { icon: Pill, text: "Medication non-adherence is a primary, controllable cause of late kidney loss." },
+                    { icon: HeartPulse, text: "You must control your blood pressure and cholesterol to protect the kidney's delicate blood vessels." },
+                    { icon: ShieldAlert, text: "Your body can develop new antibodies against the kidney over time, causing late rejection." },
+                    { icon: HeartHandshake, text: "Living donor kidneys generally have higher long-term success rates." }
                 ]} />
             </div>
         ),
@@ -784,10 +784,10 @@ const contentData: ModuleContentData = {
                     </CardContent>
                 </Card>
                 <KeyTakeaways takeaways={[
-                    { icon: ShieldAlert, text: "Fact: You have a higher risk of infections and specific cancers (especially skin cancer)." },
-                    { icon: CalendarClock, text: "Rule: Lifelong, regular follow-ups with your nephrologist and lab tests are mandatory." },
-                    { icon: Ban, text: "Warning: Avoid nonsteroidal anti-inflammatory drugs (NSAIDs) like Ibuprofen as they can harm your kidney." },
-                    { icon: Stethoscope, text: "Remember to follow the recommended schedule for all cancer screenings (skin, colon, etc.)." }
+                    { icon: ShieldAlert, text: "You have a higher risk of infections and specific cancers, especially skin cancer, due to your medication." },
+                    { icon: CalendarClock, text: "Lifelong, regular follow-ups with your nephrologist and lab tests are mandatory, not optional." },
+                    { icon: Ban, text: "Avoid certain painkillers like Ibuprofen (NSAIDs) as they can harm your new kidney." },
+                    { icon: Stethoscope, text: "You must follow the recommended schedule for all cancer screenings to catch any issues early." }
                 ]} />
             </div>
         ),
@@ -852,10 +852,10 @@ const contentData: ModuleContentData = {
                 </div>
                 
                 <KeyTakeaways takeaways={[
-                    { icon: Ban, text: "Warning: Absolutely no grapefruit or grapefruit juice. It interferes with your medication." },
-                    { icon: UtensilsCrossed, text: "Rule: Strictly limit salt, sugar, and fat to control blood pressure and prevent weight gain." },
-                    { icon: Target, text: "Goal: Drink more than 3 liters of water every day to keep your new kidney well-flushed." },
-                    { icon: Leaf, text: "Remember: A balanced diet high in fiber and lean protein is your new foundation." }
+                    { icon: Ban, text: "Absolutely no grapefruit or grapefruit juice. It dangerously interferes with your medication." },
+                    { icon: UtensilsCrossed, text: "Strictly limit salt, sugar, and unhealthy fats to control blood pressure and prevent weight gain." },
+                    { icon: Target, text: "Drink plenty of fluids, aiming for more than 3 liters every day to keep your new kidney well-flushed." },
+                    { icon: Leaf, text: "A balanced, heart-healthy diet high in fiber and lean protein is your new foundation." }
                 ]} />
             </div>
         ),
@@ -917,10 +917,10 @@ const contentData: ModuleContentData = {
                     </AlertDescription>
                 </Alert>
                 <KeyTakeaways takeaways={[
-                    { icon: Ban, text: "Warning: You must avoid heavy lifting for the first 3 months and all contact sports (boxing, football) for life." },
-                    { icon: User, text: "Rule: Start walking as soon as possible after surgery to prevent blood clots and other complications." },
-                    { icon: Target, text: "Goal: Aim for 7,500 to 10,000 steps daily as a long-term fitness goal." },
-                    { icon: ShieldQuestion, text: "Remember: Always consult your transplant team before starting any new exercise regimen." }
+                    { icon: Ban, text: "Avoid heavy lifting for the first 3 months and all contact sports (boxing, football) for life." },
+                    { icon: User, text: "Start walking as soon as possible after surgery to prevent blood clots and other complications." },
+                    { icon: Target, text: "Aim for 7,500 to 10,000 steps daily as a long-term fitness goal." },
+                    { icon: ShieldQuestion, text: "Always consult your transplant team before starting any new exercise regimen." }
                 ]} />
             </div>
         ),
@@ -1004,10 +1004,10 @@ const contentData: ModuleContentData = {
                     </Card>
                 </div>
                 <KeyTakeaways takeaways={[
-                    { icon: Pill, text: "Fact: Immunosuppressive medication is the most significant risk factor for developing diabetes after transplant." },
-                    { icon: Scale, text: "Remember: PTDM is managed first with diet and exercise, then medication if needed." },
-                    { icon: Stethoscope, text: "Rule: Your blood sugar will be monitored closely with regular blood tests, especially in the first year." },
-                    { icon: Target, text: "Goal: The A1C target for most patients with PTDM is less than 7%." }
+                    { icon: Pill, text: "Immunosuppressive medication is the most significant risk factor for developing diabetes after transplant." },
+                    { icon: Scale, text: "PTDM is managed first and foremost with lifestyle changes: diet, weight loss, and exercise." },
+                    { icon: Stethoscope, text: "Your blood sugar will be monitored closely with regular blood tests, especially in the first year." },
+                    { icon: Target, text: "The A1C target for most patients with PTDM is less than 7% to protect long-term health." }
                 ]} />
             </div>
         ),
@@ -1042,10 +1042,10 @@ const contentData: ModuleContentData = {
                     <li><strong>Adjusting to the New Organ:</strong> It can feel strange to have an organ from another person inside you. While some people worry about taking on the donor's personality, rest assured this is not possible.</li>
                 </ul>
                 <KeyTakeaways takeaways={[
-                    { icon: Heart, text: "Remember: Worrying about rejection is a common and normal fear. Talk about it." },
+                    { icon: Heart, text: "Worrying about rejection is a common and normal fear. Talking about it is the best way to manage it." },
                     { icon: Smile, text: "It's normal to feel complex emotions like gratitude and sadness, especially with a deceased donor." },
-                    { icon: Users, text: "Fact: 'Survivor's guilt' is a recognized feeling; you are not alone in it." },
-                    { icon: MessageSquare, text: "Action: Your transplant team includes social workers and psychologists to help you. Reach out to them." }
+                    { icon: Users, text: "Feeling 'survivor's guilt' is a recognized and valid emotion; you are not alone in experiencing it." },
+                    { icon: MessageSquare, text: "Your transplant team includes social workers and psychologists to help you. Reach out to them for support." }
                 ]} />
             </div>
         ),
@@ -1095,10 +1095,10 @@ const contentData: ModuleContentData = {
                     <p>You will have lab work and imaging tests to check your health. Blood and urine samples will check your overall health and confirm if you are a good match for the recipient. Imaging tests like a chest X-ray and CT scan help the team see the size and structure of your kidneys and their blood supply, which helps them decide which kidney is better to donate, letting you keep the healthier of the two.</p>
                 </div>
                 <KeyTakeaways takeaways={[
-                    { icon: Heart, text: "Remember: The evaluation is to ensure donation is safe for YOU; your health is the top priority." },
-                    { icon: Users, text: "Expect: You will meet a full team: a nephrologist, surgeon, nurse, and dietitian." },
-                    { icon: Stethoscope, text: "Fact: Imaging tests (CT scan) are done to see the kidney's structure and decide which is better to donate." },
-                    { icon: Clock, text: "Fact: The entire evaluation process can take several months to complete." }
+                    { icon: Heart, text: "The evaluation is to ensure donation is safe for YOU; your health and safety are the top priorities." },
+                    { icon: Users, text: "Expect to meet a full team of experts: a nephrologist, surgeon, nurse, and dietitian." },
+                    { icon: Stethoscope, text: "Imaging tests (like a CT scan) help the team see your kidney's structure and decide which is better to donate." },
+                    { icon: Clock, text: "The entire evaluation process is thorough and can take several months to complete." }
                 ]} />
             </div>
         ),
@@ -1138,10 +1138,10 @@ const contentData: ModuleContentData = {
                 </ul>
                 <p className="pt-2">The transplant team is dedicated to helping potential donors fully understand the risks and benefits. Their primary responsibility is ensuring your well-being throughout the entire process.</p>
                 <KeyTakeaways takeaways={[
-                    { icon: Ban, text: "Rule: You cannot donate if you have conditions like diabetes, cancer, or significant heart disease." },
-                    { icon: Heart, text: "Remember: These rules are in place to protect your long-term health." },
-                    { icon: ShieldAlert, text: "Warning: Active smoking or being significantly overweight may make you ineligible." },
-                    { icon: ShieldCheck, text: "Fact: The team's primary responsibility is to ensure YOUR well-being, not just the recipient's." }
+                    { icon: Ban, text: "You cannot donate if you have conditions like diabetes, cancer, or significant heart disease." },
+                    { icon: Heart, text: "These rules are not a judgment, but are in place to protect your long-term health." },
+                    { icon: ShieldAlert, text: "Active smoking or being significantly overweight can make donation unsafe for you." },
+                    { icon: ShieldCheck, text: "The team's primary responsibility is to ensure YOUR well-being, not just the recipient's." }
                 ]} />
             </div>
         ),
@@ -1180,10 +1180,10 @@ const contentData: ModuleContentData = {
                 <h3 className="text-xl font-bold font-headline pt-4">Your Decision is Respected</h3>
                 <p>It's important to know that you can change your mind about donating at any point up to the surgery, for any reason. Your decision will be respected, and the transplant team will support you, no matter what you choose.</p>
                 <KeyTakeaways takeaways={[
-                    { icon: CheckCircle, text: "Rule: You can change your mind about donating at any time for any reason, no questions asked." },
-                    { icon: HandCoins, text: "Warning: The assessment ensures you are not being forced or paid to donate, which is illegal." },
-                    { icon: BrainCircuit, text: "Goal: You must demonstrate you understand all the risks and benefits ('informed consent')." },
-                    { icon: MessageSquare, text: "Remember: Your motivations and support system will be discussed to ensure you're ready for the emotional journey." }
+                    { icon: CheckCircle, text: "You can change your mind about donating at any time for any reason, no questions asked." },
+                    { icon: HandCoins, text: "The assessment ensures you are not being forced or paid to donate, which is illegal." },
+                    { icon: BrainCircuit, text: "You must demonstrate a full understanding of the risks and benefits to give 'informed consent'." },
+                    { icon: MessageSquare, text: "Your motivations and support system will be discussed to ensure you're ready for the emotional journey." }
                 ]} />
             </div>
         ),
@@ -1222,10 +1222,10 @@ const contentData: ModuleContentData = {
                     <li>The risk of death from this surgery is extremely low, at only <strong>0.03%</strong> (or 3 in every 10,000 donors).</li>
                 </ul>
                 <KeyTakeaways takeaways={[
-                    { icon: Target, text: "Fact: The risk of death from donor surgery is extremely low (0.03% or 3 in 10,000)." },
-                    { icon: CheckCircle, text: "Info: Most surgeries are laparoscopic ('keyhole'), leading to a faster recovery of 4-6 weeks." },
-                    { icon: ShieldAlert, text: "Warning: A common post-op risk is a hernia if you lift heavy things too soon." },
-                    { icon: Bed, text: "Expect: You will be under general anesthesia and won't feel the 2-3 hour procedure." }
+                    { icon: Target, text: "The risk of death from donor surgery is extremely low (0.03% or 3 in 10,000)." },
+                    { icon: CheckCircle, text: "Most surgeries are laparoscopic ('keyhole'), leading to a faster recovery of 4-6 weeks." },
+                    { icon: ShieldAlert, text: "A common post-op risk is a hernia if you lift heavy things too soon." },
+                    { icon: Bed, text: "You will be under general anesthesia and won't feel the 2-3 hour procedure." }
                 ]} />
             </div>
         ),
@@ -1256,10 +1256,10 @@ const contentData: ModuleContentData = {
                 <p>A full recovery typically takes about <strong>four to six weeks</strong>. However, many donors can return to work much sooner. If you have a desk job, you may be able to return after only two weeks. If your job is more physically demanding, your employer may be able to offer a temporary desk-based role during your recovery.</p>
                 <p>It's very important that you talk to your transplant team about when it's safe for you to return to work, sports, and other physical activities. Following their guidance will ensure you heal properly and avoid complications.</p>
                 <KeyTakeaways takeaways={[
-                    { icon: Building, text: "Expect: Most donors stay in the hospital for only 1-2 nights." },
-                    { icon: Bike, text: "Goal: You will be encouraged to get up and walk on the same day as your surgery." },
-                    { icon: Clock, text: "Timeline: Full recovery takes 4-6 weeks, but a return to a desk job can be as soon as 2 weeks." },
-                    { icon: Ban, text: "Warning: You must avoid heavy lifting for several weeks to let your muscles heal properly and prevent a hernia." }
+                    { icon: Building, text: "Most donors stay in the hospital for only 1-2 nights after their surgery." },
+                    { icon: Bike, text: "You will be encouraged to get up and walk on the same day as your surgery to speed up recovery." },
+                    { icon: Clock, text: "Full recovery takes 4-6 weeks, but a return to a desk job can be as soon as 2 weeks." },
+                    { icon: Ban, text: "You must avoid heavy lifting for several weeks to let your muscles heal properly and prevent a hernia." }
                 ]} />
             </div>
         ),
@@ -1299,10 +1299,10 @@ const contentData: ModuleContentData = {
                 <p>Most living donors (80–90%) report feeling very positive about their decision to donate. However, it is also normal to feel anxious or sad for a short time after donation as you process the experience. These feelings are not uncommon, even if both you and the recipient are doing well.</p>
                 <p>It's important that you talk to your transplant team during your follow-up visits about how you are feeling, both physically and emotionally. Your emotional health is just as important as your physical recovery, and support is always available.</p>
                 <KeyTakeaways takeaways={[
-                    { icon: Heart, text: "Fact: You can live a normal, healthy life with one kidney." },
-                    { icon: Stethoscope, text: "Fact: Your remaining kidney grows and functions at about 70-80% of your original capacity." },
-                    { icon: ShieldAlert, text: "Risk: The risk of you needing a transplant later is very low (<1%), but you get high priority if needed." },
-                    { icon: Smile, text: "Fact: The vast majority of donors (80-90%) feel very positive about their decision to donate." }
+                    { icon: Heart, text: "You can live a completely normal, healthy life with one kidney." },
+                    { icon: Stethoscope, text: "Your remaining kidney grows and functions at about 70-80% of your original two-kidney capacity." },
+                    { icon: ShieldAlert, text: "The risk of you needing a transplant later is very low (<1%), and you get high priority if you do." },
+                    { icon: Smile, text: "The vast majority of donors (80-90%) feel very positive about their decision to donate." }
                 ]} />
             </div>
         ),
@@ -1384,10 +1384,10 @@ const contentData: ModuleContentData = {
                     </AlertDescription>
                 </Alert>
                 <KeyTakeaways takeaways={[
-                    { icon: CalendarClock, text: "Rule: You must have an annual kidney check-up (blood and urine tests) for life." },
-                    { icon: Scale, text: "Action: Maintain a healthy weight and control your blood pressure to protect your remaining kidney." },
-                    { icon: Ban, text: "Warning: Avoid certain painkillers (NSAIDs like ibuprofen) that can harm your kidney. Always ask first." },
-                    { icon: Heart, text: "Remember: Living a healthy lifestyle (no smoking, moderate alcohol) is crucial." }
+                    { icon: CalendarClock, text: "You must have an annual kidney check-up (blood and urine tests) for life." },
+                    { icon: Scale, text: "Maintain a healthy weight and control your blood pressure to protect your remaining kidney." },
+                    { icon: Ban, text: "Avoid certain painkillers (NSAIDs like ibuprofen) that can harm your kidney. Always ask your doctor first." },
+                    { icon: Heart, text: "Living a healthy lifestyle with good habits is crucial for your long-term well-being." }
                 ]} />
             </div>
         ),
@@ -1431,10 +1431,10 @@ const contentData: ModuleContentData = {
                     </CardContent>
                 </Card>
                 <KeyTakeaways takeaways={[
-                    { icon: HeartHandshake, text: "Your role is to be a 'support system manager' and an emotional anchor." },
-                    { icon: BookOpen, text: "Action: To be effective, learn the basics of the transplant process and medications." },
-                    { icon: Users, text: "Remember: The donor is also having major surgery and needs separate support." },
-                    { icon: Smile, text: "Fact: Your support directly and profoundly impacts the recovery of both individuals." }
+                    { icon: HeartHandshake, text: "Your role is to be a 'support system manager' and an emotional anchor for the patient and donor." },
+                    { icon: BookOpen, text: "To be effective, learn the basics of the transplant process and the lifelong medications involved." },
+                    { icon: Users, text: "Remember that the donor is also having major surgery and needs separate support and encouragement." },
+                    { icon: Smile, text: "Your positive support directly and profoundly impacts the recovery of both individuals." }
                 ]} />
             </div>
         ),
@@ -1487,10 +1487,10 @@ const contentData: ModuleContentData = {
                     </li>
                 </ul>
                 <KeyTakeaways takeaways={[
-                    { icon: MessageSquare, text: "Action: Be a 'second pair of ears' in appointments to help absorb complex information." },
-                    { icon: CalendarClock, text: "Task: Help with the logistics of transportation to the many pre-transplant evaluations." },
-                    { icon: Home, text: "Task: Assist with household chores and errands, as the recipient may have significant fatigue." },
-                    { icon: Heart, text: "Remember: Your practical help is crucial for reducing the stress on the patient and donor." }
+                    { icon: MessageSquare, text: "Be a 'second pair of ears' in appointments to help absorb complex information." },
+                    { icon: CalendarClock, text: "Help with the logistics of transportation to the many pre-transplant evaluations." },
+                    { icon: Home, text: "Assist with household chores and errands, as the recipient may have significant fatigue." },
+                    { icon: Heart, text: "Your practical help is crucial for reducing the stress on the patient and donor." }
                 ]} />
             </div>
         ),
@@ -1554,10 +1554,10 @@ const contentData: ModuleContentData = {
                     </Card>
                 </div>
                 <KeyTakeaways takeaways={[
-                    { icon: Users, text: "Task: Be the single point of contact for updating friends and family to let the patients rest." },
-                    { icon: User, text: "Remember: The donor has had major surgery too, not just the recipient." },
-                    { icon: Smile, text: "Fact: Your familiar presence in the hospital room is a huge source of comfort." },
-                    { icon: ShieldCheck, text: "Action: Be prepared to advocate for their needs if they cannot speak for themselves." }
+                    { icon: Users, text: "Be the single point of contact for updating friends and family to let the patients rest." },
+                    { icon: User, text: "Remember: The donor has had major surgery too and needs your support, not just the recipient." },
+                    { icon: Smile, text: "Your familiar, calm presence in the hospital room is a huge source of comfort." },
+                    { icon: ShieldCheck, text: "Be prepared to advocate for their needs if they are unable to speak for themselves." }
                 ]} />
             </div>
         ),
@@ -1594,10 +1594,10 @@ const contentData: ModuleContentData = {
                     <li><strong>Enforcing Restrictions:</strong> Gently help enforce post-operative activity restrictions for both the donor and recipient, such as no heavy lifting.</li>
                 </ul>
                 <KeyTakeaways takeaways={[
-                    { icon: ShieldCheck, text: "Top Priority: Strict infection control (handwashing, avoiding sick people) is your most important job." },
-                    { icon: Ban, text: "Rule: Gently but firmly enforce activity restrictions (e.g., no heavy lifting)." },
-                    { icon: Stethoscope, text: "Task: You may need to help monitor and record vital signs like blood pressure and temperature." },
-                    { icon: CalendarClock, text: "Task: Transportation to frequent follow-up appointments is a key caregiving duty." }
+                    { icon: ShieldCheck, text: "Strict infection control (handwashing, avoiding sick people) is your most important job." },
+                    { icon: Ban, text: "Gently but firmly help enforce activity restrictions, especially the 'no heavy lifting' rule." },
+                    { icon: Stethoscope, text: "You may need to help monitor and record vital signs like blood pressure and temperature." },
+                    { icon: CalendarClock, text: "Transportation to frequent follow-up appointments is a key caregiving duty." }
                 ]} />
             </div>
         ),
@@ -1651,10 +1651,10 @@ const contentData: ModuleContentData = {
                     </CardContent>
                 </Card>
                 <KeyTakeaways takeaways={[
-                    { icon: ClipboardList, text: "Action: Help organize pills into a weekly, timed pillbox. This is one of the most effective support tasks." },
-                    { icon: BellRing, text: "Action: Help set daily alarms as reminders for each medication time." },
-                    { icon: FileText, text: "Task: Help track when prescriptions are running low so refills can be ordered on time." },
-                    { icon: ShieldQuestion, text: "Remember: Your role is to support and remind, not to administer medication unless directed." }
+                    { icon: ClipboardList, text: "Help organize pills into a weekly, timed pillbox. This is one of the most effective support tasks." },
+                    { icon: BellRing, text: "Help set daily alarms on a phone or watch as reminders for each medication time." },
+                    { icon: FileText, text: "Help track when prescriptions are running low so refills can be ordered on time." },
+                    { icon: ShieldQuestion, text: "Your role is to support and remind, not to administer medication unless directed to do so." }
                 ]} />
             </div>
         ),
@@ -1699,10 +1699,10 @@ const contentData: ModuleContentData = {
                     </AlertDescription>
                 </Alert>
                 <KeyTakeaways takeaways={[
-                    { icon: Thermometer, text: "Warning: A fever over 100.4°F (38°C) is a major red flag. Call the team immediately." },
-                    { icon: Frown, text: "Rule: Trust your gut. If the patient just doesn't seem 'right', it's always worth a phone call." },
-                    { icon: Siren, text: "Warning: New pain over the transplant area or a big drop in urine output are urgent signs." },
-                    { icon: Phone, text: "Remember: Do not wait for the next appointment if you see a warning sign. Early intervention is critical." }
+                    { icon: Thermometer, text: "A fever over 100.4°F (38°C) is a major red flag. Call the team immediately." },
+                    { icon: Frown, text: "Trust your gut. If the patient just doesn't seem 'right', it's always worth making a phone call." },
+                    { icon: Siren, text: "New pain over the transplant area or a big drop in urine output are urgent signs." },
+                    { icon: Phone, text: "Do not wait for the next appointment if you see a warning sign. Early intervention is critical." }
                 ]} />
             </div>
         ),
@@ -1758,10 +1758,10 @@ const contentData: ModuleContentData = {
                     </Card>
                 </div>
                 <KeyTakeaways takeaways={[
-                    { icon: User, text: "Rule: You can't pour from an empty cup. Prioritize your own rest and nutrition." },
-                    { icon: Smile, text: "Action: Taking a break isn't selfish. Arrange for others to help so you can recharge." },
-                    { icon: MessageSquare, text: "Remember: Recognize your limits. It's okay to ask for help and get your own support (friends, counseling)." },
-                    { icon: ShieldAlert, text: "Warning: Caregiver burnout is a real risk. Caring for yourself is essential to provide good care." }
+                    { icon: User, text: "You can't pour from an empty cup. Prioritize your own rest and nutrition to be an effective caregiver." },
+                    { icon: Smile, text: "Taking a break isn't selfish; it's necessary. Arrange for others to help so you can recharge." },
+                    { icon: MessageSquare, text: "Recognize your limits. It's okay to ask for help and get your own support from friends or counselors." },
+                    { icon: ShieldAlert, text: "Caregiver burnout is a real risk. Caring for yourself is essential to provide good care for your loved one." }
                 ]} />
             </div>
         ),
@@ -1807,10 +1807,10 @@ const contentData: ModuleContentData = {
                     </CardContent>
                 </Card>
                 <KeyTakeaways takeaways={[
-                    { icon: Phone, text: "Question to Ask: 'Who is the primary contact person for urgent questions after hours?'" },
-                    { icon: FileText, text: "Tip: Write down questions before an appointment so you don't forget." },
-                    { icon: Users, text: "Action: It's okay to ask about support resources for yourself as a caregiver." },
-                    { icon: HelpCircle, text: "Remember: Clarify any instructions you don't understand. No question is a silly question." }
+                    { icon: Phone, text: "Always know who to call for urgent questions, especially after hours." },
+                    { icon: FileText, text: "Write down questions before an appointment so you don't forget them in the moment." },
+                    { icon: Users, text: "It's okay to ask about support resources for yourself as a caregiver. Your well-being matters." },
+                    { icon: HelpCircle, text: "Clarify any instructions you don't understand. No question is a silly question." }
                 ]} />
             </div>
         ),
@@ -1902,10 +1902,10 @@ const contentData: ModuleContentData = {
                     </div>
                 </div>
                 <KeyTakeaways takeaways={[
-                    { icon: Info, text: "Fact: A sore throat and nausea are common, temporary side effects of general anesthesia." },
-                    { icon: ShieldCheck, text: "Remember: Serious complications from anesthesia are very rare, but your team is prepared for them." },
-                    { icon: AlertTriangle, text: "Warning: Inform your anesthetist about all existing health conditions, like heart or lung disease." },
-                    { icon: Stethoscope, text: "Info: Specific lines, like arterial or central lines, have their own set of potential but uncommon complications." }
+                    { icon: Info, text: "A sore throat and nausea are common, temporary side effects of general anesthesia." },
+                    { icon: ShieldCheck, text: "Serious complications from anesthesia are very rare, but your medical team is prepared for them." },
+                    { icon: AlertTriangle, text: "You must inform your anesthetist about all existing health conditions, like heart or lung disease." },
+                    { icon: Stethoscope, text: "Specific IV lines, like arterial or central lines, have their own set of potential but uncommon complications." }
                 ]} />
             </div>
         ),
@@ -1928,6 +1928,94 @@ const contentData: ModuleContentData = {
             />
         )
     },
+    'patient-responsibilities': {
+        standard: (
+          <div className="space-y-6 text-base leading-relaxed">
+            <h2 className="text-2xl font-bold font-headline">A Partnership in Your Care</h2>
+            <p>A successful transplant journey is a partnership between you and your healthcare team. Your active participation and commitment to these responsibilities are key to achieving the best possible outcome.</p>
+    
+            <div className="space-y-4 mt-4">
+              <div className="flex items-start gap-4">
+                <BookOpen className="w-10 h-10 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold text-lg">Be Informed</h4>
+                  <ul className="list-disc list-inside mt-1 text-muted-foreground">
+                    <li>Learn as much as you can about your medical condition and treatment plan.</li>
+                    <li>Ask questions whenever you do not understand your care, treatment, or service.</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <ClipboardList className="w-10 h-10 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold text-lg">Follow Your Treatment Plan</h4>
+                  <ul className="list-disc list-inside mt-1 text-muted-foreground">
+                    <li>Provide complete and accurate health information to your care team.</li>
+                    <li>Always inform other doctors or specialists that you are a transplant recipient.</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <Clock className="w-10 h-10 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold text-lg">Be on Time</h4>
+                  <ul className="list-disc list-inside mt-1 text-muted-foreground">
+                    <li>Be punctual for all your appointments and medical examinations.</li>
+                    <li>Ensure your lab reports and any required documents are available for your visit.</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <ShieldCheck className="w-10 h-10 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold text-lg">Follow Facility Policies</h4>
+                  <ul className="list-disc list-inside mt-1 text-muted-foreground">
+                    <li>Adhere to all hospital safety policies and instructions.</li>
+                    <li>Help maintain a healing environment by following rules, such as no-tobacco policies.</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <Users className="w-10 h-10 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold text-lg">Be Considerate</h4>
+                  <ul className="list-disc list-inside mt-1 text-muted-foreground">
+                    <li>Treat other patients and all hospital staff with respect and courtesy.</li>
+                    <li>Help maintain a quiet and peaceful environment for everyone.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <KeyTakeaways takeaways={[
+              { icon: MessageSquare, text: "Always ask questions if you don't understand your care or treatment plan." },
+              { icon: FileText, text: "Provide complete and accurate health information to your entire medical team." },
+              { icon: Clock, text: "Being punctual for appointments and having your reports ready is crucial for your care." },
+              { icon: Users, text: "Treating staff and other patients with respect helps create a positive healing environment for all." }
+            ]} />
+          </div>
+        ),
+        eli10: (
+          <ELI10Layout
+            title="Explain Like I'm 10: Being on the Same Team"
+            explanation={
+              <div className="space-y-4">
+                <p>Think of your health journey like being on a sports team, and you are the star player! Your doctors, nurses, and coordinators are your coaches. For the team to win (which means for you to be healthy), the player and the coaches have to work together perfectly.</p>
+                <p><strong>Know the Playbook:</strong> Your job is to understand the game plan. This means learning about your health and asking questions if you're ever confused. There are no silly questions when it's about your health!</p>
+                <p><strong>Follow the Coach's Instructions:</strong> Your coaches need to know everything to help you best, so always tell them the truth about how you're feeling. Following their advice, like taking your medicine, is like running the right play in a game.</p>
+                <p><strong>Show Up for Practice:</strong> Your appointments are like team practice. Being on time shows you're a committed player. It's super important for keeping you healthy.</p>
+                <p><strong>Be a Good Teammate:</strong> The hospital is a big locker room with other players and coaches. Being respectful and kind to everyone helps the whole team succeed. By being a great team player, you help yourself and everyone around you on the path to victory!</p>
+              </div>
+            }
+            takeaways={[
+              { icon: MessageSquare, text: "Your Job: Ask questions! If you're confused about the 'game plan' for your health, speak up." },
+              { icon: FileText, text: "Your Job: Be honest with your 'coaches' (the doctors) about how you feel and what's going on." },
+              { icon: Clock, text: "Your Job: Show up on time for 'practice' (your appointments). This is a key part of staying healthy." },
+              { icon: Users, text: "Your Job: Be a good teammate by being respectful to the hospital staff and other patients." }
+            ]}
+          />
+        )
+      },
 };
 
 export default contentData;
