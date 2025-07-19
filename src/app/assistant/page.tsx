@@ -22,7 +22,7 @@ const FormSchema = z.object({
 type FormValues = z.infer<typeof FormSchema>;
 
 export default function AssistantPage() {
-  const { t } = useAppContext();
+  const { t, role } = useAppContext();
   const [lastQuestion, setLastQuestion] = useState<string | null>(null);
   const [response, setResponse] = useState<AnswerTransplantQuestionsOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +42,7 @@ export default function AssistantPage() {
     setLastQuestion(data.question);
 
     try {
-      const result = await answerTransplantQuestions({ question: data.question });
+      const result = await answerTransplantQuestions({ question: data.question, role });
       setResponse(result);
     } catch (err) {
       setError(t('assistantError'));
