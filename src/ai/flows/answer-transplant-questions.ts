@@ -66,6 +66,7 @@ If the answer cannot be found in the provided context, you MUST respond with the
 ---
 
 User's Question: {{question}}`,
+  model: 'googleai/gemini-1.5-pro-latest',
 });
 
 
