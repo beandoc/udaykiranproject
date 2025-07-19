@@ -93,7 +93,7 @@ export default function AssistantPage() {
              console.warn("Speech Recognition API not supported in this browser.");
         }
     }
-   }, []);
+   }, [toast]);
 
   const handleMicClick = () => {
     if (!recognitionRef.current) {
@@ -250,3 +250,4 @@ export default function AssistantPage() {
     </div>
   );
 }
+
