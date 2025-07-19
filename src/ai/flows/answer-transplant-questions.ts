@@ -43,12 +43,10 @@ const answerTransplantQuestionsPrompt = ai.definePrompt({
   input: {schema: AnswerTransplantQuestionsInputSchema},
   output: {schema: AnswerTransplantQuestionsOutputSchema},
   tools: [checkSourceReliability],
-  prompt: `You are a helpful AI assistant providing information about kidney transplants.
-
-  Answer the following question clearly and concisely:
-  {{question}}
-
-  After answering, use the checkSourceReliability tool to determine if the source of your information is reliable.`,
+  system: `You are a helpful AI assistant providing information about kidney transplants.
+  You will answer the user's question clearly and concisely.
+  After generating your answer, you MUST use the checkSourceReliability tool to determine if the source of your information is reliable and set the isReliableSource field accordingly.`,
+  prompt: `Answer the following question: {{question}}`,
 });
 
 
