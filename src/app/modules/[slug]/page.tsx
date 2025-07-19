@@ -69,7 +69,7 @@ export default function ModulePage() {
 
     const handlePrevious = () => {
         if (currentQuestionIndex > 0) {
-            setCurrentQuestionIndex(currentQuestionIndex - 1);
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
         }
     };
     
@@ -130,14 +130,16 @@ export default function ModulePage() {
                                 <TabsTrigger value="eli10">{t('simplifiedView')}</TabsTrigger>
                             </TabsList>
                             <TabsContent value="standard" className="mt-4">
-                                <div className="p-6 border rounded-lg">
-                                    {moduleContentData.standard}
-                                </div>
+                                <div 
+                                    className="p-6 border rounded-lg prose dark:prose-invert max-w-none"
+                                    dangerouslySetInnerHTML={{ __html: moduleContentData.standard }} 
+                                />
                             </TabsContent>
                             <TabsContent value="eli10" className="mt-4">
-                                <div className="p-6 border rounded-lg bg-muted/20">
-                                    {moduleContentData.eli10}
-                                </div>
+                                <div 
+                                    className="p-6 border rounded-lg bg-muted/20 prose dark:prose-invert max-w-none"
+                                     dangerouslySetInnerHTML={{ __html: moduleContentData.eli10 }}
+                                />
                             </TabsContent>
                         </Tabs>
                     </CardContent>

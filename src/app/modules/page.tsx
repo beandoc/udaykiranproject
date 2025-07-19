@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -13,18 +14,12 @@ import { cn } from '@/lib/utils';
 import { buttonVariants, Button } from '@/components/ui/button';
 
 // Helper to calculate reading time
-const countWords = (node: React.ReactNode): number => {
-    if (typeof node === 'string') {
-        return node.trim().split(/\s+/).length;
-    }
-    if (React.isValidElement(node) && node.props.children) {
-        return React.Children.toArray(node.props.children).reduce((acc, child) => acc + countWords(child), 0);
-    }
-    if (Array.isArray(node)) {
-        return node.reduce((acc, child) => acc + countWords(child), 0);
-    }
-    return 0;
+const countWords = (text: string): number => {
+    // Remove HTML tags before counting words
+    const plainText = text.replace(/<[^>]+>/g, ' ');
+    return plainText.trim().split(/\s+/).length;
 };
+
 
 // Words per minute
 const WPM = 200; 
@@ -32,7 +27,8 @@ const WPM = 200;
 const calculateReadingTime = (slug: string, language: string) => {
     const contentData = getContentDataForLang(language);
     const content = contentData[slug];
-    const wordCount = countWords(content);
+    if (!content || !content.standard) return 1;
+    const wordCount = countWords(content.standard);
     const time = Math.ceil(wordCount / WPM);
     return Math.max(1, time); // Ensure at least 1 minute
 }
