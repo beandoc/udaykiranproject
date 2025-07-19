@@ -13,9 +13,10 @@ import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import { modulesByRole } from '@/lib/modules-data';
 import { getContentDataForLang } from '@/lib/content-data';
-import React from 'react';
+import React, { Children } from 'react';
 
 // Helper function to extract text from ReactNode, which is how our content is structured.
+// This version is designed to handle the simplified content structure.
 const extractTextFromReactNode = (node: React.ReactNode): string => {
   if (typeof node === 'string') {
     return node;
@@ -24,12 +25,17 @@ const extractTextFromReactNode = (node: React.ReactNode): string => {
     return String(node);
   }
   if (Array.isArray(node)) {
-    return node.map(extractTextFromReactNode).join('');
+    return node.map(child => extractTextFromReactNode(child)).join('');
   }
   if (React.isValidElement(node) && node.props.children) {
-    return React.Children.toArray(node.props.children)
-      .map(child => extractTextFromReactNode(child))
-      .join('');
+    const childrenArray = Children.toArray(node.props.children);
+    const text = childrenArray.map(child => extractTextFromReactNode(child)).join('');
+    
+    // Add line breaks for block-level elements to preserve structure
+    if (['p', 'h1', 'h2', 'h3', 'h4', 'div', 'li'].includes(node.type as string)) {
+      return text + '\n';
+    }
+    return text;
   }
   return '';
 };
