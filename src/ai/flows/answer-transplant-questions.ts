@@ -85,15 +85,19 @@ const answerTransplantQuestionsFlow = ai.defineFlow(
     outputSchema: AnswerTransplantQuestionsOutputSchema,
   },
   async ({ question, role, language }) => {
-    // 1. Get the list of module slugs for the given role.
-    const modulesForRole = modulesByRole[role].modules;
-    const slugs = modulesForRole.map(m => m.slug);
+    // 1. Get the list of ALL module slugs, regardless of role.
+    const allSlugs = new Set<string>();
+    Object.values(modulesByRole).forEach(roleData => {
+      roleData.modules.forEach(module => {
+        allSlugs.add(module.slug);
+      });
+    });
     
     // 2. Load the content for those modules in the correct language.
     const contentData = getContentDataForLang(language);
     
     // 3. Extract and combine the text from the relevant modules.
-    const context = slugs
+    const context = Array.from(allSlugs)
       .map(slug => {
         const moduleContent = contentData[slug];
         if (moduleContent) {
