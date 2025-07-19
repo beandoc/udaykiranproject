@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { User, UserCheck, Users, PlayCircle, HeartPulse, PartyPopper } from "lucide-react";
+import { User, HeartHandshake, Users as CaregiverIcon, PlayCircle, HeartPulse, PartyPopper } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAppContext, type Role } from "@/context/app-context";
@@ -11,8 +11,8 @@ import { cn } from "@/lib/utils";
 
 const roles = [
     { name: 'Patient', icon: User, descriptionKey: 'rolePatientDesc' },
-    { name: 'Donor', icon: UserCheck, descriptionKey: 'roleDonorDesc' },
-    { name: 'Caregiver', icon: Users, descriptionKey: 'roleCaregiverDesc' },
+    { name: 'Donor', icon: HeartHandshake, descriptionKey: 'roleDonorDesc' },
+    { name: 'Caregiver', icon: CaregiverIcon, descriptionKey: 'roleCaregiverDesc' },
 ] as const;
 
 export default function Home() {

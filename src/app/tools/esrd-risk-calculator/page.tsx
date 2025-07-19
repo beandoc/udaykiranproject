@@ -183,7 +183,7 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
                     <div className="lg:col-span-3">
                         <Card>
                             <CardHeader>
-                                <CardTitle>Questions</CardTitle>
+                                <CardTitle className="font-headline">Questions</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <Form {...form}>
@@ -316,7 +316,7 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
                     <div className="lg:col-span-2 space-y-6">
                         <Card>
                             <CardHeader>
-                                <CardTitle>Results</CardTitle>
+                                <CardTitle className="font-headline">Results</CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-4">
                                 <div className="space-y-2">
@@ -352,7 +352,7 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
             <TabsContent value="about" className="mt-6">
                 <Card>
                     <CardHeader>
-                        <CardTitle>About The Calculator</CardTitle>
+                        <CardTitle className="font-headline">About The Calculator</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4 text-muted-foreground">
                         <h3 className="font-semibold text-foreground">Pre-donation projected risk of end-stage renal disease (in the absence of kidney donation):</h3>
@@ -366,7 +366,7 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
             <TabsContent value="references" className="mt-6">
                  <Card>
                     <CardHeader>
-                        <CardTitle>References</CardTitle>
+                        <CardTitle className="font-headline">References</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-2 text-muted-foreground">
                         <p className="font-semibold">Grams ME, Sang Y, Levey AS, Matsushita K, Ballew S, Chang AR et al.</p>

@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -26,6 +26,11 @@ export default function ModulePage() {
     
     const [viewMode, setViewMode] = useState<'content' | 'quiz'>('content');
     const [showAudioPlayer, setShowAudioPlayer] = useState(false);
+
+    // Reset audio player visibility when slug changes
+    useEffect(() => {
+        setShowAudioPlayer(false);
+    }, [slug]);
 
     const moduleContentData = getContentDataForLang(language)[slug];
 
@@ -169,6 +174,7 @@ export default function ModulePage() {
                         </CardHeader>
                         <CardContent>
                             <audio
+                                key={audioSrcForCurrentLang}
                                 controls
                                 autoPlay
                                 src={audioSrcForCurrentLang}
