@@ -88,7 +88,9 @@ const answerTransplantQuestionsFlow = ai.defineFlow(
         }
         return '';
       })
-      .join('\n\n---\n\n');
+      .join('\n\n---\n\n')
+      // Basic cleanup of HTML tags for the AI context
+      .replace(/<[^>]*>/g, ' '); 
       
     // 4. Call the prompt with the user's question and the generated context.
     const { output } = await answerTransplantQuestionsPrompt({

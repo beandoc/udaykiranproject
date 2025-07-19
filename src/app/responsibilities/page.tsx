@@ -10,6 +10,10 @@ export default function ResponsibilitiesPage() {
     // The content is now managed in the dedicated content file
     const contentData = getContentDataForLang(language)['patient-responsibilities'];
 
+    if (!contentData) {
+        return <div>Content not available.</div>
+    }
+
     return (
         <div className="space-y-8">
             <h1 className="text-3xl font-bold font-headline tracking-tight">{t('navYourResponsibilities')}</h1>

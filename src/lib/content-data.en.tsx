@@ -1,8 +1,6 @@
 
 import type { ModuleContentData } from './content-data';
 
-// --- Content Data Definitions ---
-
 export const contentData: ModuleContentData = {
     'understanding-kidney-disease': {
         standard: `
@@ -144,5 +142,121 @@ export const contentData: ModuleContentData = {
             </ul>
             <p>When you do your job well, the whole team succeeds, and you get to enjoy your healthy new kidney!</p>
         `
+    },
+    'evaluation-process': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'transplant-matching': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'surgery-day': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'post-transplant-recovery': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'immunosuppressants': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'medication-adherence': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'understanding-rejection': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'understanding-graft-health': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'long-term-care': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'diet-and-nutrition': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'physical-activity-and-exercise': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'post-transplant-diabetes': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'mental-health-support': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'understanding-living-donation': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'donor-eligibility': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'donor-evaluation': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'psychological-assessment': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'donor-surgery': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'donor-recovery': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'risks-and-benefits': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'donor-long-term-health': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'understanding-your-role': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'supporting-pre-transplant': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'hospital-stay-support': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'home-recovery-care': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'medication-management': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'recognizing-warning-signs': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'self-care-for-caregivers': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
+    },
+    'communication-with-medical-team': {
+        standard: "<p>Content for this module is coming soon.</p>",
+        eli10: "<p>We're working on making this simple to understand!</p>"
     }
 };
