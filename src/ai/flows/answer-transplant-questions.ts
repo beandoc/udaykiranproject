@@ -19,33 +19,16 @@ export type AnswerTransplantQuestionsInput = z.infer<typeof AnswerTransplantQues
 
 const AnswerTransplantQuestionsOutputSchema = z.object({
   answer: z.string().describe('The answer to the question about kidney transplants.'),
-  isReliableSource: z.boolean().describe('Whether the information is from a reliable source, such as a clinical study.'),
 });
 export type AnswerTransplantQuestionsOutput = z.infer<typeof AnswerTransplantQuestionsOutputSchema>;
 
-const checkSourceReliability = ai.defineTool({
-  name: 'checkSourceReliability',
-  description: 'Checks if the provided information comes from a reliable source, such as a clinical study.',
-  inputSchema: z.object({
-    information: z.string().describe('The information to check for reliability.'),
-  }),
-  outputSchema: z.boolean(),
-}, async (input) => {
-  // Placeholder implementation: Replace with actual reliability check logic
-  // This could involve querying a database of known reliable sources
-  // or using an external API to verify the source.
-  // For now, we'll just return true if the information contains the phrase "clinical study".
-  return input.information.toLowerCase().includes('clinical study');
-});
 
 const answerTransplantQuestionsPrompt = ai.definePrompt({
   name: 'answerTransplantQuestionsPrompt',
   input: {schema: AnswerTransplantQuestionsInputSchema},
   output: {schema: AnswerTransplantQuestionsOutputSchema},
-  tools: [checkSourceReliability],
   system: `You are a helpful AI assistant providing information about kidney transplants.
-  You will answer the user's question clearly and concisely.
-  After generating your answer, you MUST use the checkSourceReliability tool to determine if the source of your information is reliable and set the isReliableSource field accordingly.`,
+  You will answer the user's question clearly and concisely, based on your training data from reliable medical sources.`,
   prompt: `Answer the following question: {{question}}`,
 });
 

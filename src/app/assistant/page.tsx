@@ -11,8 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Sparkles, Bot, User, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Bot, User } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useAppContext } from '@/context/app-context';
 
@@ -104,14 +103,6 @@ export default function AssistantPage() {
                 </span>
                 <div className="bg-card rounded-lg p-4 w-full max-w-xl">
                     <p className="text-card-foreground">{response.answer}</p>
-                    {response.isReliableSource && (
-                        <div className="mt-4">
-                            <Badge variant="outline" className="bg-accent/20 border-accent/50 text-accent-foreground">
-                                <CheckCircle2 className="mr-1.5 h-3.5 w-3.5" />
-                                {t('assistantReliableSource')}
-                            </Badge>
-                        </div>
-                    )}
                 </div>
             </div>
         )}
