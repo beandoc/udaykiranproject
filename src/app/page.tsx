@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from "@/components/ui/button";
@@ -49,7 +50,7 @@ export default function Home() {
                     <p className="mt-2 max-w-2xl text-lg text-primary-foreground/80">
                         {t('personalizedHub')}
                     </p>
-                    <Button asChild size="lg" className="mt-6 bg-white text-primary hover:bg-white/90 shadow-lg px-8 py-6 text-base font-semibold">
+                    <Button asChild size="lg" className="mt-6 bg-white text-primary dark:text-primary-foreground hover:bg-white/90 shadow-lg px-8 py-6 text-base font-semibold">
                         <Link href="/modules">{t('exploreLearningPath')}</Link>
                     </Button>
                 </div>
