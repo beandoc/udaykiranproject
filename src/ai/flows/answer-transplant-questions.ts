@@ -37,6 +37,7 @@ const extractTextFromReactNode = (node: React.ReactNode): string => {
 const AnswerTransplantQuestionsInputSchema = z.object({
   question: z.string().describe('The question about kidney transplants.'),
   role: z.enum(['Patient', 'Donor', 'Caregiver']).describe("The user's role, which determines the context to use."),
+  language: z.enum(['en', 'hi', 'mr']).describe('The language of the question and the desired language for the answer.'),
 });
 export type AnswerTransplantQuestionsInput = z.infer<typeof AnswerTransplantQuestionsInputSchema>;
 
@@ -52,6 +53,7 @@ const answerTransplantQuestionsPrompt = ai.definePrompt({
     schema: z.object({
       question: z.string(),
       context: z.string(),
+      language: z.string(),
     }),
   },
   output: { schema: AnswerTransplantQuestionsOutputSchema },
@@ -59,8 +61,9 @@ const answerTransplantQuestionsPrompt = ai.definePrompt({
 Your role is to answer user questions based *only* on the provided context from the educational modules.
 Do not use any information from outside the provided context.
 Your answers should be clear, concise, and directly address the user's question using the text provided.
-If the answer cannot be found in the provided context, you MUST respond with the exact phrase: "Sorry, I am not sure. Please ask your Nephrologist."`,
-  prompt: `Context from educational modules:
+If the answer cannot be found in the provided context, you MUST respond with the exact phrase: "Sorry, I am not sure. Please ask your Nephrologist."
+The user's question is in the language with code '{{language}}' (en: English, hi: Hindi, mr: Marathi). You MUST respond in the same language.`,
+  prompt: `Context from educational modules (in English):
 ---
 {{context}}
 ---
@@ -76,7 +79,7 @@ const answerTransplantQuestionsFlow = ai.defineFlow(
     inputSchema: AnswerTransplantQuestionsInputSchema,
     outputSchema: AnswerTransplantQuestionsOutputSchema,
   },
-  async ({ question, role }) => {
+  async ({ question, role, language }) => {
     // 1. Get the list of module slugs for the given role.
     const modulesForRole = modulesByRole[role].modules;
     const slugs = modulesForRole.map(m => m.slug);
@@ -101,6 +104,7 @@ const answerTransplantQuestionsFlow = ai.defineFlow(
     const { output } = await answerTransplantQuestionsPrompt({
       question,
       context,
+      language,
     });
     
     return output!;

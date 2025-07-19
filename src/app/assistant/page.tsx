@@ -127,7 +127,7 @@ export default function AssistantPage() {
     setLastQuestion(data.question);
 
     try {
-      const result = await answerTransplantQuestions({ question: data.question, role });
+      const result = await answerTransplantQuestions({ question: data.question, role, language });
       setResponse(result);
     } catch (err) {
       setError(t('assistantError'));
