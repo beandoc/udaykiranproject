@@ -12,33 +12,7 @@
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import { modulesByRole } from '@/lib/modules-data';
-import { getContentDataForLang } from '@/lib/content-data';
-import React, { Children } from 'react';
-
-// Helper function to extract text from ReactNode, which is how our content is structured.
-// This version is designed to handle the simplified content structure.
-const extractTextFromReactNode = (node: React.ReactNode): string => {
-  if (typeof node === 'string') {
-    return node;
-  }
-  if (typeof node === 'number') {
-    return String(node);
-  }
-  if (Array.isArray(node)) {
-    return node.map(child => extractTextFromReactNode(child)).join('');
-  }
-  if (React.isValidElement(node) && node.props.children) {
-    const childrenArray = Children.toArray(node.props.children);
-    const text = childrenArray.map(child => extractTextFromReactNode(child)).join('');
-    
-    // Add line breaks for block-level elements to preserve structure
-    if (['p', 'h1', 'h2', 'h3', 'h4', 'div', 'li'].includes(node.type as string)) {
-      return text + '\n';
-    }
-    return text;
-  }
-  return '';
-};
+import { getContentDataForLang, ModuleContentData } from '@/lib/content-data';
 
 
 const AnswerTransplantQuestionsInputSchema = z.object({
@@ -64,6 +38,7 @@ const answerTransplantQuestionsPrompt = ai.definePrompt({
     }),
   },
   output: { schema: AnswerTransplantQuestionsOutputSchema },
+  model: 'googleai/gemini-1.5-flash-latest',
   system: `You are a helpful AI assistant for a kidney transplant application called UdayKiran.
 Your role is to answer user questions based *only* on the provided context from the educational modules.
 Do not use any information from outside the provided context. Your answers should be clear, concise, and directly address the user's question using the text provided.
@@ -80,7 +55,6 @@ If the answer cannot be found in the provided context, you MUST respond with the
 ---
 
 User's Question (in language '{{language}}'): {{question}}`,
-  model: 'googleai/gemini-1.5-flash-latest',
 });
 
 
@@ -100,15 +74,16 @@ const answerTransplantQuestionsFlow = ai.defineFlow(
     });
     
     // 2. Load the content for those modules in the correct language.
-    const contentData = getContentDataForLang(language);
+    const contentData: ModuleContentData = getContentDataForLang(language);
     
     // 3. Extract and combine the text from the relevant modules.
     const context = Array.from(allSlugs)
       .map(slug => {
         const moduleContent = contentData[slug];
         if (moduleContent) {
-          const standardText = extractTextFromReactNode(moduleContent.standard);
-          const eli10Text = extractTextFromReactNode(moduleContent.eli10);
+          // Content is now a raw string, so we just combine standard and simplified versions.
+          const standardText = moduleContent.standard;
+          const eli10Text = moduleContent.eli10;
           return `Module: ${slug}\nStandard Content:\n${standardText}\n\nSimplified Content:\n${eli10Text}`;
         }
         return '';

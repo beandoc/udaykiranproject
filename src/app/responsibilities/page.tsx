@@ -13,9 +13,10 @@ export default function ResponsibilitiesPage() {
     return (
         <div className="space-y-8">
             <h1 className="text-3xl font-bold font-headline tracking-tight">{t('navYourResponsibilities')}</h1>
-            <div>
-                {contentData.standard}
-            </div>
+            <div 
+                className="prose dark:prose-invert max-w-none text-base leading-relaxed space-y-4"
+                dangerouslySetInnerHTML={{ __html: contentData.standard }}
+            />
         </div>
     );
 }
