@@ -77,7 +77,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                     <HeartPulse className="w-6 h-6" />
                 </div>
                  <div className="group-data-[collapsible=icon]:hidden">
-                  <h1 className="text-lg font-headline font-bold text-foreground">{t('appTitle')}</h1>
+                  <h1 className="text-lg font-headline font-bold text-sidebar-primary">{t('appTitle')}</h1>
                   <p className="text-xs text-muted-foreground">{t('appSubtitle')}</p>
                 </div>
             </Link>
