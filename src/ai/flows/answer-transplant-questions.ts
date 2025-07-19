@@ -62,15 +62,18 @@ const answerTransplantQuestionsPrompt = ai.definePrompt({
 Your role is to answer user questions based *only* on the provided context from the educational modules.
 Do not use any information from outside the provided context. Your answers should be clear, concise, and directly address the user's question using the text provided.
 
-CRITICAL INSTRUCTION: The user's question is in the language with the code '{{language}}' (en: English, hi: Hindi, mr: Marathi). You MUST respond in the exact same language. For example, if the question is in Hindi, your answer MUST be in Hindi. If the question is in Marathi, your answer MUST be in Marathi. This is a strict requirement.
+CRITICAL INSTRUCTION: The user's question and the provided context are in the language with the code '{{language}}' (en: English, hi: Hindi, mr: Marathi). You MUST respond in the exact same language. For example, if the question is in Hindi, your answer MUST be in Hindi. If the question is in Marathi, your answer MUST be in Marathi. This is a strict requirement.
 
-If the answer cannot be found in the provided English context, you MUST respond with the exact phrase: "Sorry, I am not sure. Please ask your Nephrologist."`,
-  prompt: `Context from educational modules (in English):
+If the answer cannot be found in the provided context, you MUST respond with the exact phrase in the correct language:
+- For English ('en'): "Sorry, I am not sure. Please ask your Nephrologist."
+- For Hindi ('hi'): "माफ़ कीजिए, मुझे यकीन नहीं है। कृपया अपने नेफ्रोलॉजिस्ट से पूछें।"
+- For Marathi ('mr'): "माफ करा, मला खात्री नाही। कृपया आपल्या नेफ्रोलॉजिस्टला विचारा।"`,
+  prompt: `Context from educational modules (in language '{{language}}'):
 ---
 {{context}}
 ---
 
-User's Question: {{question}}`,
+User's Question (in language '{{language}}'): {{question}}`,
   model: 'googleai/gemini-1.5-flash-latest',
 });
 
@@ -86,8 +89,8 @@ const answerTransplantQuestionsFlow = ai.defineFlow(
     const modulesForRole = modulesByRole[role].modules;
     const slugs = modulesForRole.map(m => m.slug);
     
-    // 2. Load the content for those modules. We'll use the English content as the source of truth for the AI.
-    const contentData = getContentDataForLang('en');
+    // 2. Load the content for those modules in the correct language.
+    const contentData = getContentDataForLang(language);
     
     // 3. Extract and combine the text from the relevant modules.
     const context = slugs
