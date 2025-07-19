@@ -1,6 +1,7 @@
+
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -11,9 +12,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Bot, User } from 'lucide-react';
+import { Sparkles, Bot, User, Mic } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useAppContext } from '@/context/app-context';
+import { cn } from '@/lib/utils';
+import { useToast } from "@/hooks/use-toast";
+
 
 const FormSchema = z.object({
   question: z.string().min(10, { message: 'Please enter a question of at least 10 characters.' }),
@@ -21,12 +25,25 @@ const FormSchema = z.object({
 
 type FormValues = z.infer<typeof FormSchema>;
 
+// Extend the Window interface for SpeechRecognition
+declare global {
+    interface Window {
+        SpeechRecognition: any;
+        webkitSpeechRecognition: any;
+    }
+}
+
 export default function AssistantPage() {
-  const { t, role } = useAppContext();
+  const { t, role, language } = useAppContext();
   const [lastQuestion, setLastQuestion] = useState<string | null>(null);
   const [response, setResponse] = useState<AnswerTransplantQuestionsOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { toast } = useToast();
+
+  const [isListening, setIsListening] = useState(false);
+  const recognitionRef = useRef<any>(null);
+
 
   const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
@@ -34,6 +51,74 @@ export default function AssistantPage() {
       question: '',
     },
   });
+
+   useEffect(() => {
+    if (typeof window !== 'undefined') {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (SpeechRecognition) {
+            const recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            
+            recognition.onstart = () => {
+                setIsListening(true);
+            };
+            
+            recognition.onend = () => {
+                setIsListening(false);
+            };
+
+            recognition.onresult = (event: any) => {
+                const transcript = event.results[0][0].transcript;
+                form.setValue('question', transcript);
+            };
+
+            recognition.onerror = (event: any) => {
+                console.error('Speech recognition error:', event.error);
+                let toastMessage = 'Speech recognition error. Please try again.';
+                if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+                    toastMessage = "Microphone access denied. Please allow microphone access in your browser settings.";
+                } else if (event.error === 'no-speech') {
+                    toastMessage = "No speech was detected. Please try again.";
+                }
+                 toast({
+                    title: "Voice Input Error",
+                    description: toastMessage,
+                    variant: "destructive"
+                });
+            };
+            
+            recognitionRef.current = recognition;
+        } else {
+             console.warn("Speech Recognition API not supported in this browser.");
+        }
+    }
+   }, []);
+
+  const handleMicClick = () => {
+    if (!recognitionRef.current) {
+        toast({
+            title: "Voice Input Not Supported",
+            description: "Your browser does not support voice input.",
+            variant: "destructive"
+        });
+        return;
+    }
+    if (isListening) {
+        recognitionRef.current.stop();
+    } else {
+        // Set the language for recognition
+        const langCode = {
+            en: 'en-US',
+            hi: 'hi-IN',
+            mr: 'mr-IN'
+        }[language] || 'en-US';
+        recognitionRef.current.lang = langCode;
+
+        recognitionRef.current.start();
+    }
+  };
+
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setIsLoading(true);
@@ -130,14 +215,27 @@ export default function AssistantPage() {
                 control={form.control}
                 name="question"
                 render={({ field }) => (
-                  <FormItem className="flex-grow">
+                  <FormItem className="flex-grow relative">
                     <FormControl>
                       <Textarea
-                        placeholder={t('assistantFormPlaceholder')}
-                        className="min-h-12 resize-none bg-card"
+                        placeholder={isListening ? 'Listening...' : t('assistantFormPlaceholder')}
+                        className="min-h-12 resize-none bg-card pr-12"
                         {...field}
                       />
                     </FormControl>
+                     <Button 
+                        type="button" 
+                        variant="ghost"
+                        size="icon"
+                        onClick={handleMicClick}
+                        className={cn(
+                            "absolute top-1/2 right-2 -translate-y-1/2 rounded-full",
+                            isListening && "text-destructive animate-pulse"
+                        )}
+                        aria-label="Ask by voice"
+                     >
+                        <Mic className="h-5 w-5" />
+                    </Button>
                     <FormMessage />
                   </FormItem>
                 )}
