@@ -1,3 +1,4 @@
+
 'use client';
 
 import type { ReactNode } from 'react';
@@ -45,10 +46,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   // This effect runs once on the client to load persisted state from localStorage
   useEffect(() => {
-    setIsMounted(true);
     try {
       const storedRole = localStorage.getItem('app-role') as Role | null;
       const storedLanguage = localStorage.getItem('app-language') as Language | null;
+      const storedModules = localStorage.getItem('app-modules');
 
       if (storedRole && ['Patient', 'Donor', 'Caregiver'].includes(storedRole)) {
         setRole(storedRole);
@@ -56,8 +57,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
       if (storedLanguage && ['en', 'hi', 'mr'].includes(storedLanguage)) {
         setLanguage(storedLanguage);
       }
+      if (storedModules) {
+        setModulesByRole(JSON.parse(storedModules));
+      }
     } catch (error) {
       console.error("Could not load user preferences from localStorage.", error);
+    } finally {
+        setIsMounted(true);
     }
   }, []);
   
@@ -67,11 +73,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
       try {
         localStorage.setItem('app-role', role);
         localStorage.setItem('app-language', language);
+        // Persist module progress whenever it changes
+        localStorage.setItem('app-modules', JSON.stringify(modulesByRole));
       } catch (error) {
         console.error("Could not save user preferences to localStorage.", error);
       }
     }
-  }, [role, language, isMounted]);
+  }, [role, language, modulesByRole, isMounted]);
 
   const t = useCallback((key: string, options?: { [key: string]: string | number }) => {
     const langFile = translations[language] || translations['en'];
