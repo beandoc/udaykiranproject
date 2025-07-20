@@ -36,8 +36,15 @@ export default function ModulePage() {
     const moduleContentData = getContentDataForLang(language)[slug];
 
     const [questions, setQuestions] = useState<QuizQuestion[]>(() => {
-        return quizData[slug] || [];
+        const langQuizData = quizData[language] || quizData['en'];
+        return langQuizData[slug] || [];
     });
+    
+    useEffect(() => {
+        const langQuizData = quizData[language] || quizData['en'];
+        setQuestions(langQuizData[slug] || []);
+    }, [slug, language]);
+
 
     const moduleInfo = modulesByRole[role].modules.find(module => module.slug === slug);
     
@@ -76,7 +83,9 @@ export default function ModulePage() {
     
     const handleSubmit = () => {
         setIsSubmitted(true);
-        const correctCount = selectedAnswers.filter((answer, index) => answer === questions[index].correctAnswer).length;
+        const correctCount = selectedAnswers.filter((answer, index) => {
+            return questions[index] && answer === questions[index].correctAnswer
+        }).length;
         
         if (moduleInfo?.status === 'Not Started') {
             updateModuleStatus(slug, role);
@@ -94,8 +103,8 @@ export default function ModulePage() {
         setIsSubmitted(false);
     };
     
-    const score = selectedAnswers.filter((answer, index) => answer === questions[index].correctAnswer).length;
-    const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+    const score = selectedAnswers.filter((answer, index) => questions[index] && answer === questions[index].correctAnswer).length;
+    const progress = questions.length > 0 ? ((currentQuestionIndex + 1) / questions.length) * 100 : 0;
 
     if (!moduleInfo || !moduleContentData) {
         return (
@@ -144,32 +153,28 @@ export default function ModulePage() {
                             </TabsContent>
                         </Tabs>
                     </CardContent>
-                    <CardFooter className="flex-col items-stretch gap-4">
-                        <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
-                            <div className="flex flex-col sm:flex-row gap-2">
-                                <Button variant="outline" asChild>
-                                    <Link href="/modules">
-                                        <ChevronLeft className="mr-2 h-4 w-4" /> {t('contentBackToPath')}
-                                    </Link>
+                    <CardFooter className="flex flex-col sm:flex-row sm:justify-between gap-2">
+                        <Button variant="outline" asChild>
+                            <Link href="/modules">
+                                <ChevronLeft className="mr-2 h-4 w-4" /> {t('contentBackToPath')}
+                            </Link>
+                        </Button>
+                        <div className="flex flex-col sm:flex-row gap-2">
+                            {audioSrcForCurrentLang && (
+                                <Button onClick={() => setShowAudioPlayer(!showAudioPlayer)} variant="secondary">
+                                    <Volume2 className="mr-2 h-4 w-4" />
+                                    {showAudioPlayer ? t('hidePlayer') : t('listenToContent')}
                                 </Button>
-                            </div>
-                            <div className="flex flex-col sm:flex-row gap-2">
-                                {audioSrcForCurrentLang && (
-                                    <Button onClick={() => setShowAudioPlayer(!showAudioPlayer)} variant="secondary">
-                                        <Volume2 className="mr-2 h-4 w-4" />
-                                        {showAudioPlayer ? t('hidePlayer') : t('listenToContent')}
-                                    </Button>
-                                )}
-                                {questions && questions.length > 0 ? (
-                                    <Button onClick={() => setViewMode('quiz')} size="lg">
-                                        {t('contentStartQuiz')} <HelpCircle className="ml-2 h-4 w-4" />
-                                    </Button>
-                                ) : (
-                                    <Button disabled size="lg">
-                                        {t('contentQuizComingSoon')}
-                                    </Button>
-                                )}
-                            </div>
+                            )}
+                            {questions && questions.length > 0 ? (
+                                <Button onClick={() => setViewMode('quiz')} size="lg">
+                                    {t('contentStartQuiz')} <HelpCircle className="ml-2 h-4 w-4" />
+                                </Button>
+                            ) : (
+                                <Button disabled size="lg">
+                                    {t('contentQuizComingSoon')}
+                                </Button>
+                            )}
                         </div>
                     </CardFooter>
                 </Card>
@@ -207,7 +212,7 @@ export default function ModulePage() {
         )
     }
 
-    if (questions.length === 0) {
+    if (!questions || questions.length === 0) {
         return (
             <div className="text-center">
                 <h1 className="text-2xl font-bold">{t('quizNotFoundTitle')}</h1>
@@ -270,14 +275,28 @@ export default function ModulePage() {
                     <Button asChild className="w-full sm:w-auto" size="lg">
                         <Link href="/modules">{t('quizBackToPath')}</Link>
                     </Button>
-                    <Button asChild className="w-full sm:w-auto" variant="secondary">
-                         <Link href="/">
-                            <LayoutDashboard className="mr-2 h-4 w-4" />
-                            {t('navDashboard')}
-                        </Link>
-                    </Button>
+                    <div className="w-full sm:w-auto">
+                        <Button asChild className="w-full">
+                            <Link href="/">
+                                <LayoutDashboard className="mr-2 h-4 w-4" />
+                                {t('navDashboard')}
+                            </Link>
+                        </Button>
+                    </div>
                 </CardFooter>
             </Card>
+        )
+    }
+    
+    if (!currentQuestion) {
+       return (
+            <div className="text-center">
+                <h1 className="text-2xl font-bold">{t('quizNotFoundTitle')}</h1>
+                <p className="text-muted-foreground">{t('quizNotFoundDesc')}</p>
+                <Button onClick={() => setViewMode('content')} className="mt-4">
+                    <ChevronLeft className="mr-2 h-4 w-4" /> {t('quizBackToContent')}
+                </Button>
+            </div>
         )
     }
 
