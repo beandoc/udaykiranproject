@@ -151,12 +151,6 @@ export default function ModulePage() {
                                         <ChevronLeft className="mr-2 h-4 w-4" /> {t('contentBackToPath')}
                                     </Link>
                                 </Button>
-                                <Button variant="secondary" asChild>
-                                    <Link href="/">
-                                        <LayoutDashboard className="mr-2 h-4 w-4" />
-                                        {t('navDashboard')}
-                                    </Link>
-                                </Button>
                             </div>
                             <div className="flex flex-col sm:flex-row gap-2">
                                 {audioSrcForCurrentLang && (
@@ -178,6 +172,7 @@ export default function ModulePage() {
                         </div>
                     </CardFooter>
                 </Card>
+
                 {showAudioPlayer && audioSrcForCurrentLang && (
                     <Card>
                         <CardHeader>
@@ -198,6 +193,15 @@ export default function ModulePage() {
                         </CardContent>
                     </Card>
                 )}
+
+                <div className="flex justify-center pt-4">
+                    <Button asChild variant="secondary" size="lg">
+                        <Link href="/">
+                            <LayoutDashboard className="mr-2 h-4 w-4" />
+                            {t('navDashboard')}
+                        </Link>
+                    </Button>
+                </div>
             </div>
         )
     }
