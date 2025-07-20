@@ -8,1135 +8,935 @@ export type QuizQuestion = {
 };
 
 export const quizData: { [key: string]: QuizQuestion[] } = {
-    'anesthesia-risks': [
+    'understanding-kidney-disease': [
         {
-            question: "What is a common, temporary side effect after general anesthesia?",
+            question: "What is the most significant advantage of a successful kidney transplant?",
             options: [
-                "Stroke",
-                "Sore throat",
-                "Digit gangrene",
-                "Cardiac arrest"
+                "You can eat more sweets.",
+                "Freedom from the rigors of dialysis.",
+                "You no longer need to see a doctor.",
+                "You get a new scar."
             ],
-            correctAnswer: "Sore throat"
+            correctAnswer: "Freedom from the rigors of dialysis."
         },
         {
-            question: "Which of the following is a RARE but serious complication of general anesthesia?",
+            question: "What is a major lifelong commitment after receiving a transplant?",
             options: [
-                "Headache",
-                "Nausea and vomiting",
-                "Dental trauma",
-                "Severe allergy / anaphylaxis"
+                "Wearing a special bracelet.",
+                "Taking immunosuppressant medications meticulously.",
+                "Only drinking bottled water.",
+                "Avoiding all exercise."
             ],
-            correctAnswer: "Severe allergy / anaphylaxis"
+            correctAnswer: "Taking immunosuppressant medications meticulously."
+        },
+        {
+            question: "Which of these is a condition that might prevent someone from being a candidate for a transplant (a contraindication)?",
+            options: [
+                "A history of a broken arm.",
+                "Wearing glasses.",
+                "A severe, untreatable active infection.",
+                "Being 40 years old."
+            ],
+            correctAnswer: "A severe, untreatable active infection."
         }
     ],
-    'physical-activity-and-exercise': [
+    'evaluation-process': [
         {
-            question: "Why is physical activity important after a kidney transplant?",
+            question: "What is the primary goal of the comprehensive transplant evaluation?",
             options: [
-                "To be able to eat more food",
-                "To lower the risk of cardiovascular disease",
-                "To make the surgical scar heal faster",
-                "It is not important"
+                "To see how much pain a patient can tolerate.",
+                "To ensure that surgery is a safe and effective option for the patient.",
+                "To complete hospital paperwork for billing.",
+                "To test new experimental drugs."
             ],
-            correctAnswer: "To lower the risk of cardiovascular disease"
+            correctAnswer: "To ensure that surgery is a safe and effective option for the patient."
         },
         {
-            question: "What kind of activity should be avoided for the first 3 months after transplant?",
+            question: "What is 'HLA Typing'?",
             options: [
-                "Walking",
-                "Cycling on a stationary bike",
-                "Heavy lifting",
-                "Breathing exercises"
+                "A test to measure your height and weight.",
+                "A specialized blood test to identify key proteins for the best donor match.",
+                "A type of exercise you must do before surgery.",
+                "The brand of the hospital's surgical equipment."
             ],
-            correctAnswer: "Heavy lifting"
+            correctAnswer: "A specialized blood test to identify key proteins for the best donor match."
         },
         {
-            question: "What is a good daily step goal for transplant recipients to work towards?",
+            question: "Who is part of the dedicated transplant team you will meet during evaluation?",
             options: [
-                "1,000 to 2,000 steps",
-                "3,000 to 5,000 steps",
-                "7,500 to 10,000 steps",
-                "Over 15,000 steps"
+                "Only the surgeon.",
+                "The hospital CEO and billing department.",
+                "The Nephrologist, Surgeon, Nurse Coordinator, and Social Worker.",
+                "The pharmacist and physical therapist only."
             ],
-            correctAnswer: "7,500 to 10,000 steps"
-        },
-        {
-            question: "What is 'prehabilitation'?",
-            options: [
-                "A type of medication",
-                "A tailored physical therapy program before transplant surgery",
-                "A special diet before transplant",
-                "The final check-up before surgery"
-            ],
-            correctAnswer: "A tailored physical therapy program before transplant surgery"
-        },
-        {
-            question: "Who should you talk to before starting a new exercise plan?",
-            options: [
-                "Your family",
-                "A personal trainer at the gym",
-                "Your transplant team",
-                "Other transplant patients"
-            ],
-            correctAnswer: "Your transplant team"
-        }
-    ],
-    'understanding-graft-health': [
-        {
-            question: "What is the most important factor a patient can control to ensure long-term kidney health?",
-            options: [
-                "The brand of water they drink",
-                "Taking their immunosuppressant medication correctly",
-                "The time of day they have surgery",
-                "The hospital's location"
-            ],
-            correctAnswer: "Taking their immunosuppressant medication correctly"
-        },
-        {
-            question: "What does 'delayed graft function' mean?",
-            options: [
-                "The transplant surgery was late",
-                "The new kidney takes a little while to start working",
-                "The new kidney is a bad match",
-                "The patient missed a dose of medication"
-            ],
-            correctAnswer: "The new kidney takes a little while to start working"
-        },
-        {
-            question: "Which of these is an 'alloantigen-independent' factor that can affect long-term kidney health?",
-            options: [
-                "HLA mismatch",
-                "Developing new antibodies",
-                "Uncontrolled high blood pressure",
-                "Not taking immunosuppressants"
-            ],
-            correctAnswer: "Uncontrolled high blood pressure"
-        },
-        {
-            question: "Why do kidneys from living donors often have better short-term success?",
-            options: [
-                "They are always a perfect match",
-                "The surgery is shorter",
-                "They generally start working faster",
-                "They are larger"
-            ],
-            correctAnswer: "They generally start working faster"
-        },
-        {
-            question: "What is a primary cause of late kidney loss?",
-            options: [
-                "Eating too much sugar",
-                "Not exercising enough",
-                "Not taking medications as prescribed (noncompliance)",
-                "Drinking too much water"
-            ],
-            correctAnswer: "Not taking medications as prescribed (noncompliance)"
-        }
-    ],
-    'post-transplant-diabetes': [
-        {
-            question: "What does PTDM stand for?",
-            options: [
-                "Post-Tiredness Daily Measurement",
-                "Pre-Transplant Diet Management",
-                "Post-Transplant Diabetes Mellitus",
-                "Patient-Tested Drug Module"
-            ],
-            correctAnswer: "Post-Transplant Diabetes Mellitus"
-        },
-        {
-            question: "What is the most significant post-transplant risk factor for developing PTDM?",
-            options: [
-                "The patient's age",
-                "The immunosuppressive medication regimen",
-                "Family history of diabetes",
-                "The type of transplant surgery"
-            ],
-            correctAnswer: "The immunosuppressive medication regimen"
-        },
-        {
-            question: "What is the first and most important step in managing PTDM?",
-            options: [
-                "Starting insulin immediately",
-                "Lifestyle interventions (diet, weight loss, exercise)",
-                "Trying herbal remedies",
-                "Requesting different medication"
-            ],
-            correctAnswer: "Lifestyle interventions (diet, weight loss, exercise)"
-        },
-        {
-            question: "When should an A1C test be used to check for PTDM?",
-            options: [
-                "Immediately after surgery",
-                "Starting at 3 months post-transplant",
-                "Only if the patient feels symptoms of high blood sugar",
-                "It is never used for transplant patients"
-            ],
-            correctAnswer: "Starting at 3 months post-transplant"
-        },
-        {
-            question: "What is the typical blood sugar goal for most patients with PTDM, measured by A1C?",
-            options: [
-                "Less than 9%",
-                "Less than 8%",
-                "Less than 7%",
-                "Less than 6%"
-            ],
-            correctAnswer: "Less than 7%"
+            correctAnswer: "The Nephrologist, Surgeon, Nurse Coordinator, and Social Worker."
         }
     ],
     'transplant-matching': [
         {
-            question: "What are the two main factors checked during the transplant matching process?",
+            question: "What are the two primary scientific factors for matching a kidney?",
             options: [
-                "Hair color and eye color",
-                "Blood group and tissue type (HLA)",
+                "Age and gender",
+                "Blood group compatibility and Tissue (HLA) typing",
                 "Height and weight",
-                "Age and gender"
+                "Diet and exercise habits"
             ],
-            correctAnswer: "Blood group and tissue type (HLA)"
+            correctAnswer: "Blood group compatibility and Tissue (HLA) typing"
         },
         {
-            question: "What does 'HLA' stand for in tissue typing?",
+            question: "Which blood type is known as the 'universal donor'?",
             options: [
-                "Healthy Lung Activity",
-                "Human Liver Antigen",
-                "Human Leukocyte Antigen",
-                "High Level Antibody"
+                "A",
+                "B",
+                "AB",
+                "O"
             ],
-            correctAnswer: "Human Leukocyte Antigen"
+            correctAnswer: "O"
         },
         {
-            question: "Is it possible to receive a kidney from a living donor with a different blood type?",
+            question: "What does a 'negative' crossmatch test indicate?",
             options: [
-                "No, never",
-                "Yes, but only if they are a close relative",
-                "Yes, with special pre-surgery treatments",
-                "Only for children"
+                "The donor is not a good match.",
+                "The recipient's body is unlikely to immediately attack the donor kidney.",
+                "The recipient has a negative attitude.",
+                "The test results were lost."
             ],
-            correctAnswer: "Yes, with special pre-surgery treatments"
-        },
-        {
-            question: "Why are anti-rejection medications required after a transplant?",
-            options: [
-                "To prevent the new kidney from getting infections",
-                "To help the new kidney produce urine",
-                "To stop the immune system from attacking the new kidney",
-                "To lower blood pressure"
-            ],
-            correctAnswer: "To stop the immune system from attacking the new kidney"
-        },
-        {
-            question: "What is the immune system's response to a foreign organ called?",
-            options: [
-                "Acceptance",
-                "Rejection",
-                "Adaptation",
-                "Fusion"
-            ],
-            correctAnswer: "Rejection"
-        },
+            correctAnswer: "The recipient's body is unlikely to immediately attack the donor kidney."
+        }
     ],
     'surgery-day': [
         {
-            question: "How long does a typical kidney transplant surgery last?",
+            question: "What is the typical location for the incision during a kidney transplant?",
             options: [
-                "Less than 1 hour",
-                "About 2 to 3 hours",
-                "5 to 6 hours",
-                "Over 8 hours"
+                "The upper back, near the original kidneys",
+                "The chest",
+                "The lower abdomen",
+                "The side of the leg"
             ],
-            correctAnswer: "About 2 to 3 hours"
+            correctAnswer: "The lower abdomen"
         },
         {
-            question: "Where is the new kidney placed during the transplant operation?",
+            question: "What generally happens to the patient's original, failed kidneys?",
             options: [
-                "In place of one of the old kidneys",
-                "In the chest cavity",
-                "In the lower abdomen (pelvis)",
-                "Attached to the liver"
+                "They are always removed during the transplant surgery.",
+                "They are usually left in place unless they are causing specific problems.",
+                "They are sold to a research lab.",
+                "They dissolve over time."
             ],
-            correctAnswer: "In the lower abdomen (pelvis)"
+            correctAnswer: "They are usually left in place unless they are causing specific problems."
         },
         {
-            question: "What usually happens to the original, failed kidneys?",
+            question: "Where does a patient wake up immediately after the surgery is complete?",
             options: [
-                "They are always removed",
-                "They are usually left in place",
-                "They dissolve over time",
-                "They are donated to science during the surgery"
+                "In their hospital room",
+                "In the hospital cafeteria",
+                "In the Post-Anesthesia Care Unit (PACU)",
+                "In the ambulance"
             ],
-            correctAnswer: "They are usually left in place"
+            correctAnswer: "In the Post-Anesthesia Care Unit (PACU)"
+        }
+    ],
+    'anesthesia-risks': [
+        {
+            question: "What is a common and temporary side effect as anesthesia wears off?",
+            options: [
+                "Stroke",
+                "Sore throat from the breathing tube",
+                "Severe allergic reaction",
+                "Cardiac arrest"
+            ],
+            correctAnswer: "Sore throat from the breathing tube"
         },
         {
-            question: "Why might a planned transplant surgery need to be cancelled or postponed?",
+            question: "What is the purpose of a 'central line' placed during surgery?",
             options: [
-                "The patient feels nervous",
-                "The patient has an active infection",
-                "The surgeon is running late",
-                "The hospital is too busy"
+                "To measure the patient's height",
+                "To play music in the operating room",
+                "To administer medications and fluids into a major vein",
+                "To hold the surgical tools"
             ],
-            correctAnswer: "The patient has an active infection"
+            correctAnswer: "To administer medications and fluids into a major vein"
         },
         {
-            question: "When do patients typically start taking anti-rejection medication?",
+            question: "Who will meet with you before surgery to discuss the anesthesia plan?",
             options: [
-                "A week after surgery",
-                "Only if signs of rejection appear",
-                "A month before surgery",
-                "Before the surgery begins"
+                "The hospital administrator",
+                "The anesthesiologist",
+                "A physical therapist",
+                "A dietitian"
             ],
-            correctAnswer: "Before the surgery begins"
+            correctAnswer: "The anesthesiologist"
         }
     ],
     'post-transplant-recovery': [
         {
-            question: "How long should you generally wait after surgery before engaging in sexual intercourse?",
-            options: ["Two weeks", "One month", "About six weeks", "Three months"],
-            correctAnswer: "About six weeks"
+            question: "What is a vital activity you will be encouraged to do as early as the day after surgery?",
+            options: [
+                "Run a marathon",
+                "Eat a large steak dinner",
+                "Get out of bed and walk with assistance",
+                "Go home immediately"
+            ],
+            correctAnswer: "Get out of bed and walk with assistance"
         },
         {
-            question: "Which type of sport should generally be avoided after a kidney transplant?",
-            options: ["Swimming (after wound heals)", "Walking", "Contact sports like football or hockey", "Yoga"],
-            correctAnswer: "Contact sports like football or hockey"
+            question: "What is a key activity restriction during the first 6-8 weeks at home?",
+            options: [
+                "Reading books",
+                "Watching television",
+                "Avoiding heavy lifting (over 5 kg)",
+                "Talking on the phone"
+            ],
+            correctAnswer: "Avoiding heavy lifting (over 5 kg)"
         },
         {
-            question: "What is the most important step for a female patient who wants to become pregnant?",
-            options: ["Stop taking all medications", "Start trying immediately", "Plan carefully with the transplant team", "Change their diet without consultation"],
-            correctAnswer: "Plan carefully with the transplant team"
-        },
-        {
-            question: "What is the lifting restriction for the first 6 weeks after transplant?",
-            options: ["No restriction", "Anything less than 2 kg", "Anything less than 5 kg", "Anything less than 15 kg"],
-            correctAnswer: "Anything less than 5 kg"
-        },
-        {
-            question: "What should you do to maintain good oral hygiene?",
-            options: ["Brush once a week", "Use a hard-bristled toothbrush", "Brush twice a day with a soft brush and replace it every 2-3 months", "Avoid dentists"],
-            correctAnswer: "Brush twice a day with a soft brush and replace it every 2-3 months"
-        }
-    ],
-    'diet-and-nutrition': [
-        {
-            question: "Which fruit and its juice should be strictly avoided after a transplant?",
-            options: ["Apple", "Orange", "Banana", "Grapefruit"],
-            correctAnswer: "Grapefruit"
-        },
-        {
-            question: "Which of these foods is considered a 'Good Fat'?",
-            options: ["Butter", "Coconut Oil", "Olive Oil", "Bacon"],
-            correctAnswer: "Olive Oil"
-        },
-        {
-            question: "Why is it important to avoid salty foods like pickles and chips?",
-            options: ["They can stain your teeth", "They can cause excessive swelling and raise blood pressure", "They don't taste good", "They are too expensive"],
-            correctAnswer: "They can cause excessive swelling and raise blood pressure"
-        },
-        {
-            question: "What is a good source of dietary fiber?",
-            options: ["White bread", "Sugary drinks", "Brown rice and oatmeal", "Fried foods"],
-            correctAnswer: "Brown rice and oatmeal"
-        },
-        {
-            question: "How many servings of fruits and vegetables are recommended each day?",
-            options: ["One serving", "Two to three servings", "At least five to six servings", "As many as you can eat"],
-            correctAnswer: "At least five to six servings"
+            question: "Why is diligent hand hygiene and avoiding sick people crucial after transplant?",
+            options: [
+                "To save money on soap",
+                "Because your immune system is suppressed by medication, increasing infection risk",
+                "It is a hospital rule with no medical basis",
+                "To make sure your hands look nice for appointments"
+            ],
+            correctAnswer: "Because your immune system is suppressed by medication, increasing infection risk"
         }
     ],
     'immunosuppressants': [
         {
-            question: "What is the most important thing to remember about taking immunosuppressive medications?",
+            question: "What is the primary purpose of immunosuppressant (anti-rejection) medications?",
             options: [
-                "Take them only when you feel sick",
-                "Take them consistently at the same time every day",
-                "Skip doses if you experience side effects",
-                "Double the dose if you miss one"
+                "To cure the common cold",
+                "To calm your body's immune system to prevent it from attacking the new kidney",
+                "To make you stronger for sports",
+                "To improve your eyesight"
             ],
-            correctAnswer: "Take them consistently at the same time every day"
+            correctAnswer: "To calm your body's immune system to prevent it from attacking the new kidney"
         },
         {
-            question: "Why are immunosuppressants necessary after a transplant?",
+            question: "For how long must a patient take anti-rejection medications?",
             options: [
-                "To prevent infections",
-                "To lower blood pressure",
-                "To stop the body from rejecting the new organ",
-                "To manage pain"
+                "For the first month only",
+                "For the entire life of the transplanted kidney",
+                "Only on days when they feel unwell",
+                "Until the surgical scar is fully healed"
             ],
-            correctAnswer: "To stop the body from rejecting the new organ"
+            correctAnswer: "For the entire life of the transplanted kidney"
         },
         {
-            question: "What is a common side effect of many immunosuppressants?",
+            question: "What should you do if you are experiencing side effects from your medication?",
             options: [
-                "Increased risk of infection",
-                "Improved vision",
-                "Weight loss",
-                "Stronger immune system"
+                "Stop taking the medication immediately and on your own",
+                "Double the dose to see if it helps",
+                "Communicate with your transplant team, as they can often manage the side effects",
+                "Ignore the side effects and hope they disappear"
             ],
-            correctAnswer: "Increased risk of infection"
-        },
-        {
-            question: "If you suspect you have an infection, you should:",
-            options: [
-                "Stop taking your immunosuppressants immediately",
-                "Contact your transplant team for guidance",
-                "Increase your dose of immunosuppressants",
-                "Wait for it to go away on its own"
-            ],
-            correctAnswer: "Contact your transplant team for guidance"
-        },
-        {
-            question: "Which of the following should you avoid while on immunosuppressants?",
-            options: [
-                "Cooked vegetables",
-                "Grapefruit and grapefruit juice",
-                "Pasteurized milk",
-                "Drinking plenty of water"
-            ],
-            correctAnswer: "Grapefruit and grapefruit juice"
-        },
-        {
-            question: "What does 'adherence' mean in the context of medication?",
-            options: [
-                "Sharing medication with others",
-                "Taking medication exactly as prescribed",
-                "Buying the cheapest brand of medication",
-                "Storing medication in the bathroom"
-            ],
-            correctAnswer: "Taking medication exactly as prescribed"
-        },
-        {
-            question: "How should you handle a missed dose of your immunosuppressant?",
-            options: [
-                "Take two doses at the next scheduled time",
-                "Skip it entirely",
-                "Follow the specific instructions given by your transplant team",
-                "Take the dose as soon as you remember, no matter how late"
-            ],
-            correctAnswer: "Follow the specific instructions given by your transplant team"
-        },
-        {
-            question: "Sun exposure while on immunosuppressants can increase the risk of:",
-            options: [
-                "Vitamin D deficiency",
-                "Skin cancer",
-                "Sunburn only",
-                "Hair growth"
-            ],
-            correctAnswer: "Skin cancer"
-        },
-        {
-            question: "Regular blood tests are required after transplant to:",
-            options: [
-                "Check for pregnancy",
-                "Monitor the function of the transplanted organ and drug levels",
-                "See if you need more vitamins",
-                "Fulfill an insurance requirement"
-            ],
-            correctAnswer: "Monitor the function of the transplanted organ and drug levels"
-        },
-        {
-            question: "Which of these is a sign of potential organ rejection?",
-            options: [
-                "Feeling energetic",
-                "Fever, flu-like symptoms, or pain over the transplant site",
-                "Clear skin",
-                "Normal blood pressure"
-            ],
-            correctAnswer: "Fever, flu-like symptoms, or pain over the transplant site"
-        }
-    ],
-    'mental-health-support': [
-        {
-            question: "Is it normal to experience mood swings or feel stressed after a transplant?",
-            options: [
-                "No, you should feel happy all the time.",
-                "Yes, it's a common and normal part of adjusting to a major life event.",
-                "Only for the first day.",
-                "It means the medication is not working."
-            ],
-            correctAnswer: "Yes, it's a common and normal part of adjusting to a major life event."
-        },
-        {
-            question: "If you have complex feelings about receiving an organ from a deceased donor, what is a good first step?",
-            options: [
-                "Ignore the feelings and hope they go away.",
-                "Acknowledge that these mixed emotions are normal and valid.",
-                "Feel guilty about being happy.",
-                "Stop taking your medication."
-            ],
-            correctAnswer: "Acknowledge that these mixed emotions are normal and valid."
-        },
-        {
-            question: "What common emotional 'roller-coaster' might a transplant patient experience?",
-            options: [
-                "Feeling hungry and then full.",
-                "Feeling sleepy and then awake.",
-                "Feeling anxious before medical appointments and relieved after good news.",
-                "Feeling cold and then hot."
-            ],
-            correctAnswer: "Feeling anxious before medical appointments and relieved after good news."
-        },
-        {
-            question: "If you feel overwhelmed by your emotions after your transplant, what is the best thing to do?",
-            options: [
-                "Keep it to yourself.",
-                "Talk about it with your transplant team, a counselor, or a support group.",
-                "Go on a long vacation immediately.",
-                "Change your diet."
-            ],
-            correctAnswer: "Talk about it with your transplant team, a counselor, or a support group."
-        },
-        {
-            question: "Is it possible to develop the personality of your organ donor?",
-            options: [
-                "Yes, it happens frequently.",
-                "No, this is a common myth and is not possible.",
-                "Only if the donor was a close relative.",
-                "It depends on the blood type match."
-            ],
-            correctAnswer: "No, this is a common myth and is not possible."
-        }
-    ],
-    'understanding-rejection': [
-        {
-            question: "Why are anti-rejection medications essential after a kidney transplant?",
-            options: [
-                "To prevent colds and flu",
-                "To lower your blood sugar",
-                "To stop your immune system from attacking the new kidney",
-                "To help the kidney produce more urine"
-            ],
-            correctAnswer: "To stop your immune system from attacking the new kidney"
-        },
-        {
-            question: "For how long must you take anti-rejection medications?",
-            options: [
-                "For the first year only",
-                "Only when you feel unwell",
-                "For as long as the transplanted kidney is working",
-                "Until the surgical wound has healed"
-            ],
-            correctAnswer: "For as long as the transplanted kidney is working"
-        },
-        {
-            question: "What is a common way that early, subtle rejection episodes are detected?",
-            options: [
-                "By checking your temperature",
-                "Through regular blood tests",
-                "Through a new pain in your arm",
-                "By a change in your appetite"
-            ],
-            correctAnswer: "Through regular blood tests"
-        },
-        {
-            question: "If you miss a dose of your anti-rejection medication, what should you do first?",
-            options: [
-                "Take a double dose next time to catch up",
-                "Skip it and wait for the next scheduled dose",
-                "Follow the specific instructions given to you by your transplant team",
-                "Stop taking the medication completely until you feel sick"
-            ],
-            correctAnswer: "Follow the specific instructions given to you by your transplant team"
-        },
-        {
-            question: "Can transplant rejection episodes be treated?",
-            options: [
-                "No, any rejection means the transplant has failed completely",
-                "Yes, most episodes can be managed successfully, often by adjusting medications",
-                "Only if you go back to the hospital for another surgery",
-                "Only in the first week after transplant"
-            ],
-            correctAnswer: "Yes, most episodes can be managed successfully, often by adjusting medications"
-        }
-    ],
-    'long-term-care': [
-        {
-            question: "Why is it critical to attend all transplant appointments, even if you feel well?",
-            options: [
-                "To get out of the house for a day.",
-                "Because problems like rejection can be found in tests before you feel symptoms.",
-                "It's a hospital rule with no medical reason.",
-                "To check your weight."
-            ],
-            correctAnswer: "Because problems like rejection can be found in tests before you feel symptoms."
-        },
-        {
-            question: "After a transplant, you are at a higher risk of developing which health issue?",
-            options: [
-                "Common cold",
-                "Cancer",
-                "Hair loss",
-                "Broken bones"
-            ],
-            correctAnswer: "Cancer"
-        },
-        {
-            question: "What is the recommended screening for skin cancer surveillance?",
-            options: [
-                "Wearing sunscreen daily",
-                "Avoiding the sun completely",
-                "Monthly self-examination and regular exams by a skin physician",
-                "Getting a tan to build resistance"
-            ],
-            correctAnswer: "Monthly self-examination and regular exams by a skin physician"
-        },
-        {
-            question: "For women over 50, what is the recommended screening for breast cancer?",
-            options: [
-                "Daily self-exam",
-                "Annual or biennial mammography",
-                "A blood test",
-                "No screening is needed"
-            ],
-            correctAnswer: "Annual or biennial mammography"
-        },
-        {
-            question: "If you feel unwell between scheduled appointments, what should you do?",
-            options: [
-                "Wait until your next appointment.",
-                "Search online for a diagnosis.",
-                "Contact your transplant team immediately.",
-                "Take some over-the-counter pain medicine."
-            ],
-            correctAnswer: "Contact your transplant team immediately."
+            correctAnswer: "Communicate with your transplant team, as they can often manage the side effects"
         }
     ],
     'medication-adherence': [
         {
-            question: "What is the single most important thing you can do to protect your new kidney?",
+            question: "In the context of transplantation, what does 'adherence' mean?",
             options: [
-                "Take your medications correctly and consistently",
-                "Exercise twice a day",
-                "Only eat organic food",
-                "Avoid all social gatherings"
+                "Sticking to your favorite TV shows",
+                "Taking your medications exactly as prescribed—the right drug, right dose, right time, every time",
+                "Adhering to a strict no-carbohydrate diet",
+                "Only talking to people you agree with"
             ],
-            correctAnswer: "Take your medications correctly and consistently"
+            correctAnswer: "Taking your medications exactly as prescribed—the right drug, right dose, right time, every time"
         },
         {
-            question: "If your new kidney is working perfectly, should you continue taking immunosuppressants?",
+            question: "What is the leading cause of preventable transplant failure?",
             options: [
-                "No, you can stop once you feel healthy",
-                "You can reduce the dose by half",
-                "Yes, you must continue taking them as prescribed",
-                "Only take them when you remember"
+                "Drinking too much water",
+                "Exercising too much",
+                "Non-adherence (not taking medication correctly)",
+                "Sleeping too much"
             ],
-            correctAnswer: "Yes, you must continue taking them as prescribed"
+            correctAnswer: "Non-adherence (not taking medication correctly)"
         },
         {
-            question: "What should you do if you want to switch to a different brand of your medication?",
+            question: "What is a proven and effective strategy to help remember to take medications?",
             options: [
-                "It's okay as long as the name is the same",
-                "You must get permission from your nephrologist first",
-                "Choose the cheapest brand available",
-                "Ask a friend who has had a transplant"
+                "Trying to remember without any aids",
+                "Asking a friend to text you occasionally",
+                "Using a weekly pill organizer and setting daily alarms on a phone",
+                "Writing it on a calendar that you rarely look at"
             ],
-            correctAnswer: "You must get permission from your nephrologist first"
-        },
-        {
-            question: "What is the best way to deal with medication side effects?",
-            options: [
-                "Stop taking the medication immediately",
-                "Reduce the dose on your own",
-                "Discuss them with your transplant team, as they can often be managed",
-                "Ignore them and hope they go away"
-            ],
-            correctAnswer: "Discuss them with your transplant team, as they can often be managed"
-        },
-        {
-            question: "Why is it important to keep taking your medication even when you feel well?",
-            options: [
-                "Because the pharmacy requires it",
-                "To prevent your insurance from being cancelled",
-                "Because chronic rejection can start silently without any symptoms",
-                "To make your doctor happy"
-            ],
-            correctAnswer: "Because chronic rejection can start silently without any symptoms"
+            correctAnswer: "Using a weekly pill organizer and setting daily alarms on a phone"
         }
     ],
-    'donor-long-term-health': [
+    'understanding-rejection': [
         {
-            question: "How often should a kidney donor have their kidney function tested after donation?",
+            question: "What is 'acute rejection'?",
             options: [
-                "Every month",
-                "Every year",
-                "Only if they feel sick",
-                "They don't need to get tested"
+                "A personal failure by the patient",
+                "An untreatable event meaning the kidney is lost",
+                "A sudden inflammatory response by the immune system, which is often treatable",
+                "A type of cute puppy"
             ],
-            correctAnswer: "Every year"
+            correctAnswer: "A sudden inflammatory response by the immune system, which is often treatable"
         },
         {
-            question: "What is one of the most important things for a donor to do to protect their remaining kidney?",
+            question: "What is often the very first sign of an acute rejection episode?",
             options: [
-                "Drink a lot of coffee",
-                "Maintain a healthy weight and stay active",
-                "Avoid all fruits and vegetables",
-                "Sleep only four hours a night"
+                "A rash on your arm",
+                "A sudden craving for pickles",
+                "It often causes no symptoms and is detected by a rise in creatinine on a routine blood test",
+                "Your hair starts to hurt"
             ],
-            correctAnswer: "Maintain a healthy weight and stay active"
+            correctAnswer: "It often causes no symptoms and is detected by a rise in creatinine on a routine blood test"
         },
         {
-            question: "Which type of medication should donors be very careful with and always ask a doctor about before taking?",
+            question: "Which of these symptoms requires an IMMEDIATE call to your transplant team?",
             options: [
-                "Vitamins",
-                "Painkillers like ibuprofen",
-                "Allergy medicine",
-                "Antacids"
+                "Feeling a little tired in the afternoon",
+                "A fever of 100.4°F / 38°C or higher",
+                "A paper cut on your finger",
+                "Forgetting where you put your keys"
             ],
-            correctAnswer: "Painkillers like ibuprofen"
-        },
-        {
-            question: "What does an annual urine test check for in a kidney donor?",
-            options: [
-                "Sugar levels",
-                "Bacteria",
-                "Protein, which can be a sign of kidney stress",
-                "Hydration levels"
-            ],
-            correctAnswer: "Protein, which can be a sign of kidney stress"
-        },
-        {
-            question: "Why is it important for a donor to see a nephrologist (kidney specialist) yearly?",
-            options: [
-                "To get a discount on medication",
-                "To monitor their overall kidney health and get expert guidance",
-                "To fulfill a legal requirement",
-                "It is not important"
-            ],
-            correctAnswer: "To monitor their overall kidney health and get expert guidance"
+            correctAnswer: "A fever of 100.4°F / 38°C or higher"
         }
     ],
-    'donor-evaluation': [
+    'understanding-graft-health': [
         {
-            question: "Who is the main point of contact for a living donor throughout the evaluation process?",
+            question: "In transplant terms, what is the 'graft'?",
             options: [
-                "The Surgeon",
-                "The Dietitian",
-                "The Nurse Coordinator",
-                "The Nephrologist"
+                "A type of skin cream",
+                "The transplanted organ (the new kidney)",
+                "A construction tool",
+                "A payment made to the hospital"
             ],
-            correctAnswer: "The Nurse Coordinator"
+            correctAnswer: "The transplanted organ (the new kidney)"
         },
         {
-            question: "What is one purpose of imaging tests like a CT scan during the donor evaluation?",
+            question: "What does a rising serum creatinine level in your blood test often indicate?",
             options: [
-                "To check the donor's height",
-                "To help decide which kidney is healthier for the donor to keep",
-                "To test the donor's eyesight",
-                "To see if the donor has any broken bones"
+                "You are getting stronger",
+                "It's a sign of a happy, well-functioning kidney",
+                "It can be the first signal that the graft is under stress or there's a problem",
+                "You ate too much protein for breakfast"
             ],
-            correctAnswer: "To help decide which kidney is healthier for the donor to keep"
+            correctAnswer: "It can be the first signal that the graft is under stress or there's a problem"
         },
         {
-            question: "If a potential donor wants to donate to a specific person, where must their evaluation take place?",
+            question: "What is the 'gold standard' or most definitive test to diagnose a problem inside the kidney?",
             options: [
-                "At any hospital in the country",
-                "At the same transplant center as the recipient",
-                "At their local doctor's office",
-                "They can do the evaluation online"
+                "Checking your blood pressure",
+                "A simple urine test",
+                "A kidney biopsy",
+                "Asking you how you feel"
             ],
-            correctAnswer: "At the same transplant center as the recipient"
+            correctAnswer: "A kidney biopsy"
+        }
+    ],
+    'long-term-care': [
+        {
+            question: "Why are regular follow-up appointments crucial even when you feel perfectly healthy?",
+            options: [
+                "To get a day off work",
+                "To allow the team to catch potential issues like chronic rejection before they become serious",
+                "The hospital just likes to see you",
+                "To check your height and weight"
+            ],
+            correctAnswer: "To allow the team to catch potential issues like chronic rejection before they become serious"
         },
         {
-            question: "Which team member discusses the donor's kidney health and function?",
+            question: "What is a key health screening needed because of the increased risk from immunosuppressants?",
             options: [
-                "The Surgeon",
-                "The Dietitian",
-                "The Nurse Coordinator",
-                "The Nephrologist"
+                "Eye exams",
+                "Hearing tests",
+                "Screening for cancers, particularly skin cancer",
+                "Dental cleanings"
             ],
-            correctAnswer: "The Nephrologist"
+            correctAnswer: "Screening for cancers, particularly skin cancer"
         },
         {
-            question: "What is the role of the dietitian in the donor evaluation process?",
+            question: "What is a vital way to protect your long-term cardiovascular health?",
             options: [
-                "To prescribe medication",
-                "To perform the surgery",
-                "To review eating habits and discuss a healthy diet",
-                "To draw blood for lab work"
+                "Eating more red meat",
+                "Managing your blood pressure, cholesterol, and blood sugar",
+                "Avoiding all exercise",
+                "Drinking sugary sodas"
             ],
-            correctAnswer: "To review eating habits and discuss a healthy diet"
+            correctAnswer: "Managing your blood pressure, cholesterol, and blood sugar"
+        }
+    ],
+    'diet-and-nutrition': [
+        {
+            question: "Which food is absolutely forbidden for transplant patients due to its interaction with medications?",
+            options: ["Apple", "Banana", "Grapefruit", "Carrots"],
+            correctAnswer: "Grapefruit"
+        },
+        {
+            question: "What is the main reason to control sodium (salt) in your diet?",
+            options: [
+                "Salt is expensive",
+                "To help manage blood pressure and fluid retention",
+                "It makes food taste bad",
+                "It can stain your teeth"
+            ],
+            correctAnswer: "To help manage blood pressure and fluid retention"
+        },
+        {
+            question: "Why is food safety (like avoiding raw meat/fish and washing produce) so important?",
+            options: [
+                "Because your suppressed immune system makes you more vulnerable to foodborne illnesses",
+                "It's not important if the food looks clean",
+                "Only for the first week after surgery",
+                "To make cooking more complicated"
+            ],
+            correctAnswer: "Because your suppressed immune system makes you more vulnerable to foodborne illnesses"
+        }
+    ],
+    'physical-activity-and-exercise': [
+        {
+            question: "What is a perfect, low-impact exercise to start with after your transplant?",
+            options: [
+                "Heavy weightlifting",
+                "Sprinting",
+                "Walking",
+                "Boxing"
+            ],
+            correctAnswer: "Walking"
+        },
+        {
+            question: "Which types of activities must be avoided for life to protect your new kidney?",
+            options: [
+                "Gardening",
+                "Swimming",
+                "Contact sports like football, wrestling, or martial arts",
+                "Cooking"
+            ],
+            correctAnswer: "Contact sports like football, wrestling, or martial arts"
+        },
+        {
+            question: "What should you do if you feel sharp pain or dizziness during exercise?",
+            options: [
+                "Push through the pain to get stronger",
+                "Increase your speed",
+                "Stop and rest, and inform your team if it continues",
+                "Immediately lift some heavy weights"
+            ],
+            correctAnswer: "Stop and rest, and inform your team if it continues"
+        }
+    ],
+    'post-transplant-diabetes': [
+        {
+            question: "What is a primary driver of Post-Transplant Diabetes Mellitus (PTDM)?",
+            options: [
+                "Eating too much fruit",
+                "Certain immunosuppressive medications like steroids and tacrolimus",
+                "Not sleeping enough",
+                "Drinking too much water"
+            ],
+            correctAnswer: "Certain immunosuppressive medications like steroids and tacrolimus"
+        },
+        {
+            question: "What is the cornerstone and first step in managing PTDM?",
+            options: [
+                "Starting insulin injections immediately",
+                "Lifestyle modifications like diet and exercise",
+                "Trying a new herbal tea",
+                "Stopping your transplant medications"
+            ],
+            correctAnswer: "Lifestyle modifications like diet and exercise"
+        },
+        {
+            question: "Why is it important to control high blood sugar after a transplant?",
+            options: [
+                "It makes your hair grow faster",
+                "It's not important and can be ignored",
+                "Uncontrolled high blood sugar can harm the new kidney and your heart over time",
+                "It helps you lose weight"
+            ],
+            correctAnswer: "Uncontrolled high blood sugar can harm the new kidney and your heart over time"
+        }
+    ],
+    'mental-health-support': [
+        {
+            question: "Is it normal to feel a mix of emotions like joy, anxiety, and even sadness after a transplant?",
+            options: [
+                "No, you should only feel happy",
+                "Yes, experiencing an emotional rollercoaster is a normal part of this major life event",
+                "It means the transplant is failing",
+                "Only if you didn't like your donor"
+            ],
+            correctAnswer: "Yes, experiencing an emotional rollercoaster is a normal part of this major life event"
+        },
+        {
+            question: "What is a helpful strategy for managing emotional stress during the transplant journey?",
+            options: [
+                "Keeping all your feelings to yourself",
+                "Talking about your feelings with family, friends, or your transplant team",
+                "Making major life decisions impulsively",
+                "Stopping all physical activity"
+            ],
+            correctAnswer: "Talking about your feelings with family, friends, or your transplant team"
+        },
+        {
+            question: "What is a key benefit of joining a patient support group?",
+            options: [
+                "You get free medication",
+                "It's a way to complain about doctors",
+                "Connecting with peers who truly understand your specific journey can be a source of comfort and validation",
+                "It is not beneficial"
+            ],
+            correctAnswer: "Connecting with peers who truly understand your specific journey can be a source of comfort and validation"
+        }
+    ],
+    'understanding-living-donation': [
+        {
+            question: "What is a major advantage of receiving a kidney from a living donor?",
+            options: [
+                "The surgery is always shorter",
+                "The kidney typically lasts longer and the surgery can be scheduled",
+                "It costs less money",
+                "You don't need to take anti-rejection medication"
+            ],
+            correctAnswer: "The kidney typically lasts longer and the surgery can be scheduled"
+        },
+        {
+            question: "Who can be a living donor?",
+            options: [
+                "Only an identical twin",
+                "Only a parent or sibling",
+                "A family member, spouse, friend, or even an altruistic stranger",
+                "Anyone who is over 6 feet tall"
+            ],
+            correctAnswer: "A family member, spouse, friend, or even an altruistic stranger"
+        },
+        {
+            question: "What is the highest priority for the transplant team during the donor evaluation process?",
+            options: [
+                "Getting the surgery done as quickly as possible",
+                "Protecting the donor's health and interests",
+                "Making sure the recipient gets the day off work",
+                "Completing the paperwork"
+            ],
+            correctAnswer: "Protecting the donor's health and interests"
         }
     ],
     'donor-eligibility': [
         {
-            question: "Which of the following conditions may prevent someone from becoming a living kidney donor?",
+            question: "Which of these medical conditions usually prevents a person from being a living kidney donor?",
             options: [
-                "A history of seasonal allergies",
-                "Having cancer or a history of cancer",
-                "Wearing glasses for vision correction",
-                "A previous ankle sprain"
-            ],
-            correctAnswer: "Having cancer or a history of cancer"
-        },
-        {
-            question: "Why is being a smoker a concern for potential kidney donors?",
-            options: [
-                "It is not a concern.",
-                "It increases the risks associated with surgery and long-term health.",
-                "It affects hair color.",
-                "It's only a concern if the recipient also smokes."
-            ],
-            correctAnswer: "It increases the risks associated with surgery and long-term health."
-        },
-        {
-            question: "What is one of the key requirements to be considered for living donation?",
-            options: [
-                "Being a specific age",
-                "Having the same favorite color as the recipient",
-                "Being in good overall health with normal kidney function",
-                "Living in the same city as the hospital"
-            ],
-            correctAnswer: "Being in good overall health with normal kidney function"
-        },
-        {
-            question: "Is it possible for someone with uncontrolled high blood pressure to donate a kidney?",
-            options: [
-                "Yes, without any issues.",
-                "No, it's generally considered a condition that prevents donation due to health risks.",
-                "Only if they promise to control it after surgery.",
-                "Yes, but they have to pay more."
-            ],
-            correctAnswer: "No, it's generally considered a condition that prevents donation due to health risks."
-        },
-        {
-            question: "The transplant team's main priority regarding the donor is:",
-            options: [
-                "To get the kidney as fast as possible.",
-                "To ensure the donor's safety and well-being.",
-                "To make sure the donor and recipient become friends.",
-                "To publish a paper about the surgery."
-            ],
-            correctAnswer: "To ensure the donor's safety and well-being."
-        }
-    ],
-    'psychological-assessment': [
-        {
-            question: "What is the main purpose of the psychological assessment for a living donor?",
-            options: [
-                "To test the donor's memory",
-                "To make sure the donor's choice is voluntary and well-informed",
-                "To determine if the donor is a good person",
-                "To negotiate the terms of the donation"
-            ],
-            correctAnswer: "To make sure the donor's choice is voluntary and well-informed"
-        },
-        {
-            question: "What does 'informed consent' mean in the context of donation?",
-            options: [
-                "The donor has been informed of the surgery date.",
-                "The donor understands the medical procedure, including the risks and benefits.",
-                "The donor has signed a consent form without reading it.",
-                "The recipient has consented to receive the kidney."
-            ],
-            correctAnswer: "The donor understands the medical procedure, including the risks and benefits."
-        },
-        {
-            question: "Can a potential living donor change their mind about donating?",
-            options: [
-                "No, once the process starts, they must go through with it.",
-                "Only if they pay a penalty fee.",
-                "Yes, they can change their mind at any time before the surgery.",
-                "Only if the recipient agrees."
-            ],
-            correctAnswer: "Yes, they can change their mind at any time before the surgery."
-        },
-        {
-            question: "Which of these is a health condition that might prevent someone from being a living donor?",
-            options: [
-                "Having a common cold a year ago",
-                "Having well-controlled high blood pressure",
+                "Having a history of a broken leg",
+                "Wearing contact lenses",
                 "Having diabetes",
-                "Having broken a bone in the past"
+                "Being a vegetarian"
             ],
             correctAnswer: "Having diabetes"
         },
         {
-            question: "The psychological assessment ensures that the donor is NOT being...",
+            question: "What is a fundamental requirement for any potential living donor?",
             options: [
-                "Generous or selfless",
-                "Careful or thoughtful",
-                "Forced or paid to donate",
-                "Supported by their family"
+                "They must be wealthy",
+                "They must be making a completely voluntary decision, free from pressure or financial gain",
+                "They must be a relative of the recipient",
+                "They must have the same hair color as the recipient"
             ],
-            correctAnswer: "Forced or paid to donate"
+            correctAnswer: "They must be making a completely voluntary decision, free from pressure or financial gain"
+        },
+        {
+            question: "Why are the eligibility criteria for donors so strict?",
+            options: [
+                "To make the process difficult",
+                "To ensure the donor can live a long, healthy life with one kidney",
+                "Because the hospital has too many donors already",
+                "To save the hospital money"
+            ],
+            correctAnswer: "To ensure the donor can live a long, healthy life with one kidney"
+        }
+    ],
+    'donor-evaluation': [
+        {
+            question: "What is a key principle of the donor evaluation process?",
+            options: [
+                "The donor and recipient share the same medical team",
+                "The donor has their own independent team whose only job is to protect the donor",
+                "The process is rushed to get it done quickly",
+                "The recipient's needs are the only priority"
+            ],
+            correctAnswer: "The donor has their own independent team whose only job is to protect the donor"
+        },
+        {
+            question: "What does the CT scan provide for the surgeons during a donor evaluation?",
+            options: [
+                "A picture of the donor's brain",
+                "A detailed 'roadmap' of the donor's kidney anatomy and blood vessels",
+                "A test of the donor's hearing",
+                "A measure of the donor's height"
+            ],
+            correctAnswer: "A detailed 'roadmap' of the donor's kidney anatomy and blood vessels"
+        },
+        {
+            question: "Who makes the final determination on whether it is safe for a potential donor to donate?",
+            options: [
+                "The potential donor alone",
+                "The recipient's family",
+                "The entire transplant team, after a meticulous review",
+                "The hospital's financial department"
+            ],
+            correctAnswer: "The entire transplant team, after a meticulous review"
+        }
+    ],
+    'psychological-assessment': [
+        {
+            question: "What is the psychological assessment for a donor?",
+            options: [
+                "A difficult test that many people fail",
+                "A supportive and confidential conversation to ensure the donor's decision is emotionally healthy and voluntary",
+                "A test of the donor's intelligence",
+                "A negotiation about payment"
+            ],
+            correctAnswer: "A supportive and confidential conversation to ensure the donor's decision is emotionally healthy and voluntary"
+        },
+        {
+            question: "The assessment helps to verify that the donor understands the risks and has a good...",
+            options: [
+                "Sense of humor",
+                "Fashion sense",
+                "Support system of family and friends for their recovery",
+                "Singing voice"
+            ],
+            correctAnswer: "Support system of family and friends for their recovery"
+        },
+        {
+            question: "The psychological assessment provides a safe space for the donor to...",
+            options: [
+                "Get a prescription for medication",
+                "Voice any worries, fears, or hesitations they might have",
+                "Ask for a different surgeon",
+                "Meet other donors"
+            ],
+            correctAnswer: "Voice any worries, fears, or hesitations they might have"
         }
     ],
     'donor-surgery': [
         {
-            question: "How long does the living donor surgery typically take?",
-            options: ["Less than 1 hour", "Two to three hours", "Four to five hours", "Over six hours"],
-            correctAnswer: "Two to three hours"
+            question: "What is 'laparoscopic nephrectomy'?",
+            options: [
+                "A traditional open surgery with a very large incision",
+                "A minimally invasive 'keyhole' surgery with small incisions",
+                "A type of medication given to donors",
+                "A brand of surgical camera"
+            ],
+            correctAnswer: "A minimally invasive 'keyhole' surgery with small incisions"
         },
         {
-            question: "What is a 'pain block' used for in donor surgery?",
-            options: ["To put the donor to sleep", "To numb the belly area and reduce pain after surgery", "To prevent infections", "To make the surgery go faster"],
-            correctAnswer: "To numb the belly area and reduce pain after surgery"
+            question: "What is a major advantage of laparoscopic surgery for the donor?",
+            options: [
+                "A much longer hospital stay",
+                "Considerably more post-operative pain",
+                "A faster recovery and smaller scars",
+                "Bigger, more noticeable scars"
+            ],
+            correctAnswer: "A faster recovery and smaller scars"
         },
         {
-            question: "What is a common risk associated with having a urinary catheter during surgery?",
-            options: ["A hernia", "A Urinary Tract Infection (UTI)", "Bleeding", "High blood pressure"],
-            correctAnswer: "A Urinary Tract Infection (UTI)"
-        },
-        {
-            question: "To avoid a hernia after surgery, what should a donor be careful not to do?",
-            options: ["Eat too much", "Sleep on their side", "Lift anything heavy", "Walk too soon"],
-            correctAnswer: "Lift anything heavy"
-        },
-        {
-            question: "The risk of death from living donor surgery is extremely low, at about:",
-            options: ["3 in 100", "3 in 1,000", "3 in 10,000", "3 in 100,000"],
-            correctAnswer: "3 in 10,000"
+            question: "Where is the final, slightly larger incision often made to remove the kidney?",
+            options: [
+                "On the donor's back",
+                "On the donor's chest",
+                "Low on the abdomen, often below the bikini line",
+                "On the donor's neck"
+            ],
+            correctAnswer: "Low on the abdomen, often below the bikini line"
         }
     ],
     'donor-recovery': [
         {
-            question: "How long do most living donors stay in the hospital after surgery?",
-            options: ["One to two nights", "Three to four nights", "One week", "Two weeks"],
-            correctAnswer: "One to two nights"
+            question: "How long do most living donors stay in the hospital?",
+            options: [
+                "One week",
+                "Three to four days",
+                "One or two nights",
+                "They go home the same day"
+            ],
+            correctAnswer: "One or two nights"
         },
         {
-            question: "What is the general timeframe for a full recovery after donation?",
-            options: ["One to two weeks", "Two to three weeks", "Four to six weeks", "Two to three months"],
-            correctAnswer: "Four to six weeks"
+            question: "What activity restriction is essential for the first 4-6 weeks to prevent a hernia?",
+            options: [
+                "Sleeping",
+                "Walking",
+                "Lifting anything heavier than 5 kg",
+                "Watching TV"
+            ],
+            correctAnswer: "Lifting anything heavier than 5 kg"
         },
         {
-            question: "When can a donor with a non-physical (desk) job often return to work?",
-            options: ["The next day", "After about two weeks", "After six weeks", "After three months"],
-            correctAnswer: "After about two weeks"
-        },
-        {
-            question: "What are most donors able to do on the same day as their surgery?",
-            options: ["Drive home", "Eat a large meal", "Go for a short walk", "Return to work"],
-            correctAnswer: "Go for a short walk"
-        },
-        {
-            question: "Who should a donor talk to before returning to physical activities like sports?",
-            options: ["Their boss", "Their family", "The transplant team", "Other donors"],
-            correctAnswer: "The transplant team"
+            question: "When can a donor with a sedentary (desk) job often return to work?",
+            options: [
+                "Within a week",
+                "Within 2-3 weeks",
+                "After 2 months",
+                "After 6 months"
+            ],
+            correctAnswer: "Within 2-3 weeks"
         }
     ],
     'risks-and-benefits': [
         {
-            question: "What is 'compensatory growth' in a living kidney donor?",
+            question: "What is the primary, personal benefit for a living donor?",
             options: [
-                "The donor grows taller after surgery",
-                "The remaining kidney grows to take over the work of the donated one",
-                "The donor receives financial compensation",
-                "The surgical scar grows over time"
+                "They get paid a large amount of money",
+                "They get a long vacation from work",
+                "The immense satisfaction of saving or dramatically improving someone's life",
+                "They no longer have to pay taxes"
             ],
-            correctAnswer: "The remaining kidney grows to take over the work of the donated one"
+            correctAnswer: "The immense satisfaction of saving or dramatically improving someone's life"
         },
         {
-            question: "After donation, about what percentage of original kidney function can a donor expect to have long-term?",
+            question: "What does 'compensatory growth' mean for a donor's remaining kidney?",
             options: [
-                "Exactly 50%",
-                "Less than 40%",
-                "About 70-80%",
-                "100%"
+                "The kidney shrinks",
+                "The remaining kidney grows and efficiently takes over the work of two",
+                "The kidney stops working",
+                "The kidney changes color"
             ],
-            correctAnswer: "About 70-80%"
+            correctAnswer: "The remaining kidney grows and efficiently takes over the work of two"
         },
         {
-            question: "Compared to the general population, the risk of a donor needing a transplant later in life is:",
+            question: "While very safe, living with one kidney carries a small, long-term increased risk of...",
             options: [
-                "Much higher",
-                "Exactly the same",
-                "Slightly higher, but still less than 1%",
-                "Lower"
+                "Developing a third kidney",
+                "Losing your hair",
+                "Developing high blood pressure",
+                "Becoming a famous actor"
             ],
-            correctAnswer: "Slightly higher, but still less than 1%"
+            correctAnswer: "Developing high blood pressure"
+        }
+    ],
+    'donor-long-term-health': [
+        {
+            question: "How often should a living donor have an annual check-up with their primary care physician?",
+            options: [
+                "Every 5 years",
+                "At least once a year",
+                "Only if they feel sick",
+                "Never, it's not necessary"
+            ],
+            correctAnswer: "At least once a year"
         },
         {
-            question: "What is a key way for donors to stay healthy and reduce long-term risks?",
+            question: "Which type of over-the-counter medication should donors be cautious with?",
             options: [
-                "Avoiding all exercise",
-                "Eating a healthy diet and staying physically active",
-                "Only drinking bottled water",
-                "Taking the recipient's medications"
+                "Vitamin C",
+                "Antacids",
+                "Nonsteroidal Anti-Inflammatory Drugs (NSAIDs) like ibuprofen",
+                "Cough drops"
             ],
-            correctAnswer: "Eating a healthy diet and staying physically active"
+            correctAnswer: "Nonsteroidal Anti-Inflammatory Drugs (NSAIDs) like ibuprofen"
         },
         {
-            question: "What should a donor do if they feel anxious or depressed after the surgery?",
+            question: "What is the key advice for women who wish to have a baby after donating?",
             options: [
-                "Ignore the feelings and hope they go away",
-                "Pretend everything is fine so as not to worry anyone",
-                "Talk to the transplant team about their physical and emotional health",
-                "Stop going to follow-up visits"
+                "It is not possible",
+                "They must ensure their obstetrician is aware of their donation history for close monitoring",
+                "They should not tell their doctor they were a donor",
+                "They can proceed without any special precautions"
             ],
-            correctAnswer: "Talk to the transplant team about their physical and emotional health"
+            correctAnswer: "They must ensure their obstetrician is aware of their donation history for close monitoring"
         }
     ],
     'understanding-your-role': [
         {
-            question: "What is a primary role for a caregiver who is not the donor or recipient?",
-            options: [ "Making medical decisions", "Acting as an emotional anchor and logistics manager", "Performing daily blood tests", "Driving the ambulance" ],
-            correctAnswer: "Acting as an emotional anchor and logistics manager"
+            question: "What is a caregiver's role described as?",
+            options: [
+                "The person who makes all the medical decisions",
+                "An essential member of the team: a cheerleader, organizer, and advocate",
+                "Someone who only provides transportation",
+                "A person who is not involved in the process"
+            ],
+            correctAnswer: "An essential member of the team: a cheerleader, organizer, and advocate"
         },
         {
-            question: "Why is it important for a caregiver to understand immunosuppressants?",
+            question: "What is a crucial part of being a caregiver?",
             options: [
-                "So they can adjust the dose themselves",
-                "To understand their critical importance for the recipient and potential side effects",
-                "They don't need to understand them",
-                "To buy them from the pharmacy"
+                "Arguing with the doctors",
+                "Prioritizing your own well-being to provide consistent support",
+                "Staying up all night every night",
+                "Making sure the patient never sleeps"
             ],
-            correctAnswer: "To understand their critical importance for the recipient and potential side effects"
+            correctAnswer: "Prioritizing your own well-being to provide consistent support"
         }
     ],
     'supporting-pre-transplant': [
         {
-            question: "Why is it helpful for a caregiver to attend appointments with the patient/donor?",
+            question: "Why is it helpful for a caregiver to attend appointments with the patient?",
             options: [
-                "To get a day off from work",
-                "To be a second set of ears and help remember information",
-                "To tell the doctor what to do",
-                "It is not helpful"
+                "To get a day off work",
+                "To act as a second set of ears and a note-taker",
+                "To tell the doctors what to do",
+                "To use the hospital's free WiFi"
             ],
-            correctAnswer: "To be a second set of ears and help remember information"
+            correctAnswer: "To act as a second set of ears and a note-taker"
         },
         {
-            question: "What is a key practical support role for a caregiver pre-transplant?",
+            question: "What is a practical way to help prepare the home for recovery?",
             options: [
-                "Helping with transportation to appointments",
-                "Watching TV with the patient",
-                "Choosing the music for the operating room",
-                "Decorating the hospital room"
+                "Buying new, expensive furniture",
+                "Painting the walls a bright color",
+                "Deep cleaning, doing laundry, and preparing some simple meals",
+                "Adopting a new puppy"
             ],
-            correctAnswer: "Helping with transportation to appointments"
+            correctAnswer: "Deep cleaning, doing laundry, and preparing some simple meals"
         }
     ],
     'hospital-stay-support': [
         {
-            question: "What does it mean for a caregiver to be a 'communication hub'?",
+            question: "What is the most helpful way for a caregiver to manage communication with family and friends?",
             options: [
-                "Answering the main hospital phone",
-                "Updating family and friends so the patient and donor can rest",
-                "Setting up the patient's WiFi",
-                "Talking to other patients"
+                "Tell everyone to call the patient's room directly",
+                "Act as the single point person for updates to let the patient rest",
+                "Post hourly updates on social media with photos",
+                "Ignore all calls and texts"
             ],
-            correctAnswer: "Updating family and friends so the patient and donor can rest"
+            correctAnswer: "Act as the single point person for updates to let the patient rest"
         },
         {
-            question: "What is an important part of supporting the donor in the hospital?",
+            question: "If there was a living donor, what is important for the caregiver to remember?",
             options: [
-                "Reminding them they will recover quickly",
-                "Focusing only on the recipient",
-                "Acknowledging their sacrifice and validating their feelings",
-                "Bringing them their favorite fast food"
+                "The donor recovers instantly and needs no support",
+                "To ensure the donor feels just as cared for and appreciated as the recipient",
+                "To ask the donor to help care for the recipient immediately",
+                "To focus only on the recipient and ignore the donor"
             ],
-            correctAnswer: "Acknowledging their sacrifice and validating their feelings"
+            correctAnswer: "To ensure the donor feels just as cared for and appreciated as the recipient"
         }
     ],
     'home-recovery-care': [
         {
-            question: "What is a crucial part of infection control for a post-transplant patient at home?",
+            question: "What is the absolute top priority a caregiver can help with during home recovery?",
             options: [
-                "Opening all the windows",
-                "Strict hygiene, frequent handwashing, and avoiding sick contacts",
-                "Using a lot of air freshener",
-                "Allowing pets to sleep on the bed"
+                "Decorating the house",
+                "Helping the patient establish an unwavering medication routine",
+                "Planning a large welcome-home party",
+                "Buying new clothes for the patient"
             ],
-            correctAnswer: "Strict hygiene, frequent handwashing, and avoiding sick contacts"
+            correctAnswer: "Helping the patient establish an unwavering medication routine"
         },
         {
-            question: "What is a key activity a caregiver can help with during home recovery?",
+            question: "How can a caregiver act as the 'first line of defense'?",
             options: [
-                "Lifting heavy furniture for the patient",
-                "Taking the patient to parties",
-                "Helping monitor vital signs like blood pressure and temperature",
-                "Encouraging contact sports"
+                "By tasting all the food first",
+                "By locking all the doors",
+                "By tracking vital signs and reporting any new or concerning symptoms to the team",
+                "By fighting off any visitors"
             ],
-            correctAnswer: "Helping monitor vital signs like blood pressure and temperature"
+            correctAnswer: "By tracking vital signs and reporting any new or concerning symptoms to the team"
         }
     ],
     'medication-management': [
         {
-            question: "What is one of the most effective ways a caregiver can help with medication?",
+            question: "What is the most powerful tool against missed or double doses?",
             options: [
-                "Hiding the pills to see if the patient remembers",
-                "Telling the patient they don't need them",
-                "Helping organize them into a weekly pillbox",
-                "Changing the doses to see what works best"
+                "A good memory",
+                "Writing it on your hand",
+                "A weekly pill organizer with compartments for each day and time",
+                "Asking the patient every few hours if they took their pills"
             ],
-            correctAnswer: "Helping organize them into a weekly pillbox"
+            correctAnswer: "A weekly pill organizer with compartments for each day and time"
         },
         {
-            question: "Besides organizing pills, what is another helpful medication support task?",
+            question: "What is a good way to manage the medication 'supply chain'?",
             options: [
-                "Keeping track of when prescriptions need to be refilled",
-                "Throwing away the instruction labels",
-                "Mixing all the pills into one bottle",
-                "Only giving medication every other day"
+                "Wait until the very last pill is gone before refilling",
+                "Borrow medication from other patients",
+                "Be aware of the supply and refill prescriptions at least a week before running out",
+                "Assume the hospital will deliver them automatically"
             ],
-            correctAnswer: "Keeping track of when prescriptions need to be refilled"
+            correctAnswer: "Be aware of the supply and refill prescriptions at least a week before running out"
         }
     ],
     'recognizing-warning-signs': [
         {
-            question: "Which of the following is a critical warning sign that requires an immediate call to the transplant team?",
+            question: "Which of these symptoms is a critical warning sign requiring an IMMEDIATE call to the transplant team?",
             options: [
-                "The patient is feeling a little tired",
-                "The patient has a fever over 100.4°F (38°C)",
-                "The patient wants a different meal for dinner",
-                "The patient is watching TV"
+                "The patient is bored",
+                "The patient has a fever of 100.4°F (38°C) or higher",
+                "The patient doesn't like the TV show that's on",
+                "The patient is taking a nap"
             ],
-            correctAnswer: "The patient has a fever over 100.4°F (38°C)"
+            correctAnswer: "The patient has a fever of 100.4°F (38°C) or higher"
         },
         {
-            question: "If you notice a potential warning sign, what should you do?",
+            question: "What is the most important rule for a caregiver if they feel something is 'off' with the patient?",
             options: [
-                "Wait until the next scheduled appointment to mention it",
-                "Search the internet for a solution",
-                "Ask a neighbor what they think",
-                "Do not wait, contact the transplant team immediately"
+                "Wait 24 hours to see if it gets better",
+                "Ask a friend for their opinion",
+                "Trust your instincts and call the transplant team immediately",
+                "Look up the symptoms online and try to treat it yourself"
             ],
-            correctAnswer: "Do not wait, contact the transplant team immediately"
+            correctAnswer: "Trust your instincts and call the transplant team immediately"
         }
     ],
     'self-care-for-caregivers': [
         {
-            question: "Why is self-care important for a caregiver?",
+            question: "Why is it essential, not selfish, for a caregiver to take care of themselves?",
             options: [
-                "It is selfish and should be avoided",
-                "It's not important; only the patient matters",
-                "To prevent burnout and provide sustainable, effective support",
-                "It's only for after the recovery period is over"
+                "It isn't essential",
+                "To be able to go on vacation",
+                "Because you cannot provide consistent, effective support if you are exhausted or burnt out",
+                "To show the patient you are stronger than them"
             ],
-            correctAnswer: "To prevent burnout and provide sustainable, effective support"
+            correctAnswer: "Because you cannot provide consistent, effective support if you are exhausted or burnt out"
         },
         {
-            question: "What is a good self-care strategy for a caregiver?",
+            question: "When friends and family offer to help, what is a good response?",
             options: [
-                "Working 24/7 without a break",
-                "Ignoring your own feelings",
-                "Taking short, regular breaks to recharge",
-                "Avoiding all contact with friends"
+                "\"No, thank you, I can handle everything myself.\"",
+                "\"Maybe later.\"",
+                "\"Yes, thank you! Could you please pick up some groceries for us?\"",
+                "Ignore their offer"
             ],
-            correctAnswer: "Taking short, regular breaks to recharge"
+            correctAnswer: "\"Yes, thank you! Could you please pick up some groceries for us?\""
         }
     ],
     'communication-with-medical-team': [
         {
-            question: "What is a good question to ask the transplant team?",
+            question: "What is a good way to prepare for an appointment with the medical team?",
             options: [
-                "\"Where is the best place to get coffee?\"",
-                "\"Who is the primary contact for urgent questions after hours?\"",
-                "\"Can we leave the hospital early?\"",
-                "\"Do you think the patient's favorite sports team will win?\""
+                "Hope you remember your questions",
+                "Sit down with your loved one beforehand and create a written list of questions",
+                "Plan to ask only one question",
+                "Let the doctor do all the talking"
             ],
-            correctAnswer: "\"Who is the primary contact for urgent questions after hours?\""
+            correctAnswer: "Sit down with your loved one beforehand and create a written list of questions"
         },
         {
-            question: "Is it appropriate for a caregiver to ask about support resources for themselves?",
+            question: "If a doctor uses a medical term you don't understand, what should you do?",
             options: [
-                "No, they should only ask about the patient",
-                "Yes, asking about caregiver support groups or counselors is a good idea",
-                "Only if the patient is doing perfectly well",
-                "No, the hospital doesn't offer such things"
+                "Nod and pretend you understand",
+                "Look it up later on the internet",
+                "Politely ask, \"Could you explain that to us in a simpler way?\"",
+                "Interrupt them and change the subject"
             ],
-            correctAnswer: "Yes, asking about caregiver support groups or counselors is a good idea"
+            correctAnswer: "Politely ask, \"Could you explain that to us in a simpler way?\""
+        }
+    ],
+    // The 'patient-responsibilities' module is mostly about conduct, so a quiz isn't as applicable.
+    // We will leave the default quiz here for now as a placeholder.
+    'patient-responsibilities': [
+         {
+            question: "As a patient, who is the most important member of your care team?",
+            options: [
+                "The surgeon",
+                "The nurse coordinator",
+                "You, the patient",
+                "The dietitian"
+            ],
+            correctAnswer: "You, the patient"
+        },
+        {
+            question: "If you don't understand something a doctor says, what should you do?",
+            options: [
+                "Pretend you understand",
+                "Look it up on the internet later",
+                "Never hesitate to ask questions for clarification",
+                "Ask another patient"
+            ],
+            correctAnswer: "Never hesitate to ask questions for clarification"
         }
     ]
 };
