@@ -205,10 +205,6 @@ export default function ModulePage() {
     }
 
     if (isSubmitted) {
-        const allModules = modulesByRole[role].modules;
-        const lastModuleSlug = allModules[allModules.length -1].slug
-        const isFinalModule = slug === lastModuleSlug
-
         return (
             <Card className="max-w-3xl mx-auto">
                 <CardHeader className="text-center">
@@ -247,16 +243,13 @@ export default function ModulePage() {
                     <Button onClick={resetQuiz} className="w-full sm:w-auto">
                         {t('quizRetake')}
                     </Button>
-                     {isFinalModule ? (
-                        <Button onClick={() => router.push('/')} className="w-full sm:w-auto" size="lg">
-                            <LayoutDashboard className="mr-2 h-4 w-4" />
-                            {t('navDashboard')}
-                        </Button>
-                    ) : (
-                        <Button asChild className="w-full sm:w-auto" size="lg">
-                            <Link href="/modules">{t('quizBackToPath')}</Link>
-                        </Button>
-                    )}
+                    <Button asChild className="w-full sm:w-auto" size="lg">
+                        <Link href="/modules">{t('quizBackToPath')}</Link>
+                    </Button>
+                    <Button onClick={() => router.push('/')} className="w-full sm:w-auto" variant="secondary">
+                        <LayoutDashboard className="mr-2 h-4 w-4" />
+                        {t('navDashboard')}
+                    </Button>
                 </CardFooter>
             </Card>
         )
