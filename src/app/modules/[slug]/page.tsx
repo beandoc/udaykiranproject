@@ -36,12 +36,12 @@ export default function ModulePage() {
     const moduleContentData = getContentDataForLang(language)[slug];
 
     const [questions, setQuestions] = useState<QuizQuestion[]>(() => {
-        const langQuizData = quizData[language] || quizData['en'];
+        const langQuizData = quizData[language as keyof typeof quizData] || quizData['en'];
         return langQuizData[slug] || [];
     });
     
     useEffect(() => {
-        const langQuizData = quizData[language] || quizData['en'];
+        const langQuizData = quizData[language as keyof typeof quizData] || quizData['en'];
         setQuestions(langQuizData[slug] || []);
     }, [slug, language]);
 
@@ -272,17 +272,12 @@ export default function ModulePage() {
                     <Button onClick={resetQuiz} className="w-full sm:w-auto">
                         {t('quizRetake')}
                     </Button>
-                    <Button asChild className="w-full sm:w-auto" size="lg">
-                        <Link href="/modules">{t('quizBackToPath')}</Link>
+                     <Button asChild size="lg" className="w-full sm:w-auto">
+                        <Link href="/">
+                            <LayoutDashboard className="mr-2 h-4 w-4" />
+                            {t('navDashboard')}
+                        </Link>
                     </Button>
-                    <div className="w-full sm:w-auto">
-                        <Button asChild className="w-full">
-                            <Link href="/">
-                                <LayoutDashboard className="mr-2 h-4 w-4" />
-                                {t('navDashboard')}
-                            </Link>
-                        </Button>
-                    </div>
                 </CardFooter>
             </Card>
         )
@@ -367,3 +362,4 @@ export default function ModulePage() {
         </div>
     );
 }
+
