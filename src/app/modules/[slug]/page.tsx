@@ -143,28 +143,38 @@ export default function ModulePage() {
                             </TabsContent>
                         </Tabs>
                     </CardContent>
-                    <CardFooter className="flex-col items-stretch gap-4 sm:flex-row sm:justify-between">
-                         <Button variant="outline" asChild>
-                            <Link href="/modules">
-                                <ChevronLeft className="mr-2 h-4 w-4" /> {t('contentBackToPath')}
-                            </Link>
-                        </Button>
-                        <div className="flex flex-col sm:flex-row gap-2">
-                             {audioSrcForCurrentLang && (
-                                <Button onClick={() => setShowAudioPlayer(!showAudioPlayer)} variant="secondary">
-                                    <Volume2 className="mr-2 h-4 w-4" />
-                                    {showAudioPlayer ? t('hidePlayer') : t('listenToContent')}
+                    <CardFooter className="flex-col items-stretch gap-4">
+                        <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
+                            <div className="flex flex-col sm:flex-row gap-2">
+                                <Button variant="outline" asChild>
+                                    <Link href="/modules">
+                                        <ChevronLeft className="mr-2 h-4 w-4" /> {t('contentBackToPath')}
+                                    </Link>
                                 </Button>
-                            )}
-                            {questions && questions.length > 0 ? (
-                                <Button onClick={() => setViewMode('quiz')} size="lg">
-                                    {t('contentStartQuiz')} <HelpCircle className="ml-2 h-4 w-4" />
+                                <Button variant="secondary" asChild>
+                                    <Link href="/">
+                                        <LayoutDashboard className="mr-2 h-4 w-4" />
+                                        {t('navDashboard')}
+                                    </Link>
                                 </Button>
-                            ) : (
-                                <Button disabled size="lg">
-                                    {t('contentQuizComingSoon')}
-                                </Button>
-                            )}
+                            </div>
+                            <div className="flex flex-col sm:flex-row gap-2">
+                                {audioSrcForCurrentLang && (
+                                    <Button onClick={() => setShowAudioPlayer(!showAudioPlayer)} variant="secondary">
+                                        <Volume2 className="mr-2 h-4 w-4" />
+                                        {showAudioPlayer ? t('hidePlayer') : t('listenToContent')}
+                                    </Button>
+                                )}
+                                {questions && questions.length > 0 ? (
+                                    <Button onClick={() => setViewMode('quiz')} size="lg">
+                                        {t('contentStartQuiz')} <HelpCircle className="ml-2 h-4 w-4" />
+                                    </Button>
+                                ) : (
+                                    <Button disabled size="lg">
+                                        {t('contentQuizComingSoon')}
+                                    </Button>
+                                )}
+                            </div>
                         </div>
                     </CardFooter>
                 </Card>
@@ -246,9 +256,11 @@ export default function ModulePage() {
                     <Button asChild className="w-full sm:w-auto" size="lg">
                         <Link href="/modules">{t('quizBackToPath')}</Link>
                     </Button>
-                    <Button onClick={() => router.push('/')} className="w-full sm:w-auto" variant="secondary">
-                        <LayoutDashboard className="mr-2 h-4 w-4" />
-                        {t('navDashboard')}
+                    <Button asChild className="w-full sm:w-auto" variant="secondary">
+                         <Link href="/">
+                            <LayoutDashboard className="mr-2 h-4 w-4" />
+                            {t('navDashboard')}
+                        </Link>
                     </Button>
                 </CardFooter>
             </Card>
