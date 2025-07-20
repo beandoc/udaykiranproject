@@ -195,7 +195,7 @@ export default function ModulePage() {
                 )}
 
                 <div className="flex justify-center pt-4">
-                    <Button asChild variant="secondary" size="lg">
+                    <Button asChild size="lg">
                         <Link href="/">
                             <LayoutDashboard className="mr-2 h-4 w-4" />
                             {t('navDashboard')}
