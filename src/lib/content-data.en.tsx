@@ -17,10 +17,10 @@ export const contentData: ModuleContentData = {
             <p>A kidney transplant is not a suitable path for everyone. Certain conditions, known as contraindications, can make the surgery too risky. These include serious active infections, untreated malignancies (cancers), severe and unstable heart conditions, or other overwhelming medical problems. A thorough evaluation ensures that a transplant is a safe and viable option for each individual candidate.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Your Body's Filters</h3>
-            <p>Imagine your two kidneys are like super-advanced water filters for your body. Their job is to clean your blood all day, every day, removing waste and extra water to keep you healthy. When someone has end-stage kidney disease, it means these filters have gotten very tired and can't clean properly anymore. This makes the person feel very sick.</p>
-            <p>A kidney transplant is like getting a brand new, powerful filter from a very kind person. It's the best possible fix! This means no more long hours hooked up to a dialysis machine, which is an artificial filter. You get more freedom to eat the foods you love and to live a more active, normal life.</p>
-            <p>However, it's also a big deal. The surgery is a major operation. And, your body's defense team (your immune system) is trained to attack anything that's new or foreign. It might see the new kidney and think, "Hey, I don't recognize this!" To prevent this, you have to take special "friendship medicine" (immunosuppressants) every single day, for life. This medicine tells your defense team to be calm and accept the new kidney as a friend.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: When Your Body's Filters Need Help</h3>
+            <p>Think of your two kidneys as a super-advanced, high-tech water filtration system for your body. Day in and day out, they work silently to clean all the blood in your body, pulling out waste products and extra fluid to keep everything running smoothly. When someone has "end-stage kidney disease," it means this filtration system has worn out and can't do its job anymore. When that happens, waste builds up and makes the person very sick.</p>
+            <p>A kidney transplant is like getting a brand new, top-of-the-line filter from a very generous person. It's the best possible solution! The biggest plus is escaping dialysis, which is like using a big, external filter machine for hours several times a week. A transplant means more freedom to eat the foods you enjoy and live a more active, normal life.</p>
+            <p>However, it's a big deal. The surgery itself is a major operation. Plus, your body has a very alert security system (your immune system) that's trained to attack anything it doesn't recognize. To stop the security system from attacking the new kidney, you have to take special "password" medications every single day, for life. These medications tell your security system, "It's okay, this new kidney is a friend." This is a lifelong commitment, but it's what keeps the new filter working.</p>
         `
     },
     'anesthesia-risks': {
@@ -40,10 +40,10 @@ export const contentData: ModuleContentData = {
             <p class="mt-4">Your anesthesiologist will meet with you before surgery to discuss your specific situation and answer all of your questions, ensuring you feel confident and informed.</p>
         `,
         eli10: `
-             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Magic Sleep</h3>
-             <p>For your surgery, the doctors will give you a special kind of medicine to make you fall into a very deep, magic sleep called anesthesia. This is so you are completely comfortable and don't feel anything at all during the procedure. It's very, very safe.</p>
-             <p>When you wake up from this magic sleep, it's common to feel a little bit off. You might have a sore throat from the breathing tube they use to keep you safe, or you might feel a little bit sick to your stomach. These feelings are normal and usually go away very quickly. The nurses have medicine to help you feel better.</p>
-             <p>While extremely rare, more serious problems can happen, just like with any powerful magic. But your anesthesia doctor is a highly trained expert—like a wizard—who stays with you the entire time, watching you closely and keeping you safe from beginning to end. Their only job is your well-being.</p>
+             <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Magic Sleep of Surgery</h3>
+             <p>For your surgery, the doctors will give you special medicine to make you fall into a very deep, controlled sleep called anesthesia. It's not like regular sleep; it ensures you are completely unaware and feel absolutely no pain during the entire procedure. Think of the anesthesiologist as your personal pilot for this journey, staying by your side and monitoring you constantly.</p>
+             <p>When you wake up, it's normal to feel a bit groggy, like waking up from a very long nap in a strange place. You might have a sore throat because of a breathing tube they used to keep you safe, or you might feel a little queasy. These feelings are normal, expected, and they don't last long. The nurses are ready with things to make you feel comfortable.</p>
+             <p>While modern anesthesia is incredibly safe, there are always very small risks with any powerful medicine, just like flying in a plane has tiny risks. Very rarely, issues like allergic reactions can happen. But your "pilot" — the anesthesiologist — is a highly trained expert who has studied your health chart and chosen the safest flight plan just for you. They watch over you from beginning to end, making sure your journey is as smooth and safe as possible.</p>
         `
     },
     'patient-responsibilities': {
@@ -69,16 +69,16 @@ export const contentData: ModuleContentData = {
             </div>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Your Job on the Team</h3>
-            <p>Think of your transplant like being on a sports team. The doctors and nurses are your coaches, but you are the star player! For the team to win (and for you to stay healthy), you have to do your part.</p>
-            <p><strong>Your job includes:</strong></p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: You're the Star Player on the Team</h3>
+            <p>Think of your transplant journey like being on a professional sports team. The doctors, surgeons, and nurses are your expert coaches, designing the game plan. But you are the most valuable player (MVP), the star of the team! For the team to win (which means for you to stay healthy), you have to be an active and committed player.</p>
+            <p><strong>Your MVP Responsibilities Include:</strong></p>
             <ul class="list-disc list-inside space-y-2 pl-4">
-                <li><strong>Listening to the coaches:</strong> Pay attention to what the doctors say and ask questions if you're confused.</li>
-                <li><strong>Following the playbook:</strong> Take your medicine every single time, just like the coaches tell you to.</li>
-                <li><strong>Showing up for practice:</strong> Be on time for all your check-ups.</li>
-                <li><strong>Being a good teammate:</strong> Be nice to the hospital staff and other patients.</li>
+                <li><strong>Studying the Playbook:</strong> Learn about your health and treatment. The more you know the plays, the better you'll perform. Don't be shy about asking the coaches to explain a play you don't understand.</li>
+                <li><strong>Executing the Plays Perfectly:</strong> This means taking your medicine every single time, exactly as the coaches instruct. It's the most critical play in the book.</li>
+                <li><strong>Showing Up for Practice and Games:</strong> Your appointments and lab tests are like practice sessions and scheduled games. Being on time and prepared is essential for the team to see how you're doing and make adjustments.</li>
+                <li><strong>Being a Good Teammate:</strong> The hospital is the team's home stadium. Being respectful to the staff and other players (patients) helps create a winning atmosphere for everyone.</li>
             </ul>
-            <p>When you do your job well, the whole team succeeds, and you get to enjoy your healthy new kidney!</p>
+            <p>When you are an engaged star player, the entire team succeeds, and the grand prize is your long-term health!</p>
         `
     },
     'evaluation-process': {
@@ -97,9 +97,16 @@ export const contentData: ModuleContentData = {
             <p class="mt-4">This entire process can take several weeks to complete. Your active participation and timeliness in attending all appointments are essential to moving forward on your transplant journey.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Health Checkup Adventure</h3>
-            <p>Before you can get your new kidney, the doctors need to make sure your body is ready for this big adventure. Think of it like a very thorough health checkup. They want to be sure you're strong enough for the surgery.</p>
-            <p>You'll meet a whole team of experts! A kidney doctor will check on your health, a surgeon will plan the operation, and a nurse will be your guide through it all. They'll take some pictures (like X-rays) of your insides and do some blood tests to learn more about you. It's all to make sure the transplant will be safe and successful for you.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Your Pre-Flight Safety Check</h3>
+            <p>Think of getting a transplant like preparing for a very important flight. Before the plane can take off, the flight crew has to do a complete safety check to make sure everything is in perfect working order. The transplant evaluation is your body's pre-flight safety check.</p>
+            <p>The goal is to make sure you are strong and healthy enough for the "flight" (the surgery). The "crew" (your transplant team) will run a series of tests:</p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                 <li><strong>Fuel Check (Blood/Urine Tests):</strong> They'll take samples to check your overall health, just like checking the plane's fuel and oil.</li>
+                 <li><strong>Passenger ID (Tissue Typing):</strong> This special blood test is like checking your ID to find the most compatible co-pilot (donor).</li>
+                 <li><strong>Systems Check (Imaging):</strong> They'll use things like X-rays and ultrasounds to take pictures of your heart and other organs, like a mechanic checking the plane's engine and wings.</li>
+                 <li><strong>Briefing with the Crew:</strong> You'll meet with all the experts—doctors, surgeons, nurses—to go over the flight plan and ask any questions you have.</li>
+            </ul>
+            <p>This whole process makes sure your journey will be as safe and successful as possible.</p>
         `
     },
     'transplant-matching': {
@@ -123,11 +130,11 @@ export const contentData: ModuleContentData = {
             <p>Just before the transplant, a final and critical blood test called a crossmatch is performed. This test involves mixing a small amount of your blood (the recipient's) with the donor's blood. A "negative" crossmatch is the desired result, showing no reaction and signaling that the transplant is safe to proceed. A "positive" crossmatch indicates that you have pre-existing antibodies that would attack the donor kidney, and the transplant cannot happen without specialized treatment to remove those antibodies.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Finding the Perfect Puzzle Piece</h3>
-            <p>Imagine your body is a giant puzzle, and you need a new kidney puzzle piece. For the new piece to fit perfectly, it needs to match you in two special ways.</p>
-            <p><strong>1. Blood Type:</strong> This is like matching the color of the puzzle piece. Your blood has a type (like A, B, O), and the new kidney needs to have a friendly, matching type.</p>
-            <p><strong>2. Tissue Type (HLA):</strong> This is like matching the shape of the puzzle piece. Your body has a secret code (called HLA) that tells it, "This belongs here!" The closer the new kidney's code is to yours, the better it will fit and the less likely your body will think it's a mistake.</p>
-            <p>Doctors do special tests to find a kidney that is the best possible match for your body's puzzle.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Finding the Perfect Puzzle Piece</h3>
+            <p>Imagine your body is a very complex and specific puzzle, and you need a new kidney puzzle piece. For the new piece to fit perfectly without causing any trouble, it has to match your puzzle in a few special ways.</p>
+            <p><strong>1. Blood Type (The Color):</strong> This is the first and easiest match. Think of it like matching the basic color of the puzzle piece. If your puzzle area is blue, you need a blue piece. Your blood has a type (A, B, O, or AB), and the new kidney needs to have a compatible "color."</p>
+            <p><strong>2. Tissue Type/HLA (The Shape):</strong> This is much more detailed, like the exact shape of the puzzle piece's edges. Every person has special markers on their cells, called HLA markers, that are like a unique barcode. Your body's security system uses this barcode to know if a cell belongs or if it's an invader. The closer the new kidney's barcode is to yours, the better it fits, and the less likely your security system is to sound an alarm.</p>
+            <p><strong>3. The Crossmatch (The Final Test Fit):</strong> Just before putting the piece in, the doctors do a final test. They mix a little of your blood with the donor's blood in a test tube. If nothing happens, it's a "negative crossmatch," and that's great! It means the piece will fit. If there's a reaction, it's "positive," meaning your security system is already on high alert for that specific piece, and the transplant can't happen.</p>
         `
     },
     'surgery-day': {
@@ -145,9 +152,11 @@ export const contentData: ModuleContentData = {
             <p>You will wake up in the post-anesthesia care unit (recovery room), where a dedicated team of nurses will be monitoring you very closely. You will have several tubes and lines in place, including an IV for fluids and medication, a catheter in your bladder to drain urine, and possibly a small drain near your incision. Your pain will be managed effectively with medication to keep you comfortable. Once you are stable, you will be transferred to a specialized transplant unit to begin your recovery.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Big Day!</h3>
-            <p>On the big day, you'll go to a special room in the hospital. The doctors will give you "magic sleep" medicine so you won't feel, see, or hear anything during the operation. It's just like taking a long, deep nap.</p>
-            <p>While you're asleep, the expert surgeon will carefully place the new, healthy kidney inside your tummy. They'll connect it to your body's plumbing so it can start its important job of cleaning your blood right away. When you wake up, nurses will be right there to make sure you're comfortable. The new kidney will be inside, ready to help you feel much better!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Big Day!</h3>
+            <p>Think of surgery day as the grand finale of all your preparation. It's a busy day, but the team has a clear plan.</p>
+            <p><strong>The Morning Of:</strong> You won't be able to eat or drink anything. This is a safety rule for the "magic sleep" (anesthesia). The team will do one last check of your blood, and you'll meet the anesthesia doctor who will be your personal pilot for the surgery. They'll give you the first dose of your special "friendship medicine" to get your body ready.</p>
+            <p><strong>During the Operation:</strong> You'll be completely asleep and comfortable. A highly skilled surgeon will make an incision low on your belly, like where a pocket on your jeans would be. They'll place the new kidney there, where it's safe and has easy access to your body's main "highways" (blood vessels). They don't usually take your old kidneys out. The surgeon then works like a master plumber and electrician, connecting the new kidney's artery, vein, and urine tube to your system.</p>
+            <p><strong>Waking Up:</strong> You'll wake up in a special recovery room. A nurse will be right there with you. You'll have some tubes connected, like an IV for fluids, which is normal. Your job is just to rest as the team of experts takes care of everything.</p>
         `
     },
     'post-transplant-recovery': {
@@ -163,9 +172,10 @@ export const contentData: ModuleContentData = {
             <p>Because your immune system is suppressed by medication, you are at a higher risk for infections. Diligent hand hygiene, wearing a mask in public, and avoiding crowds or anyone who is sick are essential practices. Your diet will focus on being heart-healthy and low in salt, and you must be extra careful with food safety. This period is about establishing the new routines that will protect your health for years to come.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Healing Up!</h3>
-            <p>After your surgery, your body needs time to heal. At first, you'll be in the hospital where doctors and nurses will be your personal superheroes, checking on you all the time to make sure your new kidney is happy.</p>
-            <p>Soon, you'll go home, but you still need to take it easy. Think of yourself as a superhero in training! Your main job is to rest and let your body get strong. This means no heavy lifting (like carrying your school backpack) for a while. You'll also need to be extra careful about germs, so lots of hand washing! Your body is busy making friends with the new kidney, and you need to help it by taking your special medicine every single day.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Healing Up, Step by Step</h3>
+            <p>After your surgery, your body has a big job to do: healing. This process is like a marathon, not a sprint, and happens in stages.</p>
+            <p><strong>In the Hospital (The Training Camp):</strong> The first week or two is like a training camp. You're in a special unit where the nurses and doctors are your personal coaches, checking on you 24/7. They'll check your new kidney's "report card" with daily blood tests. One of your most important "training exercises" will be to get up and walk around. It might seem tough at first, but walking is a superhero move that prevents problems and helps you heal faster. You'll also start learning all about your new medications.</p>
+            <p><strong>At Home (The First Season):</strong> The first three months at home are like your rookie season. You're getting stronger, but you still need to be careful. You'll have lots of "check-ins" with your coaches (follow-up appointments). Your main job is to protect your body while it heals. This means no heavy lifting – not even a heavy backpack or groceries! Since your body's security system is calmed by medicine, you have to be a master of defense against germs. This means washing your hands often and staying away from people who are sick. This is the time to build the new, healthy habits that will last a lifetime.</p>
         `
     },
     'immunosuppressants': {
@@ -183,9 +193,10 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Friendship Medicine</h3>
-            <p>Your body has a defense team called the immune system. Its job is to fight off bad guys like germs. But because your new kidney is new, the defense team might not recognize it and think it's a bad guy.</p>
-            <p>To prevent this, you take special "friendship medicine." This medicine tells your defense team, "Hey, be cool! This new kidney is a friend, not a foe." You have to take this friendship medicine every day, forever, to remind the defense team to be nice. If you forget, the defense team might get confused and start a fight with your new kidney, which is called "rejection." That's why taking your medicine on time, every time, is the most important job you have!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Friendship Medicine</h3>
+            <p>Your body has a very loyal and powerful security system called the immune system. Its job is to attack any invaders, like germs. Since your new kidney came from someone else, your security system might mistakenly see it as an invader and try to fight it off. This fight is called "rejection."</p>
+            <p>To prevent this, you take special medications called immunosuppressants. Think of them as "friendship medicine." This medicine acts like a diplomat, constantly telling your security system, "Hey, be cool! This new kidney is a friend, not a foe. It's part of our team now."</p>
+            <p>You have to take this friendship medicine every day, for as long as you have the kidney. This is not optional; it's the most important job you have. Taking it at the same time every day keeps the diplomatic message strong and consistent, ensuring your security system and your new kidney remain peaceful friends.</p>
         `
     },
     'medication-adherence': {
@@ -206,9 +217,10 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Following the Recipe</h3>
-            <p>Think of your health like baking a cake. Your doctor gives you a recipe (your prescription) with exact instructions: how much medicine to use and exactly when to add it. To bake the perfect cake (to stay healthy), you have to follow the recipe perfectly.</p>
-            <p>If you forget an ingredient or add it at the wrong time, the cake might not turn out right. It's the same with your medicine! Taking it on time, every time, is the secret ingredient to keeping your new kidney happy and healthy for a long, long time. Using a pillbox and setting phone alarms are like being a super-organized baker!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Following the Recipe for Success</h3>
+            <p>Think of your health as baking a very important, complex cake. Your prescription is the recipe, created by expert chefs (your doctors). "Adherence" just means following that recipe perfectly. You use the exact ingredients (the right pills), in the exact amounts (the right dose), at the exact times the recipe tells you to. Following this recipe is the secret to a perfect cake—and a healthy kidney.</p>
+            <p>What happens if you forget an ingredient or add it at the wrong time? The cake might not turn out right. It's the same with your medicine. Missing even one dose is like leaving out a key ingredient. It gives your body's security system a chance to start causing trouble for your new kidney. That's why being a disciplined "baker" is your most important job.</p>
+            <p>To make it easy, use tools! A weekly pillbox is like organizing your ingredients before you start. Setting alarms on your phone is like having a timer that tells you exactly when to add the next ingredient. These simple tools help you follow the recipe for success every single day.</p>
         `
     },
     'understanding-rejection': {
@@ -234,9 +246,14 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Body's Defense Team</h3>
-            <p>Your body has a defense team (the immune system) that is a pro at fighting off bad germs. When your new kidney arrives, the defense team might get confused and think, "I don't know you! Are you a bad guy?" and start a fight. This fight is called "rejection."</p>
-            <p>Your anti-rejection medicine is like a coach that tells the defense team, "Calm down, this kidney is a friend!" Most of the time, the medicine works perfectly. Sometimes, the defense team gets a little rowdy anyway. Doctors can see this happening in your blood tests, often before you even feel sick. They can then adjust the medicine to calm the team down again. That's why going to your check-ups is super important!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: When the Body's Security System Gets Confused</h3>
+            <p>The word "rejection" sounds scary, but let's break it down. It's simply when your body's security system (the immune system) gets confused and thinks your new, life-saving kidney is an intruder. It's a risk everyone with a transplant lives with, but doctors are experts at managing it.</p>
+            <p><strong>There are two main types of confusion:</strong></p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>Acute Rejection (A Sudden Misunderstanding):</strong> This usually happens in the first few months. It's like the security system suddenly gets a "false alarm" and sends out the guards. Often, you won't feel a thing! The doctors catch it on your regular "report card" (blood tests). They can usually calm the situation down by adjusting your "friendship medicine," sometimes with a short hospital stay for a stronger dose.</li>
+                <li><strong>Chronic Rejection (A Slow Grudge):</strong> This is a much slower, long-term issue where the security system holds a low-level grudge against the kidney, causing damage over years. This is why taking your medicine perfectly forever and living a healthy life is so important—it's the best way to prevent this from happening.</li>
+            </ul>
+            <p>Your blood tests are the best detectives for finding rejection early. But you should also be on the lookout for physical clues like a fever or pain near your kidney. If you spot any, call your team right away!</p>
         `
     },
     'understanding-graft-health': {
@@ -257,10 +274,16 @@ export const contentData: ModuleContentData = {
             <p>You are the most important guardian of your new kidney. Success depends on your commitment to taking medications perfectly, maintaining a healthy lifestyle, knowing your goal numbers for blood pressure and creatinine, and immediately reporting any new or concerning symptoms to your team.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Your Kidney's Report Card</h3>
-            <p>Think of your new kidney (doctors call it a "graft") like a new student in school. You want it to get a great report card! The doctors check its report card all the time with blood tests.</p>
-            <p>The most important grade on the report card is called "creatinine." A low creatinine number is like getting an A+! It means your kidney is doing a fantastic job cleaning your blood. If the number starts to go up, it's like a C or D, and the doctors know they need to check what's wrong.</p>
-            <p>Your job is to help your new kidney get good grades by taking your medicine every day and living a healthy life. This helps your new kidney stay at the top of the class!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Your Kidney's Performance Report Card</h3>
+            <p>You'll hear the doctors call your new kidney a "graft." Think of this precious graft like a high-performance race car engine that's been gifted to you. Your job, with the help of your pit crew (the transplant team), is to keep that engine running perfectly.</p>
+            <p><strong>How the Pit Crew Checks the Engine:</strong></p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>The Main Dashboard Light (Creatinine):</strong> The most important number on your dashboard is your creatinine level, which is checked with a blood test. Creatinine is a type of "exhaust" from your muscles. A healthy engine cleans it out efficiently, keeping the number low. If the creatinine number starts to rise, it's like a "check engine" light turning on—the first sign your crew needs to investigate.</li>
+                <li><strong>The Oil Check (Urine Test):</strong> A urine test checks for protein. A healthy engine keeps all the good stuff (like protein) inside. If protein is leaking out, it's a sign the engine might be under stress.</li>
+                <li><strong>Tire Pressure (Blood Pressure):</strong> Driving with high tire pressure for a long time can damage a car. Similarly, high blood pressure can damage the delicate parts of your new kidney engine over time.</li>
+                <li><strong>A Look Under the Hood (Biopsy):</strong> If the dashboard lights are flashing, the crew might need to take a closer look. A biopsy is a safe and simple way to do this. They use a needle to take a tiny sample of the engine to see exactly what's going on, so they can use the right tool to fix it.</li>
+            </ul>
+            <p>You are the driver of this car. Knowing your numbers and taking perfect care of the engine is the key to winning the race for long-term health.</p>
         `
     },
     'long-term-care': {
@@ -280,9 +303,16 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Keeping Your Car Running Smoothly</h3>
-            <p>Getting a new kidney is like getting a brand new, amazing car. It runs great, but to keep it that way for a long, long time, you need to take it for regular check-ups. You can't just drive it and forget about it!</p>
-            <p>Your appointments with the transplant doctor are like taking your car to the best mechanic in the world. They check the engine (your kidney), check the oil (your blood tests), and make sure everything is tuned up perfectly. They also check the other parts of the car, like the tires (your heart) and the paint (your skin), to make sure everything stays in great shape. Regular check-ups keep your amazing new car running smoothly for years and years!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Lifetime Maintenance Plan</h3>
+            <p>Getting a new kidney is like being given a beautiful, high-tech house. The builders have done their job, but now you're the homeowner, and you have a lifetime maintenance plan to keep it in perfect condition.</p>
+            <p><strong>Regular Inspections (Follow-Up Appointments):</strong> You wouldn't wait for the roof to leak before having it inspected. Your follow-up appointments are your scheduled inspections. Even if everything feels fine, the inspectors (your doctors) can spot tiny, hidden issues with their special tools (blood tests) and fix them before they become big, expensive problems.</p>
+            <p><strong>Protecting the Whole Property (Screenings):</strong> The "friendship medicine" that protects your house from intruders (rejection) can sometimes make other parts of the property a bit more vulnerable over time. That's why your maintenance plan includes regular checks on other things:</p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>The Exterior (Skin Cancer):</strong> Your skin is more sensitive to the sun. Using sunscreen is like applying a protective coat of paint.</li>
+                <li><strong>The Plumbing and Wiring (Heart Health):</strong> You need to keep the plumbing (blood vessels) clear by managing blood pressure and cholesterol.</li>
+                <li><strong>The Foundation (Bone Health):</strong> Some medicines can weaken the foundation over time, so doctors might check on your bone strength.</li>
+            </ul>
+            <p>Following your maintenance plan is the best way to enjoy your beautiful new house for many, many years.</p>
         `
     },
     'diet-and-nutrition': {
@@ -301,10 +331,16 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Fuel for Your New Engine</h3>
-            <p>Your new kidney is like a brand new, high-performance engine! To keep it running great, you need to give it the best fuel. You don't have as many rules as before, but some are super important.</p>
-            <p>Think of salty foods like french fries and chips as "dirty fuel" that can clog up your engine and make your blood pressure go too high. You want to use "clean fuel" like fresh fruits, vegetables, and lean chicken. Drinking lots of water helps keep the engine clean and running smoothly.</p>
-            <p>There's one rule that's a super-mega-important secret: **NO GRAPEFRUIT!** Grapefruit does something weird to your special friendship medicine and can cause big problems. So, no grapefruit, ever!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Fuel for Your New High-Performance Engine</h3>
+            <p>Your new kidney is like a brand new, high-performance engine. It runs best on high-quality fuel. You have a lot more freedom with food than you did on dialysis, but the goal now is to choose the best fuel to protect your new engine and your whole body for the long run.</p>
+            <p>Here are the key "fuel rules":</p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>Go Easy on the Salt:</strong> Think of salt like a corrosive chemical. Too much of it can raise your blood pressure and be hard on your engine. Processed snacks and fast food are loaded with it, so fresh food is a better choice.</li>
+                <li><strong>Use the Right Oil:</strong> Your body needs fats, but good ones. Olive oil and avocados are like clean, premium synthetic oil. Fats from butter and fried foods are more like thick, sludgy oil that can clog things up.</li>
+                <li><strong>Keep the Coolant Topped Up:</strong> Water is like coolant for your new engine. Drinking plenty of it keeps the kidney flushed, cool, and running smoothly.</li>
+                <li><strong>Avoid Contaminated Fuel:</strong> Because your "friendship medicine" calms your body's security system, you have to be extra careful about food germs. This means no "raw fuel" like sushi or undercooked eggs, and always washing fruits and veggies well.</li>
+                <li><strong>THE #1 RULE:</strong> There's one type of fuel that is absolutely forbidden: **Grapefruit.** It acts like a poison to your system because it messes with your essential "friendship medicine." This is the most important food rule of all.</li>
+            </ul>
         `
     },
     'physical-activity-and-exercise': {
@@ -326,9 +362,11 @@ export const contentData: ModuleContentData = {
             <p>To protect your new kidney, which is located in your lower abdomen and is not protected by your rib cage, some activities must be avoided permanently. This includes any contact sports where you could receive a blow to the abdomen, such as football, hockey, boxing, or martial arts. Also, continue to avoid very heavy lifting to prevent hernias.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Moving Your Body</h3>
-            <p>After your surgery, you need to get your body moving to help it get strong again. But you have to start slow! At first, just taking a short walk is perfect. It's like taking your new engine out for a gentle drive around the block.</p>
-            <p>As you get stronger, you can walk a little longer, or maybe ride a stationary bike. The most important rule is to protect your new kidney! That means no rough-and-tumble games like football or wrestling. Think of it this way: you wouldn't want someone to bump into your new, shiny engine. Walking, swimming, and cycling are great ways to stay active and keep your engine—and your whole body—in fantastic shape!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Moving Your Body to Stay Strong</h3>
+            <p>Think of your body like a car. If you let it sit in the garage for too long, the battery dies and the parts get stiff. Exercise is like taking your car for a regular drive to keep the engine healthy, the tires in good shape, and everything running smoothly. It's essential for controlling your blood pressure, weight, and even your mood.</p>
+            <p><strong>Starting Your Engine Safely:</strong> After surgery, you can't just go from zero to sixty. You need to warm up the engine slowly. Walking is the perfect way to start. Begin with a short, slow drive around the block, and gradually go a little farther each day. Always listen to your body's "dashboard lights"—if you feel pain, that's a signal to slow down and rest.</p>
+            <p><strong>Approved Driving Routes:</strong> Activities like walking, swimming (once your incision is healed!), and cycling are fantastic. They are smooth rides that are great for your heart and body.</p>
+            <p><strong>Off-Limit Roads:</strong> Your new kidney is located in your belly and doesn't have your ribs to protect it like a roll cage. To keep it safe, you must permanently avoid "off-roading" or any activity where you might crash. This means no contact sports like football, wrestling, or martial arts. Protecting your new engine is priority number one!</p>
         `
     },
     'post-transplant-diabetes': {
@@ -349,9 +387,10 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Sugar Glitch</h3>
-            <p>Sometimes, the special "friendship medicine" you take for your new kidney can have a side effect. It can make the sugar in your body act a little glitchy and go too high. When this happens, it's called "post-transplant diabetes."</p>
-            <p>It's a common glitch, and the doctors know exactly how to fix it! The first step is to eat healthier foods (less candy and sweets!) and to get your body moving with exercise. This often fixes the glitch completely. If not, the doctors have other medicines that can help get your sugar levels back to normal. It's very important to fix the glitch to keep you and your new kidney healthy.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Sugar Glitch</h3>
+            <p>Imagine your body has a system for managing energy from food, which is sugar. Some of the essential "friendship medicines" you take can cause a temporary "glitch" in this system, causing the sugar levels in your blood to go too high. When this happens after a transplant, doctors call it Post-Transplant Diabetes (PTDM). It's a known and manageable side effect.</p>
+            <p><strong>What causes the glitch?</strong> The main cause is the medication itself. Think of it like a software update that sometimes has a minor bug. Being overweight or having diabetes in your family can also make you more likely to experience this glitch.</p>
+            <p><strong>How do we fix the glitch?</strong> Your team monitors for this bug with regular blood tests. If they find it, the repair process starts with simple steps. The best "software patch" is a healthy lifestyle: eating fewer sugary foods and getting regular exercise. This often fixes the problem completely. If the glitch persists, your doctors have other tools, like special pills or insulin, to get your sugar levels back to normal. Fixing this glitch is important to protect both your new kidney and your heart.</p>
         `
     },
     'mental-health-support': {
@@ -372,9 +411,15 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: All the Feels</h3>
-            <p>Getting a new kidney is a huge deal, and it can bring up a lot of different feelings, like a rollercoaster! One minute you might feel super happy and excited. The next, you might feel a little worried or scared about your new kidney. All of these feelings are totally normal.</p>
-            <p>Think of it like this: your body just went through a big change, and your brain needs some time to catch up! The best thing you can do is talk about your feelings. Talking to your parents, a friendly doctor or nurse, or even other kids who have had a transplant can make you feel so much better. It's like letting some air out of a balloon that's too full. Taking care of your feelings is just as important as taking care of your new kidney.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Taking Care of Your Thoughts and Feelings</h3>
+            <p>Going through a transplant is a huge journey, not just for your body, but for your mind and emotions, too. It's like climbing a huge mountain. On the way up, you'll have moments of incredible joy and excitement when you see the view. You'll also have moments where you feel tired, worried about the weather (complications), or just a little bit down. This emotional rollercoaster is a completely normal part of the climb.</p>
+            <p>It's a sign of strength, not weakness, to take care of your emotional health. Here are some tools for your climb:</p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>Talk to Your Climbing Team:</strong> Don't keep your worries to yourself. Talking about them with family, friends, or your transplant team is like sharing the weight in your backpack. It makes the load lighter.</li>
+                <li><strong>Meet Other Climbers:</strong> Connecting with other transplant patients in a support group is like meeting other hikers on the trail. They understand the challenges and can share tips and encouragement.</li>
+                <li><strong>Keep Moving:</strong> A little bit of exercise, like a walk, is like stretching your muscles during a long hike. It clears your head and boosts your spirits.</li>
+                <li><strong>Use an Expert Guide:</strong> Your team has social workers and therapists who are like expert mountain guides. They are trained to help people navigate the toughest parts of the journey. Asking for their help is a smart move that all the best climbers make.</li>
+            </ul>
         `
     },
     'understanding-living-donation': {
@@ -395,9 +440,9 @@ export const contentData: ModuleContentData = {
             <p>The journey to becoming a living donor involves a thorough and completely independent evaluation. The potential donor is assigned their own dedicated team of advocates—including doctors, nurses, and social workers—whose sole responsibility is to protect the donor's health and interests. This ensures that it is safe for the person to donate and that they are proceeding for purely selfless reasons.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Giving an Amazing Gift</h3>
-            <p>Imagine your friend needs a really special LEGO piece to finish their amazing creation, but they don't have it. You have two of that exact piece! You can live perfectly fine with just one, so you decide to give one of yours to your friend. That's what living kidney donation is like!</p>
-            <p>A super healthy and kind person who has two kidneys decides to give one to someone whose kidneys have stopped working. It's one of the most generous gifts anyone can give. Doctors do a lot of check-ups to make sure the person giving the kidney (the donor) is super healthy and will stay healthy with just one. This gift helps the other person get well and live a normal life again.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Giving an Extraordinary Gift</h3>
+            <p>Imagine your friend needs a specific, rare part to fix their computer so they can play games and do their homework again. You happen to have two of that exact part in your own computer, and you know your computer runs perfectly with just one. Living kidney donation is like that. A healthy person with two healthy kidneys chooses to give one to someone whose kidneys have stopped working. It's one of the most generous and life-changing gifts possible.</p>
+            <p>This type of donation has huge benefits. It means the person in need doesn't have to wait on a long list. Plus, a kidney from a living person usually works better and lasts longer. The most important rule is that the person giving the kidney (the donor) must be incredibly healthy, and it has to be 100% their own choice to give this gift, with no one pushing them to do it.</p>
         `
     },
     'donor-eligibility': {
@@ -430,9 +475,9 @@ export const contentData: ModuleContentData = {
             <p class="mt-2">It is important to remember that every potential donor is evaluated carefully on an individual basis. The final decision always rests on what is safest for the donor.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Donor Health Checklist</h3>
-            <p>Before someone can give the amazing gift of a kidney, doctors have a very important health checklist. They want to make sure the person giving the kidney (the donor) is like a superhero - super healthy!</p>
-            <p>The checklist makes sure the donor doesn't have any problems like diabetes or heart trouble. They also check that the donor has two perfectly working kidneys, so they'll be perfectly fine with just one. It's all about safety! The doctors' number one rule is to make sure the donor stays healthy and strong for their whole life. Only the healthiest superheroes get to be donors!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Superhero Health Checklist</h3>
+            <p>Before someone can become a kidney donor, they have to pass a very thorough health screening, like an astronaut preparing for a space mission. The transplant team's number one mission is to protect the donor. They want to make sure the donor is so healthy that giving away one kidney won't cause them any problems, now or decades from now.</p>
+            <p>The checklist looks for a few key things. The person needs to be an adult in great general health. But there are also some "no-go" conditions. For example, if someone has diabetes or uncontrolled high blood pressure, they can't donate. This isn't to be mean; it's because those conditions could put their own remaining kidney at risk down the road. It's all about making sure the donor remains a healthy superhero for the rest of their life.</p>
         `
     },
     'donor-evaluation': {
@@ -454,9 +499,9 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Donor's VIP Check-Up</h3>
-            <p>When someone wants to be a kidney donor, they get a VIP (Very Important Person) check-up at the hospital. This isn't just any check-up; it's to make sure they are healthy enough to share one of their two kidneys.</p>
-            <p>They get their own team of doctors and nurses who are like personal bodyguards, focused only on the donor's safety. They do blood tests, take special pictures of the kidneys inside, and have lots of conversations to answer all the donor's questions. They talk about the surgery, and make sure the donor is happy and sure about their choice. It's a careful process to make sure this amazing gift is safe for everyone.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Donor's VIP Health Deep-Dive</h3>
+            <p>The donor evaluation is like a VIP, all-access pass to a health check-up. The most important thing to know is that the potential donor gets their VERY OWN team of experts. This team is completely separate from the recipient's team. Their only job is to be the donor's personal advocate and protector.</p>
+            <p>The evaluation process is a deep-dive into their health. It starts with simple checks and then moves to a full day at the hospital. On that day, they'll do advanced blood and urine tests, get a picture of their heart (ECG), and even get a 3D "roadmap" of their kidneys (a CT scan) so the surgeon knows exactly what the anatomy looks like. They also get to sit down and talk with every expert—the kidney doctor, the surgeon, the nurse—to ask any and every question. It's a careful and thorough process designed to make sure this amazing gift is 100% safe for the generous person giving it.</p>
         `
     },
     'psychological-assessment': {
@@ -476,9 +521,16 @@ export const contentData: ModuleContentData = {
             <p class="mt-2">This assessment provides a safe and private space for the potential donor to voice any worries, fears, or hesitations they might have. The donor's total well-being is always the guiding principle.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: A Friendly Chat</h3>
-            <p>Part of being a donor is having a friendly chat with a special kind of expert, like a school counselor. This chat is to make sure the donor feels happy, confident, and not pushed into their decision.</p>
-            <p>The expert will ask things like, "Why do you want to give this amazing gift?" and "Do you have friends and family who will help take care of you after your surgery?" They want to make sure the donor's choice is 100% their own idea. It's a secret, private talk just to make sure the donor is feeling good about everything. It's another way the hospital protects these real-life superheroes!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: A Friendly, Supportive Chat</h3>
+            <p>Part of the donor's VIP evaluation is a private and friendly chat with a support expert, like a social worker or therapist. This is absolutely not a test! It's a supportive conversation to make sure the donor is feeling good and confident about their decision.</p>
+            <p>The whole point is to protect the donor. The expert will chat with them about a few things:</p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li>To make 100% sure the choice is theirs, and no one is pressuring them.</li>
+                <li>To ensure they understand the whole process, including the risks.</li>
+                <li>To talk about their "support team"—the friends and family who will help them recover.</li>
+                <li>To give them a safe space to talk about any worries they might have, big or small.</li>
+            </ul>
+            <p>It's a confidential check-in to make sure the donor's emotional health is just as protected as their physical health.</p>
         `
     },
     'donor-surgery': {
@@ -500,9 +552,10 @@ export const contentData: ModuleContentData = {
             <p class="mt-2">The surgery is performed under general anesthesia and typically takes two to three hours to complete.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Tummy Button Surgery</h3>
-            <p>Instead of one big cut, the surgeon makes a few tiny ones, like keyholes. They use a special tiny camera and tiny tools to do the surgery inside the tummy. It's like playing a very careful video game!</p>
-            <p>They carefully wrap up the kidney and bring it out through one slightly bigger (but still small!) cut, usually hidden down low. Because the cuts are so small, it doesn't hurt as much afterward, and the donor gets to go home from the hospital and get back to playing much faster!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The "Video Game" Surgery</h3>
+            <p>These days, donor surgery is incredibly high-tech. Instead of making one big incision, surgeons use a method called "laparoscopy," which is much easier on the donor's body. Think of it like a very precise video game.</p>
+            <p>The surgeon makes a few very small, "keyhole" cuts. Through one, they insert a tiny, high-definition camera. This lets them see everything up close on a big screen. Through the other small cuts, they insert long, thin tools. They then work with these tools while watching the monitor, carefully and safely detaching the kidney.</p>
+            <p>Once the kidney is free, they place it in a small, sterile bag and bring it out through one slightly larger (but still small) incision, which is usually hidden down low. The huge advantage of this technique is that it means less pain, a much shorter hospital stay, and a way faster recovery for the donor. It's a big reason why donation is so safe today.</p>
         `
     },
     'donor-recovery': {
@@ -518,9 +571,10 @@ export const contentData: ModuleContentData = {
             <p>Most people with sedentary (desk) jobs can return to work within 2-3 weeks, while those with more physically demanding occupations may need 4-6 weeks off. You will have a follow-up appointment with your surgeon about two weeks after you go home to check on your progress.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Getting Back to Action!</h3>
-            <p>After the surgery, the donor gets to rest in a comfy hospital bed. But soon, the nurses will help them get up and take a short walk. Moving around helps the body heal faster!</p>
-            <p>They only stay in the hospital for a day or two. When they go home, their main job is to take it easy. They can walk and do normal things, but no heavy lifting or rough play for a few weeks. They might feel a little tired, which is normal. Soon, they'll be back to feeling 100% and can do everything they could do before!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Getting Back to Action!</h3>
+            <p>Because the surgery is done with the minimally invasive "video game" technique, recovery for the donor is surprisingly fast.</p>
+            <p><strong>In the Hospital:</strong> The donor usually only stays for one or two nights! The most important "job" they have in the hospital is to get up and walk around. This helps wake the body up and prevents problems. The team makes sure any pain is well-controlled.</p>
+            <p><strong>At Home:</strong> Once home, the main task is to rest and heal. They'll feel more tired than usual for a bit, which is the body's way of saying, "I'm busy repairing things!" There are a couple of temporary rules: no driving for a week or two, and no lifting anything heavy for about a month to let the tummy muscles heal. Most people with office jobs are back to work in just a few weeks. Before they know it, they are back to doing everything they did before, but now with the amazing knowledge that they saved a life.</p>
         `
     },
     'risks-and-benefits': {
@@ -540,9 +594,17 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Good and the Cautions</h3>
-            <p><strong>The Good Part (Benefits):</strong> The best part of being a donor is the amazing feeling you get from giving someone the gift of health. You're a real-life hero! You help someone get off a machine (dialysis) and get back to living a normal, fun life. It's a powerful and happy feeling.</p>
-            <p><strong>The Cautions (Risks):</strong> Being a donor is very, very safe. The doctors are like super-careful scientists who make sure of it. There's a tiny, tiny risk with the surgery, just like any time you go to the hospital. And for the rest of their life, the donor has to take good care of their one remaining kidney, just like everyone should! The doctors will check on them once a year to make sure they stay super healthy.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Pros and Cons</h3>
+            <p>Deciding to be a donor means looking at the decision from all angles. It's a big choice, so let's break it down.</p>
+            <p><strong>The Pros (The Amazing Upsides):</strong></p>
+            <p>The biggest benefit is something you feel in your heart: the incredible, powerful feeling of knowing you gave someone their life back. You are a true hero. You allow someone to get off dialysis and get back to their family, work, and hobbies. It's a gift that can't be measured in words. It also allows the surgery to be planned, which reduces stress for everyone.</p>
+            <p><strong>The Cons (The Things to Be Aware Of):</strong></p>
+            <p>Overall, donation is very safe, but it's not zero risk. Here's what to know:</p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>Short-Term:</strong> The surgery has the same small risks as any surgery, like infection or bleeding. The medical team is expert at preventing these.</li>
+                <li><strong>Long-Term:</strong> Living with one kidney is perfectly fine. Your remaining kidney grows a bit and easily does the work of two. Over a whole lifetime, there's a very small increased chance of developing high blood pressure. The risk that a donor would ever need a transplant themselves is tiny (less than 1%).</li>
+                <li><strong>Emotional:</strong> Most donors feel great about it. But it's also a big emotional event, and the support team is there to help with any feelings that come up during the process.</li>
+            </ul>
         `
     },
     'donor-long-term-health': {
@@ -568,9 +630,10 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Taking Care of Your Super Kidney!</h3>
-            <p>After someone donates a kidney, their one remaining kidney gets a promotion! It becomes a "super kidney" and does the work of two. To keep this super kidney happy and healthy forever, the donor just needs to do a few simple things.</p>
-            <p>Once a year, they go to the doctor for a quick check-up, just to make sure the super kidney is still doing a great job. They also try to eat healthy foods and play and exercise to stay strong. It's the same healthy stuff everyone should be doing! Living with one kidney is easy and normal, and the donor can do everything they did before.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Taking Care of Your Super Kidney!</h3>
+            <p>After donation, the donor's remaining kidney gets a promotion and becomes a "Super Kidney," easily doing the work that two used to do. To keep this Super Kidney in top shape for a lifetime, the plan is simple: live a healthy life, just like everyone should!</p>
+            <p><strong>The Annual Tune-Up:</strong> Once a year, the donor should get a simple check-up with their regular doctor. This is like an annual tune-up for a car. They'll check three quick things: blood pressure, a blood test for creatinine (the kidney's "report card" number), and a urine test to check for protein. This simple tune-up ensures the Super Kidney is running perfectly.</p>
+            <p><strong>Healthy Habits:</strong> The best way to protect the Super Kidney is to maintain a healthy weight, eat nutritious food, and stay active. Donors should also be a little cautious with certain strong painkillers (called NSAIDs), but their doctor can guide them on that. It's all about common-sense health habits to thank that Super Kidney for its amazing work.</p>
         `
     },
     'understanding-your-role': {
@@ -589,9 +652,9 @@ export const contentData: ModuleContentData = {
             <p class="mt-2">Remember, this is a marathon, not a sprint. It's vital that you also prioritize your own well-being so that you can provide consistent and sustainable support without becoming overwhelmed yourself.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: You're the Team Manager!</h3>
-            <p>Imagine the person you're caring for is the star player on a team, and the doctors are the coaches. Your job is the Team Manager! You're the one who makes sure everything runs smoothly behind the scenes.</p>
-            <p>You help the player get to practice (doctor's appointments). You make sure they take their power-up drinks (medicines) on time. You're also the head cheerleader, keeping their spirits up when they're tired. You're a super-important part of the team, and without a great manager, it's much harder for the star player to win!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: You're the Team Manager</h3>
+            <p>If the transplant patient or donor is the star player, and the doctors are the coaches, then you, the caregiver, are the indispensable Team Manager. A team can't succeed without a great manager handling things behind the scenes. Your role is incredibly important and has many parts.</p>
+            <p>You're the <strong>Head of Logistics,</strong> helping to schedule "practices" (appointments) and arranging transportation. You're the <strong>Chief Encouragement Officer,</strong> providing a listening ear and positive support during a stressful time. You're also the <strong>Assistant Coach,</strong> attending appointments to help take notes and remember questions. After the "game" (surgery), you become the <strong>Head Trainer,</strong> helping with medications, watching for any problems, and making sure the player is resting and recovering properly. You are a vital part of the team's success.</p>
         `
     },
     'supporting-pre-transplant': {
@@ -609,9 +672,9 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Getting Ready for the Big Game</h3>
-            <p>Before the "big game" (the surgery), the player needs to train and prepare. As the team manager, you can help them get ready!</p>
-            <p>You can be their personal assistant, helping them keep track of all their training sessions (appointments). You can be their chauffeur, driving them where they need to go. You can also be their personal chef, helping them eat healthy "training food." Most importantly, you can be their number one fan, listening when they're nervous and cheering them on. Helping them prepare makes them feel ready and confident for the big day.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Getting Ready for the Big Game</h3>
+            <p>In the time before the surgery, the star player is in "training camp." As the Team Manager, you can help them prepare so they feel confident and ready for the big day.</p>
+            <p>Your job is to clear away distractions so they can focus. You can act as their <strong>Personal Assistant,</strong> going with them to meetings with the coaches (doctors) to take notes and help them remember questions. You can be their <strong>Chauffeur,</strong> handling the transportation to and from the hospital. You can also be their <strong>House Manager,</strong> getting the "dugout" (their home) ready for a comfortable recovery by stocking the fridge and cleaning up. But most importantly, you are their <strong>Confidant.</strong> Just being there to listen to their hopes and worries is one of the most powerful things you can do to help them prepare mentally.</p>
         `
     },
     'hospital-stay-support': {
@@ -629,9 +692,15 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Hospital Helper</h3>
-            <p>When the player is in the hospital after the game, you're their special helper. You can bring them things from home, like their favorite blanket, to make them feel cozy.</p>
-            <p>You can also be their secretary, giving updates to family and friends so the player can focus on resting. It's also important to remember the donor, if there is one. They are a hero who also needs support and cheering. Your biggest job is to be a calm and happy presence, which helps everyone feel better and heal faster.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Hospital Helper</h3>
+            <p>While your loved one is in the hospital, you are their link to the outside world and their personal comfort specialist. Your presence is reassuring, but remember that their main job is to rest.</p>
+            <p>Here's how you can be a super-effective helper:</p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>Be the Press Secretary:</strong> Take charge of giving updates to anxious family and friends. This frees up your loved one from having to tell the same story ten times, allowing them to rest.</li>
+                <li><strong>Be the Comfort Coordinator:</strong> A hospital room can feel cold and strange. Bringing a favorite pillow, a cozy blanket, or a pair of slippers can make a huge difference.</li>
+                <li><strong>Be the Watchful Advocate:</strong> You know your loved one best. If they seem more tired or in more pain than before, you can be the one to alert the nurse. Your observations are valuable.</li>
+                <li><strong>Don't Forget the Other MVP:</strong> If there was a living donor, remember they are a hero who also just had surgery. Make sure they are getting just as much love and support!</li>
+            </ul>
         `
     },
     'home-recovery-care': {
@@ -651,9 +720,17 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Home Coach</h3>
-            <p>When the player comes home, you become their home coach. Your most important job is making sure they take their medicine at the exact right times. You can use a pillbox and phone alarms to help, like a coach's playbook!</p>
-            <p>You'll also be like a detective, watching for any signs of trouble, like a fever, and calling the head coaches (the doctors) right away. You'll help make sure their food is healthy and their house is super clean to keep germs away. Being a home coach is a big job, but it's what helps the player heal and get back to being a superstar.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Home Recovery Coach</h3>
+            <p>When the player comes home, you transition into the role of the Home Recovery Coach. This is where your support is most hands-on and makes the biggest difference.</p>
+            <p><strong>Your Coaching Duties:</strong></p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>Master of Meds:</strong> Your #1 job is helping them nail their medication routine. Using a pillbox and setting phone alarms are your best plays.</li>
+                <li><strong>Head of Security:</strong> The patient's immune system is calm, so you need to be on high alert for germs. This means being a stickler for handwashing and keeping sick visitors away.</li>
+                <li><strong>Team Nutritionist:</strong> You can help by preparing healthy, low-salt meals that will help them heal and protect their new kidney.</li>
+                <li><strong>Team Driver:</strong> The player can't drive for a while, so you'll be the one getting them to their important follow-up appointments with the head coaches.</li>
+                <li><strong>The Enforcer:</strong> You're the one who has to gently but firmly say, "Nope, you can't lift that!" to protect their healing incision.</li>
+            </ul>
+            <p>Your coaching during this period sets the player up for a lifetime of success.</p>
         `
     },
     'medication-management': {
@@ -672,9 +749,15 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Pill Captain</h3>
-            <p>Taking all the medicines can be confusing. You can be the "Pill Captain"! Your job is to help the player sort their pills for the whole week into a special box with little compartments for each day. It's like sorting LEGOs by color!</p>
-            <p>You can also be the "Alarm Chief," setting up phone alarms that ring and say, "Time for your medicine!" This makes it almost impossible to forget. By being the Pill Captain and Alarm Chief, you help the player with their most important job, which is protecting their new kidney.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Medication Captain</h3>
+            <p>Taking the right pills at the right time is the most important part of the post-transplant playbook. It can be confusing at first, so you can step in as the Medication Captain to help create a simple, foolproof system.</p>
+            <p>Your goal is to make it almost impossible to make a mistake. Here are your best tools:</p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>The Pillbox Play:</strong> This is your star player. A weekly pillbox with compartments for morning and evening is the best defense against missed doses. Make it a Sunday ritual to fill it up together for the week ahead.</li>
+                <li><strong>The Alarm Tactic:</strong> Set alarms on a phone for every dose. Don't just make it a generic alarm—label it "Time for Morning Meds!"</li>
+                <li><strong>The Supply Sergeant:</strong> Always know how many pills are left. Help the patient remember to call for refills well before they run out. You never want to be scrambling for medication on a Sunday night.</li>
+            </ul>
+            <p>By helping to build this routine, you are providing one of the most valuable forms of support possible.</p>
         `
     },
     'recognizing-warning-signs': {
@@ -696,10 +779,16 @@ export const contentData: ModuleContentData = {
             <p class="mt-4"><strong>Trust your instincts.</strong> You know your loved one best. If something just seems "off" or they don't seem like themselves, it is always better to be safe and make the call to the transplant team. It is always better to report a concern that turns out to be nothing than to ignore a sign that turns out to be serious.</p>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Lookout</h3>
-            <p>As the Team Manager, you're also the official Lookout. You're always watching to make sure the player is feeling good. There are a few important "warning flags" you need to watch for.</p>
-            <p>The biggest warning flag is a **fever**. If the player feels hot or their thermometer reads a high number, you need to call the doctors right away. Other warning flags are a new "ouchie" near their new kidney, or if they feel sick like they have the flu.</p>
-            <p>You have a special phone number for the transplant team. If you see any of these warning flags, your job is to call them immediately. Being a good Lookout helps catch problems when they are small and easy to fix.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: The Lookout on the Tower</h3>
+            <p>As a caregiver, you are the lookout on the watchtower, keeping a close eye on your loved one. Because you see them every day, you're in the best position to notice if something is "off," sometimes even before they do. Knowing what "red flags" to look for is a critical part of your role.</p>
+            <p>Your job is to alert the command center (the transplant team) as soon as you spot a red flag. Do not wait. The most important red flags are:</p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>Fever:</strong> A temperature of 100.4°F or higher is the biggest red flag.</li>
+                <li><strong>New Pain:</strong> Any new or bad pain near the new kidney.</li>
+                <li><strong>Flu-like Feelings:</strong> If they suddenly feel achy and unwell like they're getting the flu.</li>
+                <li><strong>Changes in Urine or Swelling:</strong> A lot less pee than normal, or sudden puffiness and weight gain.</li>
+            </ul>
+            <p><strong>The most important rule is to trust your gut.</strong> If you feel like something is wrong, you are probably right. It is ALWAYS better to call the team about a false alarm than to not call about a real problem.</p>
         `
     },
     'self-care-for-caregivers': {
@@ -719,9 +808,15 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Charging Your Own Batteries</h3>
-            <p>Think of yourself like a phone. To help the player, your battery needs to be charged! If your battery runs out, you can't help anyone. Being a caregiver uses up a lot of your battery power.</p>
-            <p>"Self-care" is how you charge your batteries. This means taking time to do things that make you happy, like talking to a friend, going for a walk, or just resting. It also means getting enough sleep and eating good food. When friends offer to help, let them! It's like letting someone plug you into a charger for a little while. By keeping your own battery full, you'll have all the energy you need to be an amazing Team Manager.</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Charging Your Own Batteries</h3>
+            <p>Think of yourself as a smartphone. Your job is to support your loved one, which uses a lot of your battery power. But what happens when your phone's battery hits 1%? It shuts down and isn't helpful to anyone. "Self-care" is simply the act of plugging yourself in to recharge.</p>
+            <p>You cannot be an effective caregiver if your own battery is drained. Taking care of yourself is not selfish—it is your responsibility as a caregiver. Here's how to keep your battery charged:</p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>Use External Power Banks (Accept Help):</strong> When friends offer to help, they are handing you a fully charged power bank. Say yes! Let them bring dinner or watch the patient while you take a walk.</li>
+                <li><strong>Schedule Charging Time:</strong> You must schedule time to plug yourself in, even for just 15-30 minutes. Read a book, listen to music, do something that is just for you.</li>
+                <li><strong>Maintain Your Hardware:</strong> You have to protect your own health. Try to eat well and get enough sleep. A broken phone can't support anyone.</li>
+                <li><strong>Connect to a Network:</strong> You need support, too. Talk to friends or find a caregiver support group. It's like connecting to WiFi to download software updates and get help from other users.</li>
+            </ul>
         `
     },
     'communication-with-medical-team': {
@@ -739,9 +834,16 @@ export const contentData: ModuleContentData = {
             </ul>
         `,
         eli10: `
-            <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Talking to the Coaches</h3>
-            <p>As the Team Manager, you need to talk to the coaches (the doctors and nurses) a lot. To be a great communicator, it helps to be prepared!</p>
-            <p>Before you go to an appointment, make a list of questions, like a reporter. During the meeting, write down the answers in a notebook so you don't forget. If a coach uses a big, confusing word, it's totally okay to say, "Can you explain that in a simpler way?" It's like asking them to draw out the play on a whiteboard. Good, clear talking helps the whole team work together to help the player win!</p>
+            <h3 class="text-xl font-bold font-headline text-primary">Explain It Simply: Talking to the Coaches</h3>
+            <p>As the Team Manager, clear communication with the coaching staff (the medical team) is essential for success. You play a key role in making sure messages are sent and received correctly.</p>
+            <p>Here's your communication playbook:</p>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+                <li><strong>Prepare Your Talking Points:</strong> Before any meeting (appointment), sit down with your player and make a list of questions. You wouldn't go into a press conference unprepared!</li>
+                <li><strong>Be the Team Scribe:</strong> During meetings, be the one who takes notes. It's hard to remember everything the coach says. You can even ask, "Is it okay if I record this on my phone?" so you can review the game plan later.</li>
+                <li><strong>Ask for a Replay:</strong> Doctors sometimes use complex language. If you don't understand, it's your job to say, "Coach, can you draw that play up on the whiteboard for us?" or "Can you explain that in simpler terms?"</li>
+                <li><strong>Know the Hotline:</strong> Make sure you know the direct phone number for your main contact (usually the Nurse Coordinator) and how to reach someone for emergencies after hours.</li>
+                <li><strong>Give a Clear Report:</strong> When you call, get straight to the point. Start with the most important information: "Hi, this is Jane, calling for John Smith. He has a fever of 101." This helps the team understand the situation immediately.</li>
+            </ul>
         `
     }
 };
