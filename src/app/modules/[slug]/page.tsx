@@ -28,21 +28,20 @@ export default function ModulePage() {
     const [viewMode, setViewMode] = useState<'content' | 'quiz'>('content');
     const [showAudioPlayer, setShowAudioPlayer] = useState(false);
 
-    // Reset audio player visibility when slug changes
     useEffect(() => {
         setShowAudioPlayer(false);
     }, [slug]);
 
     const moduleContentData = getContentDataForLang(language)[slug];
 
-    const [questions, setQuestions] = useState<QuizQuestion[]>(() => {
-        const langQuizData = quizData[language as keyof typeof quizData] || quizData['en'];
-        return langQuizData[slug] || [];
-    });
+    const [questions, setQuestions] = useState<QuizQuestion[]>([]);
     
     useEffect(() => {
-        const langQuizData = quizData[language as keyof typeof quizData] || quizData['en'];
-        setQuestions(langQuizData[slug] || []);
+        const langQuizData = quizData[language as keyof typeof quizData];
+        const englishQuizData = quizData['en'];
+        // Fallback to English quiz if the language-specific quiz or slug doesn't exist
+        const selectedQuestions = (langQuizData && langQuizData[slug]) ? langQuizData[slug] : (englishQuizData[slug] || []);
+        setQuestions(selectedQuestions);
     }, [slug, language]);
 
 
@@ -59,8 +58,15 @@ export default function ModulePage() {
     const moduleTitle = moduleInfo?.title || 'Module';
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [selectedAnswers, setSelectedAnswers] = useState<(string | null)[]>(Array(questions.length).fill(null));
+    const [selectedAnswers, setSelectedAnswers] = useState<(string | null)[]>(Array(10).fill(null));
     const [isSubmitted, setIsSubmitted] = useState(false);
+
+    useEffect(() => {
+        setSelectedAnswers(Array(questions.length).fill(null));
+        setCurrentQuestionIndex(0);
+        setIsSubmitted(false);
+    }, [questions]);
+
 
     const handleAnswerSelect = (answer: string) => {
         if (selectedAnswers[currentQuestionIndex] !== null) return;
@@ -362,4 +368,3 @@ export default function ModulePage() {
         </div>
     );
 }
-
