@@ -87,6 +87,7 @@
     "quizUserAnswer": "Your answer:",
     "quizCorrectAnswer": "Correct answer:",
     "quizNotAnswered": "Not answered",
+    "explanationTitle": "Explanation",
     "assistantTitle": "AI Assistant",
     "assistantDescription": "Your trusted partner for transplant-related questions.",
     "assistantFormPlaceholder": "Type your question about kidney transplants here...",

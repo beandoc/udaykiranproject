@@ -10,12 +10,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { quizData, type QuizQuestion } from "@/lib/quiz-data";
-import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen, Volume2, LayoutDashboard } from "lucide-react";
+import { CheckCircle, XCircle, ChevronLeft, ChevronRight, HelpCircle, BookOpen, Volume2, LayoutDashboard, Info } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { getContentDataForLang } from "@/lib/content-data";
 import { useAppContext } from "@/context/app-context";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 export default function ModulePage() {
     const params = useParams();
@@ -69,7 +70,7 @@ export default function ModulePage() {
 
     const handlePrevious = () => {
         if (currentQuestionIndex > 0) {
-            setCurrentQuestionIndex(currentQuestionIndex + 1);
+            setCurrentQuestionIndex(currentQuestionIndex - 1);
         }
     };
     
@@ -238,10 +239,19 @@ export default function ModulePage() {
                                     {t('quizUserAnswer')} {userAnswer || t('quizNotAnswered')}
                                 </p>
                                 {!isCorrect && (
-                                    <p className="mt-1 text-sm text-green-700 flex items-center gap-2">
-                                        <CheckCircle className="w-4 h-4" />
-                                        {t('quizCorrectAnswer')} {q.correctAnswer}
-                                    </p>
+                                    <>
+                                        <p className="mt-1 text-sm text-green-700 flex items-center gap-2">
+                                            <CheckCircle className="w-4 h-4" />
+                                            {t('quizCorrectAnswer')} {q.correctAnswer}
+                                        </p>
+                                        <Alert className="mt-2 bg-blue-50 border-blue-200">
+                                            <Info className="h-4 w-4 text-blue-600" />
+                                            <AlertTitle className="text-blue-800 font-semibold">{t('explanationTitle')}</AlertTitle>
+                                            <AlertDescription className="text-blue-700">
+                                                {q.explanation}
+                                            </AlertDescription>
+                                        </Alert>
+                                    </>
                                 )}
                             </div>
                         )
