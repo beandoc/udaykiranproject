@@ -4,26 +4,17 @@ import type { ModuleContentData } from './content-data';
 export const contentData: ModuleContentData = {
     'understanding-kidney-disease': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Why is kidney transplant necessary in end-stage kidney disease?</h2>
-            <p>Successful kidney transplantation is the most effective and the only curative treatment modality of end-stage kidney disease.</p>
-            <h3 class="text-xl font-bold font-headline">What are the advantages of kidney transplantation?</h3>
-            <p>Major benefits of kidney transplantation are:</p>
-            <ul>
-                <li>Freedom from dialysis. Freedom from the pain, time consumption and complications of dialysis.</li>
-                <li>Lesser dietary and fluid restrictions.</li>
-                <li>Fewer complications with a transplant. Risk of complications is higher in dialysis therapy.</li>
-                <li>Improvement in daily lifestyle and higher chance of pregnancy in female.</li>
-            </ul>
-            <h3 class="text-xl font-bold font-headline">What are the disadvantages of kidney transplantation?</h3>
-            <p>Kidney transplantation offers many benefits, but has a few disadvantages, too. These are:</p>
-            <ul>
-                <li>Risk of major surgery. Kidney transplantation needs major surgical procedure under general anesthesia that has potential risks both during and after the surgery.</li>
-                <li>Risk of rejection. There is no 100% guarantee that the body will accept transplanted kidney. But with availability of newer and better immunosuppressant drugs, rejections are less likely than they were in the past.</li>
-                <li>Need to take medications to prevent rejection regularly and meticulously every day as long as the kidney works.</li>
-                <li>High risk of infections, side effects of drugs and malignancy.</li>
-            </ul>
-            <h3 class="text-xl font-bold font-headline">What are the contraindications for a kidney transplant?</h3>
-            <p>A kidney transplant is not suitable for everyone. Contraindications include serious active infection, active or untreated malignancy, severe psychosocial problems, unstable coronary artery disease, refractory congestive heart failure, severe peripheral vascular disease, and other severe medical problems.</p>
+            <h2 class="text-2xl font-bold font-headline">Understanding End-Stage Kidney Disease and the Need for Transplant</h2>
+            <p>When kidneys reach the final stage of disease, they are no longer able to effectively filter waste from the body, a vital function for maintaining life. At this point, a kidney transplant isn't just an option; it stands as the most effective and only curative treatment available, offering a new lease on life.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">The Advantages of a Successful Transplant</h3>
+            <p>A successful kidney transplant brings profound improvements to a person's quality of life. The most significant benefit is freedom from the rigors of dialysis—no more time-consuming sessions, discomfort, or risk of dialysis-related complications. This liberation extends to daily life, with fewer restrictions on diet and fluid intake. Beyond these practicalities, a transplant can lead to a more stable lifestyle, improved overall health, and for women, a restored possibility of pregnancy.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Considering the Disadvantages and Risks</h3>
+            <p>While the benefits are immense, it's crucial to approach transplantation with a clear understanding of its challenges. The procedure is a major surgery performed under general anesthesia, carrying inherent risks both during the operation and in the recovery period. There is also the risk of rejection, where the body's immune system may not accept the new organ. While modern immunosuppressant medications have made this less common, the risk never fully disappears. This necessitates a lifelong commitment to taking these medications meticulously, which in turn carries its own set of potential side effects, including a higher risk of infections.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">When is a Transplant Not Advised?</h3>
+            <p>A kidney transplant is not a suitable path for everyone. Certain conditions, known as contraindications, can make the surgery too risky. These include serious active infections, untreated malignancies (cancers), severe and unstable heart conditions, or other overwhelming medical problems. A thorough evaluation ensures that a transplant is a safe and viable option for each individual candidate.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Your Body's Filters</h3>
@@ -34,49 +25,19 @@ export const contentData: ModuleContentData = {
     },
     'anesthesia-risks': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Know Possible Risks of Anesthesia</h2>
-            <p>General Anesthesia (GA) is very safe, but like any medical procedure, it has potential risks. Understanding these helps you make an informed decision.</p>
-            <h3 class="text-xl font-bold font-headline">General Anesthesia (GA) Risks</h3>
-            <h4><strong>Common:</strong></h4>
-            <ul>
-                <li>Nausea and vomiting after surgery</li>
-                <li>Headache/Giddiness</li>
-                <li>Sore throat</li>
-                <li>Urinary retention</li>
-            </ul>
-            <h4><strong>Uncommon:</strong></h4>
-            <ul>
-                <li>Dental trauma</li>
-                <li>Allergic reactions to drugs</li>
-                <li>Pressure injuries due to positioning</li>
-                <li>Decompensation of existing diseases (e.g., heart or kidney disease)</li>
-            </ul>
-            <h4><strong>Rare:</strong></h4>
-            <ul>
-                <li>Severe allergy / anaphylaxis</li>
-                <li>Stroke</li>
-                <li>Major cardiac event (MI, CHF)</li>
-                <li>Aspiration pneumonia</li>
-                <li>Blood clots (Thromboembolism)</li>
-                <li>Cardiac arrest/death</li>
-            </ul>
-            <h3 class="text-xl font-bold font-headline">Risks from Specific Procedures</h3>
-            <h4><strong>Radial Artery Catheterization (Arterial Line):</strong></h4>
-            <ul>
-                <li>Arterial thrombosis (clot)</li>
-                <li>Hematoma (bruising)</li>
-                <li>Digit gangrene (Rare)</li>
-            </ul>
-            <h4><strong>Central Venous Cannulation (Central Line/HD Catheter):</strong></h4>
-            <ul>
-                <li>Infections and sepsis</li>
-                <li>Hematoma (bruising)</li>
-                <li>Accidental arterial puncture</li>
-                <li>Arrhythmias (irregular heartbeat)</li>
-                <li>Thrombosis (clot in the vein)</li>
-                <li>Pneumothorax/Hemothorax (Rare)</li>
-                <li>Air embolism (Rare)</li>
-            </ul>
+            <h2 class="text-2xl font-bold font-headline">Understanding the Risks of Anesthesia</h2>
+            <p>For your transplant surgery, you will be placed under general anesthesia, ensuring you are completely asleep and comfortable. Modern anesthesia is remarkably safe, thanks to highly trained specialists and advanced monitoring. However, like any medical procedure, it carries potential risks that are important to understand as you prepare for surgery.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Common and Temporary Effects</h3>
+            <p>After waking up, it's common to experience some mild, temporary side effects as the anesthesia wears off. These can include nausea, a headache, dizziness, or a sore throat from the breathing tube used during surgery. These effects are well-managed by the care team and typically resolve quickly.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Uncommon and Rare Complications</h3>
+            <p>Less common risks include minor dental trauma or allergic reactions to medications. Very rarely, more serious complications can occur, such as a major cardiac event, stroke, or severe allergic reaction (anaphylaxis). Your anesthesia team meticulously reviews your health history to minimize these risks, choosing the safest drugs and techniques for you.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Risks from Monitoring Lines</h3>
+            <p>To keep you safe, special monitoring lines like an arterial line (in your wrist) and a central line (in your neck or chest) are used. These also carry small risks, such as bruising or infection at the insertion site. The medical team is highly experienced in placing these lines and monitoring for any issues.</p>
+            
+            <p class="mt-4">Your anesthesiologist will meet with you before surgery to discuss your specific situation and answer all of your questions, ensuring you feel confident and informed.</p>
         `,
         eli10: `
              <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Magic Sleep</h3>
@@ -87,47 +48,24 @@ export const contentData: ModuleContentData = {
     },
     'patient-responsibilities': {
         standard: `
-            <div class="space-y-6">
+            <h2 class="text-2xl font-bold font-headline">Your Role: A Partnership in Care</h2>
+            <div class="space-y-4">
                 <div class="p-6 border-l-4 border-primary bg-primary/10 rounded-r-lg">
-                    <h3 class="font-headline text-xl font-semibold text-primary-dark">A Partnership in Your Care</h3>
-                    <p class="mt-2 text-foreground/80">A successful transplant journey is a partnership between you and your healthcare team. Your active participation is key to achieving the best possible outcome.</p>
+                    <h3 class="font-headline text-xl font-semibold text-primary-dark">A successful transplant journey is a partnership between you and your healthcare team. Your active participation is the key to achieving the best possible outcome.</h3>
                 </div>
-                <div class="space-y-4">
-                    <h4 class="font-bold">Be Informed:</h4>
-                    <ul class="list-disc list-inside space-y-2 pl-4">
-                        <li>Learn as much as you can about your condition and treatment options.</li>
-                        <li>Ask questions if you don't understand something your doctor or nurse says.</li>
-                    </ul>
-                </div>
-                <div class="space-y-4">
-                    <h4 class="font-bold">Follow Your Treatment Plan:</h4>
-                    <ul class="list-disc list-inside space-y-2 pl-4">
-                        <li>Provide full and accurate health information to your care team.</li>
-                        <li>Inform other doctors you see for any reason that you are a transplant recipient.</li>
-                        <li>Always take your medications exactly as prescribed.</li>
-                    </ul>
-                </div>
-                 <div class="space-y-4">
-                    <h4 class="font-bold">Be on Time:</h4>
-                    <ul class="list-disc list-inside space-y-2 pl-4">
-                        <li>Be punctual for all appointments and laboratory tests.</li>
-                        <li>Ensure your lab reports are available for your visit to avoid delays.</li>
-                    </ul>
-                </div>
-                <div class="space-y-4">
-                    <h4 class="font-bold">Follow Facility Policies:</h4>
-                     <ul class="list-disc list-inside space-y-2 pl-4">
-                        <li>Adhere to all hospital safety policies, including rules about visitors.</li>
-                        <li>Help maintain a healing environment by not using tobacco products on hospital grounds.</li>
-                    </ul>
-                </div>
-                <div class="space-y-4">
-                    <h4 class="font-bold">Be Considerate:</h4>
-                    <ul class="list-disc list-inside space-y-2 pl-4">
-                        <li>Treat other patients and all hospital staff with respect and consideration.</li>
-                        <li>Help keep noise to a minimum to ensure a restful environment for all.</li>
-                    </ul>
-                </div>
+                <p>As a patient, you are the most important member of your care team. The commitment you make to your own health is the foundation upon which a successful transplant is built. Here’s how you can be an effective partner in your own care.</p>
+                
+                <h4 class="font-bold text-lg mt-4">Be an Informed Participant</h4>
+                <p>Take the initiative to learn as much as you can about your condition, your medications, and your treatment plan. The more you understand, the more confident you will feel. Never hesitate to ask questions if you don’t understand something your doctor or nurse says. Write down your questions before appointments so you don’t forget. </p>
+
+                <h4 class="font-bold text-lg mt-4">Follow Your Treatment Plan Diligently</h4>
+                <p>Your treatment plan is designed specifically for you. It's crucial to provide your team with full and accurate health information. Always take your medications exactly as prescribed and inform any other doctor you see that you are a transplant recipient. This ensures your care is safe and coordinated.</p>
+
+                <h4 class="font-bold text-lg mt-4">Be Punctual and Prepared</h4>
+                <p>Your appointments and lab tests are scheduled to monitor your health at critical intervals. Being on time is essential. Ensure your lab reports are available for your visit to avoid delays and allow for a productive consultation with your doctor.</p>
+                
+                <h4 class="font-bold text-lg mt-4">Be Considerate and Respectful</h4>
+                <p>A hospital is a place of healing for everyone. Help create a positive environment by treating other patients and all hospital staff with respect and consideration. Adhere to hospital policies, such as rules about visitors and noise levels, to ensure a restful atmosphere for all.</p>
             </div>
         `,
         eli10: `
@@ -145,17 +83,18 @@ export const contentData: ModuleContentData = {
     },
     'evaluation-process': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">The Transplant Evaluation Process</h2>
-            <p>The goal of the evaluation is to ensure that you are healthy enough for surgery and that a transplant is the right treatment for you. This is a comprehensive process involving several tests and consultations.</p>
-            <h3 class="text-xl font-bold font-headline">Key Steps in Evaluation:</h3>
-            <ul>
-                <li><strong>Blood Tests:</strong> To check your blood type, kidney function, liver function, and to screen for infections like HIV and hepatitis. A key test is tissue typing (HLA) to see how well you might match with a potential donor.</li>
-                <li><strong>Urine Tests:</strong> To check for protein levels and signs of infection.</li>
-                <li><strong>Imaging Studies:</strong> An ultrasound of your kidneys and bladder, a chest X-ray, and an electrocardiogram (ECG) are standard. Other tests like a CT scan may be needed.</li>
-                <li><strong>Consultations:</strong> You will meet with several members of the transplant team, including the Nephrologist (kidney doctor), Transplant Surgeon, Nurse Coordinator, Social Worker, and Dietitian.</li>
-                <li><strong>Psychosocial Evaluation:</strong> This is a conversation with a social worker or psychologist to ensure you have a good support system and understand the emotional aspects of a transplant.</li>
+            <h2 class="text-2xl font-bold font-headline">The Transplant Evaluation: Preparing for Surgery</h2>
+            <p>Before you can be approved for a transplant, you must go through a comprehensive evaluation process. The goal is simple and singular: to ensure that surgery is a safe and effective option for you. This series of tests and consultations confirms you are healthy enough for the procedure and that a transplant is the best path forward for your health.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">What to Expect During Your Evaluation</h3>
+            <p>The evaluation is a thorough health assessment involving several key steps:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Blood and Urine Tests:</strong> These fundamental tests provide a wealth of information. They determine your blood type for matching, assess your current kidney and liver function, and screen for any underlying infections like HIV or hepatitis.</li>
+                <li><strong>Tissue Typing (HLA):</strong> This specialized blood test is crucial for matching. It identifies key proteins on your cells to help find the most compatible donor kidney possible, reducing the risk of rejection.</li>
+                <li><strong>Imaging Studies:</strong> To get a clear picture of your internal health, you will have non-invasive imaging tests. These typically include a chest X-ray, an electrocardiogram (ECG) to check your heart, and an ultrasound of your kidneys and bladder.</li>
+                <li><strong>Consultations with the Team:</strong> You will meet with the key members of your transplant team. This includes the Nephrologist (kidney doctor), Transplant Surgeon, a dedicated Nurse Coordinator to guide you, a Social Worker to discuss support systems, and a Dietitian for nutritional advice.</li>
             </ul>
-            <p>This process can take several weeks or months. It's important to attend all appointments and complete all required tests in a timely manner.</p>
+            <p class="mt-4">This entire process can take several weeks to complete. Your active participation and timeliness in attending all appointments are essential to moving forward on your transplant journey.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Health Checkup Adventure</h3>
@@ -165,21 +104,23 @@ export const contentData: ModuleContentData = {
     },
     'transplant-matching': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">How Transplant Matching Works</h2>
-            <p>Finding a compatible kidney is crucial for a successful transplant. The matching process involves two main components: blood group compatibility and tissue typing (HLA).</p>
-            <h3 class="text-xl font-bold font-headline">Blood Group Compatibility</h3>
-            <p>This is the first and most important factor. Just like with blood transfusions, the donor and recipient must have compatible blood types.</p>
-            <ul>
-                <li>Blood type O is the universal donor.</li>
-                <li>Blood type AB is the universal recipient.</li>
-                <li>Blood type A can donate to A and AB.</li>
-                <li>Blood type B can donate to B and AB.</li>
+            <h2 class="text-2xl font-bold font-headline">Finding the Right Match: How Kidneys are Paired</h2>
+            <p>A successful transplant hinges on finding a compatible kidney for the recipient. The matching process is a scientific puzzle with two primary pieces: blood group compatibility and tissue typing (also known as HLA typing).</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Blood Group Compatibility</h3>
+            <p>The first and most fundamental step is ensuring the donor and recipient have compatible blood types, just like in a blood transfusion. The rules are straightforward:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li>Blood Type <strong>O</strong> is the universal donor, able to give to any other blood type.</li>
+                <li>Blood Type <strong>AB</strong> is the universal recipient, able to receive from any other blood type.</li>
+                <li>Blood Type <strong>A</strong> can donate to types A and AB.</li>
+                <li>Blood Type <strong>B</strong> can donate to types B and AB.</li>
             </ul>
-            <h3 class="text-xl font-bold font-headline">Tissue Typing (HLA)</h3>
-            <p>HLA stands for Human Leukocyte Antigen. These are proteins found on the surface of your cells. Your immune system uses them to tell the difference between "self" and "foreign." Everyone has a unique set of HLA markers inherited from their parents.</p>
-            <p>A closer HLA match between donor and recipient reduces the risk of the recipient's body rejecting the new kidney. While a perfect "6 out of 6" match is ideal (often found in siblings), successful transplants are very common with partial matches.</p>
-            <h3 class="text-xl font-bold font-headline">Crossmatch Test</h3>
-            <p>This is the final blood test done before surgery. It involves mixing a small sample of the recipient's blood with the donor's blood to see if there is a reaction. A "negative" crossmatch means there is no reaction, and the transplant can proceed. A "positive" crossmatch means the recipient has pre-existing antibodies that would attack the donor kidney, and the transplant cannot happen unless special treatment is given.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Tissue Typing (HLA)</h3>
+            <p>Beyond blood type, scientists look at a set of proteins on the surface of your cells called Human Leukocyte Antigens (HLA). Your immune system uses these markers to recognize which cells belong in your body. Since you inherit your HLA markers from your parents, close relatives, especially siblings, are often the closest matches. A closer HLA match lowers the risk that your body's immune system will reject the new kidney. While a perfect "6 out of 6" match is ideal, excellent outcomes are very common with partial matches thanks to modern medications.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">The Final Check: The Crossmatch Test</h3>
+            <p>Just before the transplant, a final and critical blood test called a crossmatch is performed. This test involves mixing a small amount of your blood (the recipient's) with the donor's blood. A "negative" crossmatch is the desired result, showing no reaction and signaling that the transplant is safe to proceed. A "positive" crossmatch indicates that you have pre-existing antibodies that would attack the donor kidney, and the transplant cannot happen without specialized treatment to remove those antibodies.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Finding the Perfect Puzzle Piece</h3>
@@ -191,29 +132,17 @@ export const contentData: ModuleContentData = {
     },
     'surgery-day': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">The Day of Your Transplant Surgery</h2>
-            <p>The day of your surgery is a significant milestone. Knowing what to expect can help reduce anxiety.</p>
-            <h3 class="text-xl font-bold font-headline">Before the Surgery</h3>
-            <ul>
-                <li>You will be asked not to eat or drink anything for several hours before the operation.</li>
-                <li>You will have blood tests and meet with the anesthesiologist.</li>
-                <li>The transplant team will confirm your consent and answer any last-minute questions.</li>
-                <li>You will be given medications, including the first dose of your anti-rejection drugs.</li>
-            </ul>
-            <h3 class="text-xl font-bold font-headline">During the Surgery</h3>
-            <ul>
-                <li>The surgery is performed under general anesthesia, so you will be asleep and feel no pain.</li>
-                <li>The operation typically lasts 2 to 4 hours.</li>
-                <li>The surgeon will place the new kidney in your lower abdomen (pelvis). Your own kidneys are usually left in place unless they are causing problems like infection or high blood pressure.</li>
-                <li>The surgeon connects the new kidney's artery and vein to your blood vessels and connects the ureter (the tube that carries urine) to your bladder.</li>
-            </ul>
-             <h3 class="text-xl font-bold font-headline">After the Surgery</h3>
-            <ul>
-                <li>You will wake up in the recovery room, where a team of nurses will monitor you closely.</li>
-                <li>You will have several tubes and lines, including an IV for fluids and medication, a catheter to drain urine from your bladder, and possibly a drain near your incision.</li>
-                <li>Pain will be managed with medication.</li>
-                <li>Once stable, you will be moved to a dedicated transplant unit in the hospital.</li>
-            </ul>
+            <h2 class="text-2xl font-bold font-headline">Your Transplant Surgery: What to Expect on the Day</h2>
+            <p>The day of your surgery is a significant milestone, a culmination of preparation and hope. Understanding the flow of the day can help ease anxiety and allow you to focus on the positive outcome ahead.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Before the Operation</h3>
+            <p>In the hours leading up to surgery, the team will complete final preparations. You will be asked to stop eating and drinking to ensure your stomach is empty for anesthesia. Final blood tests will be run, and you will meet with the anesthesiologist to discuss the plan for keeping you comfortable. The transplant team will review everything with you, confirm your consent, and answer any last-minute questions. You'll also receive some initial medications, including the first dose of your crucial anti-rejection drugs.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">During the Surgery</h3>
+            <p>The operation itself is performed under general anesthesia, meaning you will be completely asleep and will not feel, hear, or remember the procedure. It typically lasts between two and four hours. The surgeon will make an incision in your lower abdomen and place the new, healthy kidney in your pelvis. Your own kidneys are generally left in place unless they are causing specific problems like persistent infections. The surgeon will skillfully connect the new kidney's artery and vein to your own blood vessels and attach the ureter (the tube that carries urine) to your bladder, completing the new system.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Immediately After Surgery</h3>
+            <p>You will wake up in the post-anesthesia care unit (recovery room), where a dedicated team of nurses will be monitoring you very closely. You will have several tubes and lines in place, including an IV for fluids and medication, a catheter in your bladder to drain urine, and possibly a small drain near your incision. Your pain will be managed effectively with medication to keep you comfortable. Once you are stable, you will be transferred to a specialized transplant unit to begin your recovery.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Big Day!</h3>
@@ -223,22 +152,15 @@ export const contentData: ModuleContentData = {
     },
     'post-transplant-recovery': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Your Recovery After Transplant</h2>
-            <p>Recovery is a gradual process that requires patience and careful adherence to your medical team's instructions. The initial recovery happens in the hospital, followed by continued healing at home.</p>
-            <h3 class="text-xl font-bold font-headline">In the Hospital (Typically 1-2 weeks)</h3>
-            <ul>
-                <li><strong>Monitoring:</strong> Your team will monitor you very closely. This includes frequent checks of your vital signs, fluid intake and output, and daily blood tests to check your new kidney's function.</li>
-                <li><strong>Activity:</strong> You will be encouraged to get out of bed and walk as early as the day after surgery to help prevent complications like blood clots and pneumonia.</li>
-                <li><strong>Medication:</strong> You will learn about your new, lifelong medications. This is a critical part of your recovery.</li>
-                <li><strong>Diet:</strong> You will start with clear liquids and gradually move to solid foods as your body recovers from surgery.</li>
-            </ul>
-            <h3 class="text-xl font-bold font-headline">At Home (First 3 Months)</h3>
-            <ul>
-                <li><strong>Follow-up:</strong> You will have frequent follow-up appointments and blood tests, sometimes several times a week initially.</li>
-                <li><strong>Activity Restrictions:</strong> You must avoid heavy lifting (more than 5 kg) and strenuous activity for at least 6-8 weeks to allow your incision to heal. Do not drive until your team says it's okay.</li>
-                <li><strong>Infection Prevention:</strong> Your immune system is suppressed, so you are at high risk for infections. Practice excellent hand hygiene, avoid crowds and sick people, and wear a mask in public.</li>
-                <li><strong>Diet:</strong> Follow the dietary guidelines provided by your team, which usually includes a low-salt, heart-healthy diet. Food safety is very important.</li>
-            </ul>
+            <h2 class="text-2xl font-bold font-headline">Your Recovery Journey After Transplant</h2>
+            <p>Your recovery after a kidney transplant is a gradual process that unfolds in stages. It requires patience, diligence, and a strong partnership with your medical team. The journey begins in the hospital and continues for several months at home as you regain your strength and adapt to life with your new kidney.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">The Hospital Stay (Typically 1-2 Weeks)</h3>
+            <p>The first phase of your recovery is managed in a specialized transplant unit. Your team will monitor you around the clock, checking vital signs and conducting daily blood tests to ensure your new kidney is functioning well. A key part of early recovery is mobility; you will be encouraged to get out of bed and walk as early as the day after surgery. This is vital for preventing complications like blood clots and pneumonia. You will also begin the critical education about your new lifelong medications. Your diet will slowly progress from clear liquids back to solid foods as your system wakes up from surgery.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Healing at Home (The First Three Months)</h3>
+            <p>The transition home marks the next important phase. You will have frequent follow-up appointments, sometimes several times a week, to continue monitoring your progress. It's crucial to protect your healing body during this time. You must avoid heavy lifting (anything over 5 kg) and strenuous activity for at least 6-8 weeks. Driving will also be restricted until your team gives you the green light.</p>
+            <p>Because your immune system is suppressed by medication, you are at a higher risk for infections. Diligent hand hygiene, wearing a mask in public, and avoiding crowds or anyone who is sick are essential practices. Your diet will focus on being heart-healthy and low in salt, and you must be extra careful with food safety. This period is about establishing the new routines that will protect your health for years to come.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Healing Up!</h3>
@@ -248,17 +170,17 @@ export const contentData: ModuleContentData = {
     },
     'immunosuppressants': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Understanding Your Medications</h2>
-            <p>Immunosuppressants, also known as anti-rejection medications, are the cornerstone of a successful transplant. They work by lowering your immune system's activity to prevent it from attacking and damaging your new kidney.</p>
-            <h3 class="text-xl font-bold font-headline">Key Principles:</h3>
-            <ul>
-                <li><strong>Lifelong Commitment:</strong> You must take these medications for the entire life of your transplanted kidney.</li>
-                <li><strong>Consistency is Crucial:</strong> Take your medications at the same times every day to maintain a stable level in your blood. Missing doses can lead to rejection.</li>
-                <li><strong>Never Adjust Doses Yourself:</strong> Your transplant team will adjust your doses based on regular blood tests. Never change the amount you take without their specific instruction.</li>
-                <li><strong>Side Effects:</strong> All medications have potential side effects. Common ones include increased risk of infection, high blood pressure, and high blood sugar. It's important to discuss any side effects with your team, as they can often be managed.</li>
+            <h2 class="text-2xl font-bold font-headline">Your Medications: The Cornerstone of Transplant Success</h2>
+            <p>The medications you take after a transplant are the foundation of your long-term health. These powerful drugs, known as immunosuppressants or anti-rejection medications, work by calming your body's immune system. This prevents it from identifying your new kidney as "foreign" and attacking it, a process called rejection.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">The Guiding Principles of Your Medication Regimen</h3>
+            <p>To ensure these medications work effectively, you must adhere to a few critical principles:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>A Lifelong Commitment:</strong> This is not a temporary treatment. You must take these medications every day for the entire life of your transplanted kidney.</li>
+                <li><strong>Consistency is Crucial:</strong> Taking your doses at the same times each day is vital. This maintains a stable, protective level of the medication in your bloodstream, shielding your kidney around the clock. Missing doses, even occasionally, can open the door to rejection.</li>
+                <li><strong>Never Adjust Doses Yourself:</strong> Your transplant team are the experts who will manage your dosage. They will perform regular blood tests to measure the drug levels in your body and make precise adjustments. Never change the amount you take without their specific instruction.</li>
+                <li><strong>Managing Side Effects:</strong> All medications have potential side effects. For immunosuppressants, these can include an increased risk of infection, high blood pressure, or high blood sugar. It's important to communicate any side effects you experience to your team, as they can often be managed effectively without compromising your kidney's health.</li>
             </ul>
-            <h3 class="text-xl font-bold font-headline">Common Medications:</h3>
-            <p>Your medication regimen will typically include a combination of drugs. Common examples include Tacrolimus, Mycophenolate Mofetil (MMF), and Prednisolone. It's vital to know the names and purposes of your specific medications.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Friendship Medicine</h3>
@@ -268,20 +190,19 @@ export const contentData: ModuleContentData = {
     },
     'medication-adherence': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">The Importance of Medication Adherence</h2>
-            <p>Medication adherence means taking your medications exactly as prescribed—the right dose, at the right time, in the right way. After a transplant, this is the single most important factor under your control for long-term success.</p>
-            <h3 class="text-xl font-bold font-headline">Why It's Critical</h3>
-            <ul>
-                <li><strong>Prevents Rejection:</strong> Even a few missed doses can trigger a rejection episode, which can cause permanent damage to your new kidney.</li>
-                <li><strong>Maintains Stable Drug Levels:</strong> Consistent timing keeps the level of immunosuppressant medication in your blood stable, providing constant protection for your kidney.</li>
-                <li><strong>Enables Accurate Monitoring:</strong> Your blood tests are timed with your medication doses. If you don't take your medication correctly, the results of your blood tests will be inaccurate, and your team won't be able to manage your care properly.</li>
-            </ul>
-            <h3 class="text-xl font-bold font-headline">Tips for Success</h3>
-            <ul>
-                <li><strong>Use Pill Organizers:</strong> A weekly pillbox with compartments for each day and time is one of the most effective tools.</li>
-                <li><strong>Set Alarms:</strong> Use your phone, watch, or a dedicated alarm clock to remind you when it's time for your medication.</li>
-                <li><strong>Build a Routine:</strong> Link taking your medication to a daily activity, like brushing your teeth.</li>
-                <li><strong>Plan Ahead:</strong> Refill your prescriptions well before you run out. Keep track of your supply, especially before weekends or holidays.</li>
+            <h2 class="text-2xl font-bold font-headline">The Power of Adherence: Taking Your Medications Correctly</h2>
+            <p>In the world of transplantation, "adherence" is a powerful word. It means taking your medications exactly as your team has prescribed—the right drug, the right dose, at the right time, every single time. After your surgery, perfect medication adherence is the single most important thing you can do to ensure the long-term health and success of your new kidney.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Why Adherence is Non-Negotiable</h3>
+            <p>Non-adherence is the leading cause of preventable graft loss. Even a few missed doses can allow your immune system to begin attacking your kidney, which can cause irreversible damage. Consistent timing maintains a stable, protective shield of medication in your blood. Furthermore, your blood tests are carefully timed in relation to your medication schedule. If you don't take your medicine correctly, the test results will be misleading, preventing your team from making the right decisions for your care.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Practical Tips for Perfect Adherence</h3>
+            <p>Building a routine is the key to success. Here are some proven strategies:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Use Pill Organizers:</strong> A weekly pillbox with compartments for each day and time is the most effective tool. It provides a clear visual of whether you've taken your dose.</li>
+                <li><strong>Set Alarms and Reminders:</strong> Use your smartphone, watch, or a simple alarm clock to create non-negotiable reminders for your medication times.</li>
+                <li><strong>Build a Routine:</strong> Link taking your medication to another daily activity you never miss, like brushing your teeth in the morning and evening.</li>
+                <li><strong>Plan Ahead for Refills:</strong> Always be aware of your medication supply. Refill your prescriptions at least a week before you run out to avoid being caught short, especially over weekends or holidays.</li>
             </ul>
         `,
         eli10: `
@@ -293,23 +214,24 @@ export const contentData: ModuleContentData = {
     'understanding-rejection': {
         standard: `
             <h2 class="text-2xl font-bold font-headline">Understanding Transplant Rejection</h2>
-            <p>Rejection is a normal and expected risk after a transplant. It happens when your body's immune system identifies the new kidney as "foreign" and tries to attack it. Fortunately, with modern medicine, most rejection episodes can be treated successfully, especially when caught early.</p>
-            <h3 class="text-xl font-bold font-headline">Types of Rejection</h3>
-            <ul>
-                <li><strong>Acute Rejection:</strong> This is the most common type, usually occurring within the first three to six months after transplant. It often does not have symptoms and is usually detected through routine blood tests. It is typically treatable with changes in medication.</li>
-                <li><strong>Chronic Rejection:</strong> This is a slower, long-term process where the kidney may gradually lose function over months or years. Consistent medication adherence and a healthy lifestyle are key to preventing it.</li>
+            <p>The term "rejection" can sound alarming, but it's important to understand it as a normal and expected risk following a transplant. It simply means that your body's immune system has recognized the new kidney as "foreign" and is mounting an attack against it. The good news is that with modern medicine and careful monitoring, most rejection episodes can be treated successfully, especially when they are detected early.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Acute vs. Chronic Rejection</h3>
+            <p>Rejection can be broadly categorized into two types:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Acute Rejection:</strong> This is the more common type, typically occurring within the first few months after transplant. Often, it causes no symptoms at all and is first detected during routine blood tests that show a rise in your creatinine level. It is usually treated by adjusting your medication, sometimes requiring a short hospital stay for IV medication.</li>
+                <li><strong>Chronic Rejection:</strong> This is a much slower process where the immune system causes gradual damage to the kidney over months or years. This is why lifelong medication adherence and a healthy lifestyle are so critical—they are the best defense against this long-term decline.</li>
             </ul>
-            <h3 class="text-xl font-bold font-headline">Signs and Symptoms</h3>
-            <p>Often, there are no symptoms, which is why regular blood tests are so important. When symptoms do occur, they can include:</p>
-            <ul>
-                <li>Fever</li>
-                <li>Pain or tenderness over the kidney</li>
-                <li>A decrease in urine output</li>
-                <li>Fluid retention (swelling)</li>
-                <li>A sudden increase in weight</li>
-                <li>Feeling unwell, like you have the flu</li>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Recognizing the Signs and Symptoms</h3>
+            <p>While routine blood tests are the primary way rejection is found, it's vital to be aware of potential physical symptoms. If you experience any of the following, you must contact your transplant team immediately:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li>Fever (100.4°F / 38°C or higher)</li>
+                <li>New pain or tenderness over your transplant site</li>
+                <li>A noticeable decrease in your urine output</li>
+                <li>Sudden weight gain or increased swelling (edema)</li>
+                <li>A general feeling of being unwell, similar to having the flu</li>
             </ul>
-            <p><strong>If you experience any of these symptoms, contact your transplant team immediately.</strong></p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Body's Defense Team</h3>
@@ -319,23 +241,20 @@ export const contentData: ModuleContentData = {
     },
     'understanding-graft-health': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Understanding Your New Kidney's Health</h2>
-            <p>'Graft' is the medical term for your transplanted kidney. Maintaining graft health is your primary goal after transplant surgery. This involves a partnership between you and your medical team.</p>
-            <h3 class="text-xl font-bold font-headline">Monitoring Graft Function</h3>
-            <p>Your transplant team monitors your kidney's health through several methods:</p>
-            <ul>
-                <li><strong>Blood Tests:</strong> The most common test is for serum creatinine. A stable, low creatinine level indicates the kidney is filtering waste well. A rising creatinine is often the first sign of a problem.</li>
-                <li><strong>Urine Tests:</strong> These check for protein in the urine (proteinuria), which can be a sign of kidney damage.</li>
-                <li><strong>Blood Pressure:</strong> High blood pressure can damage the new kidney over time, so keeping it well-controlled is essential.</li>
-                <li><strong>Biopsy:</strong> If there are signs of trouble, your doctor may perform a biopsy, where a tiny piece of the kidney is removed with a needle to be examined under a microscope. This is the most accurate way to diagnose rejection or other problems.</li>
+            <h2 class="text-2xl font-bold font-headline">Monitoring the Health of Your New Kidney</h2>
+            <p>In the world of transplantation, you will often hear your new kidney referred to as the "graft." Protecting the health of this precious gift is your most important goal. This is a collaborative effort, a partnership between you and your transplant team, built on careful monitoring and diligent self-care.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">How Your Team Monitors Graft Function</h3>
+            <p>Your team uses several key indicators to track how well your new kidney is working:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Blood Tests (Serum Creatinine):</strong> This is the most important number. Creatinine is a waste product that healthy kidneys filter from the blood. A stable, low creatinine level is a sign of a happy, well-functioning graft. A rising creatinine is often the very first signal that something may be wrong.</li>
+                <li><strong>Urine Tests:</strong> These tests check for the presence of protein in your urine (proteinuria). Healthy kidneys keep protein in the blood, so finding it in the urine can be an early sign of graft stress or damage.</li>
+                <li><strong>Blood Pressure:</strong> Consistently high blood pressure can injure the small blood vessels in the kidney over time. Keeping your blood pressure well-controlled is essential for long-term graft survival.</li>
+                <li><strong>Kidney Biopsy:</strong> If tests suggest a problem, a biopsy is the "gold standard" for diagnosis. In this safe procedure, a tiny piece of the kidney is removed with a needle and examined under a microscope. This gives doctors the most accurate picture of what is happening inside the graft, allowing for precise treatment.</li>
             </ul>
-            <h3 class="text-xl font-bold font-headline">Your Role in Graft Health</h3>
-            <ul>
-                <li><strong>Medication Adherence:</strong> Taking your anti-rejection medications exactly as prescribed is the most important thing you can do.</li>
-                <li><strong>Healthy Lifestyle:</strong> Control your blood pressure, manage your weight, eat a healthy diet, and avoid smoking.</li>
-                <li><strong>Know Your Numbers:</strong> Pay attention to your lab results and blood pressure readings. Ask your team what your goal numbers are.</li>
-                <li><strong>Communicate:</strong> Report any new symptoms to your team immediately.</li>
-            </ul>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Your Crucial Role in Graft Health</h3>
+            <p>You are the most important guardian of your new kidney. Success depends on your commitment to taking medications perfectly, maintaining a healthy lifestyle, knowing your goal numbers for blood pressure and creatinine, and immediately reporting any new or concerning symptoms to your team.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Your Kidney's Report Card</h3>
@@ -346,22 +265,18 @@ export const contentData: ModuleContentData = {
     },
     'long-term-care': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Long-Term Care and Health Maintenance</h2>
-            <p>Life after a transplant involves a lifelong commitment to your health. While your new kidney gives you freedom from dialysis, it requires careful, ongoing management to ensure it lasts for many years.</p>
-            <h3 class="text-xl font-bold font-headline">Regular Follow-Up</h3>
-            <p>Attending all your scheduled appointments is critical, even when you feel perfectly healthy. These visits allow your team to:</p>
-            <ul>
-                <li>Monitor your kidney function through blood and urine tests.</li>
-                <li>Adjust your medication dosages.</li>
-                <li>Screen for long-term complications.</li>
-                <li>Answer your questions and provide ongoing education.</li>
-            </ul>
-            <h3 class="text-xl font-bold font-headline">Screening for Other Health Issues</h3>
-            <p>Immunosuppressant medications can increase the risk of other health problems over time. Regular screening is key to catching these issues early.</p>
-            <ul>
-                <li><strong>Cancer Screening:</strong> You have a higher risk of certain cancers, especially skin cancer and lymphoma. Regular skin checks are vital. You should also follow standard cancer screening guidelines (e.g., mammograms, colonoscopies) as recommended for your age.</li>
-                <li><strong>Cardiovascular Health:</strong> Heart disease is a major concern for transplant patients. Managing blood pressure, cholesterol, and blood sugar is essential.</li>
-                <li><strong>Bone Health:</strong> Some medications can weaken your bones. Your doctor may recommend a bone density scan.</li>
+            <h2 class="text-2xl font-bold font-headline">A Lifetime of Wellness: Long-Term Care After Transplant</h2>
+            <p>Receiving a kidney transplant is not the end of your journey, but rather the beginning of a new chapter in your health. This new chapter requires a lifelong commitment to careful management and proactive wellness to ensure your new kidney thrives for many years to come.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">The Importance of Regular Follow-Up</h3>
+            <p>Even when you feel perfectly healthy, your scheduled follow-up appointments are non-negotiable. These visits are the cornerstone of long-term care, allowing your team to catch potential issues before they become serious problems. At these appointments, your team will monitor your kidney function with blood and urine tests, precisely adjust your medication dosages based on those results, and screen for long-term complications.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Proactive Screening for Other Health Issues</h3>
+            <p>The same immunosuppressant medications that protect your kidney can, over many years, increase the risk of other health conditions. Therefore, regular screening is a key part of your long-term care plan.</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Cancer Screening:</strong> Your risk for certain cancers, particularly skin cancer, is higher. Daily sunscreen use and regular skin checks by you and a dermatologist are vital. You should also diligently follow all standard age-appropriate cancer screenings (e.g., mammograms, colonoscopies).</li>
+                <li><strong>Cardiovascular Health:</strong> Protecting your heart is as important as protecting your kidney. Managing your blood pressure, cholesterol, and blood sugar through diet, exercise, and medication is essential.</li>
+                <li><strong>Bone Health:</strong> Steroids and other medications can weaken bones over time. Your doctor may recommend a bone density scan to monitor your bone health.</li>
             </ul>
         `,
         eli10: `
@@ -372,16 +287,17 @@ export const contentData: ModuleContentData = {
     },
     'diet-and-nutrition': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Diet and Nutrition After Transplant</h2>
-            <p>After your transplant, your diet is much less restrictive than when you were on dialysis. The focus shifts to a heart-healthy eating plan to protect your new kidney and your overall health. Many of the medications you take can affect your weight, blood pressure, and blood sugar, so a good diet is crucial.</p>
-            <h3 class="text-xl font-bold font-headline">Key Dietary Guidelines</h3>
-            <ul>
-                <li><strong>Sodium (Salt):</strong> A low-sodium diet is very important to help control blood pressure. Avoid processed foods, canned soups, fast food, and adding salt to your meals.</li>
-                <li><strong>Fat:</strong> Focus on healthy fats (like olive oil, avocados, nuts) and limit saturated and trans fats (found in fried foods, butter, fatty meats).</li>
-                <li><strong>Protein:</strong> You will need adequate protein to help your body heal after surgery, but excessive amounts should be avoided. Good sources include lean meats, poultry, fish, and beans.</li>
-                <li><strong>Fluids:</strong> Staying well-hydrated is important. Drink plenty of water throughout the day unless your team tells you otherwise.</li>
-                <li><strong>Food Safety:</strong> Your suppressed immune system makes you vulnerable to foodborne illness. Avoid raw or undercooked meats, fish (like sushi), and eggs. Wash all fruits and vegetables thoroughly. Avoid unpasteurized dairy products.</li>
-                <li><strong>The Grapefruit Rule:</strong> NEVER eat grapefruit or drink grapefruit juice. It interferes with the metabolism of your anti-rejection medications and can cause dangerously high levels in your blood.</li>
+            <h2 class="text-2xl font-bold font-headline">Your Diet After Transplant: Fueling Your New Life</h2>
+            <p>After your transplant, your dietary restrictions will be significantly relaxed compared to your time on dialysis. The focus now shifts from restriction to proactive, healthy eating. Your new goal is to follow a heart-healthy diet that protects your new kidney, helps manage the side effects of medications, and supports your overall well-being.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Key Principles of Post-Transplant Nutrition</h3>
+            <p>Your dietitian will provide personalized advice, but these general guidelines form the foundation of a healthy transplant diet:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Control Sodium (Salt):</strong> This is crucial for managing blood pressure. Minimize processed foods, canned goods, fast food, and frozen dinners, which are often high in sodium. Taste your food before adding salt, and experiment with herbs and spices for flavor instead.</li>
+                <li><strong>Choose Healthy Fats:</strong> Focus on unsaturated fats found in olive oil, avocados, nuts, and seeds. Limit saturated fats from butter, high-fat dairy, and fatty meats to protect your cardiovascular health.</li>
+                <li><strong>Stay Well-Hydrated:</strong> Drinking plenty of water is essential for your new kidney to function properly. Carry a water bottle with you and sip throughout the day.</li>
+                <li><strong>Practice Food Safety:</strong> Because your immune system is suppressed, you are more vulnerable to foodborne illnesses. Avoid raw or undercooked meat, fish (like sushi), and eggs. Wash all fruits and vegetables meticulously. Ensure all dairy products are pasteurized.</li>
+                <li><strong>The Golden Rule: No Grapefruit.</strong> This is an absolute rule. Grapefruit and its juice interfere with the metabolism of crucial anti-rejection medications, which can lead to dangerously high levels in your blood.</li>
             </ul>
         `,
         eli10: `
@@ -393,25 +309,21 @@ export const contentData: ModuleContentData = {
     },
     'physical-activity-and-exercise': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Physical Activity and Exercise</h2>
-            <p>Regular physical activity is a critical part of staying healthy after your transplant. It helps control weight, lower blood pressure, improve mood, and reduce the risk of cardiovascular disease.</p>
-            <h3 class="text-xl font-bold font-headline">Getting Started Safely</h3>
-            <ul>
-                <li><strong>Consult Your Team:</strong> Always talk to your transplant team before starting any new exercise program.</li>
-                <li><strong>Start Slow:</strong> Your body is recovering from major surgery. Begin with light activities like short, slow walks.</li>
-                <li><strong>Listen to Your Body:</strong> If you feel pain, dizziness, or shortness of breath, stop and rest. Don't push yourself too hard, especially in the beginning.</li>
+            <h2 class="text-2xl font-bold font-headline">Staying Active: Exercise for a Healthy Transplant</h2>
+            <p>Regular physical activity is not just recommended after a transplant; it's a vital component of your long-term care. Exercise plays a critical role in controlling your weight, lowering blood pressure, managing blood sugar, improving your mood, and significantly reducing your risk of heart disease.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Beginning Your Exercise Journey Safely</h3>
+            <p>Your body is recovering from major surgery, so it's essential to start slowly and safely. Always consult your transplant team before beginning any new exercise regimen. The key is to listen to your body; if you feel pain, dizziness, or unusual shortness of breath, it's a signal to stop and rest. Don't push yourself too hard, especially in the early weeks.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Recommended Activities for Recovery and Beyond</h3>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Walking:</strong> This is the perfect post-transplant exercise. It is low-impact, free, and you can easily control the pace and intensity. Start with short, slow walks and gradually aim to go a little further or faster each day.</li>
+                <li><strong>Cycling:</strong> A stationary bike is an excellent and safe way to build cardiovascular fitness. As you get stronger, outdoor cycling on safe paths can be a wonderful activity.</li>
+                <li><strong>Swimming:</strong> Once your surgical incision is completely healed and your team has given you the green light, swimming is a fantastic, joint-friendly, full-body workout.</li>
             </ul>
-            <h3 class="text-xl font-bold font-headline">Recommended Activities</h3>
-            <ul>
-                <li><strong>Walking:</strong> This is the perfect post-transplant exercise. It's low-impact and you can easily control the intensity. Aim to walk a little further each day.</li>
-                <li><strong>Cycling:</strong> A stationary bike is a great, safe option. Outdoor cycling can be introduced later on safe paths.</li>
-                <li><strong>Swimming:</strong> Once your surgical wound is completely healed and your team gives you the okay, swimming is an excellent full-body exercise.</li>
-            </ul>
-             <h3 class="text-xl font-bold font-headline">Activities to Avoid</h3>
-            <ul>
-                <li><strong>Heavy Lifting:</strong> Avoid lifting anything over 5 kg for the first 2-3 months to prevent a hernia.</li>
-                <li><strong>Contact Sports:</strong> Sports where you could get hit in the abdomen (like football, hockey, martial arts) should be avoided for life to protect your new kidney.</li>
-            </ul>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Activities to Avoid for Life</h3>
+            <p>To protect your new kidney, which is located in your lower abdomen and is not protected by your rib cage, some activities must be avoided permanently. This includes any contact sports where you could receive a blow to the abdomen, such as football, hockey, boxing, or martial arts. Also, continue to avoid very heavy lifting to prevent hernias.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Moving Your Body</h3>
@@ -421,23 +333,19 @@ export const contentData: ModuleContentData = {
     },
     'post-transplant-diabetes': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Post-Transplant Diabetes Mellitus (PTDM)</h2>
-            <p>Some patients develop high blood sugar and diabetes after their transplant, even if they never had it before. This is called Post-Transplant Diabetes Mellitus, or PTDM. It is a common complication, and it is manageable.</p>
-            <h3 class="text-xl font-bold font-headline">Causes and Risk Factors</h3>
-            <p>The primary cause of PTDM is the immunosuppressive medication, especially steroids (like Prednisolone) and tacrolimus. Other risk factors include:</p>
-            <ul>
-                <li>Older age</li>
-                <li>Family history of diabetes</li>
-                <li>Being overweight or obese</li>
-                <li>Hepatitis C infection</li>
-            </ul>
-            <h3 class="text-xl font-bold font-headline">Diagnosis and Management</h3>
-            <p>Your transplant team will monitor your blood sugar levels closely after your transplant. If your levels are consistently high, you may be diagnosed with PTDM.</p>
-            <p>Management of PTDM is crucial for both your long-term graft health and your overall cardiovascular health. The management strategy includes:</p>
-            <ul>
-                <li><strong>Lifestyle Changes:</strong> This is the first and most important step. It involves following a diabetic-friendly diet (limiting sugar and carbohydrates), losing weight if necessary, and regular physical activity.</li>
-                <li><strong>Medication Adjustment:</strong> In some cases, your transplant team may be able to adjust your immunosuppressant regimen to one that is less likely to cause high blood sugar.</li>
-                <li><strong>Oral Diabetes Medications or Insulin:</strong> If lifestyle changes are not enough, you may need to take pills or insulin injections to control your blood sugar.</li>
+            <h2 class="text-2xl font-bold font-headline">Understanding Post-Transplant Diabetes (PTDM)</h2>
+            <p>Following a transplant, some patients may develop high blood sugar, a condition known as Post-Transplant Diabetes Mellitus (PTDM), even if they have no prior history of diabetes. This is a common and manageable complication, and your transplant team is well-prepared to help you navigate it.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">What Causes PTDM?</h3>
+            <p>The primary drivers of PTDM are the essential immunosuppressive medications you take, particularly steroids (like Prednisolone) and tacrolimus, which can interfere with your body's ability to regulate blood sugar. Other factors that can increase your risk include being overweight, having a family history of diabetes, or being of an older age.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Diagnosis and Management Strategy</h3>
+            <p>Your transplant team will monitor your blood sugar levels very closely, especially in the first few months after your surgery. If your levels remain consistently high, a diagnosis of PTDM may be made. Effectively managing PTDM is crucial, as uncontrolled high blood sugar can harm your new kidney and increase your risk of heart disease.</p>
+            <p>The management approach is comprehensive:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Lifestyle First:</strong> The cornerstone of management is lifestyle modification. This involves adopting a diabetic-friendly diet (limiting sugars and refined carbohydrates), engaging in regular physical activity, and losing weight if necessary.</li>
+                <li><strong>Medication Adjustments:</strong> In some cases, your team may be able to adjust your anti-rejection medication regimen to one that has less impact on blood sugar.</li>
+                <li><strong>Diabetes Medications:</strong> If lifestyle changes are not sufficient to control your blood sugar, your doctor may prescribe oral medications (pills) or, in some cases, insulin injections.</li>
             </ul>
         `,
         eli10: `
@@ -448,22 +356,19 @@ export const contentData: ModuleContentData = {
     },
     'mental-health-support': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Mental and Emotional Health After Transplant</h2>
-            <p>A kidney transplant is a life-changing event that affects you physically and emotionally. It's normal to experience a wide range of feelings throughout your journey. Paying attention to your mental health is just as important as caring for your physical health.</p>
-            <h3 class="text-xl font-bold font-headline">The Emotional Rollercoaster</h3>
-            <p>It's common to feel:</p>
-            <ul>
-                <li><strong>Joy and Gratitude:</strong> Feeling incredibly thankful for your new lease on life and for your donor.</li>
-                <li><strong>Anxiety and Fear:</strong> Worrying about rejection, infection, or the future. This is often heightened around the time of clinic visits or biopsies.</li>
-                <li><strong>Guilt:</strong> Some patients, especially those who received an organ from a deceased donor, may feel a sense of guilt. These feelings are complex and normal.</li>
-                <li><strong>Depression or "The Blues":</strong> Feeling down, sad, or losing interest in activities you once enjoyed can happen. Some of the medications can also contribute to mood changes.</li>
-            </ul>
-            <h3 class="text-xl font-bold font-headline">Strategies for Coping</h3>
-            <ul>
-                <li><strong>Talk About It:</strong> Don't keep your feelings to yourself. Talk to your family, friends, or a member of your transplant team.</li>
-                <li><strong>Connect with Peers:</strong> Joining a support group with other transplant patients can be incredibly helpful. They understand what you're going through.</li>
-                <li><strong>Stay Active:</strong> Gentle physical activity is a powerful mood booster.</li>
-                <li><strong>Seek Professional Help:</strong> Your transplant team includes social workers and psychologists who are there to support you. Therapy and counseling are effective tools for managing stress and depression.</li>
+            <h2 class="text-2xl font-bold font-headline">Caring for Your Mental Health on the Transplant Journey</h2>
+            <p>A kidney transplant is a profoundly life-altering event, impacting you not just physically but emotionally as well. It is completely normal to experience a wide spectrum of feelings during this journey. Prioritizing your mental and emotional health is just as vital as caring for your new kidney.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">The Emotional Rollercoaster is Normal</h3>
+            <p>The path of a transplant recipient is often described as an emotional rollercoaster. You might feel immense joy and gratitude for your donor and your new chance at life. At the same time, you may experience significant anxiety and fear about potential complications like rejection or infection. Some patients feel a sense of guilt, especially if they received an organ from a deceased donor. Others may experience periods of sadness or depression, which can sometimes be influenced by medications. Please know that all of these feelings are normal parts of this complex experience.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Strategies for Emotional Well-being</h3>
+            <p>Actively caring for your mental health is a sign of strength. Here are some effective strategies:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Talk About Your Feelings:</strong> Don't carry the emotional weight alone. Share what you're going through with trusted family members, friends, or a member of your transplant team. Voicing your feelings can be incredibly therapeutic.</li>
+                <li><strong>Connect with Peers:</strong> Joining a support group, either in-person or online, allows you to connect with other transplant patients. Sharing experiences with people who truly understand your journey can be a powerful source of comfort and validation.</li>
+                <li><strong>Stay Active:</strong> Gentle physical activity is a potent mood booster. Even a short daily walk can have a significant positive impact on your mental state.</li>
+                <li><strong>Seek Professional Support:</strong> Your transplant program has social workers and psychologists who are experts in helping patients navigate these challenges. Therapy and counseling are valuable tools for developing coping strategies and managing stress. Never hesitate to ask for a referral.</li>
             </ul>
         `,
         eli10: `
@@ -474,17 +379,20 @@ export const contentData: ModuleContentData = {
     },
     'understanding-living-donation': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Understanding Living Donation</h2>
-            <p>Living donation is when a living person donates an organ—in this case, a kidney—to someone in need. It is a remarkable gift that offers the recipient the best possible chance for a long and healthy life. Kidneys from living donors generally last longer and start working faster than those from deceased donors.</p>
-            <h3 class="text-xl font-bold font-headline">Who Can Be a Living Donor?</h3>
-            <p>A living donor can be a family member (like a parent, sibling, or child), a friend, a spouse, or even an altruistic stranger who wishes to help someone. The donor must be:</p>
-            <ul>
+            <h2 class="text-2xl font-bold font-headline">The Gift of Life: Understanding Living Donation</h2>
+            <p>Living donation is a remarkable process where a healthy, living person chooses to donate one of their two kidneys to someone whose kidneys have failed. This selfless act is one of the greatest gifts one person can give to another, offering the recipient the very best chance for a long, healthy, and dialysis-free life.</p>
+            <p class="mt-2">Kidneys from living donors have significant advantages: they typically begin working immediately after transplant, function more effectively, and last, on average, many years longer than kidneys from deceased donors.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Who Can Be a Living Donor?</h3>
+            <p>A living donor can be a close family member, such as a parent, sibling, or adult child. They can also be a more distant relative, a spouse, a friend, or even an altruistic stranger who is moved to help someone in need. The fundamental requirements for any potential donor are that they must be:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
                 <li>In excellent physical and mental health.</li>
-                <li>Free from conditions like uncontrolled high blood pressure, diabetes, cancer, or major heart disease.</li>
-                <li>Making a voluntary and well-informed decision, free from any pressure or payment.</li>
+                <li>Free from chronic conditions like uncontrolled high blood pressure, diabetes, cancer, or significant heart disease.</li>
+                <li>Making a completely voluntary and well-informed decision, entirely free from any form of pressure or financial compensation.</li>
             </ul>
-            <h3 class="text-xl font-bold font-headline">The Process</h3>
-            <p>The journey to becoming a living donor involves a thorough and independent evaluation process. The donor has their own team of advocates (doctors, nurses, social workers) whose sole responsibility is to protect the donor's health and interests. This process ensures that it is safe for the donor to give a kidney and that they are doing so for the right reasons.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">A Process Focused on Donor Safety</h3>
+            <p>The journey to becoming a living donor involves a thorough and completely independent evaluation. The potential donor is assigned their own dedicated team of advocates—including doctors, nurses, and social workers—whose sole responsibility is to protect the donor's health and interests. This ensures that it is safe for the person to donate and that they are proceeding for purely selfless reasons.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Giving an Amazing Gift</h3>
@@ -494,29 +402,32 @@ export const contentData: ModuleContentData = {
     },
     'donor-eligibility': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Living Donor Eligibility Criteria</h2>
-            <p>The top priority in living donation is the safety of the donor. The eligibility criteria are strict to ensure that a potential donor is not put at undue risk, both during the surgery and in the long term.</p>
-            <h3 class="text-xl font-bold font-headline">General Requirements</h3>
-            <ul>
-                <li>Generally between the ages of 18 and 70.</li>
-                <li>In good overall physical and mental health.</li>
-                <li>Have a compatible or manageable blood type with the recipient.</li>
-                <li>Have a normal kidney function.</li>
-                <li>Making a voluntary decision, free of pressure or financial incentive.</li>
+            <h2 class="text-2xl font-bold font-headline">Ensuring Donor Safety: The Eligibility Criteria</h2>
+            <p>In the world of living donation, the health and safety of the donor is the absolute highest priority. To ensure that a potential donor is not placed at any undue risk, either from the surgery itself or in their long-term health, the eligibility criteria are intentionally strict and thorough.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">General Requirements for a Potential Donor</h3>
+            <p>While every transplant center has specific guidelines, the general requirements include:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li>Being an adult, typically between the ages of 18 and 70.</li>
+                <li>Being in good overall physical and mental health.</li>
+                <li>Having a compatible blood type with the recipient (though programs exist to work around incompatibility).</li>
+                <li>Demonstrating normal kidney function in both kidneys.</li>
+                <li>Making a decision that is fully voluntary, free of any pressure or financial gain.</li>
             </ul>
-            <h3 class="text-xl font-bold font-headline">Medical Conditions that Usually Prevent Donation</h3>
-            <p>Certain health conditions make it unsafe to donate a kidney. These often include:</p>
-            <ul>
-                <li>Diabetes (Type 1 or Type 2)</li>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Medical Conditions That Usually Prevent Donation</h3>
+            <p>Certain pre-existing health conditions make it unsafe for an individual to donate a kidney. These are in place to protect the donor from future harm. They most often include:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li>Diabetes (both Type 1 and Type 2)</li>
                 <li>Uncontrolled high blood pressure</li>
                 <li>Active or recently treated cancer</li>
                 <li>Significant heart or lung disease</li>
                 <li>HIV infection</li>
                 <li>A history of recurrent kidney stones</li>
-                <li>Being significantly overweight (high BMI)</li>
-                <li>Active substance abuse</li>
+                <li>Significant obesity (a high Body Mass Index, or BMI)</li>
+                <li>Active or untreated substance abuse issues</li>
             </ul>
-            <p>Each potential donor is evaluated on an individual basis by the transplant team. The final decision is always based on what is safest for the potential donor.</p>
+            <p class="mt-2">It is important to remember that every potential donor is evaluated carefully on an individual basis. The final decision always rests on what is safest for the donor.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Donor Health Checklist</h3>
@@ -526,23 +437,20 @@ export const contentData: ModuleContentData = {
     },
     'donor-evaluation': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">The Donor Evaluation Process</h2>
-            <p>The evaluation for a living donor is a comprehensive and confidential process designed to protect the donor. The donor has their own independent team, separate from the recipient's team, to ensure their interests are the top priority.</p>
-            <h3 class="text-xl font-bold font-headline">Key Steps:</h3>
-            <ul>
-                <li><strong>Initial Screening:</strong> This often starts with a health questionnaire and basic blood tests to check blood type and kidney function.</li>
-                <li><strong>Full Day Evaluation:</strong> If the initial screening is passed, the potential donor will come to the hospital for a full day of tests and consultations.</li>
-                <li><strong>Medical Tests:</strong> This includes extensive blood and urine tests, an ECG to check the heart, a chest X-ray, and a CT scan of the abdomen. The CT scan gives the surgeons a detailed "roadmap" of the kidneys' anatomy and blood vessels.</li>
-                <li><strong>Consultations:</strong> The potential donor meets with:
-                    <ul>
-                        <li>A <strong>Nephrologist</strong> to discuss their kidney health.</li>
-                        <li>A <strong>Surgeon</strong> to explain the surgical procedure and recovery.</li>
-                        <li>A <strong>Nurse Coordinator</strong> who guides them through the process.</li>
-                        <li>A <strong>Social Worker/Psychologist</strong> to ensure the decision is voluntary and the donor has good social support.</li>
-                        <li>A <strong>Dietitian</strong> to discuss healthy eating habits.</li>
+            <h2 class="text-2xl font-bold font-headline">The Donor Evaluation: A Journey of Care and Consent</h2>
+            <p>The evaluation to become a living donor is a comprehensive, confidential, and careful process designed with one primary goal: to protect the potential donor. A key principle of this process is that the donor has their own independent team, completely separate from the recipient's team. This ensures that the donor's best interests are always the top priority, free from any conflict of interest.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Key Steps in the Evaluation Process</h3>
+            <p>The journey typically follows these steps:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Initial Screening:</strong> The process often begins with a detailed health questionnaire and initial blood tests to confirm blood type and basic kidney function.</li>
+                <li><strong>Full-Day Evaluation:</strong> If the initial screening is successful, the potential donor is invited for a full day of tests and consultations at the transplant center. This day includes:
+                    <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                        <li><strong>In-depth Medical Tests:</strong> Extensive blood and urine analyses, an ECG to check the heart, a chest X-ray, and a CT scan of the abdomen. The CT scan provides the surgeons with a detailed "roadmap" of the donor's kidney anatomy and blood vessels.</li>
+                        <li><strong>Team Consultations:</strong> The potential donor meets with a Nephrologist to discuss their kidney health, a Surgeon to explain the surgical procedure, a dedicated Nurse Coordinator to guide them, and a Social Worker or Psychologist to ensure the decision is voluntary and well-supported.</li>
                     </ul>
                 </li>
-                <li><strong>Team Review:</strong> After all tests are complete, the entire transplant team meets to review the results and decide if it is safe for the potential donor to proceed.</li>
+                <li><strong>Final Team Review:</strong> Once all the information is gathered, the entire transplant team convenes to meticulously review the results. They collectively make the final determination of whether it is safe for the potential donor to proceed with the donation.</li>
             </ul>
         `,
         eli10: `
@@ -553,17 +461,19 @@ export const contentData: ModuleContentData = {
     },
     'psychological-assessment': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">The Psychological Assessment for Donors</h2>
-            <p>The psychological assessment is a crucial and confidential part of the donor evaluation. It's not a test to pass or fail, but rather a supportive conversation to ensure a potential donor is making a decision that is right for them.</p>
-            <h3 class="text-xl font-bold font-headline">Goals of the Assessment:</h3>
-            <ul>
-                <li><strong>Voluntary Decision:</strong> To confirm that the decision to donate is entirely the donor's own, without any pressure, coercion, or promise of payment from anyone.</li>
-                <li><strong>Informed Consent:</strong> To ensure the donor fully understands the surgical procedure, the recovery process, and the potential short-term and long-term risks.</li>
-                <li><strong>Mental Health:</strong> To assess for any mental health conditions, like severe depression or anxiety, that could make the stress of donation difficult to handle.</li>
-                <li><strong>Support System:</strong> To discuss the donor's support system—the family and friends who will help them during their recovery.</li>
-                <li><strong>Motivations:</strong> To understand the donor's reasons for wanting to donate.</li>
+            <h2 class="text-2xl font-bold font-headline">The Psychological Assessment: A Conversation of Support</h2>
+            <p>An essential part of the donor evaluation is the psychological assessment. This is not a test to be passed or failed, but rather a supportive and confidential conversation with a social worker or psychologist. Its purpose is to ensure that a potential donor is making a decision that is emotionally healthy and truly right for them.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Goals of the Assessment</h3>
+            <p>This conversation is designed to explore several key areas:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Voluntary Choice:</strong> To confirm that the decision to donate is entirely the donor's own, made freely and without any pressure, coercion, or promise of financial gain from any person.</li>
+                <li><strong>Informed Consent:</strong> To verify that the donor has a clear and realistic understanding of the surgery, the recovery process, and all potential short-term and long-term risks.</li>
+                <li><strong>Mental Health and Coping:</strong> To assess for any existing mental health conditions, like severe depression or anxiety, that could make the stress of donation and recovery more difficult to manage.</li>
+                <li><strong>Support System:</strong> To discuss the donor's social support network—the family and friends who will be there to help them during their recovery period.</li>
+                <li><strong>Motivations for Donating:</strong> To have an open dialogue about the donor's personal reasons for wanting to give this extraordinary gift.</li>
             </ul>
-            <p>This conversation is a safe space for the potential donor to express any concerns or fears they may have. The donor's well-being is always the primary concern.</p>
+            <p class="mt-2">This assessment provides a safe and private space for the potential donor to voice any worries, fears, or hesitations they might have. The donor's total well-being is always the guiding principle.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: A Friendly Chat</h3>
@@ -573,25 +483,21 @@ export const contentData: ModuleContentData = {
     },
     'donor-surgery': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">The Donor Surgical Procedure</h2>
-            <p>The surgery to remove a kidney for donation is called a nephrectomy. The vast majority of these are performed laparoscopically, which is a minimally invasive technique.</p>
-            <h3 class="text-xl font-bold font-headline">Laparoscopic Nephrectomy</h3>
-            <ul>
-                <li>The surgeon makes several small incisions (about 1-2 cm each) in the abdomen.</li>
-                <li>A laparoscope (a thin tube with a camera on the end) and small surgical tools are inserted through these incisions.</li>
-                <li>The abdomen is inflated with carbon dioxide gas to give the surgeon a clear view and room to work.</li>
-                <li>The surgeon carefully detaches the kidney from its blood vessels and the ureter.</li>
-                <li>The kidney is then placed in a special bag and removed through a slightly larger incision (usually about 5-7 cm) in the lower belly, often hidden below the bikini line.</li>
+            <h2 class="text-2xl font-bold font-headline">The Donor Surgery: A Minimally Invasive Approach</h2>
+            <p>The surgery to remove a kidney for donation is called a nephrectomy. Today, the overwhelming majority of these procedures are performed laparoscopically, a minimally invasive technique that has revolutionized the donor experience by promoting a faster, more comfortable recovery.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">How Laparoscopic Nephrectomy Works</h3>
+            <p>Instead of one large incision, the surgeon makes several small, "keyhole" incisions in the abdomen, each about 1-2 cm long. A laparoscope—a thin tube equipped with a high-definition camera—is inserted through one of these ports, providing a magnified view of the internal organs on a monitor. Tiny surgical tools are inserted through the other ports. The surgeon then inflates the abdomen with harmless carbon dioxide gas, creating a safe, clear space to work. With great precision, the surgeon carefully detaches the kidney from its blood vessels and the ureter. The kidney is then placed into a special sterile bag and gently removed through a slightly larger incision (about 5-7 cm) made low on the abdomen, often hidden below the bikini line for a better cosmetic result.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">The Advantages for the Donor</h3>
+            <p>This advanced technique is the standard of care because of its significant benefits for the donor, including:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li>Considerably less post-operative pain.</li>
+                <li>A much shorter hospital stay, often just one or two nights.</li>
+                <li>A faster overall recovery and return to normal daily activities.</li>
+                <li>Smaller, less noticeable scars.</li>
             </ul>
-            <h3 class="text-xl font-bold font-headline">Advantages of Laparoscopy</h3>
-            <p>Compared to traditional open surgery, this method results in:</p>
-            <ul>
-                <li>Less pain after surgery</li>
-                <li>A shorter hospital stay</li>
-                <li>A faster recovery and return to normal activities</li>
-                <li>Smaller, less noticeable scars</li>
-            </ul>
-            <p>The surgery is performed under general anesthesia and typically takes about 2 to 3 hours.</p>
+            <p class="mt-2">The surgery is performed under general anesthesia and typically takes two to three hours to complete.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Tummy Button Surgery</h3>
@@ -601,22 +507,15 @@ export const contentData: ModuleContentData = {
     },
     'donor-recovery': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Recovery After Donor Surgery</h2>
-            <p>Recovery for the living donor is generally quick and straightforward. The medical team's goal is to manage pain and get the donor moving safely to speed up healing.</p>
-            <h3 class="text-xl font-bold font-headline">In the Hospital (1-2 nights)</h3>
-            <ul>
-                <li>You will be encouraged to get out of bed and walk on the same day as your surgery. This is very important to prevent complications like blood clots.</li>
-                <li>Your pain will be well-controlled with medication.</li>
-                <li>You will be able to drink liquids soon after surgery and eat regular food by the next day.</li>
-                <li>The urinary catheter is usually removed the morning after surgery.</li>
-            </ul>
-            <h3 class="text-xl font-bold font-headline">At Home</h3>
-            <ul>
-                <li><strong>Activity:</strong> You will feel more tired than usual for a few weeks. Rest is important, but so is gentle activity like walking.</li>
-                <li><strong>Restrictions:</strong> Do not lift anything heavier than 5 kg for 4-6 weeks. Do not drive for 1-2 weeks, or while taking prescription pain medication.</li>
-                <li><strong>Returning to Work:</strong> Most people with desk jobs can return to work in 2-3 weeks. Those with more physically demanding jobs may need 4-6 weeks.</li>
-                <li><strong>Follow-up:</strong> You will have a follow-up appointment with the transplant team about 1-2 weeks after you go home. Annual check-ups are recommended for life.</li>
-            </ul>
+            <h2 class="text-2xl font-bold font-headline">The Donor's Recovery After Surgery</h2>
+            <p>The recovery period for a living donor is typically smooth and swift. The entire medical team is focused on managing any discomfort and helping the donor get back on their feet safely, which speeds up the healing process.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Your Hospital Stay (1-2 Nights)</h3>
+            <p>Your time in the hospital is brief. You will be encouraged to get out of bed and take short walks on the very same day as your surgery. This early movement is crucial for preventing complications like blood clots and keeping your lungs clear. Your pain will be well-managed with medication, and you will be able to drink liquids soon after surgery, progressing to a regular diet by the next day. The urinary catheter placed during surgery is usually removed on the morning after your procedure.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Recovering at Home</h3>
+            <p>Once home, rest is important, but so is continuing gentle activity like walking. You will likely feel more tired than usual for a few weeks as your body heals. It's essential to follow activity restrictions: do not lift anything heavier than 5 kg for 4-6 weeks to allow your abdominal muscles to heal properly. You should also not drive for 1-2 weeks, or for as long as you are taking prescription pain medication.</p>
+            <p>Most people with sedentary (desk) jobs can return to work within 2-3 weeks, while those with more physically demanding occupations may need 4-6 weeks off. You will have a follow-up appointment with your surgeon about two weeks after you go home to check on your progress.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: Getting Back to Action!</h3>
@@ -626,21 +525,18 @@ export const contentData: ModuleContentData = {
     },
     'risks-and-benefits': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Risks and Benefits of Living Donation</h2>
-            <p>The decision to become a living donor is a significant one. It's important to have a clear understanding of both the potential risks and the profound benefits.</p>
-            <h3 class="text-xl font-bold font-headline">Benefits</h3>
-            <ul>
-                <li>The primary benefit is emotional and psychological: the immense satisfaction of saving or dramatically improving someone's life.</li>
-                <li>It allows the recipient to receive a transplant sooner, often avoiding years of dialysis.</li>
-                <li>It provides the recipient with a kidney that is likely to last longer and work better than one from a deceased donor.</li>
-                <li>The surgery can be scheduled at a convenient time for both the donor and recipient.</li>
-            </ul>
-            <h3 class="text-xl font-bold font-headline">Risks</h3>
-            <p>The overall risks to the donor's health are very low, but they exist and must be understood.</p>
-            <ul>
-                <li><strong>Short-Term Surgical Risks:</strong> Like any major surgery, there are risks related to anesthesia, bleeding, infection, and blood clots. The risk of death from the surgery is extremely low (about 3 in 10,000).</li>
-                <li><strong>Long-Term Risks:</strong> Life with one kidney is very safe. The remaining kidney compensates and does the work of two. There is a small increase in the long-term risk of developing high blood pressure or a slight reduction in kidney function. The risk of eventually needing a transplant yourself is less than 1%.</li>
-                <li><strong>Emotional Risks:</strong> While most donors feel positive, some may experience feelings of anxiety or even regret if the transplant is not successful. This is why the psychological assessment is so important.</li>
+            <h2 class="text-2xl font-bold font-headline">Weighing the Risks and Benefits of Living Donation</h2>
+            <p>Making the decision to become a living donor is a profound one, requiring a balanced and clear-eyed understanding of both the potential risks and the incredible benefits.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">The Profound Benefits</h3>
+            <p>The primary benefit of donation is deeply personal and psychological: the immense satisfaction that comes from saving or dramatically improving another person's life. For the recipient, receiving a living donor kidney means getting a transplant sooner, avoiding potentially years of debilitating dialysis. It also provides them with a high-quality organ that is likely to last longer and function better. Finally, the ability to schedule the surgery provides a sense of control and predictability for everyone involved.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Understanding the Risks</h3>
+            <p>It's important to state clearly: the overall risk to a donor's health is very low. However, risks do exist and must be considered.</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Short-Term Surgical Risks:</strong> Like any major surgery, donation carries the standard risks related to anesthesia, bleeding, infection, pain, and blood clots. The risk of death from the donor operation itself is extremely low, estimated at about 3 in 10,000 procedures.</li>
+                <li><strong>Long-Term Health Risks:</strong> Living with one kidney is very safe. The remaining kidney undergoes "compensatory growth" and efficiently takes over the work of two. Studies show a small increase in the long-term risk of developing high blood pressure or a slight decrease in kidney function compared to non-donors. The risk of a donor ever needing a kidney transplant themselves in the future remains very low, at less than 1%.</li>
+                <li><strong>Emotional Risks:</strong> While the vast majority of donors report positive feelings about their experience, some may struggle with anxiety or disappointment, especially if the transplant is not successful for the recipient. This is why the pre-donation psychological assessment is such a critical and supportive part of the process.</li>
             </ul>
         `,
         eli10: `
@@ -651,22 +547,24 @@ export const contentData: ModuleContentData = {
     },
     'donor-long-term-health': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Long-Term Health for Living Donors</h2>
-            <p>Living a long, healthy life with one kidney is the norm for living donors. The key is a commitment to a healthy lifestyle and regular medical follow-up.</p>
-            <h3 class="text-xl font-bold font-headline">Annual Check-ups</h3>
-            <p>It is recommended that you have a check-up with your primary care physician or a nephrologist every year. This check-up should include:</p>
-            <ul>
-                <li><strong>Blood Pressure Check:</strong> To ensure it remains in a healthy range.</li>
-                <li><strong>Blood Test:</strong> To measure your creatinine level and check your kidney function (eGFR).</li>
-                <li><strong>Urine Test:</strong> To check for protein in the urine (albuminuria), which can be an early sign of kidney stress.</li>
+            <h2 class="text-2xl font-bold font-headline">A Donor's Guide to Lifelong Health</h2>
+            <p>For those who give the gift of life, living a long, healthy, and completely normal life with one kidney is the standard outcome. Your donation is a testament to your excellent health, and maintaining that health is the key to your continued well-being. This involves a commitment to a healthy lifestyle and regular, simple medical follow-ups.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">The Importance of Annual Check-ups</h3>
+            <p>It is strongly recommended that you have a check-up with your primary care physician at least once a year. This annual visit is a simple way to monitor your health and should include three key tests:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Blood Pressure Check:</strong> To ensure your blood pressure remains in a healthy range.</li>
+                <li><strong>Blood Test (Creatinine):</strong> A simple blood test to measure your serum creatinine, which calculates your eGFR and confirms your remaining kidney is functioning perfectly.</li>
+                <li><strong>Urine Test (Albuminuria):</strong> A urine test to check for tiny amounts of protein, which can be an early indicator of kidney stress.</li>
             </ul>
-            <h3 class="text-xl font-bold font-headline">Lifestyle Recommendations</h3>
-            <ul>
-                <li><strong>Maintain a Healthy Weight:</strong> Staying at a healthy weight reduces the strain on your remaining kidney.</li>
-                <li><strong>Eat a Balanced Diet:</strong> Focus on a diet low in salt and processed foods.</li>
-                <li><strong>Stay Active:</strong> Regular physical activity helps control blood pressure and weight.</li>
-                <li><strong>Avoid NSAIDs:</strong> Be cautious with Nonsteroidal Anti-Inflammatory Drugs (like ibuprofen and naproxen), as they can be harmful to kidneys. Always ask your doctor before taking any new medication.</li>
-                <li><strong>Pregnancy:</strong> Women who have donated a kidney can have healthy pregnancies, but they are at a slightly higher risk for complications like preeclampsia. It's important to be monitored by a doctor who is aware of your donation history.</li>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Healthy Lifestyle Recommendations</h3>
+            <p>The advice for kidney donors is the same advice for anyone wanting to live a long and healthy life:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Maintain a Healthy Weight:</strong> This reduces the overall strain on your body's systems, including your kidney.</li>
+                <li><strong>Eat a Balanced Diet:</strong> Focus on a diet rich in fruits, vegetables, and whole grains, and low in salt and processed foods.</li>
+                <li><strong>Be Mindful of Medications:</strong> Be cautious with Nonsteroidal Anti-Inflammatory Drugs (NSAIDs) like ibuprofen and naproxen, as high doses or prolonged use can be harmful to kidneys. Always consult your doctor before taking any new medication.</li>
+                <li><strong>Pregnancy After Donation:</strong> Women who have donated a kidney can and do have healthy pregnancies. However, they carry a slightly higher risk for developing issues like gestational diabetes or preeclampsia and should be co-managed by an obstetrician who is aware of their donation history.</li>
             </ul>
         `,
         eli10: `
@@ -677,16 +575,18 @@ export const contentData: ModuleContentData = {
     },
     'understanding-your-role': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Understanding Your Role as a Caregiver</h2>
-            <p>As a caregiver, you are one of the most important people in the transplant journey. Your support, encouragement, and practical help are essential for both the patient and the living donor. Your role is multifaceted, acting as a cheerleader, organizer, and an extra set of eyes and ears.</p>
-            <h3 class="text-xl font-bold font-headline">Key Responsibilities</h3>
-            <ul>
-                <li><strong>Emotional Support:</strong> The transplant process is an emotional rollercoaster. Being a calm, positive, and listening presence is invaluable.</li>
-                <li><strong>Logistical Manager:</strong> You can help by organizing appointments, managing transportation, picking up prescriptions, and coordinating communication with other family and friends.</li>
-                <li><strong>Advocate:</strong> Attending medical appointments allows you to help listen, take notes, and ask clarifying questions. You can help ensure the patient's concerns are heard.</li>
-                <li><strong>Post-Surgery Support:</strong> Your role is most intense in the weeks following surgery. You will help with medication reminders, monitoring for warning signs, preparing appropriate meals, and providing transportation to frequent follow-up visits.</li>
+            <h2 class="text-2xl font-bold font-headline">The Caregiver's Vital Role in the Transplant Journey</h2>
+            <p>As a caregiver, you are an essential and invaluable member of the transplant team. Your support, encouragement, and practical assistance are fundamental to the well-being and successful outcome of both the patient and the living donor. Your role is multifaceted: you are a cheerleader, an organizer, an advocate, and a crucial second set of eyes and ears throughout this complex journey.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Your Key Responsibilities</h3>
+            <p>Your support will manifest in many ways, but here are some of the most critical areas:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Emotional Anchor:</strong> The transplant process is an emotional rollercoaster for everyone involved. Being a calm, positive, and listening presence can provide immense comfort and stability during a stressful time.</li>
+                <li><strong>Logistics Manager:</strong> You can relieve a significant burden by helping to manage the practical details—organizing appointments, coordinating transportation, picking up prescriptions, and acting as the communication hub for other family and friends.</li>
+                <li><strong>Patient Advocate:</strong> Attending medical appointments allows you to help your loved one process complex information. You can take notes, remind them of questions they wanted to ask, and speak up if their concerns aren't being heard.</li>
+                <li><strong>Post-Surgery Support:</strong> Your role becomes most hands-on in the weeks following surgery. You will be instrumental in reminding them about medications, monitoring for warning signs, preparing appropriate meals, and providing transportation to frequent follow-up visits.</li>
             </ul>
-            <p>Remember, this is a marathon, not a sprint. It's vital that you also take care of your own well-being so you can provide sustainable support.</p>
+            <p class="mt-2">Remember, this is a marathon, not a sprint. It's vital that you also prioritize your own well-being so that you can provide consistent and sustainable support without becoming overwhelmed yourself.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: You're the Team Manager!</h3>
@@ -696,16 +596,16 @@ export const contentData: ModuleContentData = {
     },
     'supporting-pre-transplant': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Supporting Your Loved One Before Transplant</h2>
-            <p>The time leading up to a transplant can be filled with anxiety and a flurry of activity. Your support during this phase is crucial for keeping your loved one organized and emotionally grounded.</p>
-            <h3 class="text-xl font-bold font-headline">How You Can Help</h3>
-            <ul>
-                <li><strong>Attend Appointments:</strong> Go with your loved one to key appointments. Four ears are better than two for absorbing complex information. Take notes and help formulate questions beforehand.</li>
-                <li><strong>Organize Medical Information:</strong> Help keep track of test results, appointment schedules, and medication lists. A simple binder or folder can be a huge help.</li>
-                <li><strong>Provide Transportation:</strong> The evaluation process involves many trips to the hospital. Offering to drive can relieve a significant burden.</li>
-                <li><strong>Be a Good Listener:</strong> Create a safe space for your loved one to share their fears and hopes without judgment. Sometimes, just listening is the most helpful thing you can do.</li>
-                <li><strong>Encourage a Healthy Lifestyle:</strong> Support them in making healthy food choices and engaging in light physical activity (as approved by their doctor) to get them in the best possible shape for surgery.</li>
-                <li><strong>Help Prepare the Home:</strong> Help plan for their return after surgery. This might include preparing some meals to freeze, ensuring the home is clean, and setting up a comfortable recovery space.</li>
+            <h2 class="text-2xl font-bold font-headline">Support Before the Transplant: Setting the Stage for Success</h2>
+            <p>The period leading up to a transplant is often filled with a mixture of hope, anxiety, and a whirlwind of activity. Your support during this preparatory phase is crucial. By helping to manage logistics and providing emotional stability, you can help your loved one arrive on their surgery day feeling organized, prepared, and emotionally grounded.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Practical Ways You Can Help</h3>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Attend Key Appointments:</strong> Whenever possible, go with your loved one to their consultations. Four ears are better than two for absorbing complex medical information. You can take notes, which frees them to focus on listening and asking questions.</li>
+                <li><strong>Help Organize Information:</strong> The amount of paperwork and test results can be overwhelming. Help your loved one keep everything in a simple binder or folder. This simple act of organization can bring a great sense of control.</li>
+                <li><strong>Provide Transportation:</strong> The evaluation process can involve numerous trips to the hospital. Offering to drive can relieve a significant logistical and financial burden.</li>
+                <li><strong>Be an Empathetic Listener:</strong> More than anything, offer a safe space for your loved one to share their hopes and fears without judgment. You don't need to have the answers; sometimes, simply listening is the most powerful support you can provide.</li>
+                <li><strong>Prepare the Home for Recovery:</strong> Help get the home ready for their return after surgery. This might include cleaning, doing laundry, preparing and freezing some simple meals, and setting up a comfortable, accessible recovery space on the main floor.</li>
             </ul>
         `,
         eli10: `
@@ -716,15 +616,16 @@ export const contentData: ModuleContentData = {
     },
     'hospital-stay-support': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Providing Support During the Hospital Stay</h2>
-            <p>Your presence and support in the hospital can be a great source of comfort. However, it's important to balance being present with allowing your loved one (both patient and donor) adequate time to rest and recover.</p>
-            <h3 class="text-xl font-bold font-headline">How to Be an Effective Hospital Support Person</h3>
-            <ul>
-                <li><strong>Be the Communication Hub:</strong> Act as the point person for updates to the wider circle of family and friends. This allows the patient to rest instead of repeating the same information multiple times.</li>
-                <li><strong>Bring Comforts from Home:</strong> Simple things like a favorite pillow, a book, or a tablet with headphones can make the sterile hospital environment feel more comfortable.</li>
-                <li><strong>Advocate and Observe:</strong> Pay attention during nurse shift changes and doctor rounds. You can gently remind staff of questions you or the patient have. Notice changes in your loved one's condition and report them.</li>
-                <li><strong>Support the Donor Too:</strong> If there is a living donor, remember they have also undergone major surgery. Split your time, or coordinate with other family members to ensure the donor feels just as supported as the recipient.</li>
-                <li><strong>Respect Rest Time:</strong> Don't feel you need to be there every single minute. Recovery requires a lot of sleep. Encourage your loved one to rest when they are tired, even if it means you step out of the room for a while.</li>
+            <h2 class="text-2xl font-bold font-headline">Your Supportive Presence During the Hospital Stay</h2>
+            <p>Your presence and support in the hospital after surgery can be an immense source of comfort for your loved one. The key is to balance being a helpful advocate with allowing them the quiet time they need to rest and heal. This is true for both the transplant recipient and the living donor.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">How to Be an Effective Hospital Support Person</h3>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Be the Communication Hub:</strong> Take on the role of the designated point person for communication. You can provide updates to the wider circle of family and friends via text or a group chat. This allows your loved one to rest instead of repeating the same information over and over.</li>
+                <li><strong>Bring Comforts from Home:</strong> A few simple items can make the sterile hospital environment feel more personal and comfortable. Consider bringing their favorite pillow, a warm blanket, a book or tablet with headphones, and comfortable clothes for when they start walking.</li>
+                <li><strong>Advocate and Observe:</strong> Be present during doctor's rounds and nurse shift changes. You can gently remind staff of questions you or the patient have. As someone who knows them best, you might notice subtle changes in their condition or comfort level that you can bring to the nursing staff's attention.</li>
+                <li><strong>Remember the Donor:</strong> If this was a living donation, remember that the donor has also undergone major surgery and needs support. Coordinate with other family members to ensure the donor feels just as cared for and appreciated as the recipient.</li>
+                <li><strong>Prioritize Rest:</strong> Recovery from major surgery requires a great deal of sleep. Don't feel you need to be at the bedside every single minute. Encourage your loved one to rest when they are tired, even if it means you step out of the room to give them quiet time. Your calm presence is valuable, even from the waiting room.</li>
             </ul>
         `,
         eli10: `
@@ -735,17 +636,18 @@ export const contentData: ModuleContentData = {
     },
     'home-recovery-care': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Caregiving During Home Recovery</h2>
-            <p>The first few months at home are a critical period for healing and establishing new routines. Your role as a caregiver is most intensive during this time.</p>
-            <h3 class="text-xl font-bold font-headline">Key Areas of Support</h3>
-            <ul>
-                <li><strong>Medication Management:</strong> This is the top priority. Help create a system with pillboxes and alarms to ensure no dose is ever missed.</li>
-                <li><strong>Monitoring and Reporting:</strong> Help track vital signs like temperature, blood pressure, and weight. Keep a log of these numbers and any new symptoms to report to the transplant team.</li>
-                <li><strong>Infection Control:</strong> Be vigilant about hygiene. Enforce handwashing for all visitors, keep the home clean, and help the patient avoid crowds and anyone who is sick.</li>
-                <li><strong>Diet and Nutrition:</strong> Help with grocery shopping and preparing meals that follow the transplant diet (low-salt, good food safety).</li>
-                <li><strong>Transportation:</strong> The patient cannot drive for several weeks. You will be their primary means of getting to frequent follow-up appointments.</li>
-                <li><strong>Enforcing Restrictions:</strong> Gently remind your loved one of their activity restrictions, especially about not lifting heavy items.</li>
-                <li><strong>Emotional Support:</strong> Be patient and understanding. Recovery has its ups and downs. Celebrate small victories and offer encouragement on tough days.</li>
+            <h2 class="text-2xl font-bold font-headline">Guiding the Way Through Home Recovery</h2>
+            <p>The first few months after discharge from the hospital are a critical period for healing, adapting to new routines, and setting the foundation for long-term health. Your role as a caregiver is often most intensive and most impactful during this time.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Key Areas of Support at Home</h3>
+            <p>Your support will touch on many aspects of daily life. Here are the most critical:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Medication Management:</strong> This is the absolute top priority. Help the patient establish an unwavering routine. This can involve helping them set up a weekly pillbox, creating alarms, and making a simple chart to check off each dose as it's taken.</li>
+                <li><strong>Monitoring and Reporting:</strong> You are the first line of defense. Help by tracking vital signs like temperature, blood pressure, and daily weight. Keep a simple log of these numbers and any new symptoms (like pain, nausea, or swelling) to report to the transplant team.</li>
+                <li><strong>Creating a Safe Haven:</strong> Be vigilant about infection control. This means ensuring diligent handwashing for everyone in the home and for all visitors. Help the patient avoid crowds and anyone who shows signs of illness.</li>
+                <li><strong>Nutrition and Hydration:</strong> You can help by assisting with grocery shopping and preparing meals that follow the transplant diet (low-salt, heart-healthy). Ensure they are staying well-hydrated by keeping a water bottle nearby.</li>
+                <li><strong>Transportation and Logistics:</strong> The patient will not be able to drive for several weeks. You will be their primary means of getting to their frequent and vital follow-up appointments.</li>
+                <li><strong>Enforcing Rest:</strong> Gently but firmly remind your loved one of their activity restrictions, especially the "no heavy lifting" rule, to prevent complications like a hernia.</li>
             </ul>
         `,
         eli10: `
@@ -756,15 +658,17 @@ export const contentData: ModuleContentData = {
     },
     'medication-management': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Assisting with Medication Management</h2>
-            <p>Ensuring the transplant recipient takes their immunosuppressant medications perfectly is the most critical task for a successful outcome. As a caregiver, you can be an invaluable partner in this process.</p>
-            <h3 class="text-xl font-bold font-headline">Practical Ways to Help</h3>
-            <ul>
-                <li><strong>Set up a System:</strong> A pill organizer box with compartments for each day of the week and times of day (e.g., AM/PM) is essential. Help the patient fill this box accurately each week.</li>
-                <li><strong>Use Technology:</strong> Set recurring alarms on the patient's phone, your phone, or a smart home device. There are also specialized medication reminder apps available.</li>
-                <li><strong>Create a Chart:</strong> A simple chart on the refrigerator where the patient can check off each dose after they take it can provide a visual confirmation and prevent double-dosing.</li>
-                <li><strong>Manage Refills:</strong> Be aware of how much medication is left. Help remind the patient when it's time to call the pharmacy for a refill, ensuring there's always at least a week's supply in reserve.</li>
-                <li><strong>Observe and Report:</strong> Pay attention to any new side effects the patient might be experiencing from their medications and encourage them to report these to the transplant team.</li>
+            <h2 class="text-2xl font-bold font-headline">A Caregiver's Guide to Medication Management</h2>
+            <p>Ensuring the transplant recipient achieves perfect medication adherence is the single most critical task for a successful long-term outcome. As a caregiver, you can be an invaluable partner in establishing and maintaining this crucial routine, especially in the early weeks after surgery when the patient may be tired or overwhelmed.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Practical Ways to Build a Failsafe System</h3>
+            <p>The goal is to make taking medications an automatic and error-proof habit. Here’s how you can help:</p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Set up a Pill Organizer:</strong> A pill organizer box with compartments for each day of the week and specific times (e.g., AM/PM) is the most powerful tool against missed doses. Make a weekly ritual of sitting down together to accurately fill the box.</li>
+                <li><strong>Leverage Technology:</strong> Set recurring alarms on the patient's smartphone, your own phone, or a smart home device like Alexa or Google Home. The alarm name itself can be a reminder, like "8 AM Tacrolimus".</li>
+                <li><strong>Use a Visual Chart:</strong> For some, a simple paper chart on the refrigerator is very effective. The patient can physically check off each dose after they swallow the pills, providing a clear visual confirmation and preventing accidental double-dosing.</li>
+                <li><strong>Manage the Supply Chain:</strong> Be aware of how much medication is left in the bottles. Help remind the patient when it's time to call the pharmacy for a refill, ensuring there is always at least a one-week supply in reserve to account for any delays.</li>
+                <li><strong>Observe and Encourage Communication:</strong> Gently ask the patient how they are feeling and if they are experiencing any new side effects. Encourage them to report these to the transplant team, as adjustments can often be made to improve their quality of life.</li>
             </ul>
         `,
         eli10: `
@@ -775,20 +679,21 @@ export const contentData: ModuleContentData = {
     },
     'recognizing-warning-signs': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Recognizing Warning Signs in a Transplant Recipient</h2>
-            <p>As a caregiver, you are often the first person to notice subtle changes in your loved one's health. Knowing the key warning signs of potential problems like rejection or infection is crucial. Your quick action can make a huge difference.</p>
-            <h3 class="text-xl font-bold font-headline">Key Warning Signs to Watch For:</h3>
-            <p><strong>Contact the transplant team IMMEDIATELY if the patient has:</strong></p>
-            <ul>
-                <li>A fever with a temperature of 100.4°F (38°C) or higher.</li>
-                <li>New pain or tenderness over the area of the transplanted kidney.</li>
-                <li>Flu-like symptoms, such as chills, body aches, headache, or dizziness.</li>
-                <li>A significant decrease in urine output.</li>
-                <li>Sudden, unexplained weight gain or increased swelling in the hands, feet, or face.</li>
-                <li>Nausea, vomiting, or diarrhea.</li>
-                <li>A new cough, sore throat, or shortness of breath.</li>
+            <h2 class="text-2xl font-bold font-headline">The Caregiver's Watchful Eye: Recognizing Warning Signs</h2>
+            <p>As a caregiver, you spend more time with the transplant recipient than anyone on the medical team. This unique position makes you the first line of defense in spotting subtle changes that could indicate a problem like rejection or infection. Knowing the key warning signs and acting on them quickly can make a profound difference in the patient's outcome.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Critical Warning Signs That Require an Immediate Call</h3>
+            <p>Do not wait for the next appointment to report a new or worrying symptom. <strong>Contact the transplant team IMMEDIATELY if the patient experiences any of the following:</strong></p>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li>A <strong>fever</strong> with a temperature of 100.4°F (38°C) or higher.</li>
+                <li>New or worsening <strong>pain or tenderness</strong> over the area of the transplanted kidney (usually the lower abdomen).</li>
+                <li><strong>Flu-like symptoms</strong>, such as chills, body aches, headaches, or dizziness.</li>
+                <li>A noticeable <strong>decrease in urine output</strong> compared to their normal.</li>
+                <li>Sudden, unexplained <strong>weight gain</strong> of more than 2-3 pounds in a day, or increased swelling in the hands, feet, or face.</li>
+                <li>New onset of <strong>nausea, vomiting, or diarrhea</strong>.</li>
+                <li>A new <strong>cough, sore throat, or shortness of breath</strong>, which could signal a respiratory infection.</li>
             </ul>
-            <p><strong>Trust your instincts.</strong> If something just doesn't seem right with your loved one, it's always better to be safe and call the transplant team. Do not wait for the next appointment to report a new or worrying symptom.</p>
+            <p class="mt-4"><strong>Trust your instincts.</strong> You know your loved one best. If something just seems "off" or they don't seem like themselves, it is always better to be safe and make the call to the transplant team. It is always better to report a concern that turns out to be nothing than to ignore a sign that turns out to be serious.</p>
         `,
         eli10: `
             <h3 class="text-xl font-bold font-headline text-primary">Explain Like I'm 10: The Lookout</h3>
@@ -799,16 +704,18 @@ export const contentData: ModuleContentData = {
     },
     'self-care-for-caregivers': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">The Importance of Self-Care for Caregivers</h2>
-            <p>Caring for a transplant recipient is a demanding and often stressful role. It is not selfish to take care of yourself; it is essential. You cannot pour from an empty cup. To be an effective and sustainable source of support for your loved one, you must also attend to your own physical and emotional needs.</p>
-            <h3 class="text-xl font-bold font-headline">What is Caregiver Burnout?</h3>
-            <p>Burnout is a state of physical, emotional, and mental exhaustion. Signs include feeling tired all the time, losing interest in activities you once enjoyed, feeling irritable or hopeless, and changes in your sleep or eating patterns.</p>
-            <h3 class="text-xl font-bold font-headline">Strategies for Self-Care</h3>
-            <ul>
-                <li><strong>Accept Help:</strong> When friends and family offer to help with meals, errands, or sitting with the patient, say YES. Create a list of specific tasks people can help with.</li>
-                <li><strong>Take Breaks:</strong> You must schedule time for yourself, even if it's just 30 minutes to go for a walk, read a book, or listen to music. Regular, short breaks are more effective than waiting until you are exhausted.</li>
-                <li><strong>Protect Your Health:</strong> Try to eat healthy meals, get enough sleep, and stay physically active. You are no good to your loved one if you become sick yourself.</li>
-                <li><strong>Find Your Own Support:</strong> Talk to a trusted friend about your feelings. Consider joining a caregiver support group, either in-person or online, to connect with others who understand your situation.</li>
+            <h2 class="text-2xl font-bold font-headline">The Unspoken Rule of Caregiving: You Must Care for Yourself</h2>
+            <p>Supporting a transplant recipient is a deeply rewarding but also incredibly demanding role. It is easy to get so focused on the needs of your loved one that you neglect your own. However, taking care of yourself is not selfish; it is an essential part of being an effective caregiver. You cannot pour from an empty cup. To be a consistent and sustainable source of support, you must attend to your own physical and emotional needs.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Understanding and Preventing Caregiver Burnout</h3>
+            <p>Burnout is a state of physical, emotional, and mental exhaustion that can creep up on caregivers. The signs can include feeling tired all the time, losing interest in activities you once enjoyed, feeling irritable or hopeless, and noticing changes in your sleep or eating habits. Recognizing these signs early is the first step to preventing burnout.</p>
+
+            <h3 class="text-xl font-bold font-headline mt-4">Practical Strategies for Self-Care</h3>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Accept Help Gracefully:</strong> When friends and family offer to help, your answer should be "Yes, thank you!" Be specific. Let them run an errand, bring a meal, or sit with the patient for an hour so you can take a walk. People want to help; let them.</li>
+                <li><strong>Schedule "You" Time:</strong> You must intentionally schedule time for yourself, even if it's just for 30 minutes. Take a walk, listen to a podcast, read a book, or simply sit quietly with a cup of tea. Regular, short breaks are far more effective than waiting until you are completely exhausted.</li>
+                <li><strong>Protect Your Own Health:</strong> Your health is just as important. Try to eat balanced meals, get as much sleep as you can, and stay physically active. You are no good to your loved one if you become sick yourself.</li>
+                <li><strong>Find Your Own Support System:</strong> You also need someone to talk to. Confide in a trusted friend about your feelings and frustrations. Consider joining a caregiver support group, either in-person or online, to connect with others who truly understand the unique challenges and rewards of your situation.</li>
             </ul>
         `,
         eli10: `
@@ -819,15 +726,16 @@ export const contentData: ModuleContentData = {
     },
     'communication-with-medical-team': {
         standard: `
-            <h2 class="text-2xl font-bold font-headline">Communicating Effectively with the Medical Team</h2>
-            <p>Clear and open communication is key to a successful transplant journey. As a caregiver, you play an important role in the communication loop between the patient and the healthcare providers.</p>
-            <h3 class="text-xl font-bold font-headline">Tips for Effective Communication</h3>
-            <ul>
-                <li><strong>Be Prepared for Appointments:</strong> Before each visit, sit down with your loved one and write down a list of questions and concerns. This ensures you don't forget anything important.</li>
-                <li><strong>Take Notes:</strong> During the appointment, write down the answers and instructions from the doctor or nurse. It can be hard to remember everything later. Ask for permission to record the conversation on your phone if that's easier.</li>
-                <li><strong>Ask for Clarification:</strong> If you or the patient don't understand a medical term or an instruction, don't be afraid to say, "Could you explain that in a simpler way?"</li>
-                <li><strong>Know Who to Call:</strong> Make sure you have a clear understanding of who your primary contact on the transplant team is (usually the Nurse Coordinator) and how to reach them during business hours and after hours for emergencies.</li>
-                <li><strong>Be Clear and Concise:</strong> When you do need to call the team, state the reason for your call clearly. For example, "I am calling because my husband has a temperature of 101°F." Have relevant information ready, such as a list of current medications and recent vital signs.</li>
+            <h2 class="text-2xl font-bold font-headline">Effective Communication with the Medical Team</h2>
+            <p>Clear, open, and organized communication is a cornerstone of a successful transplant journey. As a caregiver, you are a vital link in the communication loop between the patient and their healthcare providers. Your involvement can ensure that information is understood, questions are answered, and concerns are addressed promptly.</p>
+            
+            <h3 class="text-xl font-bold font-headline mt-4">Tips for Productive and Clear Communication</h3>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><strong>Prepare for Appointments:</strong> Before each visit, sit down with your loved one and create a list of questions and concerns. Having a written list ensures you don't forget anything important during the limited time with the doctor.</li>
+                <li><strong>Take Notes and Ask to Record:</strong> During the appointment, be the designated note-taker. Write down the answers and instructions from the doctor or nurse. It can be very difficult to remember everything later. Don't be afraid to ask, "Would you mind if I record this part of our conversation on my phone so we can review it later?"</li>
+                <li><strong>Ask for Clarification:</strong> The medical world is full of jargon. If you or the patient do not understand a term or an instruction, it is essential to speak up. A simple phrase like, "Could you explain that to us in a simpler way?" is perfectly acceptable and encouraged.</li>
+                <li><strong>Know Who to Call and When:</strong> Ensure you have a clear understanding of who your primary contact on the transplant team is (this is often the Nurse Coordinator). Know their direct phone number and the procedure for reaching someone after business hours for urgent issues or emergencies.</li>
+                <li><strong>Be Clear and Concise on the Phone:</strong> When you need to call the team, state the reason for your call clearly and upfront. For example, "Hello, I am calling for John Doe. He has a temperature of 101°F." Have relevant information ready, such as a list of current medications, the patient's temperature, blood pressure, and any other symptoms.</li>
             </ul>
         `,
         eli10: `
@@ -838,3 +746,6 @@ export const contentData: ModuleContentData = {
     }
 };
 
+
+
+    
