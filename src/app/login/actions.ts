@@ -34,11 +34,10 @@ export async function login(formData: FormData) {
       isLoggedIn: true
   }
 
-  // Set a session cookie
+  // Set a session cookie. It will be deleted when the browser is closed.
   cookies().set('session', JSON.stringify(sessionData), {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    maxAge: 60 * 60 * 24 * 7, // One week
     path: '/',
   });
 
