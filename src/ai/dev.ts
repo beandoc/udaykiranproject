@@ -2,7 +2,7 @@ import {config} from 'dotenv';
 config();
 
 // This file is the entrypoint for the Genkit developer UI.
-// It is used to register all the defined flows.
+// It is used to register all the defined flows for local development.
 
 import {genkit} from 'genkit';
 import {googleAI} from '@genkit-ai/googleai';
