@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import Link from "next/link";
+import { LayoutDashboard } from "lucide-react";
 
 export default function AdminPage() {
     const { toast } = useToast();
@@ -23,7 +25,18 @@ export default function AdminPage() {
 
     return (
         <div className="space-y-8">
-            <h1 className="text-3xl font-bold font-headline tracking-tight">Admin Dashboard</h1>
+            <div className="flex justify-between items-start">
+                <div>
+                    <h1 className="text-3xl font-bold font-headline tracking-tight">Admin Dashboard</h1>
+                    <p className="text-muted-foreground">Welcome, Admin. Manage users or view the main application.</p>
+                </div>
+                <Button asChild>
+                    <Link href="/">
+                        <LayoutDashboard className="mr-2 h-4 w-4" />
+                        Go to Main Dashboard
+                    </Link>
+                </Button>
+            </div>
             <Card className="max-w-md">
                 <CardHeader>
                     <CardTitle>Change User Password</CardTitle>

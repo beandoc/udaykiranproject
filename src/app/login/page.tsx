@@ -23,7 +23,7 @@ export default function LoginPage() {
           <form action={login} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="username">Username</Label>
-              <Input id="username" name="username" placeholder="e.g. user" required />
+              <Input id="username" name="username" placeholder="Enter your username" required />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
@@ -33,10 +33,6 @@ export default function LoginPage() {
               Login
             </Button>
           </form>
-           <div className="mt-4 text-center text-sm text-muted-foreground">
-            <p>User: user / udaykiran</p>
-            <p>Admin: sachin / udaykiran</p>
-          </div>
         </CardContent>
       </Card>
     </main>
