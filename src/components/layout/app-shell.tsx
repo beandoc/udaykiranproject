@@ -48,6 +48,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useAppContext } from '@/context/app-context';
 import { logout } from '@/app/login/actions';
+import { cn } from '@/lib/utils';
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -136,7 +137,10 @@ export function AppShell({ children }: { children: ReactNode }) {
             <form action={logout}>
                 <SidebarMenu>
                     <SidebarMenuItem>
-                         <SidebarMenuButton type="submit" variant="outline" className="w-full justify-start">
+                         <SidebarMenuButton type="submit" variant="default" className={cn(
+                            "w-full justify-start",
+                            "bg-destructive/20 text-destructive-foreground hover:bg-destructive/30"
+                         )}>
                              <LogOut />
                              <span>Logout</span>
                          </SidebarMenuButton>
