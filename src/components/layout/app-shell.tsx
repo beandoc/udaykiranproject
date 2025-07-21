@@ -49,11 +49,13 @@ import {
 import { useAppContext } from '@/context/app-context';
 import { logout } from '@/app/login/actions';
 import { cn } from '@/lib/utils';
+import { useRouter } from 'next/navigation';
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const { t, setLanguage } = useAppContext();
   const { setTheme, theme } = useTheme();
+  const router = useRouter();
 
   const mainNav = [
     { href: '/', labelKey: 'navDashboard', icon: LayoutDashboard },
@@ -74,6 +76,17 @@ export function AppShell({ children }: { children: ReactNode }) {
   ];
 
   const isAdminPage = pathname.startsWith('/admin');
+
+  const handleLogout = async () => {
+    // Clear client-side storage first
+    if (typeof window !== 'undefined') {
+        localStorage.removeItem('app-role');
+        localStorage.removeItem('app-language');
+        localStorage.removeItem('app-modules');
+    }
+    // Then call the server action to clear the cookie and redirect
+    await logout();
+  };
 
   return (
     <SidebarProvider>
@@ -134,19 +147,21 @@ export function AppShell({ children }: { children: ReactNode }) {
             )}
         </SidebarContent>
          <SidebarFooter>
-            <form action={logout}>
-                <SidebarMenu>
-                    <SidebarMenuItem>
-                         <SidebarMenuButton type="submit" variant="default" className={cn(
+            <SidebarMenu>
+                <SidebarMenuItem>
+                     <SidebarMenuButton 
+                        onClick={handleLogout}
+                        variant="default" 
+                        className={cn(
                             "w-full justify-start",
                             "bg-destructive/20 text-destructive-foreground hover:bg-destructive/30"
-                         )}>
-                             <LogOut />
-                             <span>Logout</span>
-                         </SidebarMenuButton>
-                    </SidebarMenuItem>
-                </SidebarMenu>
-            </form>
+                        )}
+                     >
+                         <LogOut />
+                         <span>Logout</span>
+                     </SidebarMenuButton>
+                </SidebarMenuItem>
+            </SidebarMenu>
          </SidebarFooter>
       </Sidebar>
       <SidebarInset>
