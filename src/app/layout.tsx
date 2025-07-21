@@ -1,9 +1,10 @@
+
 import type { Metadata } from 'next';
-import { AppShell } from '@/components/layout/app-shell';
 import { Toaster } from "@/components/ui/toaster";
 import { AppProvider } from '@/context/app-context';
 import { ThemeProvider } from "next-themes";
 import './globals.css';
+import { AppShellWrapper } from '@/components/layout/app-shell-wrapper';
 
 export const metadata: Metadata = {
   title: 'UdayKiran: Your Transplant Companion',
@@ -31,7 +32,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AppProvider>
-              <AppShell>{children}</AppShell>
+              <AppShellWrapper>{children}</AppShellWrapper>
               <Toaster />
           </AppProvider>
         </ThemeProvider>

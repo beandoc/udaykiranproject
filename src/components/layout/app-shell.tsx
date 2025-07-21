@@ -17,6 +17,7 @@ import {
   SidebarInset,
   SidebarGroup,
   SidebarGroupLabel,
+  SidebarFooter,
 } from '@/components/ui/sidebar';
 import {
   BookOpen,
@@ -35,6 +36,8 @@ import {
   HelpCircle,
   Calculator,
   ClipboardList,
+  LogOut,
+  UserCog,
 } from 'lucide-react';
 import { Button } from '../ui/button';
 import {
@@ -44,6 +47,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useAppContext } from '@/context/app-context';
+import { logout } from '@/app/login/actions';
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -68,6 +72,8 @@ export function AppShell({ children }: { children: ReactNode }) {
     { href: '/faq', labelKey: 'navFaq', icon: HelpCircle },
   ];
 
+  const isAdminPage = pathname.startsWith('/admin');
+
   return (
     <SidebarProvider>
       <Sidebar>
@@ -83,53 +89,82 @@ export function AppShell({ children }: { children: ReactNode }) {
             </Link>
         </SidebarHeader>
         <SidebarContent>
-            <SidebarMenu>
-                {mainNav.map((item) => (
-                    <SidebarMenuItem key={item.href}>
-                    <SidebarMenuButton asChild isActive={pathname === item.href}>
-                        <Link href={item.href}>
-                        <item.icon />
-                        <span>{t(item.labelKey)}</span>
-                        </Link>
-                    </SidebarMenuButton>
-                    </SidebarMenuItem>
-                ))}
-            </SidebarMenu>
-            <SidebarGroup className="mt-4">
-                <SidebarGroupLabel>{t('groupHealthTools')}</SidebarGroupLabel>
+            {isAdminPage ? (
                 <SidebarMenu>
-                    {toolsNav.map((item) => (
-                        <SidebarMenuItem key={item.href}>
-                        <SidebarMenuButton asChild isActive={pathname.startsWith(item.href)}>
-                            <Link href={item.href}>
-                            <item.icon />
-                            <span>{(item as any).labelKey ? t((item as any).labelKey) : (item as any).label}</span>
+                    <SidebarMenuItem>
+                        <SidebarMenuButton asChild isActive={pathname === '/admin'}>
+                            <Link href="/admin">
+                                <UserCog />
+                                <span>Admin Dashboard</span>
                             </Link>
                         </SidebarMenuButton>
-                        </SidebarMenuItem>
-                    ))}
+                    </SidebarMenuItem>
                 </SidebarMenu>
-            </SidebarGroup>
+            ) : (
+                <>
+                    <SidebarMenu>
+                        {mainNav.map((item) => (
+                            <SidebarMenuItem key={item.href}>
+                            <SidebarMenuButton asChild isActive={pathname === item.href}>
+                                <Link href={item.href}>
+                                <item.icon />
+                                <span>{t(item.labelKey)}</span>
+                                </Link>
+                            </SidebarMenuButton>
+                            </SidebarMenuItem>
+                        ))}
+                    </SidebarMenu>
+                    <SidebarGroup className="mt-4">
+                        <SidebarGroupLabel>{t('groupHealthTools')}</SidebarGroupLabel>
+                        <SidebarMenu>
+                            {toolsNav.map((item) => (
+                                <SidebarMenuItem key={item.href}>
+                                <SidebarMenuButton asChild isActive={pathname.startsWith(item.href)}>
+                                    <Link href={item.href}>
+                                    <item.icon />
+                                    <span>{(item as any).labelKey ? t((item as any).labelKey) : (item as any).label}</span>
+                                    </Link>
+                                </SidebarMenuButton>
+                                </SidebarMenuItem>
+                            ))}
+                        </SidebarMenu>
+                    </SidebarGroup>
+                </>
+            )}
         </SidebarContent>
+         <SidebarFooter>
+            <form action={logout}>
+                <SidebarMenu>
+                    <SidebarMenuItem>
+                         <SidebarMenuButton type="submit" variant="outline" className="w-full justify-start">
+                             <LogOut />
+                             <span>Logout</span>
+                         </SidebarMenuButton>
+                    </SidebarMenuItem>
+                </SidebarMenu>
+            </form>
+         </SidebarFooter>
       </Sidebar>
       <SidebarInset>
         <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm lg:h-[60px] lg:px-6">
           <SidebarTrigger className="md:hidden" />
           <div className="flex-1" />
           <div className="flex items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="text-sm font-medium px-3">
-                      <Languages className="mr-2 h-5 w-5" />
-                      <span>{t('languageLabel')}</span>
-                  </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                  <DropdownMenuItem onClick={() => setLanguage('en')}>{t('langEnglish')}</DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => setLanguage('hi')}>{t('langHindi')}</DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => setLanguage('mr')}>{t('langMarathi')}</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {!isAdminPage && (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" className="text-sm font-medium px-3">
+                        <Languages className="mr-2 h-5 w-5" />
+                        <span>{t('languageLabel')}</span>
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                    <DropdownMenuItem onClick={() => setLanguage('en')}>{t('langEnglish')}</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setLanguage('hi')}>{t('langHindi')}</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setLanguage('mr')}>{t('langMarathi')}</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
             <Button variant="ghost" size="icon" className="rounded-full">
                 <Bell className="h-5 w-5" />
                 <span className="sr-only">{t('notifications')}</span>
@@ -139,7 +174,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <span className="sr-only">{t('toggleTheme')}</span>
             </Button>
             <div className="text-sm font-semibold text-foreground pr-2">
-              Command Hospital Pune
+              {isAdminPage ? "Admin" : "Command Hospital Pune"}
             </div>
         </div>
         </header>
