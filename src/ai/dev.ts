@@ -13,5 +13,6 @@ genkit({
   enableTracingAndMetrics: true,
 });
 
+// Import all flows to register them with the dev UI
 import './flows/answer-transplant-questions';
 import './flows/narrate-content-flow';
