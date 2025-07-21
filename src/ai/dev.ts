@@ -6,10 +6,9 @@ config();
 
 import {genkit} from 'genkit';
 import {googleAI} from '@genkit-ai/googleai';
-import {nextPlugin} from '@genkit-ai/next';
 
 genkit({
-  plugins: [googleAI(), nextPlugin()],
+  plugins: [googleAI()],
   logLevel: 'debug',
   enableTracingAndMetrics: true,
 });
