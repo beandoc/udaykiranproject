@@ -14,5 +14,5 @@ genkit({
   enableTracingAndMetrics: true,
 });
 
-import '../src/ai/flows/answer-transplant-questions';
-import '../src/ai/flows/narrate-content-flow';
+import '@/ai/flows/answer-transplant-questions';
+import '@/ai/flows/narrate-content-flow';
