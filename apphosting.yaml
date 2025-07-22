@@ -1,7 +1,30 @@
 # Settings to manage and configure a Firebase App Hosting backend.
 # https://firebase.google.com/docs/app-hosting/configure
 
+# The runtime to use for this backend.
+runtime: 'nodejs20'
+
+# The command to build your app. This is run on the server
+# and is required for all backends.
+build:
+  - npm run build
+
+# The command to run your app. This is required for all backends.
+start: npm run start
+
 runConfig:
-  # Increase this value if you'd like to automatically spin up
-  # more instances in response to increased traffic.
-  maxInstances: 1
+  # The number of CPUs to allocate to this backend.
+  # https://firebase.google.com/docs/app-hosting/reference/yaml-api-reference#cpu
+  cpu: 1
+
+  # The amount of memory to allocate to this backend.
+  # https://firebase.google.com/docs/app-hosting/reference/yaml-api-reference#memorymib
+  memoryMiB: 1024
+
+  # The number of concurrent requests your backend can handle.
+  # https://firebase.google.com/docs/app-hosting/reference/yaml-api-reference#concurrency
+  concurrency: 100
+
+  # The maximum number of instances to spin up in response to traffic.
+  # https://firebase.google.com/docs/app-hosting/reference/yaml-api-reference#maxinstances
+  maxInstances: 2
