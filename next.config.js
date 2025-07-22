@@ -21,6 +21,13 @@ const nextConfig = {
     // This is a workaround for a warning in the opentelemetry-js library.
     // The warning is: "Critical dependency: the request of a dependency is an expression"
     config.module.exprContextCritical = false;
+
+    // Add a rule to ignore the 'handlebars' module
+    config.module.rules.push({
+      test: /handlebars/lib/index.js$/,
+      use: 'ignore-loader',
+    });
+
     return config;
   },
 };
