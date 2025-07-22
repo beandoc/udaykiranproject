@@ -1,12 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     remotePatterns: [
       {
@@ -24,7 +18,7 @@ const nextConfig = {
 
     // Add a rule to ignore the 'handlebars' module
     config.module.rules.push({
-      test: /handlebars/lib/index.js$/,
+      test: /handlebars\/lib\/index\.js$/,
       use: 'ignore-loader',
     });
 
