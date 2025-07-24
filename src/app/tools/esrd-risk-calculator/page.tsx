@@ -160,7 +160,7 @@ Reference: Grams ME, Sang Y, Levey AS, et al. Kidney-Failure Risk Projection for
         });
     };
 
-    const filledFields = Object.values(formValues).filter(val => val !== undefined && val !== null && val !== '').length;
+    const filledFields = Object.values(formValues).filter(val => val !== undefined && val !== null).length;
     const totalFields = Object.keys(FormSchema.shape).length;
     const progressPercentage = (filledFields / totalFields) * 100;
 
