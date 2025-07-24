@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { answerTransplantQuestions } from '@/ai/flows/answer-transplant-questions';
-import type { AnswerTransplantQuestionsOutput } from '@/ai/flows/answer-transplant-questions';
+// import { answerTransplantQuestions } from '@/ai/flows/answer-transplant-questions';
+// import type { AnswerTransplantQuestionsOutput } from '@/ai/flows/answer-transplant-questions';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
@@ -35,7 +35,8 @@ declare global {
 export default function AssistantPage() {
   const { t, role, language } = useAppContext();
   const [lastQuestion, setLastQuestion] = useState<string | null>(null);
-  const [response, setResponse] = useState<AnswerTransplantQuestionsOutput | null>(null);
+  // const [response, setResponse] = useState<AnswerTransplantQuestionsOutput | null>(null);
+  const [response, setResponse] = useState<{answer: string} | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { toast } = useToast();
@@ -126,8 +127,9 @@ export default function AssistantPage() {
     setLastQuestion(data.question);
 
     try {
-      const result = await answerTransplantQuestions({ question: data.question, role, language });
-      setResponse(result);
+      // const result = await answerTransplantQuestions({ question: data.question, role, language });
+      // setResponse(result);
+      setResponse({ answer: "The AI assistant is temporarily unavailable. Please try again later."});
     } catch (err) {
       setError(t('assistantError'));
       console.error(err);
