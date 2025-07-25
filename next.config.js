@@ -22,6 +22,13 @@ const nextConfig = {
         config.externals.push('handlebars');
     }
     
+    // This is to solve the "Module not found: Can't resolve 'ignore-loader'" error
+    // from a Genkit sub-dependency.
+    config.module.rules.push({
+      test: /dtrace-provider\.js$/,
+      use: 'ignore-loader',
+    });
+    
     return config;
   },
 };
