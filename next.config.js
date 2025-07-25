@@ -25,7 +25,6 @@ const nextConfig = {
       use: 'ignore-loader',
     });
     
-    // !! --- ADD THIS NEW RULE --- !!
     // This new rule tells Webpack what 'ignore-loader' is, fixing the "Module not found" error.
     config.module.rules.push({
       test: /ignore-loader/,

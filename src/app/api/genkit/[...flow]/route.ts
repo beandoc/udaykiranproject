@@ -1,4 +1,4 @@
-import { genkitNext } from '@genkit-ai/next';
+import { genkitNextHandler } from '@genkit-ai/next';
 import {config} from 'dotenv';
 config();
 
@@ -8,4 +8,4 @@ import '@/ai/flows/narrate-content-flow';
 
 // This is the standard Next.js route handler for Genkit.
 // It will automatically expose all of your defined flows as API endpoints.
-export const { GET, POST, OPTIONS } = genkitNext();
+export const { GET, POST, OPTIONS } = genkitNextHandler();
