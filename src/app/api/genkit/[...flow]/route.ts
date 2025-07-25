@@ -1,4 +1,4 @@
-import { genkitNextHandler } from '@genkit-ai/next';
+import genkitNextHandler from '@genkit-ai/next';
 import {config} from 'dotenv';
 config();
 
