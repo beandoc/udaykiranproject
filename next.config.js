@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
   images: {
     remotePatterns: [
       {
@@ -11,17 +10,20 @@ const nextConfig = {
       },
     ],
   },
-   webpack: (config, { isServer }) => {
+  webpack: (config, { isServer }) => {
     // This is a workaround for a warning in the opentelemetry-js library.
     // The warning is: "Critical dependency: the request of a dependency is an expression"
     config.module.exprContextCritical = false;
 
-    // Add a rule to ignore the 'handlebars' module
-    config.module.rules.push({
-      test: /handlebars\/lib\/index\.js$/,
-      use: 'ignore-loader',
-    });
-
+    // This is to solve a build error with Genkit, which uses Handlebars.
+    // It prevents Webpack from trying to bundle this server-side module on the client.
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        'handlebars': false,
+      };
+    }
+    
     return config;
   },
 };

@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-// import { answerTransplantQuestions } from '@/ai/flows/answer-transplant-questions';
-// import type { AnswerTransplantQuestionsOutput } from '@/ai/flows/answer-transplant-questions';
+import { answerTransplantQuestions } from '@/ai/flows/answer-transplant-questions';
+import type { AnswerTransplantQuestionsOutput } from '@/ai/flows/answer-transplant-questions';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
@@ -35,8 +35,7 @@ declare global {
 export default function AssistantPage() {
   const { t, role, language } = useAppContext();
   const [lastQuestion, setLastQuestion] = useState<string | null>(null);
-  // const [response, setResponse] = useState<AnswerTransplantQuestionsOutput | null>(null);
-  const [response, setResponse] = useState<{answer: string} | null>(null);
+  const [response, setResponse] = useState<AnswerTransplantQuestionsOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { toast } = useToast();
@@ -127,9 +126,8 @@ export default function AssistantPage() {
     setLastQuestion(data.question);
 
     try {
-      // const result = await answerTransplantQuestions({ question: data.question, role, language });
-      // setResponse(result);
-      setResponse({ answer: "The AI assistant is temporarily unavailable. Please try again later."});
+      const result = await answerTransplantQuestions({ question: data.question, role, language });
+      setResponse(result);
     } catch (err) {
       setError(t('assistantError'));
       console.error(err);
@@ -188,7 +186,7 @@ export default function AssistantPage() {
                     <Bot className="h-5 w-5" />
                 </span>
                 <div className="bg-card rounded-lg p-4 w-full max-w-xl">
-                    <p className="text-card-foreground">{response.answer}</p>
+                    <p className="text-card-foreground whitespace-pre-wrap">{response.answer}</p>
                 </div>
             </div>
         )}
@@ -196,9 +194,11 @@ export default function AssistantPage() {
         {!isLoading && !response && !lastQuestion &&(
              <Card className="max-w-xl mx-auto border-dashed">
                 <CardHeader>
-                    <CardTitle className="flex items-center gap-2 font-headline">
-                        <Sparkles className="text-primary"/>
-                        <span>{t('assistantDefaultCardTitle')}</span>
+                    <CardTitle>
+                        <div className="flex items-center gap-2 font-headline">
+                            <Sparkles className="text-primary"/>
+                            <span>{t('assistantDefaultCardTitle')}</span>
+                        </div>
                     </CardTitle>
                     <CardDescription>
                         {t('assistantDefaultCardDesc')}

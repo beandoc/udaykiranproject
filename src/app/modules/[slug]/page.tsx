@@ -83,7 +83,7 @@ export default function ModulePage() {
 
     const handlePrevious = () => {
         if (currentQuestionIndex > 0) {
-            setCurrentQuestionIndex(currentQuestionIndex - 1);
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
         }
     };
     
@@ -195,7 +195,6 @@ export default function ModulePage() {
                             <audio
                                 key={audioSrcForCurrentLang}
                                 controls
-                                autoPlay
                                 src={audioSrcForCurrentLang}
                                 className="w-full"
                                 onEnded={() => setShowAudioPlayer(false)}
@@ -234,7 +233,7 @@ export default function ModulePage() {
         return (
             <Card className="max-w-3xl mx-auto">
                 <CardHeader className="text-center">
-                    <CardTitle className="font-headline text-2xl">{t('quizResultsTitle')}</CardTitle>
+                    <CardTitle>{t('quizResultsTitle')}</CardTitle>
                      <CardDescription>{t('quizResultsCongrats')}</CardDescription>
                     <p className="text-lg font-semibold pt-2">{t('quizResultsScore', { score: score, total: questions.length })}</p>
                 </CardHeader>
