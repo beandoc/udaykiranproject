@@ -1,4 +1,3 @@
-
 'use server';
 
 import { redirect } from 'next/navigation';
@@ -34,8 +33,8 @@ export async function login(formData: FormData) {
       isLoggedIn: true
   }
 
-  // Set a session cookie. It will be deleted when the browser is closed.
-  cookies().set('session', JSON.stringify(sessionData), {
+  // Set a session cookie.
+  await cookies().set('session', JSON.stringify(sessionData), {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     path: '/',
@@ -49,6 +48,7 @@ export async function login(formData: FormData) {
 }
 
 export async function logout() {
-  cookies().set('session', '', { expires: new Date(0) });
+  // Set an empty session cookie that expires immediately to log out.
+  await cookies().set('session', '', { expires: new Date(0) });
   redirect('/login');
 }
