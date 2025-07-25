@@ -18,10 +18,7 @@ const nextConfig = {
     // This is to solve a build error with Genkit, which uses Handlebars.
     // It prevents Webpack from trying to bundle this server-side module on the client.
     if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        'handlebars': false,
-      };
+        config.externals.push('handlebars');
     }
     
     return config;
