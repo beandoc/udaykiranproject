@@ -1,4 +1,3 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -13,19 +12,23 @@ const nextConfig = {
   },
   webpack: (config, { isServer }) => {
     // This is a workaround for a warning in the opentelemetry-js library.
-    // The warning is: "Critical dependency: the request of a dependency is an expression"
     config.module.exprContextCritical = false;
 
     // This is to solve a build error with Genkit, which uses Handlebars.
-    // It prevents Webpack from trying to bundle this server-side module on the client.
     if (!isServer) {
         config.externals.push('handlebars');
     }
     
-    // This is to solve the "Module not found: Can't resolve 'ignore-loader'" error
-    // from a Genkit sub-dependency.
+    // This existing rule tells webpack to ignore dtrace-provider.js.
     config.module.rules.push({
       test: /dtrace-provider\.js$/,
+      use: 'ignore-loader',
+    });
+    
+    // !! --- ADD THIS NEW RULE --- !!
+    // This new rule tells Webpack what 'ignore-loader' is, fixing the "Module not found" error.
+    config.module.rules.push({
+      test: /ignore-loader/,
       use: 'ignore-loader',
     });
     
