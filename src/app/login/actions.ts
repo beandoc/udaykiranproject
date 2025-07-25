@@ -49,6 +49,6 @@ export async function login(formData: FormData) {
 
 export async function logout() {
   // Set an empty session cookie that expires immediately to log out.
-  await cookies().set('session', '', { expires: new Date(0) });
+  cookies().set('session', '', { expires: new Date(0) });
   redirect('/login');
 }
